@@ -38,16 +38,17 @@
 
   function renderGrid(container, items, folder){
     if(!container) return;
+    const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>';
     container.innerHTML = items.map(item => `
       <article class="card">
         <div class="card__media">
+          <span class="card__tag">${item.tag}</span>
           <img src="assets/img/${folder}/${item.img}.webp" srcset="assets/img/${folder}/${item.img}-sm.webp 500w, assets/img/${folder}/${item.img}.webp 1000w" sizes="(max-width:600px) 46vw, (max-width:1024px) 30vw, 22vw" alt="${item.alt}" loading="lazy" width="500" height="500">
         </div>
         <div class="card__body">
-          <span class="card__tag">${item.tag}</span>
           <h3 class="card__name">${item.name}</h3>
           <p class="card__price">Precio por WhatsApp</p>
-          <a class="card__btn js-wa" href="#" data-wa-msg="Hola OGCLEAN, quiero información y precio de: ${item.name} (${item.tag}).">Comprar por WhatsApp</a>
+          <a class="card__btn js-wa" href="#" data-wa-msg="Hola OGCLEAN, quiero información y precio de: ${item.name} (${item.tag}).">${waIcon}Comprar por WhatsApp</a>
         </div>
       </article>
     `).join('');
