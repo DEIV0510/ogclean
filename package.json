@@ -1,0 +1,9 @@
+{
+  "name": "ogclean",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing OGCLEAN - gorras fitted y tenis Nike Kyrie",
+  "scripts": {
+    "dev": "node serve.js"
+  }
+}
