@@ -73,8 +73,8 @@
       <h1 class="hero__title reveal">Estilo <em>original</em>,<br>al alcance de todos</h1>
       <p class="hero__sub reveal">Gorras fitted y tenis Nike seleccionados uno por uno. El estilo que buscas, sin pagar de más.</p>
       <div class="hero__cta reveal">
-        <a href="#gorras" class="btn btn--primary">Ver catálogo</a>
-        <a href="#" class="btn btn--ghost-light js-wa" data-wa-msg="Hola OGCLEAN, quiero más información de sus productos.">
+        <a href="#gorras" class="btn btn--primary btn--magnetic">Ver catálogo</a>
+        <a href="#" class="btn btn--ghost-light btn--magnetic js-wa" data-wa-msg="Hola OGCLEAN, quiero más información de sus productos.">
           <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
           Hablar por WhatsApp
         </a>
@@ -85,6 +85,44 @@
     </a>
   </section>
 
+  <!-- ===== TICKER ===== -->
+  <div class="marquee" role="presentation" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Gorras Originales</span><span class="dot">•</span>
+      <span>Tenis Nike Kyrie</span><span class="dot">•</span>
+      <span>Envíos a toda Colombia</span><span class="dot">•</span>
+      <span>Precio Justo</span><span class="dot">•</span>
+      <span>Estilo Callejero</span><span class="dot">•</span>
+      <span>Gorras Originales</span><span class="dot">•</span>
+      <span>Tenis Nike Kyrie</span><span class="dot">•</span>
+      <span>Envíos a toda Colombia</span><span class="dot">•</span>
+      <span>Precio Justo</span><span class="dot">•</span>
+      <span>Estilo Callejero</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- ===== CIFRAS ===== -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="15">0</span>
+        <span class="stat__label">Gorras 59FIFTY</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="8">0</span>
+        <span class="stat__label">Modelos Kyrie</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="100" data-suffix="%">0</span>
+        <span class="stat__label">Originalidad</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="2">0</span>
+        <span class="stat__label">Líneas WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== GORRAS ===== -->
   <section class="section" id="gorras">
     <div class="container">
@@ -92,6 +130,12 @@
         <p class="eyebrow">Catálogo</p>
         <h2 class="section__title">Gorras fitted</h2>
         <p class="section__sub">Piezas 59FIFTY seleccionadas. Disponibilidad limitada por referencia.</p>
+      </div>
+
+      <div class="filter-chips reveal" id="capsFilters">
+        <button class="chip is-active" data-filter="all">Todas</button>
+        <button class="chip" data-filter="mlb">MLB</button>
+        <button class="chip" data-filter="wbc">Selección México</button>
       </div>
 
       <div class="grid grid--products" id="capsGrid"></div>
@@ -105,6 +149,12 @@
         <p class="eyebrow">Catálogo</p>
         <h2 class="section__title">Tenis Nike Kyrie</h2>
         <p class="section__sub">Modelos icónicos de la línea Kyrie, en las mejores condiciones.</p>
+      </div>
+
+      <div class="filter-chips reveal" id="sneakersFilters">
+        <button class="chip is-active" data-filter="all">Todos</button>
+        <button class="chip" data-filter="neutro">Blanco / Negro</button>
+        <button class="chip" data-filter="color">Multicolor</button>
       </div>
 
       <div class="grid grid--products" id="sneakersGrid"></div>
@@ -172,11 +222,11 @@
   </section>
 
   <!-- ===== CTA FINAL ===== -->
-  <section class="cta-final grain">
+  <section class="cta-final grain spotlight">
     <div class="container cta-final__content reveal">
       <h2>¿Listo para encontrar tu estilo?</h2>
       <p>Escríbenos y te mostramos disponibilidad al instante.</p>
-      <a href="#" class="btn btn--primary btn--lg js-wa" data-wa-msg="Hola OGCLEAN, quiero comprar.">
+      <a href="#" class="btn btn--primary btn--lg btn--magnetic js-wa" data-wa-msg="Hola OGCLEAN, quiero comprar.">
         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
         Hablar por WhatsApp
       </a>
