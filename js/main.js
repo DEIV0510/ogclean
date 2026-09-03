@@ -124,6 +124,38 @@
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
+  /* ===================== Tilt 3D (hero + tarjetas de producto) ===================== */
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function attachTilt(zone, target, { maxTilt = 6, scale = 1.1 } = {}){
+    if(!zone || !target) return;
+
+    function onMove(e){
+      const rect = zone.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width;   // 0..1
+      const py = (e.clientY - rect.top) / rect.height;   // 0..1
+      const rotateY = (px - .5) * maxTilt * 2;
+      const rotateX = (.5 - py) * maxTilt * 2;
+      target.style.transform = `scale(${scale}) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+    }
+    function onLeave(){
+      target.style.transform = '';
+    }
+    zone.addEventListener('mousemove', onMove);
+    zone.addEventListener('mouseleave', onLeave);
+  }
+
+  if(canTilt){
+    const heroMedia = document.querySelector('.hero__media');
+    const heroImg = heroMedia?.querySelector('img');
+    attachTilt(heroMedia, heroImg, { maxTilt: 4, scale: 1.12 });
+
+    document.querySelectorAll('.card__media').forEach(media => {
+      attachTilt(media, media.querySelector('img'), { maxTilt: 9, scale: 1.1 });
+    });
+  }
+
   /* ===================== Loader ===================== */
   const loader = document.getElementById('loader');
   const hideLoader = () => loader.classList.add('is-done');
