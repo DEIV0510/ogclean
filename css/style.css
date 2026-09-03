@@ -320,6 +320,67 @@ svg{display:block}
 .footer__social svg{width:17px;height:17px}
 .footer__bottom{padding:22px 0;text-align:center;font-size:.82rem;color:rgba(246,239,228,.5)}
 
+/* ===== Zoom de producto (lightbox) ===== */
+.card__media{cursor:zoom-in}
+.card__zoom{
+  position:absolute;bottom:14px;right:14px;z-index:1;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(246,239,228,.94);color:var(--cafe-900);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(34,24,18,.18);
+  opacity:0;transform:scale(.85);
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+  pointer-events:none;
+}
+.card__zoom svg{width:16px;height:16px}
+.card:hover .card__zoom{opacity:1;transform:scale(1)}
+
+.lightbox{
+  position:fixed;inset:0;z-index:998;
+  background:rgba(16,10,6,.94);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:60px 20px;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease), visibility .3s var(--ease);
+}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox__stage{
+  position:relative;
+  max-width:min(90vw, 900px);max-height:72vh;
+  overflow:hidden;border-radius:12px;
+  cursor:zoom-in;
+  box-shadow:var(--shadow-deep);
+}
+.lightbox__stage.is-zoomed{cursor:zoom-out}
+.lightbox__stage img{
+  display:block;max-width:min(90vw, 900px);max-height:72vh;width:auto;height:auto;
+  transform-origin:var(--zoom-x,50%) var(--zoom-y,50%);
+  transition:transform .4s var(--ease);
+}
+.lightbox__stage.is-zoomed img{transform:scale(2.4)}
+.lightbox__caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:14px 18px;color:var(--cream);font-size:.85rem;font-weight:600;
+  background:linear-gradient(0deg, rgba(16,10,6,.75) 0%, rgba(16,10,6,0) 100%);
+  pointer-events:none;
+}
+.lightbox__hint{margin-top:16px;color:rgba(246,239,228,.55);font-size:.82rem}
+.lightbox__close{
+  position:absolute;top:20px;right:20px;z-index:1;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(246,239,228,.1);color:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(246,239,228,.25);
+  transition:background .25s var(--ease);
+}
+.lightbox__close:hover{background:rgba(246,239,228,.2)}
+.lightbox__close svg{width:20px;height:20px}
+
+@media (max-width:600px){
+  .lightbox{padding:80px 16px 40px}
+  .card__zoom{opacity:1;transform:scale(1);width:30px;height:30px}
+}
+
 /* ===== WhatsApp flotante ===== */
 .wa-float{
   position:fixed;right:22px;bottom:22px;z-index:90;
