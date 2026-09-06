@@ -414,6 +414,44 @@
     }
   } catch(err){ console.error('OGCLEAN impact:', err); }
 
+  /* ===================== Destacados: pin + scroll horizontal (solo desktop) ===================== */
+  try {
+    const showcaseSection = document.querySelector('.showcase');
+    const showcaseTrack = document.getElementById('showcaseTrack');
+    const isWideEnough = window.matchMedia('(min-width: 861px)').matches;
+    if(gsapReady && showcaseSection && showcaseTrack && isWideEnough){
+      let distance = 0;
+      function measure(){
+        distance = Math.max(0, showcaseTrack.scrollWidth - window.innerWidth + 48);
+        showcaseSection.style.setProperty('--showcase-h', `${window.innerHeight + distance}px`);
+        return distance;
+      }
+      showcaseSection.classList.add('is-pinned');
+      measure();
+      const tween = gsap.to(showcaseTrack, {
+        x: () => -distance,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: showcaseSection,
+          start: 'top top',
+          end: () => `+=${distance}`,
+          scrub: true,
+          invalidateOnRefresh: true
+        }
+      });
+      window.addEventListener('resize', () => {
+        if(!window.matchMedia('(min-width: 861px)').matches){
+          showcaseSection.classList.remove('is-pinned');
+          gsap.set(showcaseTrack, { x: 0 });
+          tween.scrollTrigger && tween.scrollTrigger.kill();
+          return;
+        }
+        measure();
+        ScrollTrigger.refresh();
+      });
+    }
+  } catch(err){ console.error('OGCLEAN showcase:', err); }
+
   /* ===================== Cursor personalizado ===================== */
   try {
     if(canTilt){
