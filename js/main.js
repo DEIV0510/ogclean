@@ -68,12 +68,20 @@
     { img: 'kyrie7-verde-azul', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', category: 'color' },
   ];
 
-  function renderGrid(container, items, folder, price){
+  const CAP_SIZES = ['7', '7 1/8', '7 1/4', '7 3/8', '7 1/2', '7 5/8', '7 3/4'];
+  const SNEAKER_SIZES = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'];
+
+  const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>';
+  const sizeUnit = folder => folder === 'caps' ? '' : ' US';
+
+  function renderGrid(container, items, folder, price, sizes){
     if(!container) return;
     const priceLabel = `$${price.toLocaleString('es-CO')}`;
-    const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>';
     const zoomIcon = '<svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4-4M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
-    container.innerHTML = items.map(item => `
+    const sizeOptions = sizes.map(s => `<option value="${s}">${s}${sizeUnit(folder)}</option>`).join('');
+    container.innerHTML = items.map((item, i) => {
+      const uid = `${folder}-${i}`;
+      return `
       <article class="card" data-category="${item.category}">
         <div class="card__media" data-zoom-src="assets/img/${folder}/${item.img}.webp" data-zoom-caption="${item.name} — ${item.tag}" data-zoom-alt="${item.alt}">
           <span class="card__tag">${item.tag}</span>
@@ -83,14 +91,61 @@
         <div class="card__body">
           <h3 class="card__name">${item.name}</h3>
           <p class="card__price">${priceLabel}</p>
-          <a class="card__btn js-wa" href="#" data-wa-msg="Hola OGCLEAN, quiero comprar: ${item.name} (${item.tag}) - ${priceLabel}.">${waIcon}Comprar por WhatsApp</a>
+          <div class="size-select">
+            <label for="size-${uid}" class="size-select__label">Talla</label>
+            <select id="size-${uid}" class="size-select__input">
+              <option value="">Elige tu talla</option>
+              ${sizeOptions}
+            </select>
+          </div>
+          <a class="card__btn js-wa-size" href="#" data-size-id="size-${uid}" data-name="${item.name}" data-tag="${item.tag}" data-price="${priceLabel}">${waIcon}Comprar por WhatsApp</a>
         </div>
       </article>
-    `).join('');
+    `;
+    }).join('');
   }
 
-  renderGrid(document.getElementById('capsGrid'), CAPS, 'caps', 85000);
-  renderGrid(document.getElementById('sneakersGrid'), SNEAKERS, 'sneakers', 185000);
+  renderGrid(document.getElementById('capsGrid'), CAPS, 'caps', 85000, CAP_SIZES);
+  renderGrid(document.getElementById('sneakersGrid'), SNEAKERS, 'sneakers', 185000, SNEAKER_SIZES);
+
+  /* ===================== WhatsApp con talla seleccionada ===================== */
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.js-wa-size');
+    if(!btn) return;
+    e.preventDefault();
+    const select = document.getElementById(btn.dataset.sizeId);
+    const size = select && select.value ? select.value : '';
+    const parts = [`Hola OGCLEAN, quiero comprar: ${btn.dataset.name} (${btn.dataset.tag}) - ${btn.dataset.price}.`];
+    if(size) parts.push(`Talla: ${size}.`);
+    else if(select) select.classList.add('is-empty-hint');
+    window.open(waLink(WA_PRIMARY, parts.join(' ')), '_blank', 'noopener');
+    if(select) setTimeout(() => select.classList.remove('is-empty-hint'), 900);
+  });
+
+  /* ===================== Talla + compra en "Destacados" ===================== */
+  try {
+    document.querySelectorAll('.showcase__item').forEach((item, i) => {
+      const info = item.querySelector('.showcase__info');
+      const price = item.querySelector('.showcase__price');
+      if(!info || !price) return;
+      const isCaps = item.dataset.type === 'caps';
+      const sizes = isCaps ? CAP_SIZES : SNEAKER_SIZES;
+      const uid = `showcase-${i}`;
+      const options = sizes.map(s => `<option value="${s}">${s}${sizeUnit(isCaps ? 'caps' : 'sneakers')}</option>`).join('');
+      const wrap = document.createElement('div');
+      wrap.innerHTML = `
+        <div class="size-select">
+          <label for="size-${uid}" class="size-select__label">Talla</label>
+          <select id="size-${uid}" class="size-select__input">
+            <option value="">Elige tu talla</option>
+            ${options}
+          </select>
+        </div>
+        <a class="card__btn js-wa-size" href="#" data-size-id="size-${uid}" data-name="${item.dataset.name}" data-tag="${item.dataset.tag}" data-price="${price.textContent}">${waIcon}Comprar por WhatsApp</a>
+      `;
+      info.append(...wrap.children);
+    });
+  } catch(err){ console.error('OGCLEAN showcase talla:', err); }
 
   /* ===================== Filtros de catálogo ===================== */
   function setupFilters(filtersEl, gridEl){

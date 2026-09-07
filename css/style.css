@@ -386,6 +386,28 @@ svg{display:block}
 .card__btn svg{width:15px;height:15px;flex-shrink:0}
 .card__btn:hover{background:var(--cafe-800);color:var(--cream)}
 
+/* ===== Selector de talla ===== */
+.size-select{margin-bottom:12px}
+.size-select__label{
+  display:block;font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+}
+.size-select__input{
+  width:100%;appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  padding:11px 36px 11px 14px;border-radius:100px;
+  border:1.5px solid var(--line);background-color:var(--white);
+  font-family:var(--font-body);font-weight:600;font-size:.86rem;color:var(--cafe-900);
+  cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23221812' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  transition:border-color .25s var(--ease);
+}
+.size-select__input:hover{border-color:var(--cafe-500)}
+.size-select__input:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.size-select__input.is-empty-hint{border-color:var(--rust);animation:sizeShake .4s ease}
+@keyframes sizeShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){.size-select__input.is-empty-hint{animation:none}}
+
 /* ===== Beneficios (historia sticky) ===== */
 .story__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
 .story__visual{position:sticky;top:110px}
