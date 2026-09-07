@@ -151,38 +151,62 @@
   <!-- ===== GORRAS ===== -->
   <section class="section" id="gorras">
     <div class="container">
-      <div class="section__head" data-reveal="slide-right">
-        <p class="eyebrow">Catálogo</p>
-        <h2 class="section__title">Gorras fitted</h2>
-        <p class="section__sub">Piezas 59FIFTY seleccionadas. Disponibilidad limitada por referencia.</p>
+      <div class="section__head section__head--split" data-reveal="slide-right">
+        <h2 class="section__title section__title--mosaic">La colección</h2>
+        <p class="section__sub">Cada gorra tiene su propia ficha: colorway, bordados y detalles reales. Elige tu talla y te despachamos al mismo día hábil.</p>
       </div>
 
-      <div class="filter-chips reveal" id="capsFilters">
-        <button class="chip is-active" data-filter="all">Todas</button>
-        <button class="chip" data-filter="mlb">MLB</button>
-        <button class="chip" data-filter="wbc">Selección México</button>
+      <div class="catalog-bar reveal">
+        <div class="filter-chips" id="capsFilters">
+          <button class="chip is-active" data-filter="all">Todas</button>
+          <button class="chip" data-filter="mlb">MLB</button>
+          <button class="chip" data-filter="wbc">Selección México</button>
+        </div>
+        <div class="catalog-bar__right">
+          <span class="catalog-bar__count" id="capsCount"></span>
+          <div class="catalog-bar__sort">
+            <label for="capsSort" class="sr-only">Ordenar</label>
+            <select id="capsSort" class="catalog-bar__select">
+              <option value="default">Destacadas</option>
+              <option value="az">Nombre A-Z</option>
+              <option value="za">Nombre Z-A</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div class="grid grid--products" id="capsGrid" data-reveal="stagger"></div>
+      <div class="grid grid--mosaic" id="capsGrid" data-reveal="stagger"></div>
     </div>
   </section>
 
   <!-- ===== TENIS ===== -->
   <section class="section section--alt" id="tenis">
     <div class="container">
-      <div class="section__head" data-reveal="slide-left-inv">
-        <p class="eyebrow">Catálogo</p>
-        <h2 class="section__title">Tenis Nike Kyrie</h2>
-        <p class="section__sub">Modelos icónicos de la línea Kyrie, en las mejores condiciones.</p>
+      <div class="section__head section__head--split" data-reveal="slide-left-inv">
+        <h2 class="section__title section__title--mosaic">Línea Kyrie</h2>
+        <p class="section__sub">Modelos icónicos de la línea Kyrie, en las mejores condiciones. Confirma tu talla exacta antes de comprar.</p>
       </div>
 
-      <div class="filter-chips reveal" id="sneakersFilters">
-        <button class="chip is-active" data-filter="all">Todos</button>
-        <button class="chip" data-filter="neutro">Blanco / Negro</button>
-        <button class="chip" data-filter="color">Multicolor</button>
+      <div class="catalog-bar reveal">
+        <div class="filter-chips" id="sneakersFilters">
+          <button class="chip is-active" data-filter="all">Todos</button>
+          <button class="chip" data-filter="neutro">Blanco / Negro</button>
+          <button class="chip" data-filter="color">Multicolor</button>
+        </div>
+        <div class="catalog-bar__right">
+          <span class="catalog-bar__count" id="sneakersCount"></span>
+          <div class="catalog-bar__sort">
+            <label for="sneakersSort" class="sr-only">Ordenar</label>
+            <select id="sneakersSort" class="catalog-bar__select">
+              <option value="default">Destacados</option>
+              <option value="az">Nombre A-Z</option>
+              <option value="za">Nombre Z-A</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div class="grid grid--products" id="sneakersGrid" data-reveal="stagger"></div>
+      <div class="grid grid--mosaic" id="sneakersGrid" data-reveal="stagger"></div>
     </div>
   </section>
 

@@ -77,15 +77,12 @@
   const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>';
   const sizeUnit = folder => folder === 'caps' ? '' : ' US';
 
-  function renderGrid(container, items, folder, price, sizes){
+  function renderGrid(container, items, folder, price){
     if(!container) return;
     const priceLabel = `$${price.toLocaleString('es-CO')}`;
     const zoomIcon = '<svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4-4M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
-    const sizeOptions = sizes.map(s => `<option value="${s}">${s}${sizeUnit(folder)}</option>`).join('');
-    container.innerHTML = items.map((item, i) => {
-      const uid = `${folder}-${i}`;
-      return `
-      <article class="card" data-category="${item.category}" data-folder="${folder}" data-idx="${i}">
+    container.innerHTML = items.map((item, i) => `
+      <article class="card${i % 5 === 0 ? ' is-tall' : ''}" data-category="${item.category}" data-folder="${folder}" data-idx="${i}" data-name="${item.name}">
         <div class="card__media" data-zoom-src="assets/img/${folder}/${item.img}.webp" data-zoom-caption="${item.name} — ${item.tag}" data-zoom-alt="${item.alt}">
           <span class="card__tag">${item.tag}</span>
           <span class="card__zoom">${zoomIcon}</span>
@@ -93,23 +90,14 @@
         </div>
         <div class="card__body">
           <h3 class="card__name">${item.name}</h3>
-          <p class="card__price">${priceLabel}</p>
-          <div class="size-select">
-            <label for="size-${uid}" class="size-select__label">Talla</label>
-            <select id="size-${uid}" class="size-select__input">
-              <option value="">Elige tu talla</option>
-              ${sizeOptions}
-            </select>
-          </div>
-          <a class="card__btn js-wa-size" href="#" data-size-id="size-${uid}" data-name="${item.name}" data-tag="${item.tag}" data-price="${priceLabel}">${waIcon}Comprar por WhatsApp</a>
+          <p class="card__price">${item.tag} · ${priceLabel}</p>
         </div>
       </article>
-    `;
-    }).join('');
+    `).join('');
   }
 
-  renderGrid(document.getElementById('capsGrid'), CAPS, 'caps', 85000, CAP_SIZES);
-  renderGrid(document.getElementById('sneakersGrid'), SNEAKERS, 'sneakers', 185000, SNEAKER_SIZES);
+  renderGrid(document.getElementById('capsGrid'), CAPS, 'caps', 85000);
+  renderGrid(document.getElementById('sneakersGrid'), SNEAKERS, 'sneakers', 185000);
 
   /* ===================== WhatsApp con talla seleccionada ===================== */
   document.addEventListener('click', (e) => {
@@ -150,22 +138,49 @@
     });
   } catch(err){ console.error('OGCLEAN showcase talla:', err); }
 
-  /* ===================== Filtros de catálogo ===================== */
-  function setupFilters(filtersEl, gridEl){
-    if(!filtersEl || !gridEl) return;
-    filtersEl.addEventListener('click', (e) => {
-      const chip = e.target.closest('.chip');
-      if(!chip) return;
-      filtersEl.querySelectorAll('.chip').forEach(c => c.classList.remove('is-active'));
-      chip.classList.add('is-active');
-      const filter = chip.dataset.filter;
-      gridEl.querySelectorAll('.card').forEach(card => {
-        card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter);
-      });
-    });
+  /* ===================== Filtros, conteo y orden del catálogo ===================== */
+  function updateCount(gridEl, countEl, singular, plural){
+    if(!countEl) return;
+    const visible = gridEl.querySelectorAll('.card:not(.is-hidden)').length;
+    countEl.textContent = `${visible} ${visible === 1 ? singular : plural}`;
   }
-  setupFilters(document.getElementById('capsFilters'), document.getElementById('capsGrid'));
-  setupFilters(document.getElementById('sneakersFilters'), document.getElementById('sneakersGrid'));
+
+  function setupCatalog(gridEl, filtersEl, countEl, sortEl, singular, plural){
+    if(!gridEl) return;
+
+    if(filtersEl){
+      filtersEl.addEventListener('click', (e) => {
+        const chip = e.target.closest('.chip');
+        if(!chip) return;
+        filtersEl.querySelectorAll('.chip').forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        const filter = chip.dataset.filter;
+        gridEl.querySelectorAll('.card').forEach(card => {
+          card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter);
+        });
+        updateCount(gridEl, countEl, singular, plural);
+      });
+    }
+
+    if(sortEl){
+      sortEl.addEventListener('change', () => {
+        const cards = Array.from(gridEl.querySelectorAll('.card'));
+        if(sortEl.value === 'az'){
+          cards.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name, 'es'));
+        } else if(sortEl.value === 'za'){
+          cards.sort((a, b) => b.dataset.name.localeCompare(a.dataset.name, 'es'));
+        } else {
+          cards.sort((a, b) => Number(a.dataset.idx) - Number(b.dataset.idx));
+        }
+        cards.forEach(card => gridEl.appendChild(card));
+      });
+    }
+
+    updateCount(gridEl, countEl, singular, plural);
+  }
+
+  setupCatalog(document.getElementById('capsGrid'), document.getElementById('capsFilters'), document.getElementById('capsCount'), document.getElementById('capsSort'), 'gorra', 'gorras');
+  setupCatalog(document.getElementById('sneakersGrid'), document.getElementById('sneakersFilters'), document.getElementById('sneakersCount'), document.getElementById('sneakersSort'), 'par', 'pares');
 
   /* ===================== WhatsApp links ===================== */
   function bindWaLinks(){
