@@ -231,7 +231,18 @@
   const lightboxBuy = document.getElementById('lightboxBuy');
   const lightboxFeatures = document.getElementById('lightboxFeatures');
   const lightboxRelated = document.getElementById('lightboxRelated');
+  const lightboxTopbar = lightbox.querySelector('.lightbox__topbar');
   let lastFocused = null;
+
+  function playLightboxIntro(){
+    if(!gsapReady) return;
+    const detailEls = [lightboxName, lightboxTag, lightboxPrice, lightboxSize.closest('.size-select'), lightboxBuy, lightboxFeatures.closest('.lightbox__desc')].filter(Boolean);
+    gsap.killTweensOf([lightboxTopbar, lightboxStage, ...detailEls, lightboxRelated]);
+    gsap.fromTo(lightboxTopbar, {y:-30, opacity:0}, {y:0, opacity:1, duration:.5, ease:'power3.out'});
+    gsap.fromTo(lightboxStage, {opacity:0, scale:.94, y:24}, {opacity:1, scale:1, y:0, duration:.7, ease:'power3.out', delay:.08});
+    gsap.fromTo(detailEls, {opacity:0, y:22}, {opacity:1, y:0, duration:.55, ease:'power3.out', stagger:.07, delay:.18});
+    gsap.fromTo(lightboxRelated, {opacity:0, y:30}, {opacity:1, y:0, duration:.6, ease:'power3.out', delay:.42});
+  }
 
   function openLightbox(folder, idx){
     const cat = CATALOG[folder];
@@ -282,6 +293,7 @@
     document.body.style.overflow = 'hidden';
     lastFocused = document.activeElement;
     lightboxClose.focus();
+    playLightboxIntro();
   }
   function closeLightbox(){
     lightbox.classList.remove('is-open');
