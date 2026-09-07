@@ -262,8 +262,8 @@
 
   if(canTilt){
     const heroMedia = document.querySelector('.hero__media');
-    const heroImg = heroMedia?.querySelector('img');
-    attachTilt(heroMedia, heroImg, { maxTilt: 4, scale: 1.12 });
+    const heroVisual = heroMedia?.querySelector('video, img');
+    attachTilt(heroMedia, heroVisual, { maxTilt: 4, scale: 1.12 });
 
     document.querySelectorAll('.card__media').forEach(media => {
       attachTilt(media, media.querySelector('img'), { maxTilt: 9, scale: 1.1 });
@@ -327,6 +327,19 @@
   } else {
     statEls.forEach(el => { el.textContent = el.dataset.count + (el.dataset.suffix || ''); });
   }
+
+  /* ===================== Video del hero: autoplay silenciado garantizado ===================== */
+  try {
+    const heroVideo = document.getElementById('heroVideo');
+    if(heroVideo){
+      heroVideo.muted = true;
+      heroVideo.defaultMuted = true;
+      const playPromise = heroVideo.play();
+      if(playPromise && typeof playPromise.catch === 'function'){
+        playPromise.catch(() => { /* autoplay bloqueado: se queda en el poster, sin romper nada */ });
+      }
+    }
+  } catch(err){ console.error('OGCLEAN hero video:', err); }
 
   /* ===================== Hero: intro y profundidad ===================== */
   let heroIntroPlayed = false;

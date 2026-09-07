@@ -75,7 +75,18 @@
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
     <div class="hero__media" id="heroMedia">
-      <img src="assets/img/sneakers/kyrie3-blanco.webp" alt="Tenis Nike sobre fondo elegante, catálogo OGCLEAN" fetchpriority="high">
+      <video
+        id="heroVideo"
+        autoplay muted loop playsinline
+        preload="auto"
+        poster="assets/video/hero-poster.jpg"
+        aria-label="Video de gorra OGCLEAN girando">
+        <source media="(max-width: 767px)" src="assets/video/hero-mobile.webm" type="video/webm">
+        <source media="(max-width: 767px)" src="assets/video/hero-mobile.mp4" type="video/mp4">
+        <source src="assets/video/hero.webm" type="video/webm">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+        <img src="assets/video/hero-poster.jpg" alt="Gorra OGCLEAN, catálogo streetwear">
+      </video>
       <div class="hero__scrim"></div>
       <div class="hero__shapes" aria-hidden="true">
         <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="1"/><line x1="22" y1="100" x2="178" y2="100" stroke="currentColor" stroke-width="1"/><line x1="100" y1="22" x2="100" y2="178" stroke="currentColor" stroke-width="1"/></svg>
