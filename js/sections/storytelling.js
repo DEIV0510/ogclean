@@ -35,26 +35,48 @@ export function initHeroVideo() {
   const video = qs('#heroVideo');
   if (!video) return;
 
+  // Con ahorro de datos activo queda el póster: no gastamos el plan del visitante
   const conexion = navigator.connection;
-  const ahorroDatos = conexion && (conexion.saveData || /2g/.test(conexion.effectiveType || ''));
-  if (ahorroDatos || reducedMotion) return;
+  if (conexion && (conexion.saveData || /(^|-)2g$/.test(conexion.effectiveType || ''))) return;
 
-  const ancho = mq('(min-width: 768px)');
-  const base = ancho ? 'assets/video/hero' : 'assets/video/hero-mobile';
+  // El archivo liviano en móvil, el grande solo en pantallas anchas
+  const base = mq('(min-width: 768px)') ? 'assets/video/hero' : 'assets/video/hero-mobile';
 
-  const cargar = () => {
-    if (video.dataset.cargado === '1') return;
+  video.muted = true;          // requisito para el autoplay en todos los navegadores
+  video.defaultMuted = true;
+  video.playsInline = true;
+
+  if (video.dataset.cargado !== '1') {
     video.dataset.cargado = '1';
     video.innerHTML = `
       <source src="${base}.webm" type="video/webm">
       <source src="${base}.mp4" type="video/mp4">`;
     video.load();
-    const play = video.play();
-    if (play && play.catch) play.catch(() => {});
+  }
+
+  const reproducir = () => {
+    if (!video.paused) return;
+    const intento = video.play();
+    if (intento && intento.catch) intento.catch(() => {});
   };
 
-  if ('requestIdleCallback' in window) requestIdleCallback(cargar, { timeout: 1200 });
-  else setTimeout(cargar, 600);
+  reproducir();
+  video.addEventListener('loadeddata', reproducir);
+  video.addEventListener('canplay', reproducir);
+
+  // Si el navegador bloquea el autoplay, el primer gesto del visitante lo destraba
+  const alPrimerGesto = () => {
+    reproducir();
+    ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((ev) =>
+      window.removeEventListener(ev, alPrimerGesto));
+  };
+  ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((ev) =>
+    window.addEventListener(ev, alPrimerGesto, { once: false, passive: true }));
+
+  // Al volver a la pestaña algunos navegadores lo dejan pausado
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) reproducir();
+  });
 }
 
 /** Tira infinita de miniaturas reales sobre la sección de redes. */

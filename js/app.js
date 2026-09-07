@@ -39,6 +39,7 @@ function arrancar() {
   // 1 · Contenido y estructura (barato, inmediato)
   initWhatsApp();
   initAnio();
+  initHeroVideo(); // cuanto antes arranque, antes se ve el hero en movimiento
   initCatalog();
   initCombo();
   initSocialStrip();
@@ -61,7 +62,6 @@ function arrancar() {
 
   // 4 · Lo pesado, cuando el navegador esté libre
   const pesado = () => {
-    initHeroVideo();
     whenGsap().then((gsap) => {
       if (gsap && !reducedMotion) {
         gsap.registerPlugin(window.ScrollTrigger);
