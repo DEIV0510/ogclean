@@ -70,6 +70,9 @@
 
   const CAP_SIZES = ['7', '7 1/8', '7 1/4', '7 3/8', '7 1/2', '7 5/8', '7 3/4'];
   const SNEAKER_SIZES = ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'];
+  const CAP_PRICE = 85000;
+  const SNEAKER_PRICE = 185000;
+  const CATALOG = { caps: { items: CAPS, sizes: CAP_SIZES, price: CAP_PRICE }, sneakers: { items: SNEAKERS, sizes: SNEAKER_SIZES, price: SNEAKER_PRICE } };
 
   const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>';
   const sizeUnit = folder => folder === 'caps' ? '' : ' US';
@@ -82,7 +85,7 @@
     container.innerHTML = items.map((item, i) => {
       const uid = `${folder}-${i}`;
       return `
-      <article class="card" data-category="${item.category}">
+      <article class="card" data-category="${item.category}" data-folder="${folder}" data-idx="${i}">
         <div class="card__media" data-zoom-src="assets/img/${folder}/${item.img}.webp" data-zoom-caption="${item.name} — ${item.tag}" data-zoom-alt="${item.alt}">
           <span class="card__tag">${item.tag}</span>
           <span class="card__zoom">${zoomIcon}</span>
@@ -215,21 +218,65 @@
   overlay.addEventListener('click', closeNav);
   nav.querySelectorAll('.nav__link').forEach(a => a.addEventListener('click', closeNav));
 
-  /* ===================== Lightbox / zoom de producto ===================== */
+  /* ===================== Ficha de producto (lightbox) ===================== */
   const lightbox = document.getElementById('lightbox');
+  const lightboxScroll = lightbox.querySelector('.lightbox__scroll');
   const lightboxStage = document.getElementById('lightboxStage');
   const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxName = document.getElementById('lightboxName');
+  const lightboxTag = document.getElementById('lightboxTag');
+  const lightboxPrice = document.getElementById('lightboxPrice');
+  const lightboxSize = document.getElementById('lightboxSize');
+  const lightboxBuy = document.getElementById('lightboxBuy');
+  const lightboxFeatures = document.getElementById('lightboxFeatures');
+  const lightboxRelated = document.getElementById('lightboxRelated');
   let lastFocused = null;
 
-  function openLightbox(media){
-    lightboxImg.src = media.dataset.zoomSrc;
-    lightboxImg.alt = media.dataset.zoomAlt || '';
-    lightboxCaption.textContent = media.dataset.zoomCaption || '';
+  function openLightbox(folder, idx){
+    const cat = CATALOG[folder];
+    const item = cat && cat.items[idx];
+    if(!item) return;
+    const priceLabel = `$${cat.price.toLocaleString('es-CO')}`;
+
+    lightboxImg.src = `assets/img/${folder}/${item.img}.webp`;
+    lightboxImg.alt = item.alt || '';
+    lightboxName.textContent = item.name;
+    lightboxTag.textContent = item.tag;
+    lightboxPrice.textContent = priceLabel;
+
+    lightboxSize.innerHTML = '<option value="">Elige tu talla</option>' +
+      cat.sizes.map(s => `<option value="${s}">${s}${sizeUnit(folder)}</option>`).join('');
+
+    lightboxBuy.dataset.sizeId = 'lightboxSize';
+    lightboxBuy.dataset.name = item.name;
+    lightboxBuy.dataset.tag = item.tag;
+    lightboxBuy.dataset.price = priceLabel;
+    lightboxBuy.classList.add('js-wa-size');
+
+    const features = folder === 'caps'
+      ? ['Gorra fitted 59FIFTY, ajuste cerrado', `Edición: ${item.tag}`, 'Confirma tu talla exacta por WhatsApp antes de comprar']
+      : [`Modelo: ${item.name}`, `Colorway: ${item.tag}`, 'Confirma disponibilidad de talla por WhatsApp antes de comprar'];
+    lightboxFeatures.innerHTML = features.map(f => `<li>${f}</li>`).join('');
+
+    const sameCategory = cat.items.filter((it, i) => i !== idx && it.category === item.category);
+    const others = cat.items.filter((it, i) => i !== idx && it.category !== item.category);
+    const related = [...sameCategory, ...others].slice(0, 4);
+    lightboxRelated.innerHTML = related.map(r => {
+      const rIdx = cat.items.indexOf(r);
+      return `
+        <button type="button" class="lightbox__related-item" data-folder="${folder}" data-idx="${rIdx}">
+          <img src="assets/img/${folder}/${r.img}-sm.webp" alt="${r.alt}" loading="lazy" width="200" height="200">
+          <span>${r.name}</span>
+        </button>
+      `;
+    }).join('');
+
     lightboxStage.classList.remove('is-zoomed');
     lightboxImg.style.removeProperty('--zoom-x');
     lightboxImg.style.removeProperty('--zoom-y');
+    if(lightboxScroll) lightboxScroll.scrollTop = 0;
+
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -245,7 +292,17 @@
   }
 
   document.querySelectorAll('.card__media[data-zoom-src]').forEach(media => {
-    media.addEventListener('click', () => openLightbox(media));
+    media.addEventListener('click', () => {
+      const card = media.closest('.card');
+      if(!card) return;
+      openLightbox(card.dataset.folder, Number(card.dataset.idx));
+    });
+  });
+
+  lightboxRelated.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lightbox__related-item');
+    if(!btn) return;
+    openLightbox(btn.dataset.folder, Number(btn.dataset.idx));
   });
 
   lightboxStage.addEventListener('click', (e) => {
@@ -260,7 +317,7 @@
   });
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => {
-    if(e.target === lightbox) closeLightbox();
+    if(e.target === lightbox || e.target === lightboxScroll) closeLightbox();
   });
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
