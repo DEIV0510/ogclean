@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>OGCLEAN | Gorras y Tenis Streetwear</title>
+<meta name="description" content="OGCLEAN — gorras fitted y tenis Nike Kyrie seleccionados. Tu estilo, al mejor precio. Compra directo por WhatsApp.">
+<meta name="theme-color" content="#3B2418">
+
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/brand/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- ===== PANTALLA DE CARGA ===== -->
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader__mark">
+    <div class="loader__wipe">
+      <img src="assets/img/brand/logo.webp" alt="" width="220" height="132">
+    </div>
+  </div>
+  <div class="loader__bar"><span></span></div>
+</div>
+
+<!-- ===== CURSOR PERSONALIZADO (desktop) ===== -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="container header__row">
+    <a href="#inicio" class="header__logo" aria-label="OGCLEAN — Inicio">
+      <img src="assets/img/brand/logo.webp" alt="OGCLEAN" width="150" height="90">
+    </a>
+
+    <nav class="nav" id="nav">
+      <div class="nav__brand">
+        <img src="assets/img/brand/logo.webp" alt="OGCLEAN" width="150" height="90">
+      </div>
+      <a href="#inicio" class="nav__link">Inicio</a>
+      <a href="#gorras" class="nav__link">Gorras</a>
+      <a href="#tenis" class="nav__link">Tenis</a>
+      <a href="#beneficios" class="nav__link">Beneficios</a>
+      <a href="#nosotros" class="nav__link">Nosotros</a>
+      <a href="#contacto" class="nav__link">Contacto</a>
+      <a href="#" class="btn btn--primary nav__cta js-wa" data-wa-msg="Hola OGCLEAN, quiero comprar.">Hablar por WhatsApp</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--primary btn--sm" id="headerCta" href="#" target="_blank" rel="noopener">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+        Comprar ahora
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- overlay menú móvil -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__media" id="heroMedia">
+      <video
+        id="heroVideo"
+        autoplay muted loop playsinline
+        preload="auto"
+        poster="assets/video/hero-poster.jpg"
+        aria-label="Video de gorra OGCLEAN girando">
+        <source media="(max-width: 767px)" src="assets/video/hero-mobile.webm" type="video/webm">
+        <source media="(max-width: 767px)" src="assets/video/hero-mobile.mp4" type="video/mp4">
+        <source src="assets/video/hero.webm" type="video/webm">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+        <img src="assets/video/hero-poster.jpg" alt="Gorra OGCLEAN, catálogo streetwear">
+      </video>
+      <div class="hero__scrim"></div>
+      <div class="hero__shapes" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="1"/><line x1="22" y1="100" x2="178" y2="100" stroke="currentColor" stroke-width="1"/><line x1="100" y1="22" x2="100" y2="178" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+    </div>
+    <p class="hero__word" aria-hidden="true">STREETWEAR</p>
+    <div class="container hero__content" id="heroContent">
+      <p class="eyebrow">Gorras &amp; Tenis Urbanos</p>
+      <h1 class="hero__title" id="heroTitle">Estilo <em>propio</em>,<br>al alcance de todos</h1>
+      <p class="hero__sub">Gorras fitted y tenis Nike seleccionados uno por uno. El estilo que buscas, sin pagar de más.</p>
+      <div class="hero__cta">
+        <a href="#gorras" class="btn btn--primary btn--magnetic">Ver catálogo <span class="btn__arrow">→</span></a>
+        <a href="#" class="btn btn--ghost-light btn--magnetic js-wa" data-wa-msg="Hola OGCLEAN, quiero más información de sus productos.">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+    <a href="#gorras" class="hero__scroll" aria-label="Bajar">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="marquee" role="presentation" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Gorras Urbanas</span><span class="dot">•</span>
+      <span>Tenis Nike Kyrie</span><span class="dot">•</span>
+      <span>Envíos a toda Colombia</span><span class="dot">•</span>
+      <span>Precio Justo</span><span class="dot">•</span>
+      <span>Estilo Callejero</span><span class="dot">•</span>
+      <span>Gorras Urbanas</span><span class="dot">•</span>
+      <span>Tenis Nike Kyrie</span><span class="dot">•</span>
+      <span>Envíos a toda Colombia</span><span class="dot">•</span>
+      <span>Precio Justo</span><span class="dot">•</span>
+      <span>Estilo Callejero</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- ===== CIFRAS ===== -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat" data-reveal="scale">
+        <span class="stat__num" data-count="15">0</span>
+        <span class="stat__label">Gorras 59FIFTY</span>
+      </div>
+      <div class="stat" data-reveal="scale">
+        <span class="stat__num" data-count="8">0</span>
+        <span class="stat__label">Modelos Kyrie</span>
+      </div>
+      <div class="stat" data-reveal="scale">
+        <span class="stat__num" data-count="100" data-suffix="%">0</span>
+        <span class="stat__label">Estilo propio</span>
+      </div>
+      <div class="stat" data-reveal="scale">
+        <span class="stat__num" data-count="2">0</span>
+        <span class="stat__label">Líneas WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GORRAS ===== -->
+  <section class="section" id="gorras">
+    <div class="container">
+      <div class="section__head section__head--split" data-reveal="slide-right">
+        <h2 class="section__title section__title--mosaic">La colección</h2>
+        <p class="section__sub">Cada gorra tiene su propia ficha: colorway, bordados y detalles reales. Elige tu talla y te despachamos al mismo día hábil.</p>
+      </div>
+
+      <div class="catalog-bar reveal">
+        <div class="filter-chips" id="capsFilters">
+          <button class="chip is-active" data-filter="all">Todas</button>
+          <button class="chip" data-filter="mlb">MLB</button>
+          <button class="chip" data-filter="wbc">Selección México</button>
+        </div>
+        <div class="catalog-bar__right">
+          <span class="catalog-bar__count" id="capsCount"></span>
+          <div class="catalog-bar__sort">
+            <label for="capsSort" class="sr-only">Ordenar</label>
+            <select id="capsSort" class="catalog-bar__select">
+              <option value="default">Destacadas</option>
+              <option value="az">Nombre A-Z</option>
+              <option value="za">Nombre Z-A</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid--mosaic" id="capsGrid" data-reveal="stagger"></div>
+    </div>
+  </section>
+
+  <!-- ===== TENIS ===== -->
+  <section class="section section--alt" id="tenis">
+    <div class="container">
+      <div class="section__head section__head--split" data-reveal="slide-left-inv">
+        <h2 class="section__title section__title--mosaic">Línea Kyrie</h2>
+        <p class="section__sub">Modelos icónicos de la línea Kyrie, en las mejores condiciones. Confirma tu talla exacta antes de comprar.</p>
+      </div>
+
+      <div class="catalog-bar reveal">
+        <div class="filter-chips" id="sneakersFilters">
+          <button class="chip is-active" data-filter="all">Todos</button>
+          <button class="chip" data-filter="neutro">Blanco / Negro</button>
+          <button class="chip" data-filter="color">Multicolor</button>
+        </div>
+        <div class="catalog-bar__right">
+          <span class="catalog-bar__count" id="sneakersCount"></span>
+          <div class="catalog-bar__sort">
+            <label for="sneakersSort" class="sr-only">Ordenar</label>
+            <select id="sneakersSort" class="catalog-bar__select">
+              <option value="default">Destacados</option>
+              <option value="az">Nombre A-Z</option>
+              <option value="za">Nombre Z-A</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid--mosaic" id="sneakersGrid" data-reveal="stagger"></div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFICIOS (historia sticky) ===== -->
+  <section class="section story" id="beneficios">
+    <div class="container story__grid">
+      <div class="story__visual">
+        <div class="story__frame">
+          <img src="assets/img/caps/mets-rojo.webp" alt="Gorra fitted New York Mets, catálogo OGCLEAN" class="story__img is-active" data-story-img="0" loading="lazy">
+          <img src="assets/img/sneakers/kyrie7-verde-amarillo.webp" alt="Tenis Nike Kyrie 7, catálogo OGCLEAN" class="story__img" data-story-img="1" loading="lazy">
+          <img src="assets/img/caps/padres-cafe.webp" alt="Gorra fitted San Diego Padres café, catálogo OGCLEAN" class="story__img" data-story-img="2" loading="lazy">
+          <img src="assets/img/sneakers/kyrie4-negro.webp" alt="Tenis Nike Kyrie 4 negro, catálogo OGCLEAN" class="story__img" data-story-img="3" loading="lazy">
+        </div>
+      </div>
+
+      <div class="story__list">
+        <div class="section__head reveal">
+          <p class="eyebrow">¿Por qué OGCLEAN?</p>
+          <h2 class="section__title">Estilo con criterio</h2>
+        </div>
+
+        <div class="story__item is-active" data-story-step="0">
+          <span class="story__num">01</span>
+          <svg class="story__icon" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Estilo seleccionado</h3>
+          <p>Cada pieza pasa por nuestro filtro de calidad y estilo.</p>
+        </div>
+        <div class="story__item" data-story-step="1">
+          <span class="story__num">02</span>
+          <svg class="story__icon" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Mejor precio</h3>
+          <p>Estilo premium sin pagar de más.</p>
+        </div>
+        <div class="story__item" data-story-step="2">
+          <span class="story__num">03</span>
+          <svg class="story__icon" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Variedad real</h3>
+          <p>Gorras y tenis para todos los estilos y edades.</p>
+        </div>
+        <div class="story__item" data-story-step="3">
+          <span class="story__num">04</span>
+          <svg class="story__icon" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Atención directa</h3>
+          <p>Te respondemos por WhatsApp al instante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MOMENTO DE IMPACTO ===== -->
+  <section class="impact grain" id="impacto">
+    <div class="impact__media">
+      <img src="assets/img/caps/padres-cafe.webp" alt="Gorra San Diego Padres, tono café, catálogo OGCLEAN" loading="lazy">
+      <div class="impact__scrim"></div>
+    </div>
+    <div class="container impact__content">
+      <h2 class="impact__headline" id="impactHeadline">
+        <span class="impact__line">No es solo el fit.</span>
+        <span class="impact__line impact__line--accent">Es cómo lo llevas.</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- ===== DESTACADOS (scroll horizontal) ===== -->
+  <section class="showcase" id="showcase">
+    <div class="showcase__pin">
+      <div class="container showcase__head">
+        <p class="eyebrow">Destacados</p>
+        <h2 class="section__title">Lo más pedido</h2>
+      </div>
+      <div class="showcase__track" id="showcaseTrack">
+        <article class="showcase__item" data-type="caps" data-name="Chicago White Sox" data-tag="World Series 05">
+          <div class="showcase__media"><img src="assets/img/caps/whitesox-negro.webp" alt="Gorra fitted Chicago White Sox negra" loading="lazy"></div>
+          <div class="showcase__info">
+            <h3>Chicago White Sox</h3>
+            <p>World Series 05</p>
+            <span class="showcase__price">$85.000</span>
+          </div>
+        </article>
+        <article class="showcase__item" data-type="sneakers" data-name="Nike Kyrie 7" data-tag="Lila / Rosa">
+          <div class="showcase__media"><img src="assets/img/sneakers/kyrie7-lila-rosa.webp" alt="Tenis Nike Kyrie 7 lila y rosa" loading="lazy"></div>
+          <div class="showcase__info">
+            <h3>Nike Kyrie 7</h3>
+            <p>Lila / Rosa</p>
+            <span class="showcase__price">$185.000</span>
+          </div>
+        </article>
+        <article class="showcase__item" data-type="caps" data-name="Houston Astros" data-tag="45 aniversario">
+          <div class="showcase__media"><img src="assets/img/caps/astros-caqui.webp" alt="Gorra fitted Houston Astros caqui" loading="lazy"></div>
+          <div class="showcase__info">
+            <h3>Houston Astros</h3>
+            <p>45 aniversario</p>
+            <span class="showcase__price">$85.000</span>
+          </div>
+        </article>
+        <article class="showcase__item" data-type="sneakers" data-name="Nike Kyrie 4" data-tag="Negro total">
+          <div class="showcase__media"><img src="assets/img/sneakers/kyrie4-negro.webp" alt="Tenis Nike Kyrie 4 negro" loading="lazy"></div>
+          <div class="showcase__info">
+            <h3>Nike Kyrie 4</h3>
+            <p>Negro total</p>
+            <span class="showcase__price">$185.000</span>
+          </div>
+        </article>
+        <article class="showcase__item" data-type="caps" data-name="Los Angeles Dodgers" data-tag="Script bordado">
+          <div class="showcase__media"><img src="assets/img/caps/dodgers-rojo.webp" alt="Gorra fitted Los Angeles Dodgers roja" loading="lazy"></div>
+          <div class="showcase__info">
+            <h3>Los Angeles Dodgers</h3>
+            <p>Script bordado</p>
+            <span class="showcase__price">$85.000</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE OGCLEAN ===== -->
+  <section class="section about" id="nosotros">
+    <div class="container about__grid">
+      <div class="about__media" data-reveal="mask">
+        <img src="assets/img/caps/yankees-negro-oro.webp" alt="Gorra New York Yankees negra con dorado, OGCLEAN" loading="lazy">
+      </div>
+      <div class="about__text" data-reveal="slide-left">
+        <p class="eyebrow">Sobre nosotros</p>
+        <h2 class="section__title">Encontramos tu estilo</h2>
+        <p>En OGCLEAN te ayudamos a encontrar el estilo adecuado al mejor precio. Gorras y tenis para todas las edades, con esencia callejera y una selección pensada con criterio.</p>
+        <a href="#" class="btn btn--primary js-wa" data-wa-msg="Hola OGCLEAN, quiero saber más sobre ustedes.">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+          Hablar con nosotros
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final grain spotlight">
+    <div class="container cta-final__content reveal">
+      <h2>¿Listo para encontrar tu estilo?</h2>
+      <p>Escríbenos y te mostramos disponibilidad al instante.</p>
+      <a href="#" class="btn btn--primary btn--lg btn--magnetic js-wa" data-wa-msg="Hola OGCLEAN, quiero comprar.">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Contacto</p>
+        <h2 class="section__title">Hablemos</h2>
+        <p class="section__sub">Elige el medio que prefieras, respondemos rápido.</p>
+      </div>
+
+      <div class="contact-grid" data-reveal="stagger">
+        <a class="contact-card js-wa" href="#" data-wa-msg="Hola OGCLEAN, quiero más información.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+          <span class="contact-card__title">WhatsApp · Línea 1</span>
+          <span class="contact-card__value">+57 313 755 8643</span>
+        </a>
+        <a class="contact-card js-wa2" href="#" data-wa-msg="Hola OGCLEAN, quiero más información.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+          <span class="contact-card__title">WhatsApp · Línea 2</span>
+          <span class="contact-card__value">+57 323 518 2745</span>
+        </a>
+        <a class="contact-card" href="https://www.facebook.com/profile.php?id=61577983661507" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3C15.9 4.2 15 4.1 14 4.1c-2.3 0-3.9 1.4-3.9 4v2.3H7.5v3H10V21h3.5Z"/></svg>
+          <span class="contact-card__title">Facebook</span>
+          <span class="contact-card__value">OGCLEAN</span>
+        </a>
+        <a class="contact-card" href="https://www.tiktok.com/@ogclean.co" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.3 4.3 0 0 1-3-3.8h-3.1v13.2a2.6 2.6 0 1 1-1.8-2.5V9.5a5.8 5.8 0 1 0 5 5.7V9.3a7.3 7.3 0 0 0 4.3 1.4V7.5a4.3 4.3 0 0 1-1.4-.3Z"/></svg>
+          <span class="contact-card__title">TikTok</span>
+          <span class="contact-card__value">@ogclean.co</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer grain">
+  <div class="container footer__row">
+    <div class="footer__brand">
+      <a href="#inicio" class="footer__logo">
+        <img src="assets/img/brand/logo.webp" alt="OGCLEAN" width="130" height="78" loading="lazy">
+      </a>
+      <p class="footer__tagline">Estilo propio, al mejor precio.</p>
+    </div>
+
+    <nav class="footer__nav">
+      <a href="#gorras">Gorras</a>
+      <a href="#tenis">Tenis</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="footer__social">
+      <a href="https://www.facebook.com/profile.php?id=61577983661507" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3C15.9 4.2 15 4.1 14 4.1c-2.3 0-3.9 1.4-3.9 4v2.3H7.5v3H10V21h3.5Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@ogclean.co" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.3 4.3 0 0 1-3-3.8h-3.1v13.2a2.6 2.6 0 1 1-1.8-2.5V9.5a5.8 5.8 0 1 0 5 5.7V9.3a7.3 7.3 0 0 0 4.3 1.4V7.5a4.3 4.3 0 0 1-1.4-.3Z"/></svg>
+      </a>
+      <a href="#" class="js-wa" aria-label="WhatsApp" data-wa-msg="Hola OGCLEAN, quiero más información.">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year"></span> OGCLEAN. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ===== FICHA DE PRODUCTO (pantalla completa) ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__topbar">
+    <img src="assets/img/brand/logo.webp" alt="OGCLEAN" class="lightbox__logo" width="90" height="54">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="lightbox__scroll">
+    <div class="lightbox__panel">
+      <div class="lightbox__gallery">
+        <figure class="lightbox__stage" id="lightboxStage">
+          <img id="lightboxImg" src="" alt="">
+        </figure>
+        <p class="lightbox__hint">Toca la imagen para hacer zoom</p>
+      </div>
+
+      <div class="lightbox__details">
+        <p class="eyebrow">OGCLEAN</p>
+        <h3 class="lightbox__name" id="lightboxName"></h3>
+        <p class="lightbox__tag" id="lightboxTag"></p>
+        <p class="lightbox__price" id="lightboxPrice"></p>
+
+        <div class="size-select">
+          <label for="lightboxSize" class="size-select__label">Talla</label>
+          <select id="lightboxSize" class="size-select__input">
+            <option value="">Elige tu talla</option>
+          </select>
+        </div>
+        <a class="btn btn--primary lightbox__buy" id="lightboxBuy" href="#" target="_blank" rel="noopener">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+          Comprar por WhatsApp
+        </a>
+
+        <div class="lightbox__desc">
+          <h4>Detalles</h4>
+          <ul id="lightboxFeatures"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="lightbox__related">
+      <p class="lightbox__related-title">También te puede interesar</p>
+      <div class="lightbox__related-grid" id="lightboxRelated"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
+<a href="#" class="wa-float js-wa" data-wa-msg="Hola OGCLEAN, quiero más información." aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

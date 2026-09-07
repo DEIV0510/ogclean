@@ -1,0 +1,82 @@
+/* ============================================================
+   OGCLEAN · TOKENS
+   Sistema de diseño: color, tipografía, espacio, capas, motion.
+   ============================================================ */
+
+:root {
+  /* ---- Color base (extraído del logo: café, crema, rojo globo) ---- */
+  --ink: #0C0A09;
+  --ink-2: #16120E;
+  --ink-3: #241A13;
+  --espresso: #3B2418;
+  --bone: #F6F1E6;
+  --paper: #EBE3D4;
+  --paper-2: #DED3BF;
+  --red: #E4231A;
+  --red-deep: #A9130C;
+  --red-soft: #FF5A4D;
+  --gold: #C9922B;
+
+  /* ---- Roles ---- */
+  --bg: var(--bone);
+  --fg: var(--ink);
+  --muted: color-mix(in srgb, var(--ink) 58%, var(--bone));
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  --line-strong: color-mix(in srgb, var(--ink) 26%, transparent);
+  --surface: #FFFFFF;
+
+  /* ---- Tipografía ---- */
+  --font-display: 'Archivo', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  --fs-display: clamp(3.4rem, 15vw, 12.5rem);
+  --fs-h1: clamp(2.6rem, 9vw, 6.4rem);
+  --fs-h2: clamp(2rem, 6.2vw, 4.4rem);
+  --fs-h3: clamp(1.25rem, 3vw, 1.9rem);
+  --fs-body: clamp(0.98rem, 1.1vw + 0.72rem, 1.12rem);
+  --fs-small: 0.82rem;
+  --fs-micro: 0.68rem;
+
+  --tracking-mono: 0.16em;
+
+  /* ---- Espaciado ---- */
+  --gutter: clamp(1.1rem, 4vw, 3.5rem);
+  --maxw: 1440px;
+  --section-y: clamp(4.5rem, 11vw, 10rem);
+  --radius: 2px;
+  --radius-lg: 4px;
+
+  /* ---- Capas ---- */
+  --z-bg: 0;
+  --z-content: 1;
+  --z-header: 60;
+  --z-menu: 70;
+  --z-modal: 80;
+  --z-loader: 95;
+  --z-cursor: 99;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.22s;
+  --dur: 0.5s;
+  --dur-slow: 0.9s;
+
+  /* ---- Sombra ---- */
+  --shadow-sm: 0 2px 10px rgba(12, 10, 9, 0.08);
+  --shadow: 0 18px 46px -22px rgba(12, 10, 9, 0.5);
+  --shadow-lg: 0 40px 80px -40px rgba(12, 10, 9, 0.65);
+}
+
+/* Bloques oscuros: invierten los roles sin tocar el resto del sistema */
+.is-dark {
+  --bg: var(--ink);
+  --fg: var(--bone);
+  --muted: color-mix(in srgb, var(--bone) 62%, var(--ink));
+  --line: color-mix(in srgb, var(--bone) 16%, transparent);
+  --line-strong: color-mix(in srgb, var(--bone) 30%, transparent);
+  --surface: var(--ink-2);
+  color: var(--fg);
+  background: var(--bg);
+}
