@@ -778,3 +778,13 @@
 @media (max-width: 699px) {
   .runway__hint { flex: 1 0 100%; order: 2; }
 }
+
+/* Acciones del combo: carrito y WhatsApp lado a lado */
+.combo__acciones { display: grid; gap: 0.6rem; }
+.combo .btn--ghost { color: var(--bone); border-color: color-mix(in srgb, var(--bone) 34%, transparent); }
+.combo .btn--ghost::before { background: var(--bone); }
+.combo .btn--ghost:hover { color: var(--ink); }
+
+@media (min-width: 560px) {
+  .combo__acciones { grid-auto-flow: column; }
+}

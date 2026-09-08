@@ -10,6 +10,7 @@ import { initLoader } from './components/loader.js';
 import { initHeader, initMenu, initScrollSpy } from './components/nav.js';
 import { initCursor, initMagnetic } from './components/cursor.js';
 import { initQuickView } from './components/quickview.js';
+import { initCart } from './components/cart.js';
 import { initCatalog } from './sections/catalog.js';
 import { initCombo } from './sections/combo.js';
 import { initRunway } from './sections/runway.js';
@@ -45,6 +46,7 @@ function arrancar() {
   initSocialStrip();
   initMarquees();
   initLineas();
+  initCart();
   initQuickView();
 
   // 2 · Navegación e interacción

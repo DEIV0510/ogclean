@@ -1,0 +1,215 @@
+/* Carrito de compra: estado en localStorage, panel lateral y pedido
+   completo precargado en WhatsApp. Sin pasarela: el cierre es por chat. */
+
+import { qs, qsa } from '../utils/dom.js';
+import { porId } from '../data/products.js';
+import { SITE, wa, precioCOP } from '../data/site.js';
+
+const LLAVE = 'ogclean:carrito:v1';
+
+/* Una línea del carrito: producto + talla. La misma pieza en otra talla
+   es otra línea distinta. */
+const claveLinea = (id, talla) => `${id}|${talla}`;
+
+let lineas = [];      // [{ id, talla, cant }]
+let hidratado = false; // guardia: no guardar antes de leer (si no, se borra al recargar)
+let panel, listaEl, totalEl, ctaEl, badgeEls, vacioEl;
+
+/* ---------------- Estado ---------------- */
+
+function leer() {
+  try {
+    const crudo = localStorage.getItem(LLAVE);
+    const datos = crudo ? JSON.parse(crudo) : [];
+    lineas = Array.isArray(datos)
+      ? datos.filter((l) => l && porId(l.id) && Number(l.cant) > 0)
+        .map((l) => ({ id: l.id, talla: String(l.talla || ''), cant: Math.min(Number(l.cant), 20) }))
+      : [];
+  } catch (err) {
+    lineas = [];
+  }
+  hidratado = true;
+}
+
+function guardar() {
+  if (!hidratado) return;
+  try {
+    localStorage.setItem(LLAVE, JSON.stringify(lineas));
+  } catch (err) { /* modo privado o almacenamiento lleno: el carrito vive en memoria */ }
+}
+
+export const totalUnidades = () => lineas.reduce((n, l) => n + l.cant, 0);
+
+const totalPesos = () => lineas.reduce((n, l) => {
+  const p = porId(l.id);
+  return n + (p ? p.precio * l.cant : 0);
+}, 0);
+
+/* ---------------- Mensaje de WhatsApp ---------------- */
+
+function mensajePedido() {
+  if (!lineas.length) return 'Hola OGCLEAN, quiero hacer un pedido.';
+  const filas = lineas.map((l) => {
+    const p = porId(l.id);
+    const talla = l.talla ? ` talla ${l.talla}${p.unidad}` : '';
+    const cant = l.cant > 1 ? ` x${l.cant}` : '';
+    return `• ${p.name} (${p.tag})${talla}${cant} — ${precioCOP(p.precio * l.cant)}`;
+  });
+  return [
+    'Hola OGCLEAN, quiero pedir:',
+    ...filas,
+    `Total: ${precioCOP(totalPesos())}`,
+    `Envío: ${SITE.envios}`,
+  ].join('\n');
+}
+
+/* ---------------- Pintado ---------------- */
+
+function pintarBadges() {
+  const n = totalUnidades();
+  badgeEls.forEach((b) => {
+    b.textContent = n;
+    b.classList.toggle('is-empty', n === 0);
+  });
+  const boton = qs('#cartBtn');
+  if (boton) boton.setAttribute('aria-label', n ? `Ver carrito, ${n} artículo${n === 1 ? '' : 's'}` : 'Ver carrito, vacío');
+}
+
+function pintar() {
+  if (!listaEl) return;
+
+  listaEl.innerHTML = lineas.map((l) => {
+    const p = porId(l.id);
+    const clave = claveLinea(l.id, l.talla);
+    return `
+      <li class="cart-item" data-linea="${clave}">
+        <div class="cart-item__media">
+          <img src="${p.srcSm}" alt="${p.alt}" width="120" height="120" loading="lazy" decoding="async">
+        </div>
+        <div class="cart-item__info">
+          <p class="cart-item__name">${p.name}</p>
+          <p class="cart-item__meta">${p.tag}${l.talla ? ` · Talla ${l.talla}${p.unidad}` : ''}</p>
+          <p class="cart-item__price">${precioCOP(p.precio * l.cant)}</p>
+        </div>
+        <div class="cart-item__acciones">
+          <div class="qty" role="group" aria-label="Cantidad de ${p.name}">
+            <button class="qty__btn" type="button" data-cart="menos" data-linea="${clave}" aria-label="Quitar una unidad">−</button>
+            <span class="qty__n">${l.cant}</span>
+            <button class="qty__btn" type="button" data-cart="mas" data-linea="${clave}" aria-label="Agregar una unidad">+</button>
+          </div>
+          <button class="cart-item__quitar" type="button" data-cart="quitar" data-linea="${clave}">Quitar</button>
+        </div>
+      </li>`;
+  }).join('');
+
+  const vacio = lineas.length === 0;
+  if (vacioEl) vacioEl.hidden = !vacio;
+  listaEl.hidden = vacio;
+  if (totalEl) totalEl.textContent = precioCOP(totalPesos());
+  if (ctaEl) {
+    ctaEl.href = wa(mensajePedido());
+    ctaEl.classList.toggle('is-disabled', vacio);
+    ctaEl.setAttribute('aria-disabled', String(vacio));
+  }
+  pintarBadges();
+  guardar();
+}
+
+/* ---------------- Acciones ---------------- */
+
+/** Agrega una pieza al carrito. Devuelve false si falta la talla. */
+export function agregar(id, talla, cant = 1) {
+  const p = porId(id);
+  if (!p) return false;
+  const clave = claveLinea(id, talla);
+  const existente = lineas.find((l) => claveLinea(l.id, l.talla) === clave);
+  if (existente) existente.cant = Math.min(existente.cant + cant, 20);
+  else lineas.push({ id, talla, cant });
+  pintar();
+  animarBadge();
+  return true;
+}
+
+function cambiar(clave, delta) {
+  const linea = lineas.find((l) => claveLinea(l.id, l.talla) === clave);
+  if (!linea) return;
+  linea.cant += delta;
+  if (linea.cant < 1) lineas = lineas.filter((l) => l !== linea);
+  pintar();
+}
+
+function quitar(clave) {
+  lineas = lineas.filter((l) => claveLinea(l.id, l.talla) !== clave);
+  pintar();
+}
+
+function animarBadge() {
+  const boton = qs('#cartBtn');
+  if (!boton) return;
+  boton.classList.remove('is-bump');
+  void boton.offsetWidth; // reinicia la animación
+  boton.classList.add('is-bump');
+}
+
+/* ---------------- Panel ---------------- */
+
+export function abrirCarrito() {
+  if (!panel) return;
+  panel.classList.add('is-open');
+  panel.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('is-locked');
+  qs('#cartClose')?.focus({ preventScroll: true });
+}
+
+export function cerrarCarrito() {
+  if (!panel) return;
+  panel.classList.remove('is-open');
+  panel.setAttribute('aria-hidden', 'true');
+  // La ficha de producto también bloquea el scroll: solo lo soltamos si está cerrada
+  if (!qs('#quick')?.classList.contains('is-open')) document.body.classList.remove('is-locked');
+}
+
+/* ---------------- Arranque ---------------- */
+
+export function initCart() {
+  panel = qs('#cart');
+  listaEl = qs('#cartLista');
+  totalEl = qs('#cartTotal');
+  ctaEl = qs('#cartCta');
+  vacioEl = qs('#cartVacio');
+  badgeEls = qsa('.cart-badge');
+  if (!panel) return;
+
+  leer();
+  pintar();
+
+  qs('#cartBtn')?.addEventListener('click', abrirCarrito);
+  qs('#cartClose')?.addEventListener('click', cerrarCarrito);
+  qs('#cartFondo')?.addEventListener('click', cerrarCarrito);
+  qsa('.js-cart-open').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); abrirCarrito(); }));
+
+  panel.addEventListener('click', (e) => {
+    if (e.target.closest('[data-cart-cerrar]')) { cerrarCarrito(); return; }
+    const btn = e.target.closest('[data-cart]');
+    if (!btn) return;
+    const { cart: accion, linea } = btn.dataset;
+    if (accion === 'mas') cambiar(linea, 1);
+    else if (accion === 'menos') cambiar(linea, -1);
+    else if (accion === 'quitar') quitar(linea);
+  });
+
+  ctaEl?.addEventListener('click', (e) => {
+    if (!lineas.length) e.preventDefault();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('is-open')) cerrarCarrito();
+  });
+
+  // Si el visitante tiene la tienda abierta en dos pestañas, se mantienen iguales
+  window.addEventListener('storage', (e) => {
+    if (e.key !== LLAVE) return;
+    leer();
+    pintar();
+  });
+}

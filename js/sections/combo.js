@@ -4,6 +4,7 @@
 import { qs, qsa } from '../utils/dom.js';
 import { LINEAS } from '../data/products.js';
 import { wa, precioCOP } from '../data/site.js';
+import { agregar } from '../components/cart.js';
 
 const estado = {
   caps: { item: null, talla: '' },
@@ -92,6 +93,29 @@ export function initCombo() {
   pintarThumbs(sneThumbs, 'sneakers', (item) => setItem('sneakers', item));
   pintarTallas(qs('#comboCapSizes'), 'caps', (t) => { estado.caps.talla = t; refrescar(); });
   pintarTallas(qs('#comboSneSizes'), 'sneakers', (t) => { estado.sneakers.talla = `${t}`; refrescar(); });
+
+  // Manda el combo completo al carrito (una línea por pieza)
+  const add = qs('#comboAdd');
+  if (add) {
+    add.addEventListener('click', () => {
+      const faltaTalla = !estado.caps.talla || !estado.sneakers.talla;
+      if (faltaTalla) {
+        [qs('#comboCapSizes'), qs('#comboSneSizes')].forEach((cont, i) => {
+          const falta = i === 0 ? !estado.caps.talla : !estado.sneakers.talla;
+          if (!cont || !falta) return;
+          cont.classList.add('is-hint');
+          setTimeout(() => cont.classList.remove('is-hint'), 900);
+        });
+        return;
+      }
+      agregar(estado.caps.item.id, estado.caps.talla);
+      agregar(estado.sneakers.item.id, estado.sneakers.talla);
+      const original = add.textContent;
+      add.classList.add('is-added');
+      add.textContent = '✓ Combo agregado';
+      setTimeout(() => { add.classList.remove('is-added'); add.textContent = original; }, 1400);
+    });
+  }
 
   // Arranque con las piezas que ya están en el HTML
   setItem('caps', LINEAS.caps.items[0]);

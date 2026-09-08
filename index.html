@@ -91,6 +91,13 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
         <span class="header__cta-text">Comprar</span>
       </a>
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="Ver carrito, vacío">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <path d="M6.5 8h11l-1 11.5a1.5 1.5 0 0 1-1.5 1.4H9a1.5 1.5 0 0 1-1.5-1.4L6.5 8Z" stroke-linejoin="round"/>
+          <path d="M9.5 8V6.6a2.5 2.5 0 0 1 5 0V8" stroke-linecap="round"/>
+        </svg>
+        <span class="cart-badge is-empty" aria-hidden="true">0</span>
+      </button>
       <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
         <i></i><i></i>
       </button>
@@ -390,9 +397,12 @@
           <span class="mono">Total del combo</span>
           <strong id="comboTotal">$270.000</strong>
         </div>
-        <a class="btn btn--primary btn--lg js-magnetic" id="comboCta" href="#" target="_blank" rel="noopener">
-          Pedir combo por WhatsApp <span class="btn__arrow">→</span>
-        </a>
+        <div class="combo__acciones">
+          <button class="btn btn--lg btn--ghost js-magnetic" id="comboAdd" type="button">Agregar combo al carrito</button>
+          <a class="btn btn--primary btn--lg js-magnetic" id="comboCta" href="#" target="_blank" rel="noopener">
+            Pedir por WhatsApp <span class="btn__arrow">→</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -576,6 +586,43 @@
   </div>
 </div>
 
+<!-- ══════════ CARRITO ══════════ -->
+<div class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Tu carrito" aria-hidden="true">
+  <div class="cart__fondo" id="cartFondo"></div>
+  <aside class="cart__panel">
+    <header class="cart__top">
+      <div>
+        <p class="mono">Tu carrito</p>
+        <p class="cart__sub mono">Cierra el pedido por WhatsApp</p>
+      </div>
+      <button class="cart__close" id="cartClose" type="button" aria-label="Cerrar carrito">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </header>
+
+    <div class="cart__body">
+      <ul class="cart__lista" id="cartLista"></ul>
+      <div class="cart__vacio" id="cartVacio" hidden>
+        <p class="h3">Todavía no has<br>agregado nada</p>
+        <p class="txt-muted">Abre cualquier pieza del catálogo, elige tu talla y agrégala aquí.</p>
+        <a class="btn btn--dark" href="#catalogo" data-cart-cerrar>Ver catálogo <span class="btn__arrow">→</span></a>
+      </div>
+    </div>
+
+    <footer class="cart__foot">
+      <div class="cart__total">
+        <span class="mono">Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <p class="cart__nota mono">Envíos a toda Colombia · Confirmamos disponibilidad por chat</p>
+      <a class="btn btn--primary btn--lg btn--block" id="cartCta" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+        Enviar pedido por WhatsApp
+      </a>
+    </footer>
+  </aside>
+</div>
+
 <!-- ══════════ FLOTANTES ══════════ -->
 <a class="wa-float js-wa" id="waFloat" data-wa="Hola OGCLEAN, quiero comprar." href="#" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
@@ -583,7 +630,9 @@
 
 <div class="mobile-bar" id="mobileBar">
   <a class="btn btn--ghost btn--sm" href="#catalogo">Catálogo</a>
-  <a class="btn btn--primary btn--sm js-wa" data-wa="Hola OGCLEAN, quiero comprar." href="#">Comprar ahora</a>
+  <button class="btn btn--primary btn--sm js-cart-open" type="button">
+    Ver carrito <span class="cart-badge is-empty" aria-hidden="true">0</span>
+  </button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
