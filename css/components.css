@@ -679,3 +679,261 @@
 /* Botón "Agregar al carrito" con confirmación en el propio botón */
 .btn.is-added { background: #1FB855; }
 .btn.is-added::before { background: #1FB855; }
+
+/* ---------------- Compra rápida en la tarjeta ---------------- */
+
+/* Fotos verticales de zapatillas: se encuadran en la tarjeta, enteras en la ficha */
+.card__media img { object-position: center 55%; }
+
+.card__price.is-cotizar {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.card__buy {
+  position: relative;
+  z-index: 4; /* por encima del botón invisible que abre la ficha */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, transform 0.25s var(--ease-out);
+}
+.card__buy:hover { background: var(--red); }
+.card__buy:active { transform: scale(0.97); }
+
+.card__rapida {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  background: color-mix(in srgb, var(--bone) 97%, transparent);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.35s var(--ease-out), visibility 0s linear 0.3s;
+}
+.card.is-buying .card__rapida {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.3s ease, transform 0.35s var(--ease-out);
+}
+.card__rapida-top { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.card__rapida-top .mono { color: var(--ink); }
+.card__rapida-x {
+  width: 30px; height: 30px;
+  display: grid; place-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
+.card__rapida-x:hover { background: var(--ink); color: var(--bone); }
+
+.card__sizes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.3rem;
+  align-content: start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.card__size {
+  min-height: 36px;
+  padding: 0.35rem 0.2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.card__size:hover { border-color: var(--ink); }
+.card__size.is-active { background: var(--red); border-color: var(--red); color: #fff; }
+.card__rapida-nota { color: var(--muted); font-size: 0.58rem; text-align: center; }
+
+@media (min-width: 700px) {
+  .card__sizes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ---------------- Buscador, filtros con conteo, vacío y "ver más" ---------------- */
+
+.catalogo__buscar {
+  position: relative;
+  margin-bottom: 0.9rem;
+}
+.catalogo__buscar svg {
+  position: absolute;
+  left: 1rem; top: 50%;
+  width: 18px; height: 18px;
+  translate: 0 -50%;
+  color: var(--muted);
+  pointer-events: none;
+}
+.catalogo__buscar input {
+  width: 100%;
+  padding: 0.95rem 1rem 0.95rem 2.8rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 1rem; /* 16px: evita el zoom automático de iOS */
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.catalogo__buscar input:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--red) 22%, transparent);
+}
+
+.chip__n {
+  margin-left: 0.2rem;
+  opacity: 0.55;
+  font-size: 0.9em;
+}
+
+/* En móvil los filtros de marca van en una fila deslizable */
+@media (max-width: 699px) {
+  #catalogoFiltros {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 0.3rem;
+    scrollbar-width: none;
+  }
+  #catalogoFiltros::-webkit-scrollbar { display: none; }
+  #catalogoFiltros .chip { flex: 0 0 auto; }
+}
+
+.catalogo__vacio {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+}
+.catalogo__vacio a { color: var(--red); text-decoration: underline; }
+
+.catalogo__mas {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.4rem, 4vw, 2.4rem);
+}
+
+/* ---------------- Aviso "agregado al carrito" ---------------- */
+
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(1rem, 3vw, 1.6rem);
+  z-index: 75;
+  width: min(460px, calc(100% - 1.6rem));
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.7rem;
+  background: var(--ink);
+  color: var(--bone);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  translate: -50% 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.4s var(--ease-out);
+}
+.aviso.is-visible { opacity: 1; transform: none; }
+.aviso img {
+  width: 56px; height: 56px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: #fff;
+}
+.aviso__ok { color: #4ADE80; font-size: 0.6rem; }
+.aviso__nombre {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.aviso__meta { color: color-mix(in srgb, var(--bone) 60%, var(--ink)); font-size: 0.58rem; }
+.aviso__acciones { display: flex; align-items: center; gap: 0.3rem; }
+.aviso__x {
+  width: 30px; height: 30px;
+  display: grid; place-content: center;
+  color: color-mix(in srgb, var(--bone) 60%, var(--ink));
+  font-size: 0.7rem;
+}
+.aviso__x:hover { color: var(--bone); }
+
+@media (max-width: 767px) {
+  /* Sobre la barra móvil, no debajo */
+  .aviso { bottom: calc(env(safe-area-inset-bottom, 0px) + 4.4rem); }
+}
+
+/* ---------------- Ficha: foto entera, video 360°, precio por cotizar ---------------- */
+
+.quick__media img { object-fit: contain; }
+.quick__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  cursor: pointer;
+}
+.quick__hint--video { left: auto; right: 0.8rem; background: var(--red); }
+
+.quick__price.is-cotizar {
+  flex-wrap: wrap;
+  font-size: clamp(1.2rem, 3.4vw, 1.6rem);
+  color: var(--red);
+}
+
+/* Totales largos ("$85.000 + zapatillas por cotizar") */
+.cart__total strong.is-long,
+.combo__total strong.is-long {
+  font-size: clamp(1.05rem, 3.6vw, 1.45rem);
+  letter-spacing: -0.01em;
+  text-align: right;
+}
+.combo__total strong.is-long { text-align: left; }
+
+/* Tarjetas angostas: el botón de pedir se acomoda en dos líneas y el aviso se apila */
+.card__rapida .btn {
+  white-space: normal;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.6rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .aviso {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    gap: 0.6rem;
+    padding: 0.55rem;
+  }
+  .aviso img { width: 48px; height: 48px; }
+  .aviso__acciones .btn { padding: 0.55rem 0.7rem; }
+}

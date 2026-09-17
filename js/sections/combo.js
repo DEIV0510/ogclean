@@ -2,7 +2,7 @@
    precargado en WhatsApp (modelos, tallas y total). */
 
 import { qs, qsa } from '../utils/dom.js';
-import { LINEAS } from '../data/products.js';
+import { LINEAS, tienePrecio, porId } from '../data/products.js';
 import { wa, precioCOP } from '../data/site.js';
 import { agregar } from '../components/cart.js';
 
@@ -11,8 +11,18 @@ const estado = {
   sneakers: { item: null, talla: '' },
 };
 
+/* Zapatillas para el combo: los Kyrie (precio confirmado) + una muestra de marcas */
+const COMBO_ZAPATILLAS = [
+  'sneakers-kyrie4-negro', 'sneakers-kyrie3-blanco', 'sneakers-kyrie7-verde-azul', 'sneakers-kyrie5-lila',
+  'sneakers-jordan-air-jordan-4-blanco-rosa', 'sneakers-nike-dunk-low-blanco-cafe', 'sneakers-nike-air-force-1-blanco-total',
+  'sneakers-salomon-xt-6-crema-cafe', 'sneakers-on-cloud-crema-rosa', 'sneakers-adidas-campus-00s-crema-cafe',
+  'sneakers-new-balance-running-crema', 'sneakers-nike-shox-r4-rojo-negro',
+].map(porId).filter(Boolean);
+
+const opcionesDe = (linea) => (linea === 'sneakers' ? COMBO_ZAPATILLAS : LINEAS[linea].items);
+
 function pintarThumbs(cont, linea, alElegir) {
-  cont.innerHTML = LINEAS[linea].items
+  cont.innerHTML = opcionesDe(linea)
     .map((p, i) => `
       <button class="combo__thumb${i === 0 ? ' is-active' : ''}" type="button" role="option"
               aria-selected="${i === 0}" data-id="${p.id}" title="${p.name} — ${p.tag}">
@@ -28,7 +38,7 @@ function pintarThumbs(cont, linea, alElegir) {
       t.classList.toggle('is-active', activo);
       t.setAttribute('aria-selected', String(activo));
     });
-    alElegir(LINEAS[linea].items.find((p) => p.id === b.dataset.id));
+    alElegir(opcionesDe(linea).find((p) => p.id === b.dataset.id));
   });
 }
 
@@ -57,20 +67,26 @@ export function initCombo() {
   const totalEl = qs('#comboTotal');
   const cta = qs('#comboCta');
 
-  const total = () => (estado.caps.item?.precio || 0) + (estado.sneakers.item?.precio || 0);
+  const piezas = () => [estado.caps.item, estado.sneakers.item].filter(Boolean);
+  const total = () => piezas().reduce((n, p) => n + (tienePrecio(p) ? p.precio : 0), 0);
+  const porCotizar = () => piezas().some((p) => !tienePrecio(p));
+  const textoTotal = () => (porCotizar() ? `${precioCOP(total())} + zapatillas por cotizar` : precioCOP(total()));
 
   const mensaje = () => {
     const c = estado.caps.item;
     const s = estado.sneakers.item;
     const lineas = ['Hola OGCLEAN, quiero este combo:'];
     if (c) lineas.push(`• Gorra ${c.name} (${c.tag})${estado.caps.talla ? ` talla ${estado.caps.talla}` : ''} — ${precioCOP(c.precio)}`);
-    if (s) lineas.push(`• Tenis ${s.name} (${s.tag})${estado.sneakers.talla ? ` talla ${estado.sneakers.talla} US` : ''} — ${precioCOP(s.precio)}`);
-    lineas.push(`Total: ${precioCOP(total())}`);
+    if (s) lineas.push(`• Zapatillas ${s.name} (${s.tag})${estado.sneakers.talla ? ` talla ${estado.sneakers.talla} US` : ''} — ${tienePrecio(s) ? precioCOP(s.precio) : 'precio a confirmar'}`);
+    lineas.push(`Total: ${textoTotal()}`);
     return lineas.join('\n');
   };
 
   const refrescar = () => {
-    if (totalEl) totalEl.textContent = precioCOP(total());
+    if (totalEl) {
+      totalEl.textContent = textoTotal();
+      totalEl.classList.toggle('is-long', porCotizar());
+    }
     if (cta) cta.href = wa(mensaje());
   };
 
@@ -119,5 +135,5 @@ export function initCombo() {
 
   // Arranque con las piezas que ya están en el HTML
   setItem('caps', LINEAS.caps.items[0]);
-  setItem('sneakers', LINEAS.sneakers.items[0]);
+  setItem('sneakers', COMBO_ZAPATILLAS[0]);
 }

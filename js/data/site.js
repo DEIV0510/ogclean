@@ -20,5 +20,7 @@ export function wa(mensaje, numero = SITE.whatsapp.linea1.numero) {
   return `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 }
 
-/** Formatea un precio colombiano: 85000 -> $85.000 */
-export const precioCOP = (v) => `$${v.toLocaleString('es-CO')}`;
+/** Formatea un precio colombiano: 85000 -> $85.000. Sin precio confirmado (null) se cotiza por chat. */
+export const precioCOP = (v) => (typeof v === 'number' && Number.isFinite(v)
+  ? `$${v.toLocaleString('es-CO')}`
+  : 'Precio por WhatsApp');

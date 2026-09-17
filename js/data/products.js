@@ -1,6 +1,10 @@
 /* Catálogo real de OGCLEAN. Las imágenes viven en assets/img/<linea>/<img>.webp
    (con variante -sm.webp para pantallas pequeñas). */
 
+import { ZAPATOS } from './zapatos.js';
+
+/* Precio por defecto de cada línea. En zapatillas solo los Kyrie tienen precio
+   confirmado: el resto trae su propio `precio` (null = se cotiza por WhatsApp). */
 export const PRECIOS = { caps: 85000, sneakers: 185000 };
 
 export const TALLAS = {
@@ -29,14 +33,14 @@ export const CAPS = [
 ];
 
 export const SNEAKERS = [
-  { img: 'kyrie3-blanco', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco' },
-  { img: 'kyrie-blanco-oro', name: 'Nike Low', tag: 'Blanco / Oro', alt: 'Tenis Nike blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro' },
-  { img: 'kyrie4-negro', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro' },
-  { img: 'kyrie5-lila', name: 'Nike Kyrie 5', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 5 lila y rosa', cat: 'color', color: 'Lila / Rosa' },
-  { img: 'kyrie7-morado-azul', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo' },
-  { img: 'kyrie7-lila-rosa', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa' },
-  { img: 'kyrie7-verde-amarillo', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo' },
-  { img: 'kyrie7-verde-azul', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', cat: 'color', color: 'Verde / Azul' },
+  { img: 'kyrie3-blanco', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie-blanco-oro', name: 'Nike Low', tag: 'Blanco / Oro', alt: 'Tenis Nike blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie4-negro', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie5-lila', name: 'Nike Kyrie 5', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 5 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-morado-azul', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-lila-rosa', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-verde-amarillo', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-verde-azul', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', cat: 'color', color: 'Verde / Azul', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
 ];
 
 /** Normaliza un item del catálogo con todo lo que la UI necesita. */
@@ -46,12 +50,12 @@ function decorar(item, linea, idx) {
     linea,
     idx,
     id: `${linea}-${item.img}`,
-    precio: PRECIOS[linea],
+    precio: item.precio !== undefined ? item.precio : PRECIOS[linea],
     tallas: TALLAS[linea],
     unidad: UNIDAD_TALLA[linea],
-    src: `assets/img/${linea}/${item.img}.webp`,
-    srcSm: `assets/img/${linea}/${item.img}-sm.webp`,
-    tipo: linea === 'caps' ? 'Gorra fitted' : 'Tenis',
+    src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
+    srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
+    tipo: linea === 'caps' ? 'Gorra fitted' : (/bota/i.test(item.name) ? 'Botas' : 'Zapatillas'),
   };
 }
 
@@ -72,19 +76,35 @@ export const LINEAS = {
   },
   sneakers: {
     id: 'sneakers',
-    titulo: 'Tenis',
+    titulo: 'Zapatillas',
     singular: 'par',
     plural: 'pares',
-    kicker: 'Línea Nike Kyrie',
-    desc: 'Siluetas de cancha con colorways que no se ven en cualquier parte.',
-    items: SNEAKERS.map((s, i) => decorar(s, 'sneakers', i)),
-    filtros: [
-      { id: 'all', label: 'Todos' },
-      { id: 'color', label: 'Colorway' },
-      { id: 'neutro', label: 'Neutros' },
-    ],
+    kicker: 'Multimarca',
+    desc: 'Nike, Jordan, Adidas, Salomon, On, New Balance y más, en tu talla.',
+    items: [...SNEAKERS, ...ZAPATOS.map((z) => ({ ...z, carpeta: 'zapatos', cat: z.marca }))]
+      .map((s, i) => decorar(s, 'sneakers', i)),
+    filtros: [],
   },
 };
+
+/* Zapatillas: un filtro por marca (las de 3+ referencias) y el resto en "Otras" */
+(() => {
+  const conteo = {};
+  LINEAS.sneakers.items.forEach((p) => { conteo[p.marca] = (conteo[p.marca] || 0) + 1; });
+  const grandes = Object.keys(conteo).filter((m) => m !== 'Otras' && conteo[m] >= 3)
+    .sort((a, b) => conteo[b] - conteo[a]);
+  LINEAS.sneakers.items.forEach((p) => { p.cat = grandes.includes(p.marca) ? p.marca : 'Otras'; });
+  const otras = LINEAS.sneakers.items.filter((p) => p.cat === 'Otras').length;
+  LINEAS.sneakers.filtros = [
+    { id: 'all', label: 'Todas', n: LINEAS.sneakers.items.length },
+    ...grandes.map((m) => ({ id: m, label: m, n: conteo[m] })),
+    ...(otras ? [{ id: 'Otras', label: 'Otras marcas', n: otras }] : []),
+  ];
+})();
+
+/* Video 360° real que venía en la carpeta de zapatos */
+const bape = LINEAS.sneakers.items.find((p) => p.img === 'bape-road-sta-azul-marino');
+if (bape) bape.video = 'assets/video/zapatos/bape-road-sta-azul-marino.mp4';
 
 export const TODOS = [...LINEAS.caps.items, ...LINEAS.sneakers.items];
 
@@ -100,4 +120,11 @@ export const DESTACADOS = [
   'sneakers-kyrie3-blanco',
   'caps-mexico-verde',
   'sneakers-kyrie7-lila-rosa',
-].map(porId);
+  'sneakers-jordan-air-jordan-4-blanco-rosa',
+  'sneakers-salomon-xt-6-crema-cafe',
+  'sneakers-on-cloud-crema-rosa',
+  'sneakers-nike-dunk-low-blanco-cafe',
+].map(porId).filter(Boolean);
+
+/* Precio confirmado: número; sin confirmar: null */
+export const tienePrecio = (p) => typeof p?.precio === 'number';

@@ -2,7 +2,7 @@
    completo precargado en WhatsApp. Sin pasarela: el cierre es por chat. */
 
 import { qs, qsa } from '../utils/dom.js';
-import { porId } from '../data/products.js';
+import { porId, tienePrecio } from '../data/products.js';
 import { SITE, wa, precioCOP } from '../data/site.js';
 
 const LLAVE = 'ogclean:carrito:v1';
@@ -42,8 +42,22 @@ export const totalUnidades = () => lineas.reduce((n, l) => n + l.cant, 0);
 
 const totalPesos = () => lineas.reduce((n, l) => {
   const p = porId(l.id);
-  return n + (p ? p.precio * l.cant : 0);
+  return n + (tienePrecio(p) ? p.precio * l.cant : 0);
 }, 0);
+
+/** Pares cuyo precio aún se confirma por chat (no suman al total). */
+const unidadesPorCotizar = () => lineas.reduce((n, l) => (tienePrecio(porId(l.id)) ? n : n + l.cant), 0);
+
+const precioLinea = (p, cant) => (tienePrecio(p) ? precioCOP(p.precio * cant) : 'Precio por WhatsApp');
+
+/** Texto del total: suma lo confirmado y avisa lo que falta cotizar. */
+function textoTotal() {
+  const pendientes = unidadesPorCotizar();
+  const confirmado = totalPesos();
+  if (!pendientes) return precioCOP(confirmado);
+  const cola = `${pendientes} por cotizar`;
+  return confirmado ? `${precioCOP(confirmado)} + ${cola}` : cola.charAt(0).toUpperCase() + cola.slice(1);
+}
 
 /* ---------------- Mensaje de WhatsApp ---------------- */
 
@@ -53,12 +67,12 @@ function mensajePedido() {
     const p = porId(l.id);
     const talla = l.talla ? ` talla ${l.talla}${p.unidad}` : '';
     const cant = l.cant > 1 ? ` x${l.cant}` : '';
-    return `• ${p.name} (${p.tag})${talla}${cant} — ${precioCOP(p.precio * l.cant)}`;
+    return `• ${p.name} (${p.tag})${talla}${cant} — ${tienePrecio(p) ? precioCOP(p.precio * l.cant) : 'precio a confirmar'}`;
   });
   return [
     'Hola OGCLEAN, quiero pedir:',
     ...filas,
-    `Total: ${precioCOP(totalPesos())}`,
+    `Total: ${textoTotal()}`,
     `Envío: ${SITE.envios}`,
   ].join('\n');
 }
@@ -89,7 +103,7 @@ function pintar() {
         <div class="cart-item__info">
           <p class="cart-item__name">${p.name}</p>
           <p class="cart-item__meta">${p.tag}${l.talla ? ` · Talla ${l.talla}${p.unidad}` : ''}</p>
-          <p class="cart-item__price">${precioCOP(p.precio * l.cant)}</p>
+          <p class="cart-item__price">${precioLinea(p, l.cant)}</p>
         </div>
         <div class="cart-item__acciones">
           <div class="qty" role="group" aria-label="Cantidad de ${p.name}">
@@ -105,7 +119,10 @@ function pintar() {
   const vacio = lineas.length === 0;
   if (vacioEl) vacioEl.hidden = !vacio;
   listaEl.hidden = vacio;
-  if (totalEl) totalEl.textContent = precioCOP(totalPesos());
+  if (totalEl) {
+    totalEl.textContent = textoTotal();
+    totalEl.classList.toggle('is-long', unidadesPorCotizar() > 0);
+  }
   if (ctaEl) {
     ctaEl.href = wa(mensajePedido());
     ctaEl.classList.toggle('is-disabled', vacio);
@@ -151,6 +168,31 @@ function animarBadge() {
   boton.classList.add('is-bump');
 }
 
+/* ---------------- Aviso "agregado" ---------------- */
+
+let avisoTimer = 0;
+
+/** Confirma lo agregado sin sacar al visitante de donde está. */
+export function aviso(p, talla) {
+  const el = qs('#aviso');
+  if (!el || !p) return;
+  qs('#avisoImg', el).src = p.srcSm;
+  qs('#avisoImg', el).alt = '';
+  qs('#avisoNombre', el).textContent = p.name;
+  qs('#avisoMeta', el).textContent = `${p.tag}${talla ? ` · Talla ${talla}${p.unidad}` : ''}`;
+  el.hidden = false;
+  requestAnimationFrame(() => el.classList.add('is-visible'));
+  clearTimeout(avisoTimer);
+  avisoTimer = setTimeout(ocultarAviso, 4200);
+}
+
+function ocultarAviso() {
+  const el = qs('#aviso');
+  if (!el) return;
+  el.classList.remove('is-visible');
+  setTimeout(() => { if (!el.classList.contains('is-visible')) el.hidden = true; }, 350);
+}
+
 /* ---------------- Panel ---------------- */
 
 export function abrirCarrito() {
@@ -184,6 +226,8 @@ export function initCart() {
   pintar();
 
   qs('#cartBtn')?.addEventListener('click', abrirCarrito);
+  qs('#avisoVer')?.addEventListener('click', () => { ocultarAviso(); abrirCarrito(); });
+  qs('#avisoCerrar')?.addEventListener('click', ocultarAviso);
   qs('#cartClose')?.addEventListener('click', cerrarCarrito);
   qs('#cartFondo')?.addEventListener('click', cerrarCarrito);
   qsa('.js-cart-open').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); abrirCarrito(); }));
