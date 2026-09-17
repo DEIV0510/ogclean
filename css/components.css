@@ -776,33 +776,6 @@
 
 /* ---------------- Buscador, filtros con conteo, vacío y "ver más" ---------------- */
 
-.catalogo__buscar {
-  position: relative;
-  margin-bottom: 0.9rem;
-}
-.catalogo__buscar svg {
-  position: absolute;
-  left: 1rem; top: 50%;
-  width: 18px; height: 18px;
-  translate: 0 -50%;
-  color: var(--muted);
-  pointer-events: none;
-}
-.catalogo__buscar input {
-  width: 100%;
-  padding: 0.95rem 1rem 0.95rem 2.8rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 1rem; /* 16px: evita el zoom automático de iOS */
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-.catalogo__buscar input:focus {
-  outline: none;
-  border-color: var(--ink);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--red) 22%, transparent);
-}
-
 .chip__n {
   margin-left: 0.2rem;
   opacity: 0.55;
@@ -810,24 +783,6 @@
 }
 
 /* En móvil los filtros de marca van en una fila deslizable */
-@media (max-width: 699px) {
-  #catalogoFiltros {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    width: 100%;
-    padding-bottom: 0.3rem;
-    scrollbar-width: none;
-  }
-  #catalogoFiltros::-webkit-scrollbar { display: none; }
-  #catalogoFiltros .chip { flex: 0 0 auto; }
-}
-
-.catalogo__vacio {
-  padding: 2rem 0;
-  text-align: center;
-  color: var(--muted);
-}
-.catalogo__vacio a { color: var(--red); text-decoration: underline; }
 
 .catalogo__mas {
   display: flex;

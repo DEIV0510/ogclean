@@ -32,7 +32,7 @@ export function initRunway(gsap) {
   const seccion = qs('#runway');
   if (!track) return;
 
-  track.innerHTML = DESTACADOS.map(itemHTML).join('');
+  track.innerHTML = DESTACADOS.slice(0, 8).map(itemHTML).join('');
   track.querySelectorAll('[data-tilt]').forEach((el) => tilt(el, { max: 7, scale: 1.01 }));
 
   if (!gsap || reducedMotion || !mq('(min-width: 900px)')) return;

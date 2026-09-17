@@ -106,7 +106,43 @@ export const LINEAS = {
 const bape = LINEAS.sneakers.items.find((p) => p.img === 'bape-road-sta-azul-marino');
 if (bape) bape.video = 'assets/video/zapatos/bape-road-sta-azul-marino.mp4';
 
+/* ---------- Facetas para la tienda (derivadas de los datos reales) ---------- */
+
+/* Familias de color: una pieza puede estar en varias ("Blanco / Rojo") */
+const FAMILIAS_COLOR = [
+  ['Blanco', /blanc|perla/],
+  ['Negro', /negr/],
+  ['Gris', /gris|cemento/],
+  ['Plata', /plata|iridiscente/],
+  ['Rojo', /roj|vinotinto/],
+  ['Rosa', /rosa|durazno|salm/],
+  ['Morado', /morad|lila/],
+  ['Azul', /azul|marino|celeste|turquesa/],
+  ['Verde', /verde|menta|oliva/],
+  ['Amarillo', /amarill|oro|dorad/],
+  ['Naranja', /naranja/],
+  ['Café y beige', /caf|caqui|beige|crema|arena|trigo/],
+  ['Estampado', /camuflad|estampad|monograma|salpicad|multicolor/],
+];
+
+const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+[...LINEAS.caps.items, ...LINEAS.sneakers.items].forEach((p) => {
+  const texto = minus(`${p.color} ${p.tag}`);
+  p.colores = FAMILIAS_COLOR.filter(([, re]) => re.test(texto)).map(([nombre]) => nombre);
+  if (p.linea === 'caps') {
+    p.marca = 'New Era';
+    p.grupo = 'Gorras';
+    p.coleccion = p.cat === 'wbc' ? 'World Baseball Classic' : 'MLB';
+  } else {
+    p.grupo = p.tipo === 'Botas' ? 'Botas' : 'Zapatillas';
+  }
+});
+
 export const TODOS = [...LINEAS.caps.items, ...LINEAS.sneakers.items];
+
+/** Orden de colores para mostrar los filtros siempre igual */
+export const ORDEN_COLORES = FAMILIAS_COLOR.map(([nombre]) => nombre);
 
 export const porId = (id) => TODOS.find((p) => p.id === id);
 
