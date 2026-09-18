@@ -22,7 +22,9 @@ function leer() {
     const crudo = localStorage.getItem(LLAVE);
     const datos = crudo ? JSON.parse(crudo) : [];
     lineas = Array.isArray(datos)
-      ? datos.filter((l) => l && porId(l.id) && Number(l.cant) > 0)
+      // Fuera lo que ya no existe: productos retirados o tallas que dejaron de ofrecerse
+      ? datos.filter((l) => l && porId(l.id) && Number(l.cant) > 0
+          && (!l.talla || porId(l.id).tallas.includes(String(l.talla))))
         .map((l) => ({ id: l.id, talla: String(l.talla || ''), cant: Math.min(Number(l.cant), 20) }))
       : [];
   } catch (err) {

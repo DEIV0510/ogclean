@@ -8,7 +8,7 @@ import { ZAPATOS } from './zapatos.js';
 export const PRECIOS = { caps: 85000, sneakers: 185000 };
 
 export const TALLAS = {
-  caps: ['7', '7 1/8', '7 1/4', '7 3/8', '7 1/2', '7 5/8', '7 3/4'],
+  caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
   sneakers: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
 };
 
