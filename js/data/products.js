@@ -2,6 +2,7 @@
    (con variante -sm.webp para pantallas pequeñas). */
 
 import { ZAPATOS } from './zapatos.js';
+import { GORRAS } from './gorras.js';
 
 /* Precio por defecto de cada línea. En zapatillas solo los Kyrie tienen precio
    confirmado: el resto trae su propio `precio` (null = se cotiza por WhatsApp). */
@@ -51,11 +52,13 @@ function decorar(item, linea, idx) {
     idx,
     id: `${linea}-${item.img}`,
     precio: item.precio !== undefined ? item.precio : PRECIOS[linea],
-    tallas: TALLAS[linea],
+    tallas: item.tallas && item.tallas.length ? item.tallas : TALLAS[linea],
     unidad: UNIDAD_TALLA[linea],
     src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
     srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
-    tipo: linea === 'caps' ? 'Gorra fitted' : (/bota/i.test(item.name) ? 'Botas' : 'Zapatillas'),
+    tipo: linea === 'caps'
+      ? (item.cierre === 'Ajustable' ? 'Gorra ajustable' : 'Gorra cerrada')
+      : (/bota/i.test(item.name) ? 'Botas' : 'Zapatillas'),
   };
 }
 
@@ -67,7 +70,10 @@ export const LINEAS = {
     plural: 'gorras',
     kicker: 'Fitted 59FIFTY',
     desc: 'Piezas cerradas, bordado limpio y parches originales de temporada.',
-    items: CAPS.map((c, i) => decorar(c, 'caps', i)),
+    items: [
+      ...CAPS.map((c) => ({ ...c, cierre: 'Cerrada', equipo: c.name, liga: c.cat === 'wbc' ? 'World Baseball Classic' : 'MLB' })),
+      ...GORRAS.map((g) => ({ ...g, carpeta: 'gorras', cat: g.liga })),
+    ].map((c, i) => decorar(c, 'caps', i)),
     filtros: [
       { id: 'all', label: 'Todas' },
       { id: 'mlb', label: 'MLB' },
@@ -119,7 +125,7 @@ const FAMILIAS_COLOR = [
   ['Morado', /morad|lila/],
   ['Azul', /azul|marino|celeste|turquesa/],
   ['Verde', /verde|menta|oliva/],
-  ['Amarillo', /amarill|oro|dorad/],
+  ['Amarillo', /amarill|oro|dorad|mostaza/],
   ['Naranja', /naranja/],
   ['Café y beige', /caf|caqui|beige|crema|arena|trigo/],
   ['Estampado', /camuflad|estampad|monograma|salpicad|multicolor/],
@@ -131,9 +137,8 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const texto = minus(`${p.color} ${p.tag}`);
   p.colores = FAMILIAS_COLOR.filter(([, re]) => re.test(texto)).map(([nombre]) => nombre);
   if (p.linea === 'caps') {
-    p.marca = 'New Era';
     p.grupo = 'Gorras';
-    p.coleccion = p.cat === 'wbc' ? 'World Baseball Classic' : 'MLB';
+    p.equipo = p.equipo || null;
   } else {
     p.grupo = p.tipo === 'Botas' ? 'Botas' : 'Zapatillas';
   }

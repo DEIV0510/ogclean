@@ -67,7 +67,7 @@ function mensajePedido() {
   if (!lineas.length) return 'Hola OGCLEAN, quiero hacer un pedido.';
   const filas = lineas.map((l) => {
     const p = porId(l.id);
-    const talla = l.talla ? ` talla ${l.talla}${p.unidad}` : '';
+    const talla = l.talla ? (l.talla === 'Ajustable' ? ' (ajustable)' : ` talla ${l.talla}${p.unidad}`) : '';
     const cant = l.cant > 1 ? ` x${l.cant}` : '';
     return `• ${p.name} (${p.tag})${talla}${cant} — ${tienePrecio(p) ? precioCOP(p.precio * l.cant) : 'precio a confirmar'}`;
   });
@@ -104,7 +104,7 @@ function pintar() {
         </div>
         <div class="cart-item__info">
           <p class="cart-item__name">${p.name}</p>
-          <p class="cart-item__meta">${p.tag}${l.talla ? ` · Talla ${l.talla}${p.unidad}` : ''}</p>
+          <p class="cart-item__meta">${p.tag}${l.talla ? (l.talla === 'Ajustable' ? ' · Ajustable' : ` · Talla ${l.talla}${p.unidad}`) : ''}</p>
           <p class="cart-item__price">${precioLinea(p, l.cant)}</p>
         </div>
         <div class="cart-item__acciones">
@@ -181,7 +181,7 @@ export function aviso(p, talla) {
   qs('#avisoImg', el).src = p.srcSm;
   qs('#avisoImg', el).alt = '';
   qs('#avisoNombre', el).textContent = p.name;
-  qs('#avisoMeta', el).textContent = `${p.tag}${talla ? ` · Talla ${talla}${p.unidad}` : ''}`;
+  qs('#avisoMeta', el).textContent = `${p.tag}${talla ? (talla === 'Ajustable' ? ' · Ajustable' : ` · Talla ${talla}${p.unidad}`) : ''}`;
   el.hidden = false;
   requestAnimationFrame(() => el.classList.add('is-visible'));
   clearTimeout(avisoTimer);

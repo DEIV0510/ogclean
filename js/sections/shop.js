@@ -1,5 +1,5 @@
-/* Tienda: todos los productos con filtros combinables (categoría, marca,
-   colección, color, precio), búsqueda, orden, paginación y URL compartible. */
+/* Tienda: todos los productos con filtros combinables, búsqueda, orden,
+   paginación y URL compartible (tienda.html?categoria=Gorras&liga=MLB). */
 
 import { qs, qsa } from '../utils/dom.js';
 import { TODOS, ORDEN_COLORES, tienePrecio } from '../data/products.js';
@@ -9,12 +9,22 @@ import { initCompraRapida } from '../components/compraRapida.js';
 const POR_PAGINA = 24;
 const GRUPOS = ['Gorras', 'Zapatillas', 'Botas'];
 
+/* Filtros de casillas. Añadir uno nuevo = una línea aquí + su bloque en tienda.html.
+   `orden` fija el orden de las opciones; si no, se ordenan por cantidad. */
+const FACETAS = [
+  { id: 'cierre', campo: 'cierre', param: 'tipo', orden: ['Cerrada', 'Ajustable'] },
+  { id: 'lineaGorra', campo: 'lineaGorra', param: 'linea', orden: ['Clásica', 'Exclusiva'] },
+  { id: 'liga', campo: 'liga', param: 'liga', orden: ['MLB', 'NBA', 'NFL', 'NHL', 'NCAA', 'World Baseball Classic', 'Marcas', 'Otras'],
+    etiqueta: (v) => ({ Marcas: 'Marcas (Supreme, Jordan…)', Otras: 'Otras' }[v] || v) },
+  { id: 'equipo', campo: 'equipo', param: 'equipo' },
+  { id: 'marca', campo: 'marca', param: 'marca', etiqueta: (v) => (v === 'Otras' ? 'Otras (sin marca)' : v) },
+];
+
 /* Estado de filtros. Los conjuntos permiten marcar varias opciones a la vez. */
 const estado = {
   q: '',
   grupo: 'todo',
-  marcas: new Set(),
-  colecciones: new Set(),
+  sel: Object.fromEntries(FACETAS.map((f) => [f.id, new Set()])),
   colores: new Set(),
   precio: 'todos', // todos | con | cotizar
   orden: 'destacados',
@@ -22,7 +32,7 @@ const estado = {
 };
 
 const normal = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-const etiquetaMarca = (m) => (m === 'Otras' ? 'Otras (sin marca)' : m);
+const etiquetaDe = (faceta, v) => (faceta.etiqueta ? faceta.etiqueta(v) : v);
 
 let refs = {};
 
@@ -33,15 +43,19 @@ function filtrar(ignorar = '') {
   const palabras = normal(estado.q).split(/\s+/).filter(Boolean);
   return TODOS.filter((p) => {
     if (ignorar !== 'grupo' && estado.grupo !== 'todo' && p.grupo !== estado.grupo) return false;
-    if (ignorar !== 'marcas' && estado.marcas.size && !estado.marcas.has(p.marca)) return false;
-    if (ignorar !== 'colecciones' && estado.colecciones.size && !estado.colecciones.has(p.coleccion)) return false;
+    for (const f of FACETAS) {
+      if (ignorar === f.id) continue;
+      const set = estado.sel[f.id];
+      if (set.size && !set.has(p[f.campo])) return false;
+    }
     if (ignorar !== 'colores' && estado.colores.size && !p.colores.some((c) => estado.colores.has(c))) return false;
     if (ignorar !== 'precio') {
       if (estado.precio === 'con' && !tienePrecio(p)) return false;
       if (estado.precio === 'cotizar' && tienePrecio(p)) return false;
     }
     if (palabras.length) {
-      const texto = normal(`${p.name} ${p.tag} ${p.color} ${p.marca} ${p.grupo} ${p.coleccion || ''}`);
+      const texto = normal([p.name, p.tag, p.color, p.marca, p.grupo, p.tipo, p.equipo, p.liga, p.cierre, p.lineaGorra]
+        .filter(Boolean).join(' '));
       if (!palabras.every((w) => texto.includes(w))) return false;
     }
     return true;
@@ -72,8 +86,10 @@ const contar = (lista, clave) => lista.reduce((acc, p) => {
 
 /* ---------------- Pintado de filtros ---------------- */
 
+const idSeguro = (t) => normal(String(t)).replace(/[^a-z0-9]+/g, '-');
+
 function opcionCheck(nombre, valor, label, n, marcado) {
-  const id = `f-${nombre}-${normal(valor).replace(/[^a-z0-9]+/g, '-')}`;
+  const id = `f-${nombre}-${idSeguro(valor)}`;
   return `
     <label class="filtro-op${n ? '' : ' is-cero'}" for="${id}">
       <input type="checkbox" id="${id}" name="${nombre}" value="${valor}"${marcado ? ' checked' : ''}${!n && !marcado ? ' disabled' : ''}>
@@ -94,19 +110,19 @@ function pintarFiltros() {
       </button>`)
     .join('');
 
-  // Marcas, ordenadas por cantidad
-  const porMarca = contar(filtrar('marcas'), 'marca');
-  const marcas = [...new Set(TODOS.map((p) => p.marca))]
-    .filter((m) => porMarca[m] || estado.marcas.has(m))
-    .sort((a, b) => (a === 'Otras') - (b === 'Otras') || (porMarca[b] || 0) - (porMarca[a] || 0) || a.localeCompare(b));
-  refs.marcas.innerHTML = marcas.map((m) => opcionCheck('marca', m, etiquetaMarca(m), porMarca[m] || 0, estado.marcas.has(m))).join('');
-  refs.marcasBloque.hidden = !marcas.length;
-
-  // Colección (solo aplica a gorras)
-  const porColeccion = contar(filtrar('colecciones'), 'coleccion');
-  const colecciones = ['MLB', 'World Baseball Classic'].filter((c) => porColeccion[c] || estado.colecciones.has(c));
-  refs.colecciones.innerHTML = colecciones.map((c) => opcionCheck('coleccion', c, c, porColeccion[c] || 0, estado.colecciones.has(c))).join('');
-  refs.coleccionesBloque.hidden = !colecciones.length;
+  // Facetas de casillas: solo se muestran si aplican a lo que se está viendo
+  FACETAS.forEach((f) => {
+    const cont = qs(`#filtro-${f.id}`);
+    const bloque = qs(`#bloque-${f.id}`);
+    if (!cont || !bloque) return;
+    const conteo = contar(filtrar(f.id), f.campo);
+    const set = estado.sel[f.id];
+    let valores = [...new Set([...Object.keys(conteo), ...set])];
+    if (f.orden) valores = f.orden.filter((v) => valores.includes(v)).concat(valores.filter((v) => !f.orden.includes(v)));
+    else valores.sort((a, b) => (a === 'Otras') - (b === 'Otras') || (conteo[b] || 0) - (conteo[a] || 0) || a.localeCompare(b, 'es'));
+    cont.innerHTML = valores.map((v) => opcionCheck(f.id, v, etiquetaDe(f, v), conteo[v] || 0, set.has(v))).join('');
+    bloque.hidden = valores.length < (set.size ? 1 : 2); // una sola opción no filtra nada
+  });
 
   // Colores como muestras
   const porColor = contar(filtrar('colores'), 'colores');
@@ -143,8 +159,7 @@ function chipsActivos() {
   const chips = [];
   if (estado.q.trim()) chips.push(['q', estado.q.trim(), `“${estado.q.trim()}”`]);
   if (estado.grupo !== 'todo') chips.push(['grupo', estado.grupo, estado.grupo]);
-  estado.marcas.forEach((m) => chips.push(['marca', m, etiquetaMarca(m)]));
-  estado.colecciones.forEach((c) => chips.push(['coleccion', c, c]));
+  FACETAS.forEach((f) => estado.sel[f.id].forEach((v) => chips.push([f.id, v, etiquetaDe(f, v)])));
   estado.colores.forEach((c) => chips.push(['color', c, c]));
   if (estado.precio !== 'todos') chips.push(['precio', estado.precio, estado.precio === 'con' ? 'Con precio' : 'Precio por WhatsApp']);
   return chips;
@@ -191,13 +206,12 @@ function guardarEnUrl() {
   const u = new URLSearchParams();
   if (estado.q.trim()) u.set('q', estado.q.trim());
   if (estado.grupo !== 'todo') u.set('categoria', estado.grupo);
-  if (estado.marcas.size) u.set('marca', [...estado.marcas].join(','));
-  if (estado.colecciones.size) u.set('coleccion', [...estado.colecciones].join(','));
+  FACETAS.forEach((f) => { if (estado.sel[f.id].size) u.set(f.param, [...estado.sel[f.id]].join(',')); });
   if (estado.colores.size) u.set('color', [...estado.colores].join(','));
   if (estado.precio !== 'todos') u.set('precio', estado.precio);
   if (estado.orden !== 'destacados') u.set('orden', estado.orden);
-  const qs2 = u.toString();
-  history.replaceState(null, '', `${location.pathname}${qs2 ? `?${qs2}` : ''}`);
+  const texto = u.toString();
+  history.replaceState(null, '', `${location.pathname}${texto ? `?${texto}` : ''}`);
 }
 
 function leerUrl() {
@@ -206,9 +220,10 @@ function leerUrl() {
   estado.q = u.get('q') || '';
   const cat = u.get('categoria');
   estado.grupo = GRUPOS.includes(cat) ? cat : 'todo';
-  const marcas = new Set(TODOS.map((p) => p.marca));
-  estado.marcas = new Set(lista('marca').filter((m) => marcas.has(m)));
-  estado.colecciones = new Set(lista('coleccion').filter((c) => ['MLB', 'World Baseball Classic'].includes(c)));
+  FACETAS.forEach((f) => {
+    const validos = new Set(TODOS.map((p) => p[f.campo]).filter(Boolean));
+    estado.sel[f.id] = new Set(lista(f.param).filter((v) => validos.has(v)));
+  });
   estado.colores = new Set(lista('color').filter((c) => ORDEN_COLORES.includes(c)));
   estado.precio = ['con', 'cotizar'].includes(u.get('precio')) ? u.get('precio') : 'todos';
   estado.orden = ['az', 'za', 'precio'].includes(u.get('orden')) ? u.get('orden') : 'destacados';
@@ -237,10 +252,6 @@ export function initShop() {
   refs = {
     grid: qs('#tiendaGrid'),
     grupos: qs('#tiendaGrupos'),
-    marcas: qs('#filtroMarcas'),
-    marcasBloque: qs('#bloqueMarcas'),
-    colecciones: qs('#filtroColecciones'),
-    coleccionesBloque: qs('#bloqueColecciones'),
     colores: qs('#filtroColores'),
     precio: qs('#filtroPrecio'),
     buscar: qs('#tiendaBuscar'),
@@ -275,6 +286,18 @@ export function initShop() {
 
   const reiniciar = () => { estado.visibles = POR_PAGINA; };
   const toggle = (set, valor) => (set.has(valor) ? set.delete(valor) : set.add(valor));
+  const enPanel = () => refs.panel.classList.contains('is-open');
+
+  const limpiar = () => {
+    estado.q = '';
+    refs.buscar.value = '';
+    estado.grupo = 'todo';
+    FACETAS.forEach((f) => estado.sel[f.id].clear());
+    estado.colores.clear();
+    estado.precio = 'todos';
+    reiniciar();
+    pintarResultados();
+  };
 
   // Búsqueda con pequeña espera para no repintar en cada letra
   let t = 0;
@@ -298,20 +321,23 @@ export function initShop() {
     const b = e.target.closest('[data-grupo]');
     if (!b) return;
     estado.grupo = b.dataset.grupo;
-    // La colección solo existe en gorras: si cambian de categoría, se suelta
-    if (estado.grupo !== 'Gorras' && estado.grupo !== 'todo') estado.colecciones.clear();
+    // Al cambiar de categoría se sueltan los filtros que ya no aplican (ej. equipo en zapatillas)
+    FACETAS.forEach((f) => {
+      const validos = new Set(filtrar(f.id).map((p) => p[f.campo]));
+      estado.sel[f.id].forEach((v) => { if (!validos.has(v)) estado.sel[f.id].delete(v); });
+    });
     reiniciar();
     pintarResultados();
   });
 
   refs.panel.addEventListener('change', (e) => {
     const input = e.target;
-    if (input.name === 'marca') toggle(estado.marcas, input.value);
-    else if (input.name === 'coleccion') toggle(estado.colecciones, input.value);
+    const faceta = FACETAS.find((f) => f.id === input.name);
+    if (faceta) toggle(estado.sel[faceta.id], input.value);
     else if (input.name === 'precio') estado.precio = input.value;
     else return;
     reiniciar();
-    pintarResultados({ mantenerScroll: refs.panel.classList.contains('is-open') });
+    pintarResultados({ mantenerScroll: enPanel() });
   });
 
   refs.panel.addEventListener('click', (e) => {
@@ -319,24 +345,12 @@ export function initShop() {
     if (color) {
       toggle(estado.colores, color.dataset.color);
       reiniciar();
-      pintarResultados({ mantenerScroll: refs.panel.classList.contains('is-open') });
+      pintarResultados({ mantenerScroll: enPanel() });
       return;
     }
     if (e.target.closest('[data-limpiar-panel]')) limpiar();
     if (e.target.closest('.tienda-filtros__cerrar') || e.target.closest('#verResultados')) cerrarPanel();
   });
-
-  const limpiar = () => {
-    estado.q = '';
-    refs.buscar.value = '';
-    estado.grupo = 'todo';
-    estado.marcas.clear();
-    estado.colecciones.clear();
-    estado.colores.clear();
-    estado.precio = 'todos';
-    reiniciar();
-    pintarResultados();
-  };
 
   refs.activos.addEventListener('click', (e) => {
     if (e.target.closest('[data-limpiar]')) { limpiar(); return; }
@@ -344,11 +358,10 @@ export function initShop() {
     if (!b) return;
     const { quitar, valor } = b.dataset;
     if (quitar === 'q') { estado.q = ''; refs.buscar.value = ''; }
-    if (quitar === 'grupo') estado.grupo = 'todo';
-    if (quitar === 'marca') estado.marcas.delete(valor);
-    if (quitar === 'coleccion') estado.colecciones.delete(valor);
-    if (quitar === 'color') estado.colores.delete(valor);
-    if (quitar === 'precio') estado.precio = 'todos';
+    else if (quitar === 'grupo') estado.grupo = 'todo';
+    else if (quitar === 'color') estado.colores.delete(valor);
+    else if (quitar === 'precio') estado.precio = 'todos';
+    else estado.sel[quitar]?.delete(valor);
     reiniciar();
     pintarResultados({ mantenerScroll: true });
   });

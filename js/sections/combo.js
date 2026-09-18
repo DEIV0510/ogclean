@@ -19,7 +19,10 @@ const COMBO_ZAPATILLAS = [
   'sneakers-new-balance-running-crema', 'sneakers-nike-shox-r4-rojo-negro',
 ].map(porId).filter(Boolean);
 
-const opcionesDe = (linea) => (linea === 'sneakers' ? COMBO_ZAPATILLAS : LINEAS[linea].items);
+/* Gorras para el combo: las 15 cerradas originales (todas con las 4 tallas y precio real) */
+const COMBO_GORRAS = LINEAS.caps.items.filter((p) => !p.carpeta);
+
+const opcionesDe = (linea) => (linea === 'sneakers' ? COMBO_ZAPATILLAS : COMBO_GORRAS);
 
 function pintarThumbs(cont, linea, alElegir) {
   cont.innerHTML = opcionesDe(linea)
@@ -134,6 +137,6 @@ export function initCombo() {
   }
 
   // Arranque con las piezas que ya están en el HTML
-  setItem('caps', LINEAS.caps.items[0]);
+  setItem('caps', COMBO_GORRAS[0]);
   setItem('sneakers', COMBO_ZAPATILLAS[0]);
 }

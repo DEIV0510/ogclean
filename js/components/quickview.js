@@ -34,15 +34,15 @@ function fichaHTML(p) {
     </div>
 
     <div class="quick__info">
-      <p class="eyebrow">${p.tipo} · ${p.linea === 'caps' ? 'Talla cerrada' : 'Talla US'}</p>
+      <p class="eyebrow">${p.tipo}${p.lineaGorra ? ` · Línea ${p.lineaGorra.toLowerCase()}` : ''}${p.linea === 'caps' ? '' : ' · Talla US'}</p>
       <h2 class="h2 quick__title">${p.name}</h2>
-      <p class="lead">${p.tag}${p.tag.toLowerCase().includes(p.color.toLowerCase()) ? '' : ` · ${p.color}`}. ${p.linea === 'caps' ? 'Fitted 59FIFTY, talla cerrada.' : `${p.marca}, talla US.`}</p>
+      <p class="lead">${p.tag}${p.tag.toLowerCase().includes(p.color.toLowerCase()) ? '' : ` · ${p.color}`}. ${p.linea === 'caps' ? (p.cierre === 'Ajustable' ? 'Ajustable, talla única.' : 'Cerrada, solo las tallas disponibles.') : `${p.marca}, talla US.`}</p>
 
       <p class="quick__price${tienePrecio(p) ? '' : ' is-cotizar'}">${precioCOP(p.precio)} <small>${tienePrecio(p) ? (p.linea === 'caps' ? 'Precio único de la línea' : 'Precio confirmado') : 'Agrégalo y te lo confirmamos en el chat'}</small></p>
       ${descuento(p) ? `<p class="quick__antes">Antes <s>${precioCOP(descuento(p).antes)}</s> · Ahorras ${precioCOP(descuento(p).ahorro)} (-${descuento(p).porcentaje}%)</p>` : ''}
 
       <div>
-        <p class="mono" style="margin-bottom:.5rem">Elige tu talla</p>
+        <p class="mono" style="margin-bottom:.5rem">${p.tallas.length === 1 ? 'Talla única' : 'Elige tu talla'}</p>
         <div class="sizes" id="quickSizes" role="group" aria-label="Tallas disponibles">${tallas}</div>
       </div>
 
@@ -57,7 +57,7 @@ function fichaHTML(p) {
       </a>
 
       <ul class="spec-list">
-        <li><span class="k">Línea</span><span class="v">${p.linea === 'caps' ? 'Gorra fitted 59FIFTY' : p.marca}</span></li>
+        <li><span class="k">Línea</span><span class="v">${p.linea === 'caps' ? [p.equipo, p.liga].filter(Boolean).join(' · ') || p.tipo : p.marca}</span></li>
         <li><span class="k">Referencia</span><span class="v">${p.tag}</span></li>
         <li><span class="k">Color</span><span class="v">${p.color}</span></li>
         <li><span class="k">Tallas</span><span class="v">${p.tallas[0]}${p.unidad} — ${p.tallas[p.tallas.length - 1]}${p.unidad}</span></li>
@@ -161,6 +161,9 @@ export function abrirFicha(id) {
       }, 1400);
     });
   }
+
+  // Talla única (gorras ajustables): queda marcada de entrada
+  if (sizes && p.tallas.length === 1) qs('.size', sizes)?.click();
 
   activarZoom();
   qs('#quickClose')?.focus({ preventScroll: true });

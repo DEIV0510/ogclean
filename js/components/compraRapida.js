@@ -38,6 +38,8 @@ export function initCompraRapida(contenedor) {
       const card = agregarBtn.closest('.card');
       const p = porId(card.dataset.id);
       if (!p) return;
+      // Talla única (gorras ajustables): no hay nada que elegir
+      if (!card.dataset.talla && p.tallas.length === 1) card.dataset.talla = p.tallas[0];
       if (!card.dataset.talla) {
         qsa('.card.is-buying').forEach((c) => { if (c !== card) c.classList.remove('is-buying'); });
         card.classList.add('is-buying');
@@ -81,7 +83,7 @@ export function initCompraRapida(contenedor) {
     const ya = qs('[data-pedir-ya]', card);
     if (ya) {
       const precio = tienePrecio(p) ? precioCOP(p.precio) : 'precio a confirmar';
-      ya.href = wa(`Hola OGCLEAN, quiero comprar: ${p.name} (${p.tag}) talla ${talla.dataset.talla}${p.unidad} — ${precio}.`);
+      ya.href = wa(`Hola OGCLEAN, quiero comprar: ${p.name} (${p.tag})${talla.dataset.talla === 'Ajustable' ? ' ajustable' : ` talla ${talla.dataset.talla}${p.unidad}`} — ${precio}.`);
       ya.hidden = false;
     }
   });

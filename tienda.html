@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Tienda OGCLEAN | Zapatillas, botas y gorras fitted por marca y talla</title>
-<meta name="description" content="Compra en OGCLEAN: 163 productos entre zapatillas Nike, Jordan, Adidas, Salomon, On, New Balance y más, botas y gorras fitted 59FIFTY. Filtra por marca, color y precio, elige tu talla y pide por WhatsApp.">
+<title>Tienda OGCLEAN | Gorras cerradas y ajustables, zapatillas y botas</title>
+<meta name="description" content="Compra en OGCLEAN: 536 productos entre gorras cerradas y ajustables, zapatillas Nike, Jordan, Adidas, Salomon, On, New Balance y más, y botas. Filtra por equipo, liga, marca, color y precio, elige tu talla y pide por WhatsApp.">
 <meta name="theme-color" content="#0C0A09">
 <link rel="canonical" href="https://ogclean.vercel.app/tienda.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="OGCLEAN">
 <meta property="og:locale" content="es_CO">
-<meta property="og:title" content="Tienda OGCLEAN | Zapatillas, botas y gorras">
-<meta property="og:description" content="163 productos con filtros por marca, color y precio. Elige tu talla y pide por WhatsApp. Envíos a toda Colombia.">
+<meta property="og:title" content="Tienda OGCLEAN | Gorras, zapatillas y botas">
+<meta property="og:description" content="Gorras y zapatillas con filtros por equipo, liga, marca, color y precio. Elige tu talla y pide por WhatsApp. Envíos a toda Colombia.">
 <meta property="og:url" content="https://ogclean.vercel.app/tienda.html">
 <meta property="og:image" content="https://ogclean.vercel.app/assets/img/brand/logo.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -111,7 +111,7 @@
   </div>
   <div class="menu__foot">
     <span>Envíos a toda Colombia</span>
-    <span>Gorras $85.000 · 148 pares</span>
+    <span>388 gorras · 148 pares</span>
     <span>OGCLEAN ©</span>
   </div>
 </div>
@@ -126,7 +126,7 @@
       </nav>
       <div class="tienda-top__fila">
         <h1 class="h1" id="tituloTienda">Tienda</h1>
-        <p class="tienda-top__meta mono"><b id="tiendaTotal">163</b> productos · Envíos a toda Colombia</p>
+        <p class="tienda-top__meta mono"><b id="tiendaTotal">536</b> productos · Envíos a toda Colombia</p>
       </div>
       <form class="tienda-buscar" id="tiendaBuscarForm" role="search">
         <label class="sr-only" for="tiendaBuscar">Buscar por marca, modelo o color</label>
@@ -147,14 +147,29 @@
       </div>
 
       <div class="tienda-filtros__scroll">
-        <details class="filtro" id="bloqueMarcas" open>
-          <summary>Marca</summary>
-          <div class="filtro__lista filtro__lista--larga" id="filtroMarcas"></div>
+        <details class="filtro" id="bloque-cierre" open>
+          <summary>Tipo de gorra</summary>
+          <div class="filtro__lista" id="filtro-cierre"></div>
         </details>
 
-        <details class="filtro" id="bloqueColecciones" open>
-          <summary>Colección de gorras</summary>
-          <div class="filtro__lista" id="filtroColecciones"></div>
+        <details class="filtro" id="bloque-lineaGorra" open>
+          <summary>Línea de gorras</summary>
+          <div class="filtro__lista" id="filtro-lineaGorra"></div>
+        </details>
+
+        <details class="filtro" id="bloque-liga" open>
+          <summary>Liga</summary>
+          <div class="filtro__lista" id="filtro-liga"></div>
+        </details>
+
+        <details class="filtro" id="bloque-equipo">
+          <summary>Equipo</summary>
+          <div class="filtro__lista filtro__lista--larga" id="filtro-equipo"></div>
+        </details>
+
+        <details class="filtro" id="bloque-marca" open>
+          <summary>Marca de calzado</summary>
+          <div class="filtro__lista filtro__lista--larga" id="filtro-marca"></div>
         </details>
 
         <details class="filtro" open>
@@ -242,12 +257,12 @@
     </nav>
     <div class="footer__meta">
       <p class="mono">Envíos a toda Colombia</p>
-      <p class="mono">Gorras $85.000 · Zapatillas por talla</p>
+      <p class="mono">Gorras y zapatillas por talla</p>
     </div>
   </div>
   <div class="footer__bottom container">
     <span class="mono">© <span id="year">2026</span> OGCLEAN</span>
-    <span class="mono">Gorras fitted · Zapatillas multimarca</span>
+    <span class="mono">Gorras · Zapatillas multimarca</span>
   </div>
 </footer>
 
