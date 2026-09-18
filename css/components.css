@@ -169,28 +169,6 @@
   backdrop-filter: blur(4px);
 }
 
-.card__view {
-  position: absolute;
-  inset: auto 0.7rem 0.7rem auto;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 999px;
-  background: var(--bone);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s var(--ease-out);
-}
-.card:hover .card__view,
-.card:focus-within .card__view { opacity: 1; transform: none; }
-
 .card__body {
   display: grid;
   gap: 0.35rem;
@@ -892,3 +870,234 @@
   .aviso img { width: 48px; height: 48px; }
   .aviso__acciones .btn { padding: 0.55rem 0.7rem; }
 }
+
+/* ---------------- Tarjeta v2: ojo, precios, tallas a la vista y dos botones ---------------- */
+
+/* Ojo siempre visible, abajo al centro de la foto (también en celular) */
+.card__ojo {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  z-index: 4; /* por encima del botón invisible que abre la ficha */
+  width: 44px; height: 44px;
+  display: grid;
+  place-content: center;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, #fff 94%, transparent);
+  color: var(--ink);
+  box-shadow: 0 6px 18px -6px rgba(12, 10, 9, 0.45);
+  transition: transform 0.3s var(--ease-out), background 0.25s ease, color 0.25s ease;
+}
+.card__ojo:hover { background: var(--ink); color: var(--bone); transform: scale(1.08); }
+.card__ojo:active { transform: scale(0.94); }
+
+.card__desc {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 2;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.card__body { gap: 0.3rem; }
+.card__kicker { color: var(--muted); font-size: 0.6rem; }
+.card__meta { text-transform: none; letter-spacing: 0.02em; font-family: var(--font-body); font-size: 0.8rem; }
+
+.card__precios { display: grid; gap: 0.05rem; margin-top: 0.15rem; }
+.card__price {
+  font-family: var(--font-display);
+  font-size: clamp(1.02rem, 2.6vw, 1.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.card__cop { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); }
+.card__antes { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
+.card__antes s { text-decoration-thickness: 1.5px; }
+.card__price.is-cotizar { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; }
+
+/* Tallas a la vista */
+.card__chips {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+.card__chip {
+  min-width: 34px;
+  padding: 0.32rem 0.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.card__chip:hover { border-color: var(--ink); }
+.card__chip.is-active { background: var(--red); border-color: var(--red); color: #fff; }
+.card__chip--mas { color: var(--muted); }
+
+/* Dos acciones: ver producto (contorno) + agregar (sólido) */
+.card__acciones {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.card__ver {
+  padding: 0.68rem 0.6rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.card__ver:hover { background: var(--ink); color: var(--bone); }
+.card__acciones .card__buy { margin-top: 0; background: var(--red); }
+.card__acciones .card__buy:hover { background: var(--ink); }
+.card__buy.is-added { background: #1FB855 !important; }
+
+@media (min-width: 1100px) {
+  .card__acciones { grid-template-columns: 1fr 1fr; }
+}
+
+/* Precio anterior en la ficha */
+.quick__antes { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); margin-top: -0.6rem; }
+.quick__antes s { text-decoration-thickness: 1.5px; }
+
+/* ---------------- Visor de fotos (el ojo) ---------------- */
+
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 85; /* encima de la ficha y del carrito */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: #0b0a09;
+  color: var(--bone);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.visor.is-open { opacity: 1; }
+
+.visor__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(0.7rem + env(safe-area-inset-top, 0px)) var(--gutter) 0.7rem;
+}
+.visor__cuenta { color: color-mix(in srgb, var(--bone) 60%, transparent); }
+.visor__cerrar {
+  width: 46px; height: 46px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bone) 12%, transparent);
+  color: var(--bone);
+  transition: background 0.25s ease;
+}
+.visor__cerrar:hover { background: var(--red); }
+
+.visor__escena {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: zoom-in;
+  user-select: none;
+}
+.visor.is-zoom .visor__escena { cursor: zoom-out; touch-action: none; }
+.visor__img, .visor__video {
+  grid-area: 1 / 1;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  transition: transform 0.35s var(--ease-out), opacity 0.25s ease;
+}
+.visor__img.is-cargando { opacity: 0.35; }
+.visor.is-zoom .visor__img { transform: scale(2.2); transition: transform 0.35s var(--ease-out); }
+.visor__video { position: absolute; inset: 0; width: 100%; height: 100%; background: #0b0a09; }
+.visor__video[hidden] { display: none; }
+
+.visor__pista {
+  position: absolute;
+  left: 50%;
+  bottom: 0.8rem;
+  translate: -50% 0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, #000 55%, transparent);
+  color: color-mix(in srgb, var(--bone) 80%, transparent);
+  font-size: 0.6rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.visor__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 48px; height: 48px;
+  display: grid;
+  place-content: center;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bone) 14%, transparent);
+  color: var(--bone);
+  backdrop-filter: blur(6px);
+  transition: background 0.25s ease;
+}
+.visor__nav:hover { background: var(--bone); color: var(--ink); }
+.visor__nav--prev { left: clamp(0.5rem, 2vw, 1.5rem); }
+.visor__nav--next { right: clamp(0.5rem, 2vw, 1.5rem); }
+.visor.is-solo .visor__nav { display: none; }
+.visor.is-zoom .visor__nav { opacity: 0; pointer-events: none; }
+
+.visor__pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem var(--gutter) calc(0.9rem + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid color-mix(in srgb, var(--bone) 12%, transparent);
+}
+.visor__info { min-width: 0; }
+.visor__nombre {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 3.4vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.visor__meta { color: color-mix(in srgb, var(--bone) 60%, transparent); font-size: 0.62rem; margin-top: 0.2rem; }
+.visor__talla { flex: 0 0 auto; }
+
+@media (max-width: 600px) {
+  .visor__nav { top: auto; bottom: 5.8rem; translate: none; width: 42px; height: 42px; }
+}
+
+/* Descuento arriba a la izquierda y la etiqueta de color justo debajo (como la referencia) */
+.card__desc { right: auto; left: 0.7rem; z-index: 3; }
+.card__desc + .card__tag { top: 2.55rem; }

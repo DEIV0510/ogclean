@@ -2,7 +2,7 @@
    selector de talla, especificaciones y salto directo a WhatsApp. */
 
 import { qs, qsa } from '../utils/dom.js';
-import { porId, LINEAS, tienePrecio } from '../data/products.js';
+import { porId, LINEAS, tienePrecio, descuento } from '../data/products.js';
 import { SITE, wa, precioCOP } from '../data/site.js';
 import { cardHTML } from './productCard.js';
 import { agregar, aviso } from './cart.js';
@@ -39,6 +39,7 @@ function fichaHTML(p) {
       <p class="lead">${p.tag}${p.tag.toLowerCase().includes(p.color.toLowerCase()) ? '' : ` · ${p.color}`}. ${p.linea === 'caps' ? 'Fitted 59FIFTY, talla cerrada.' : `${p.marca}, talla US.`}</p>
 
       <p class="quick__price${tienePrecio(p) ? '' : ' is-cotizar'}">${precioCOP(p.precio)} <small>${tienePrecio(p) ? (p.linea === 'caps' ? 'Precio único de la línea' : 'Precio confirmado') : 'Agrégalo y te lo confirmamos en el chat'}</small></p>
+      ${descuento(p) ? `<p class="quick__antes">Antes <s>${precioCOP(descuento(p).antes)}</s> · Ahorras ${precioCOP(descuento(p).ahorro)} (-${descuento(p).porcentaje}%)</p>` : ''}
 
       <div>
         <p class="mono" style="margin-bottom:.5rem">Elige tu talla</p>

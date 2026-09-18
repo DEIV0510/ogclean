@@ -15,6 +15,44 @@ export function initCompraRapida(contenedor) {
   contenedor.dataset.compraRapidaLista = '1';
 
   contenedor.addEventListener('click', (e) => {
+    // Tallas a la vista en la tarjeta: marcan la talla elegida
+    const chip = e.target.closest('.card__chip[data-talla]');
+    if (chip) {
+      const card = chip.closest('.card');
+      const ya = chip.classList.contains('is-active');
+      qsa('.card__chip[data-talla]', card).forEach((c) => {
+        c.classList.remove('is-active');
+        c.setAttribute('aria-pressed', 'false');
+      });
+      if (!ya) {
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-pressed', 'true');
+      }
+      card.dataset.talla = ya ? '' : chip.dataset.talla;
+      return;
+    }
+
+    // "Agregar": con talla elegida va directo al carrito; sin talla, muestra todas
+    const agregarBtn = e.target.closest('[data-agregar]');
+    if (agregarBtn) {
+      const card = agregarBtn.closest('.card');
+      const p = porId(card.dataset.id);
+      if (!p) return;
+      if (!card.dataset.talla) {
+        qsa('.card.is-buying').forEach((c) => { if (c !== card) c.classList.remove('is-buying'); });
+        card.classList.add('is-buying');
+        qs('.card__size', card)?.focus({ preventScroll: true });
+        return;
+      }
+      agregar(p.id, card.dataset.talla);
+      aviso(p, card.dataset.talla);
+      agregarBtn.classList.add('is-added');
+      const original = agregarBtn.innerHTML;
+      agregarBtn.textContent = '✓ Agregado';
+      setTimeout(() => { agregarBtn.classList.remove('is-added'); agregarBtn.innerHTML = original; }, 1300);
+      return;
+    }
+
     const abrir = e.target.closest('[data-rapida]');
     if (abrir) {
       e.preventDefault();

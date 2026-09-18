@@ -164,3 +164,15 @@ export const DESTACADOS = [
 
 /* Precio confirmado: número; sin confirmar: null */
 export const tienePrecio = (p) => typeof p?.precio === 'number';
+
+/* Precio anterior tachado: solo si el dueño da los DOS precios reales y el
+   anterior es mayor. Nunca se inventa (sería un descuento falso).
+   Para activarlo en un producto: { precio: 177900, precioAntes: 258900 } */
+export function descuento(p) {
+  if (!tienePrecio(p) || typeof p.precioAntes !== 'number' || p.precioAntes <= p.precio) return null;
+  return {
+    antes: p.precioAntes,
+    ahorro: p.precioAntes - p.precio,
+    porcentaje: Math.round((1 - p.precio / p.precioAntes) * 100),
+  };
+}
