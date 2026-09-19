@@ -766,7 +766,7 @@
   margin-bottom: clamp(1.4rem, 3vw, 2rem);
 }
 @media (min-width: 700px) {
-  .preview__cats { grid-template-columns: 1.4fr 1fr 1fr; }
+  .preview__cats { grid-template-columns: 1.3fr 1fr 1fr 0.8fr; }
 }
 
 .preview-cat {
@@ -856,3 +856,6 @@
   .preview-cat:first-child .preview-cat__t { font-size: 1.8rem; }
   .preview-cat__flecha { width: 34px; height: 34px; font-size: 0.95rem; }
 }
+
+/* Dos accesos en el panel de gorras: cerradas y ajustables */
+.linea__ctas { display: flex; flex-wrap: wrap; gap: 0.5rem; }

@@ -1101,3 +1101,14 @@
 /* Descuento arriba a la izquierda y la etiqueta de color justo debajo (como la referencia) */
 .card__desc { right: auto; left: 0.7rem; z-index: 3; }
 .card__desc + .card__tag { top: 2.55rem; }
+
+/* La foto del visor siempre cabe entera en el espacio disponible (collages altos incluidos) */
+.visor__img {
+  position: absolute;
+  inset: 0.5rem 0;
+  width: 100%;
+  height: calc(100% - 1rem);
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}

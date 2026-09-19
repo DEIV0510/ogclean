@@ -1,5 +1,5 @@
 /* Tienda: todos los productos con filtros combinables, búsqueda, orden,
-   paginación y URL compartible (tienda.html?categoria=Gorras&liga=MLB). */
+   paginación y URL compartible (tienda.html?categoria=Gorras+ajustables&liga=MLB). */
 
 import { qs, qsa } from '../utils/dom.js';
 import { TODOS, ORDEN_COLORES, tienePrecio } from '../data/products.js';
@@ -7,12 +7,14 @@ import { renderCards } from '../components/productCard.js';
 import { initCompraRapida } from '../components/compraRapida.js';
 
 const POR_PAGINA = 24;
-const GRUPOS = ['Gorras', 'Zapatillas', 'Botas'];
+const GRUPOS = ['Gorras cerradas', 'Gorras ajustables', 'Zapatillas', 'Botas'];
+
+/* Enlaces viejos (?categoria=Gorras) siguen funcionando: muestran las dos líneas de gorras */
+const esGrupo = (p, g) => p.grupo === g || (g === 'Gorras' && p.linea === 'caps');
 
 /* Filtros de casillas. Añadir uno nuevo = una línea aquí + su bloque en tienda.html.
    `orden` fija el orden de las opciones; si no, se ordenan por cantidad. */
 const FACETAS = [
-  { id: 'cierre', campo: 'cierre', param: 'tipo', orden: ['Cerrada', 'Ajustable'] },
   { id: 'lineaGorra', campo: 'lineaGorra', param: 'linea', orden: ['Clásica', 'Exclusiva'] },
   { id: 'liga', campo: 'liga', param: 'liga', orden: ['MLB', 'NBA', 'NFL', 'NHL', 'NCAA', 'World Baseball Classic', 'Marcas', 'Otras'],
     etiqueta: (v) => ({ Marcas: 'Marcas (Supreme, Jordan…)', Otras: 'Otras' }[v] || v) },
@@ -42,7 +44,7 @@ let refs = {};
 function filtrar(ignorar = '') {
   const palabras = normal(estado.q).split(/\s+/).filter(Boolean);
   return TODOS.filter((p) => {
-    if (ignorar !== 'grupo' && estado.grupo !== 'todo' && p.grupo !== estado.grupo) return false;
+    if (ignorar !== 'grupo' && estado.grupo !== 'todo' && !esGrupo(p, estado.grupo)) return false;
     for (const f of FACETAS) {
       if (ignorar === f.id) continue;
       const set = estado.sel[f.id];
@@ -219,7 +221,11 @@ function leerUrl() {
   const lista = (k) => (u.get(k) || '').split(',').map((s) => s.trim()).filter(Boolean);
   estado.q = u.get('q') || '';
   const cat = u.get('categoria');
-  estado.grupo = GRUPOS.includes(cat) ? cat : 'todo';
+  // ?tipo=Ajustable|Cerrada (enlaces anteriores) se traduce a su categoría
+  const tipo = u.get('tipo');
+  estado.grupo = GRUPOS.includes(cat) || cat === 'Gorras' ? cat : 'todo';
+  if (tipo === 'Ajustable') estado.grupo = 'Gorras ajustables';
+  if (tipo === 'Cerrada') estado.grupo = 'Gorras cerradas';
   FACETAS.forEach((f) => {
     const validos = new Set(TODOS.map((p) => p[f.campo]).filter(Boolean));
     estado.sel[f.id] = new Set(lista(f.param).filter((v) => validos.has(v)));

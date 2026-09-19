@@ -100,7 +100,7 @@ function pintar() {
     return `
       <li class="cart-item" data-linea="${clave}">
         <div class="cart-item__media">
-          <img src="${p.srcSm}" alt="${p.alt}" width="120" height="120" loading="lazy" decoding="async">
+          <img src="${p.srcCard || p.srcSm}" alt="${p.alt}" width="120" height="120" loading="lazy" decoding="async">
         </div>
         <div class="cart-item__info">
           <p class="cart-item__name">${p.name}</p>
@@ -178,7 +178,7 @@ let avisoTimer = 0;
 export function aviso(p, talla) {
   const el = qs('#aviso');
   if (!el || !p) return;
-  qs('#avisoImg', el).src = p.srcSm;
+  qs('#avisoImg', el).src = p.srcCard || p.srcSm;
   qs('#avisoImg', el).alt = '';
   qs('#avisoNombre', el).textContent = p.name;
   qs('#avisoMeta', el).textContent = `${p.tag}${talla ? (talla === 'Ajustable' ? ' · Ajustable' : ` · Talla ${talla}${p.unidad}`) : ''}`;

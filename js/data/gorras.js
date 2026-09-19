@@ -2172,17 +2172,17 @@ export const GORRAS = [
   },
   {
     "img": "gorra-ajustable-negro-rojo-bandera-usa",
-    "name": "Gorra ajustable",
+    "name": "Kansas City Chiefs",
     "tag": "Negro / rojo bandera USA",
     "color": "Negro / rojo bandera USA",
-    "equipo": null,
-    "liga": "Otras",
+    "equipo": "Kansas City Chiefs",
+    "liga": "NFL",
     "cierre": "Ajustable",
     "lineaGorra": "Clásica",
     "tallas": [
       "Ajustable"
     ],
-    "alt": "Gorra ajustable Gorra ajustable, negro / rojo bandera usa",
+    "alt": "Gorra ajustable Kansas City Chiefs, negro / rojo bandera usa",
     "origen": "A1",
     "precio": null
   },

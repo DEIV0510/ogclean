@@ -56,6 +56,8 @@ function decorar(item, linea, idx) {
     unidad: UNIDAD_TALLA[linea],
     src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
     srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
+    // Gorras en collage: la tarjeta muestra solo el frente; ficha y visor, la foto completa
+    srcCard: item.carpeta === 'gorras' ? `assets/img/gorras/${item.img}-card.webp` : null,
     tipo: linea === 'caps'
       ? (item.cierre === 'Ajustable' ? 'Gorra ajustable' : 'Gorra cerrada')
       : (/bota/i.test(item.name) ? 'Botas' : 'Zapatillas'),
@@ -137,7 +139,7 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const texto = minus(`${p.color} ${p.tag}`);
   p.colores = FAMILIAS_COLOR.filter(([, re]) => re.test(texto)).map(([nombre]) => nombre);
   if (p.linea === 'caps') {
-    p.grupo = 'Gorras';
+    p.grupo = p.cierre === 'Ajustable' ? 'Gorras ajustables' : 'Gorras cerradas';
     p.equipo = p.equipo || null;
   } else {
     p.grupo = p.tipo === 'Botas' ? 'Botas' : 'Zapatillas';
