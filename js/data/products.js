@@ -10,10 +10,24 @@ export const PRECIOS = { caps: 85000, sneakers: 185000 };
 
 export const TALLAS = {
   caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
-  sneakers: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
+  // Básquetbol y botas conservan tallas US, como ya estaba publicado (el usuario
+  // solo confirmó talla colombiana para las zapatillas de calle, no para botas)
+  basquetbol: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
+  botas: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
+  // Zapatillas de calle: talla colombiana confirmada por el dueño
+  hombre: ['40', '41', '42', '43', '44'],
+  dama: ['36', '37', '38', '39'],
 };
 
-export const UNIDAD_TALLA = { caps: '', sneakers: ' US' };
+export const UNIDAD_TALLA = { caps: '', basquetbol: ' US', botas: ' US', hombre: '', dama: '' };
+
+/** Grupo de talla de una zapatilla/bota: básquetbol y botas conservan US;
+ *  el resto usa la talla colombiana del género. */
+function grupoTalla(item) {
+  if (item.deporte === 'basquetbol') return 'basquetbol';
+  if (/bota/i.test(item.name)) return 'botas'; // item aún no tiene `tipo`: se decora más abajo
+  return item.genero === 'dama' ? 'dama' : 'hombre';
+}
 
 export const CAPS = [
   { img: 'mets-rojo', name: 'New York Mets', tag: 'Shea Stadium 40th', alt: 'Gorra fitted New York Mets roja', cat: 'mlb', color: 'Rojo' },
@@ -34,14 +48,14 @@ export const CAPS = [
 ];
 
 export const SNEAKERS = [
-  { img: 'kyrie3-blanco', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie-blanco-oro', name: 'Nike Low', tag: 'Blanco / Oro', alt: 'Tenis Nike blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie4-negro', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie5-lila', name: 'Nike Kyrie 5', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 5 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-morado-azul', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-lila-rosa', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-verde-amarillo', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-verde-azul', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', cat: 'color', color: 'Verde / Azul', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie3-blanco', deporte: 'basquetbol', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie-blanco-oro', deporte: 'basquetbol', name: 'Nike Low', tag: 'Blanco / Oro', alt: 'Tenis Nike blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie4-negro', deporte: 'basquetbol', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie5-lila', deporte: 'basquetbol', name: 'Nike Kyrie 5', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 5 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-morado-azul', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-lila-rosa', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-verde-amarillo', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-verde-azul', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', cat: 'color', color: 'Verde / Azul', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
 ];
 
 /** Normaliza un item del catálogo con todo lo que la UI necesita. */
@@ -52,8 +66,8 @@ function decorar(item, linea, idx) {
     idx,
     id: `${linea}-${item.img}`,
     precio: item.precio !== undefined ? item.precio : PRECIOS[linea],
-    tallas: item.tallas && item.tallas.length ? item.tallas : TALLAS[linea],
-    unidad: UNIDAD_TALLA[linea],
+    tallas: item.tallas && item.tallas.length ? item.tallas : TALLAS[linea === 'sneakers' ? grupoTalla(item) : linea],
+    unidad: linea === 'sneakers' ? UNIDAD_TALLA[grupoTalla(item)] : UNIDAD_TALLA[linea],
     src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
     srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
     // Gorras en collage: la tarjeta muestra solo el frente; ficha y visor, la foto completa
@@ -141,8 +155,12 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   if (p.linea === 'caps') {
     p.grupo = p.cierre === 'Ajustable' ? 'Gorras ajustables' : 'Gorras cerradas';
     p.equipo = p.equipo || null;
+  } else if (p.tipo === 'Botas') {
+    p.grupo = 'Botas';
+  } else if (p.deporte === 'basquetbol') {
+    p.grupo = 'Básquetbol';
   } else {
-    p.grupo = p.tipo === 'Botas' ? 'Botas' : 'Zapatillas';
+    p.grupo = p.genero === 'dama' ? 'Zapatillas dama' : 'Zapatillas hombre';
   }
 });
 

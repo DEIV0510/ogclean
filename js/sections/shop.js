@@ -7,10 +7,13 @@ import { renderCards } from '../components/productCard.js';
 import { initCompraRapida } from '../components/compraRapida.js';
 
 const POR_PAGINA = 24;
-const GRUPOS = ['Gorras cerradas', 'Gorras ajustables', 'Zapatillas', 'Botas'];
+const GRUPOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Botas'];
 
-/* Enlaces viejos (?categoria=Gorras) siguen funcionando: muestran las dos líneas de gorras */
-const esGrupo = (p, g) => p.grupo === g || (g === 'Gorras' && p.linea === 'caps');
+/* Enlaces viejos siguen funcionando: ?categoria=Gorras muestra las dos líneas de gorras;
+   ?categoria=Zapatillas muestra hombre+dama+básquetbol (todo el calzado que no es bota) */
+const esGrupo = (p, g) => p.grupo === g
+  || (g === 'Gorras' && p.linea === 'caps')
+  || (g === 'Zapatillas' && p.linea === 'sneakers' && p.tipo !== 'Botas');
 
 /* Filtros de casillas. Añadir uno nuevo = una línea aquí + su bloque en tienda.html.
    `orden` fija el orden de las opciones; si no, se ordenan por cantidad. */
@@ -223,7 +226,7 @@ function leerUrl() {
   const cat = u.get('categoria');
   // ?tipo=Ajustable|Cerrada (enlaces anteriores) se traduce a su categoría
   const tipo = u.get('tipo');
-  estado.grupo = GRUPOS.includes(cat) || cat === 'Gorras' ? cat : 'todo';
+  estado.grupo = GRUPOS.includes(cat) || cat === 'Gorras' || cat === 'Zapatillas' ? cat : 'todo';
   if (tipo === 'Ajustable') estado.grupo = 'Gorras ajustables';
   if (tipo === 'Cerrada') estado.grupo = 'Gorras cerradas';
   FACETAS.forEach((f) => {

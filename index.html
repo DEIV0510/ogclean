@@ -34,6 +34,7 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/firma.css">
 
 <script type="application/ld+json">
 {
@@ -150,13 +151,7 @@
     <div class="hero__bg" aria-hidden="true">
       <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg"></video>
       <div class="hero__scrim"></div>
-      <svg class="hero__globe" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-        <circle cx="100" cy="100" r="98" stroke="currentColor" stroke-width="0.6"/>
-        <circle cx="100" cy="100" r="72" stroke="currentColor" stroke-width="0.6"/>
-        <ellipse cx="100" cy="100" rx="40" ry="98" stroke="currentColor" stroke-width="0.6"/>
-        <ellipse cx="100" cy="100" rx="72" ry="98" stroke="currentColor" stroke-width="0.6"/>
-        <path d="M2 100h196M14 60h172M14 140h172" stroke="currentColor" stroke-width="0.6"/>
-      </svg>
+      <div class="hero__globe" data-globo data-velocidad="18"></div>
     </div>
 
     <div class="container hero__inner">
@@ -210,6 +205,10 @@
 
   <!-- ══════════ 04 · MANIFIESTO ══════════ -->
   <section class="manifiesto" id="manifiesto">
+    <div class="meridiano meridiano--a" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none"><path class="meridiano__linea" pathLength="1" vector-effect="non-scaling-stroke" d="M1500 -10 C 1180 40, 900 150, 560 120 S 120 40, -40 90"/></svg>
+      <span class="meridiano__punto"></span>
+    </div>
     <div class="container manifiesto__inner">
       <p class="eyebrow" data-anim>El código OGCLEAN</p>
       <h2 class="h1 manifiesto__text" id="manifiestoText">
@@ -245,9 +244,13 @@
       <div class="linea__body">
         <span class="linea__num mono">Línea 02</span>
         <h2 class="h2">Zapa<br><span class="outline-text">tillas</span></h2>
-        <p class="linea__desc">143 pares de Nike, Jordan, Adidas, Salomon, On, New Balance y más, y 5 botas. Tallas 7 a 13 US.</p>
+        <p class="linea__desc">143 pares de Nike, Jordan, Adidas, Salomon, On, New Balance y más, y 5 botas. Básquetbol en talla US, el resto en talla colombiana.</p>
         <p class="linea__price mono">Filtra por marca y elige tu talla</p>
-        <a class="btn btn--primary btn--sm" href="tienda.html?categoria=Zapatillas">Ver las 143 <span class="btn__arrow">→</span></a>
+        <div class="linea__ctas">
+          <a class="btn btn--primary btn--sm" href="tienda.html?categoria=B%C3%A1squetbol">Básquetbol <span class="btn__arrow">→</span></a>
+          <a class="btn btn--primary btn--sm" href="tienda.html?categoria=Zapatillas+hombre">Hombre <span class="btn__arrow">→</span></a>
+          <a class="btn btn--primary btn--sm" href="tienda.html?categoria=Zapatillas+dama">Dama <span class="btn__arrow">→</span></a>
+        </div>
       </div>
     </article>
   </section>
@@ -338,7 +341,7 @@
           <li class="orbita__item" data-anim style="--delay:.19s">
             <span class="orbita__n">03</span>
             <h3 class="h3">Tu talla exacta</h3>
-            <p>Fitted del 7 al 7 3/8 y zapatillas del 7 al 13 US. Eliges antes de escribir.</p>
+            <p>Fitted del 7 al 7 3/8, zapatillas de hombre 40 a 44 y dama 36 a 39. Eliges antes de escribir.</p>
           </li>
           <li class="orbita__item" data-anim style="--delay:.26s">
             <span class="orbita__n">04</span>
@@ -412,6 +415,10 @@
 
   <!-- ══════════ 10 · TIENDA (vista previa; el catálogo completo vive en tienda.html) ══════════ -->
   <section class="preview section" id="catalogo" aria-label="Tienda">
+    <div class="meridiano meridiano--b" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none"><path class="meridiano__linea" pathLength="1" vector-effect="non-scaling-stroke" d="M-40 30 C 300 150, 620 150, 760 80 S 1160 0, 1480 110"/></svg>
+      <span class="meridiano__punto"></span>
+    </div>
     <div class="container">
       <div class="preview__head">
         <div class="section-head" data-anim>
@@ -509,9 +516,14 @@
 
   <!-- ══════════ 13 · CTA FINAL ══════════ -->
   <section class="cta-final" aria-label="Escríbenos">
+    <div class="meridiano meridiano--c" aria-hidden="true">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none"><path class="meridiano__linea" pathLength="1" vector-effect="non-scaling-stroke" d="M-40 10 C 360 20, 620 40, 720 160"/></svg>
+      <span class="meridiano__punto"></span>
+    </div>
     <div class="cta-final__bg" aria-hidden="true">
       <img src="assets/img/sneakers/kyrie7-verde-amarillo.webp" alt="" loading="lazy" width="1000" height="1000">
     </div>
+    <div class="cta-final__globo" data-globo data-velocidad="12"></div>
     <div class="container cta-final__inner">
       <h2 class="display cta-final__title" data-split>Escríbenos</h2>
       <p class="lead" data-anim>Te decimos disponibilidad, tallas y envío en la misma conversación.</p>

@@ -9,7 +9,8 @@ export const ZAPATOS = [
     "tag": "Gris / Blanco",
     "color": "Gris / Blanco",
     "alt": "Zapatillas Dolce & Gabbana Sneaker DG color gris / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-turquesa",
@@ -18,7 +19,8 @@ export const ZAPATOS = [
     "tag": "Turquesa",
     "color": "Turquesa",
     "alt": "Zapatillas Nike NOCTA Hot Step color turquesa",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "puma-suede-xl-negro-blanco",
@@ -27,7 +29,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Puma Suede XL color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-crema-cafe",
@@ -36,7 +39,8 @@ export const ZAPATOS = [
     "tag": "Crema / Café",
     "color": "Crema / Café",
     "alt": "Zapatillas Salomon XT-6 color crema / café",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-trefoil-low-blanco-gris",
@@ -45,7 +49,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Gris",
     "color": "Blanco / Gris",
     "alt": "Zapatillas Adidas Trefoil Low color blanco / gris",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-blanco-menta",
@@ -54,7 +59,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Menta",
     "color": "Blanco / Menta",
     "alt": "Zapatillas Salomon XT-6 color blanco / menta",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "adidas-running-rosa-lila",
@@ -63,7 +69,8 @@ export const ZAPATOS = [
     "tag": "Rosa / Lila",
     "color": "Rosa / Lila",
     "alt": "Zapatillas Adidas Running color rosa / lila",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-nocta-hot-step-blanco-total",
@@ -72,7 +79,8 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Nike NOCTA Hot Step color blanco total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-knit-capsulas-lila-naranja",
@@ -81,7 +89,8 @@ export const ZAPATOS = [
     "tag": "Lila / Naranja",
     "color": "Lila / Naranja",
     "alt": "Zapatillas Nike Knit Cápsulas color lila / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-air-force-1-blanco-total",
@@ -90,7 +99,8 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Nike Air Force 1 color blanco total",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "jordan-air-jordan-11-blanco-negro-charol",
@@ -99,7 +109,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Negro charol",
     "color": "Blanco / Negro charol",
     "alt": "Zapatillas Air Jordan 11 color blanco / negro charol",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "diesel-runner-beige-negro",
@@ -108,7 +119,8 @@ export const ZAPATOS = [
     "tag": "Beige / Negro",
     "color": "Beige / Negro",
     "alt": "Zapatillas Diesel Runner color beige / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-shox-r4-plata-negro-naranja",
@@ -117,7 +129,8 @@ export const ZAPATOS = [
     "tag": "Plata / Negro / Naranja",
     "color": "Plata / Negro / Naranja",
     "alt": "Zapatillas Nike Shox R4 color plata / negro / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-campus-00s-gris-lila",
@@ -126,7 +139,8 @@ export const ZAPATOS = [
     "tag": "Gris / Lila",
     "color": "Gris / Lila",
     "alt": "Zapatillas Adidas Campus 00s color gris / lila",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "salomon-xt-6-beige-negro",
@@ -135,7 +149,8 @@ export const ZAPATOS = [
     "tag": "Beige / Negro",
     "color": "Beige / Negro",
     "alt": "Zapatillas Salomon XT-6 color beige / negro",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-kyrie-3-negro-multicolor",
@@ -144,7 +159,8 @@ export const ZAPATOS = [
     "tag": "Negro / Multicolor",
     "color": "Negro / Multicolor",
     "alt": "Zapatillas Nike Kyrie 3 color negro / multicolor",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "adidas-superstar-cafe-gamuza",
@@ -153,7 +169,8 @@ export const ZAPATOS = [
     "tag": "Café gamuza",
     "color": "Café gamuza",
     "alt": "Zapatillas Adidas Superstar color café gamuza",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "runner-retro-blanco-gris",
@@ -162,7 +179,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Gris",
     "color": "Blanco / Gris",
     "alt": "Zapatillas Runner Retro color blanco / gris",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-knit-capsulas-rosa-palo-naranja",
@@ -171,7 +189,8 @@ export const ZAPATOS = [
     "tag": "Rosa palo / Naranja",
     "color": "Rosa palo / Naranja",
     "alt": "Zapatillas Nike Knit Cápsulas color rosa palo / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "adidas-running-blanco-morado",
@@ -180,7 +199,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Morado",
     "color": "Blanco / Morado",
     "alt": "Zapatillas Adidas Running color blanco / morado",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "new-balance-running-blanco-plata",
@@ -189,7 +209,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Plata",
     "color": "Blanco / Plata",
     "alt": "Zapatillas New Balance Running color blanco / plata",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "numeris-glitter-negro-brillante",
@@ -198,7 +219,8 @@ export const ZAPATOS = [
     "tag": "Negro brillante",
     "color": "Negro brillante",
     "alt": "Zapatillas Numeris Glitter color negro brillante",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "adidas-superstar-camuflado",
@@ -207,7 +229,8 @@ export const ZAPATOS = [
     "tag": "Camuflado",
     "color": "Camuflado",
     "alt": "Zapatillas Adidas Superstar color camuflado",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "jordan-air-jordan-4-blanco-azul",
@@ -216,7 +239,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Azul",
     "color": "Blanco / Azul",
     "alt": "Zapatillas Air Jordan 4 color blanco / azul",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "bape-road-sta-negro-blanco",
@@ -225,7 +249,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas BAPE Road Sta color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "le-coq-sportif-runner-negro-camuflado",
@@ -234,7 +259,8 @@ export const ZAPATOS = [
     "tag": "Negro camuflado",
     "color": "Negro camuflado",
     "alt": "Zapatillas Le Coq Sportif Runner color negro camuflado",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-shox-r4-lila-negro",
@@ -243,7 +269,8 @@ export const ZAPATOS = [
     "tag": "Lila / Negro",
     "color": "Lila / Negro",
     "alt": "Zapatillas Nike Shox R4 color lila / negro",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "on-cloud-blanco-gris",
@@ -252,7 +279,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Gris",
     "color": "Blanco / Gris",
     "alt": "Zapatillas On Cloud color blanco / gris",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-negro-total",
@@ -261,7 +289,8 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Salomon XT color negro total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "the-north-face-bota-negro",
@@ -279,7 +308,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Dolce & Gabbana Sneaker color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-running-crema-naranja",
@@ -288,7 +318,8 @@ export const ZAPATOS = [
     "tag": "Crema / Naranja",
     "color": "Crema / Naranja",
     "alt": "Zapatillas Adidas Running color crema / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-blanco-plata",
@@ -297,7 +328,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Plata",
     "color": "Blanco / Plata",
     "alt": "Zapatillas Salomon XT-6 color blanco / plata",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-running-blanco-rojo",
@@ -306,7 +338,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Rojo",
     "color": "Blanco / Rojo",
     "alt": "Zapatillas Nike Running color blanco / rojo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-shox-r4-blanco-lila",
@@ -315,7 +348,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Lila",
     "color": "Blanco / Lila",
     "alt": "Zapatillas Nike Shox R4 color blanco / lila",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "on-cloud-crema-rosa",
@@ -324,7 +358,8 @@ export const ZAPATOS = [
     "tag": "Crema / Rosa",
     "color": "Crema / Rosa",
     "alt": "Zapatillas On Cloud color crema / rosa",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "salomon-xt-6-plata",
@@ -333,7 +368,8 @@ export const ZAPATOS = [
     "tag": "Plata",
     "color": "Plata",
     "alt": "Zapatillas Salomon XT-6 color plata",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "skate-chunky-negro-rojo-gris",
@@ -342,7 +378,8 @@ export const ZAPATOS = [
     "tag": "Negro / Rojo / Gris",
     "color": "Negro / Rojo / Gris",
     "alt": "Zapatillas Skate Chunky color negro / rojo / gris",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-running-blanco-celeste",
@@ -351,7 +388,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Celeste",
     "color": "Blanco / Celeste",
     "alt": "Zapatillas Adidas Running color blanco / celeste",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "on-cloud-gris-oscuro",
@@ -360,7 +398,8 @@ export const ZAPATOS = [
     "tag": "Gris oscuro",
     "color": "Gris oscuro",
     "alt": "Zapatillas On Cloud color gris oscuro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-negro-total",
@@ -369,7 +408,8 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Nike NOCTA Hot Step color negro total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "louis-vuitton-lv-skate-negro-blanco",
@@ -378,7 +418,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Louis Vuitton LV Skate color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-air-force-1-rosa-azul-charol",
@@ -387,7 +428,8 @@ export const ZAPATOS = [
     "tag": "Rosa / Azul charol",
     "color": "Rosa / Azul charol",
     "alt": "Zapatillas Nike Air Force 1 color rosa / azul charol",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "numeris-low-negro-blanco",
@@ -396,7 +438,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Numeris Low color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "jordan-air-jordan-3-blanco-verde-naranja",
@@ -405,7 +448,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Verde / Naranja",
     "color": "Blanco / Verde / Naranja",
     "alt": "Zapatillas Air Jordan 3 color blanco / verde / naranja",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "adidas-superstar-blanco-negro",
@@ -414,7 +458,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Negro",
     "color": "Blanco / Negro",
     "alt": "Zapatillas Adidas Superstar color blanco / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "osiris-d3-negro-total",
@@ -423,7 +468,8 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Osiris D3 color negro total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-negro-verde",
@@ -432,7 +478,8 @@ export const ZAPATOS = [
     "tag": "Negro / Verde",
     "color": "Negro / Verde",
     "alt": "Zapatillas Nike NOCTA Hot Step color negro / verde",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "numeris-low-beige-camuflado",
@@ -441,7 +488,8 @@ export const ZAPATOS = [
     "tag": "Beige camuflado",
     "color": "Beige camuflado",
     "alt": "Zapatillas Numeris Low color beige camuflado",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-blanco-amarillo",
@@ -450,7 +498,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Amarillo",
     "color": "Blanco / Amarillo",
     "alt": "Zapatillas Nike NOCTA Hot Step color blanco / amarillo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-morado",
@@ -459,7 +508,8 @@ export const ZAPATOS = [
     "tag": "Morado",
     "color": "Morado",
     "alt": "Zapatillas Nike NOCTA Hot Step color morado",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-skate-v2-blanco-plata",
@@ -468,7 +518,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Plata",
     "color": "Blanco / Plata",
     "alt": "Zapatillas Nike Skate V2 color blanco / plata",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "skate-chunky-azul-naranja",
@@ -477,7 +528,8 @@ export const ZAPATOS = [
     "tag": "Azul / Naranja",
     "color": "Azul / Naranja",
     "alt": "Zapatillas Skate Chunky color azul / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-p-6000-negro-plata",
@@ -486,7 +538,8 @@ export const ZAPATOS = [
     "tag": "Negro / Plata",
     "color": "Negro / Plata",
     "alt": "Zapatillas Nike P-6000 color negro / plata",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "diesel-runner-gris",
@@ -495,7 +548,8 @@ export const ZAPATOS = [
     "tag": "Gris",
     "color": "Gris",
     "alt": "Zapatillas Diesel Runner color gris",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-shox-r4-negro-blanco-azul",
@@ -504,7 +558,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco / Azul",
     "color": "Negro / Blanco / Azul",
     "alt": "Zapatillas Nike Shox R4 color negro / blanco / azul",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-running-negro-blanco",
@@ -513,7 +568,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Adidas Running color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "le-coq-sportif-runner-negro",
@@ -522,7 +578,8 @@ export const ZAPATOS = [
     "tag": "Negro",
     "color": "Negro",
     "alt": "Zapatillas Le Coq Sportif Runner color negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "dolce-y-gabbana-sneaker-dg-negro-total",
@@ -531,7 +588,8 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Dolce & Gabbana Sneaker DG color negro total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-negro-rojo",
@@ -540,7 +598,8 @@ export const ZAPATOS = [
     "tag": "Negro / Rojo",
     "color": "Negro / Rojo",
     "alt": "Zapatillas Salomon XT-6 color negro / rojo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-azul-gris",
@@ -549,7 +608,8 @@ export const ZAPATOS = [
     "tag": "Azul / Gris",
     "color": "Azul / Gris",
     "alt": "Zapatillas Salomon XT-6 color azul / gris",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "amiri-low-negro-salpicado",
@@ -558,7 +618,8 @@ export const ZAPATOS = [
     "tag": "Negro salpicado",
     "color": "Negro salpicado",
     "alt": "Zapatillas Amiri Low color negro salpicado",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "jordan-air-jordan-1-mid-rosa-blanco",
@@ -567,7 +628,8 @@ export const ZAPATOS = [
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Air Jordan 1 Mid color rosa / blanco",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "adidas-running-negro-blanco-verde",
@@ -576,7 +638,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco / Verde",
     "color": "Negro / Blanco / Verde",
     "alt": "Zapatillas Adidas Running color negro / blanco / verde",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-dunk-low-crema-vinotinto",
@@ -585,7 +648,8 @@ export const ZAPATOS = [
     "tag": "Crema / Vinotinto",
     "color": "Crema / Vinotinto",
     "alt": "Zapatillas Nike Dunk Low color crema / vinotinto",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "new-balance-running-crema",
@@ -594,7 +658,8 @@ export const ZAPATOS = [
     "tag": "Crema",
     "color": "Crema",
     "alt": "Zapatillas New Balance Running color crema",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "reebok-club-c-85-blanco-verde",
@@ -603,7 +668,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Verde",
     "color": "Blanco / Verde",
     "alt": "Zapatillas Reebok Club C 85 color blanco / verde",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "the-north-face-bota-gris-negro",
@@ -621,7 +687,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Café",
     "color": "Blanco / Café",
     "alt": "Zapatillas Nike Dunk Low color blanco / café",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-dunk-low-gris-blanco",
@@ -630,7 +697,8 @@ export const ZAPATOS = [
     "tag": "Gris / Blanco",
     "color": "Gris / Blanco",
     "alt": "Zapatillas Nike Dunk Low color gris / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-gris-claro",
@@ -639,7 +707,8 @@ export const ZAPATOS = [
     "tag": "Gris claro",
     "color": "Gris claro",
     "alt": "Zapatillas Salomon XT-6 color gris claro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-air-force-1-naranja-charol",
@@ -648,7 +717,8 @@ export const ZAPATOS = [
     "tag": "Naranja charol",
     "color": "Naranja charol",
     "alt": "Zapatillas Nike Air Force 1 color naranja charol",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-negro-beige",
@@ -657,7 +727,8 @@ export const ZAPATOS = [
     "tag": "Negro / Beige",
     "color": "Negro / Beige",
     "alt": "Zapatillas Salomon XT color negro / beige",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "timberland-bota-6-negro-monograma",
@@ -675,7 +746,8 @@ export const ZAPATOS = [
     "tag": "Plata / Blanco",
     "color": "Plata / Blanco",
     "alt": "Zapatillas Under Armour Running color plata / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "denim-chunky-azul",
@@ -684,7 +756,8 @@ export const ZAPATOS = [
     "tag": "Azul",
     "color": "Azul",
     "alt": "Zapatillas Denim Chunky color azul",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "jordan-air-jordan-3-blanco-cemento-rojo",
@@ -693,7 +766,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Cemento / Rojo",
     "color": "Blanco / Cemento / Rojo",
     "alt": "Zapatillas Air Jordan 3 color blanco / cemento / rojo",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "dior-oblique-low-beige-negro",
@@ -702,7 +776,8 @@ export const ZAPATOS = [
     "tag": "Beige / Negro",
     "color": "Beige / Negro",
     "alt": "Zapatillas Dior Oblique Low color beige / negro",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-air-force-1-verde-amarillo-rojo",
@@ -711,7 +786,8 @@ export const ZAPATOS = [
     "tag": "Verde / Amarillo / Rojo",
     "color": "Verde / Amarillo / Rojo",
     "alt": "Zapatillas Nike Air Force 1 color verde / amarillo / rojo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "bape-road-sta-crema-morado",
@@ -720,7 +796,8 @@ export const ZAPATOS = [
     "tag": "Crema / Morado",
     "color": "Crema / Morado",
     "alt": "Zapatillas BAPE Road Sta color crema / morado",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "salomon-xt-6-gtx-negro-plata",
@@ -729,7 +806,8 @@ export const ZAPATOS = [
     "tag": "Negro / Plata",
     "color": "Negro / Plata",
     "alt": "Zapatillas Salomon XT-6 GTX color negro / plata",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "bape-road-sta-vinotinto",
@@ -738,7 +816,8 @@ export const ZAPATOS = [
     "tag": "Vinotinto",
     "color": "Vinotinto",
     "alt": "Zapatillas BAPE Road Sta color vinotinto",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-p-6000-plata",
@@ -747,7 +826,8 @@ export const ZAPATOS = [
     "tag": "Plata",
     "color": "Plata",
     "alt": "Zapatillas Nike P-6000 color plata",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "numeris-low-negro-rosa",
@@ -756,7 +836,8 @@ export const ZAPATOS = [
     "tag": "Negro / Rosa",
     "color": "Negro / Rosa",
     "alt": "Zapatillas Numeris Low color negro / rosa",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-nocta-hot-step-negro-amarillo",
@@ -765,7 +846,8 @@ export const ZAPATOS = [
     "tag": "Negro / Amarillo",
     "color": "Negro / Amarillo",
     "alt": "Zapatillas Nike NOCTA Hot Step color negro / amarillo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-running-blanco-morado-claro",
@@ -774,7 +856,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Morado claro",
     "color": "Blanco / Morado claro",
     "alt": "Zapatillas Adidas Running color blanco / morado claro",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "dior-oblique-plataforma-beige-negro",
@@ -783,7 +866,8 @@ export const ZAPATOS = [
     "tag": "Beige / Negro",
     "color": "Beige / Negro",
     "alt": "Zapatillas Dior Oblique Plataforma color beige / negro",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-dunk-low-verde-oliva-negro",
@@ -792,7 +876,8 @@ export const ZAPATOS = [
     "tag": "Verde oliva / Negro",
     "color": "Verde oliva / Negro",
     "alt": "Zapatillas Nike Dunk Low color verde oliva / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-air-more-uptempo-negro-blanco",
@@ -801,7 +886,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Nike Air More Uptempo color negro / blanco",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "nike-air-more-uptempo-blanco-total",
@@ -810,7 +896,8 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Nike Air More Uptempo color blanco total",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "nike-shox-r4-rojo-negro",
@@ -819,7 +906,8 @@ export const ZAPATOS = [
     "tag": "Rojo / Negro",
     "color": "Rojo / Negro",
     "alt": "Zapatillas Nike Shox R4 color rojo / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "plataforma-canvas-negro-blanco",
@@ -828,7 +916,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Plataforma Canvas color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-v2k-run-blanco-plata",
@@ -837,7 +926,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Plata",
     "color": "Blanco / Plata",
     "alt": "Zapatillas Nike V2K Run color blanco / plata",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "salomon-xt-6-negro-plata",
@@ -846,7 +936,8 @@ export const ZAPATOS = [
     "tag": "Negro / Plata",
     "color": "Negro / Plata",
     "alt": "Zapatillas Salomon XT-6 color negro / plata",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "jordan-air-jordan-3-negro-cemento",
@@ -855,7 +946,8 @@ export const ZAPATOS = [
     "tag": "Negro cemento",
     "color": "Negro cemento",
     "alt": "Zapatillas Air Jordan 3 color negro cemento",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "nike-running-blanco-menta",
@@ -864,7 +956,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Menta",
     "color": "Blanco / Menta",
     "alt": "Zapatillas Nike Running color blanco / menta",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "new-balance-running-negro-blanco",
@@ -873,7 +966,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas New Balance Running color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "le-coq-sportif-runner-verde-oliva-camuflado",
@@ -882,7 +976,8 @@ export const ZAPATOS = [
     "tag": "Verde oliva camuflado",
     "color": "Verde oliva camuflado",
     "alt": "Zapatillas Le Coq Sportif Runner color verde oliva camuflado",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "the-north-face-bota-blanco",
@@ -900,7 +995,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Nike Knit Cápsulas color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-dunk-low-blanco-negro",
@@ -909,7 +1005,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Negro",
     "color": "Blanco / Negro",
     "alt": "Zapatillas Nike Dunk Low color blanco / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "jordan-air-jordan-11-negro-rojo",
@@ -918,7 +1015,8 @@ export const ZAPATOS = [
     "tag": "Negro / Rojo",
     "color": "Negro / Rojo",
     "alt": "Zapatillas Air Jordan 11 color negro / rojo",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "on-cloud-blanco-verde",
@@ -927,7 +1025,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Verde",
     "color": "Blanco / Verde",
     "alt": "Zapatillas On Cloud color blanco / verde",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "new-balance-running-blanco-verde",
@@ -936,7 +1035,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Verde",
     "color": "Blanco / Verde",
     "alt": "Zapatillas New Balance Running color blanco / verde",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-running-rosa-blanco",
@@ -945,7 +1045,8 @@ export const ZAPATOS = [
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Nike Running color rosa / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-nocta-hot-step-blanco-perla",
@@ -954,7 +1055,8 @@ export const ZAPATOS = [
     "tag": "Blanco perla",
     "color": "Blanco perla",
     "alt": "Zapatillas Nike NOCTA Hot Step color blanco perla",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-air-max-blanco-negro-rojo",
@@ -963,7 +1065,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Negro / Rojo",
     "color": "Blanco / Negro / Rojo",
     "alt": "Zapatillas Nike Air Max color blanco / negro / rojo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-running-negro-menta",
@@ -972,7 +1075,8 @@ export const ZAPATOS = [
     "tag": "Negro / Menta",
     "color": "Negro / Menta",
     "alt": "Zapatillas Adidas Running color negro / menta",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "numeris-glitter-negro",
@@ -981,7 +1085,8 @@ export const ZAPATOS = [
     "tag": "Negro",
     "color": "Negro",
     "alt": "Zapatillas Numeris Glitter color negro",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "new-balance-running-crema-amarillo",
@@ -990,7 +1095,8 @@ export const ZAPATOS = [
     "tag": "Crema / Amarillo",
     "color": "Crema / Amarillo",
     "alt": "Zapatillas New Balance Running color crema / amarillo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-kyrie-3-gris-rosa",
@@ -999,7 +1105,8 @@ export const ZAPATOS = [
     "tag": "Gris / Rosa",
     "color": "Gris / Rosa",
     "alt": "Zapatillas Nike Kyrie 3 color gris / rosa",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "timberland-bota-6-trigo-monograma",
@@ -1017,7 +1124,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Negro",
     "color": "Blanco / Negro",
     "alt": "Zapatillas On Cloud color blanco / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-campus-00s-gris-negro",
@@ -1026,7 +1134,8 @@ export const ZAPATOS = [
     "tag": "Gris / Negro",
     "color": "Gris / Negro",
     "alt": "Zapatillas Adidas Campus 00s color gris / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "numeris-low-negro-total",
@@ -1035,7 +1144,8 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Numeris Low color negro total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "osiris-d3-negro-blanco",
@@ -1044,7 +1154,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Osiris D3 color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "osiris-d3-blanco-total",
@@ -1053,7 +1164,8 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Osiris D3 color blanco total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "new-balance-running-blanco-lila",
@@ -1062,7 +1174,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Lila",
     "color": "Blanco / Lila",
     "alt": "Zapatillas New Balance Running color blanco / lila",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-knit-capsulas-rosa-blanco",
@@ -1071,7 +1184,8 @@ export const ZAPATOS = [
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Nike Knit Cápsulas color rosa / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "bape-road-sta-plata-amarillo",
@@ -1080,7 +1194,8 @@ export const ZAPATOS = [
     "tag": "Plata / Amarillo",
     "color": "Plata / Amarillo",
     "alt": "Zapatillas BAPE Road Sta color plata / amarillo",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-superstar-vinotinto",
@@ -1089,7 +1204,8 @@ export const ZAPATOS = [
     "tag": "Vinotinto",
     "color": "Vinotinto",
     "alt": "Zapatillas Adidas Superstar color vinotinto",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-gris-oscuro",
@@ -1098,7 +1214,8 @@ export const ZAPATOS = [
     "tag": "Gris oscuro",
     "color": "Gris oscuro",
     "alt": "Zapatillas Salomon XT-6 color gris oscuro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "diesel-runner-negro",
@@ -1107,7 +1224,8 @@ export const ZAPATOS = [
     "tag": "Negro",
     "color": "Negro",
     "alt": "Zapatillas Diesel Runner color negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "numeris-low-blanco-total",
@@ -1116,7 +1234,8 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Numeris Low color blanco total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "numeris-glitter-negro-blanco",
@@ -1125,7 +1244,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Numeris Glitter color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-running-blanco-rosa",
@@ -1134,7 +1254,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Rosa",
     "color": "Blanco / Rosa",
     "alt": "Zapatillas Nike Running color blanco / rosa",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "jordan-air-jordan-4-blanco-rosa",
@@ -1143,7 +1264,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Rosa",
     "color": "Blanco / Rosa",
     "alt": "Zapatillas Air Jordan 4 color blanco / rosa",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "jordan-air-jordan-4-blanco-verde-durazno",
@@ -1152,7 +1274,8 @@ export const ZAPATOS = [
     "tag": "Blanco / Verde / Durazno",
     "color": "Blanco / Verde / Durazno",
     "alt": "Zapatillas Air Jordan 4 color blanco / verde / durazno",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "numeris-low-azul-estampado",
@@ -1161,7 +1284,8 @@ export const ZAPATOS = [
     "tag": "Azul estampado",
     "color": "Azul estampado",
     "alt": "Zapatillas Numeris Low color azul estampado",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "dolce-y-gabbana-sneaker-blanco-total",
@@ -1170,7 +1294,8 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Dolce & Gabbana Sneaker color blanco total",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-knit-capsulas-negro-naranja",
@@ -1179,7 +1304,8 @@ export const ZAPATOS = [
     "tag": "Negro / Naranja",
     "color": "Negro / Naranja",
     "alt": "Zapatillas Nike Knit Cápsulas color negro / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "le-coq-sportif-runner-negro-naranja",
@@ -1188,7 +1314,8 @@ export const ZAPATOS = [
     "tag": "Negro / Naranja",
     "color": "Negro / Naranja",
     "alt": "Zapatillas Le Coq Sportif Runner color negro / naranja",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-running-rosa-blanco",
@@ -1197,7 +1324,8 @@ export const ZAPATOS = [
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Adidas Running color rosa / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "dama"
   },
   {
     "img": "nike-zoomx-negro-blanco",
@@ -1206,7 +1334,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Nike ZoomX color negro / blanco",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "adidas-campus-00s-crema-cafe",
@@ -1215,7 +1344,8 @@ export const ZAPATOS = [
     "tag": "Crema / Café",
     "color": "Crema / Café",
     "alt": "Zapatillas Adidas Campus 00s color crema / café",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "salomon-xt-6-azul-arena",
@@ -1224,7 +1354,8 @@ export const ZAPATOS = [
     "tag": "Azul / Arena",
     "color": "Azul / Arena",
     "alt": "Zapatillas Salomon XT-6 color azul / arena",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-air-max-95-amarillo-negro",
@@ -1233,7 +1364,8 @@ export const ZAPATOS = [
     "tag": "Amarillo / Negro",
     "color": "Amarillo / Negro",
     "alt": "Zapatillas Nike Air Max 95 color amarillo / negro",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "nike-kyrie-3-negro-blanco",
@@ -1242,7 +1374,8 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Nike Kyrie 3 color negro / blanco",
-    "precio": null
+    "precio": null,
+    "deporte": "basquetbol"
   },
   {
     "img": "osiris-d3-azul-marino-salmon",
@@ -1251,7 +1384,8 @@ export const ZAPATOS = [
     "tag": "Azul marino / Salmón",
     "color": "Azul marino / Salmón",
     "alt": "Zapatillas Osiris D3 color azul marino / salmón",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   },
   {
     "img": "bape-road-sta-azul-marino",
@@ -1260,6 +1394,7 @@ export const ZAPATOS = [
     "tag": "Azul marino cuero",
     "color": "Azul marino",
     "alt": "Zapatillas BAPE Road Sta azul marino en cuero, vista del video 360",
-    "precio": null
+    "precio": null,
+    "genero": "hombre"
   }
 ];

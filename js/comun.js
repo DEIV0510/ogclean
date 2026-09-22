@@ -9,6 +9,7 @@ import { initCursor, initMagnetic } from './components/cursor.js';
 import { initQuickView } from './components/quickview.js';
 import { initCart } from './components/cart.js';
 import { initVisor } from './components/visor.js';
+import { initFirma } from './components/firma.js';
 
 /** Enlaza todos los CTA de WhatsApp (línea 1 y línea 2). */
 export function initWhatsApp(raiz = document) {
@@ -37,6 +38,7 @@ export function initComun() {
   initCart();
   initQuickView();
   initVisor();
+  initFirma();
   initHeader();
   initMenu();
   initCursor();

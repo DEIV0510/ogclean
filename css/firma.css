@@ -1,0 +1,341 @@
+/* ============================================================
+   OGCLEAN · FIRMA "LA ÓRBITA"
+   Una sola idea que viene del logo (el globo rojo): una curva de
+   meridiano + un punto rojo. Se repite con variaciones:
+   globo del hero · meridianos entre secciones · arco en las
+   tarjetas · punto al final de los títulos · cursor · vuelo al
+   carrito · globo en el cierre y en la tienda.
+   ============================================================ */
+
+:root {
+  --og-orbita: color-mix(in srgb, var(--red) 78%, transparent);
+  --og-punto: var(--red);
+}
+
+/* ---------------- 1 · El globo ---------------- */
+
+[data-globo] { pointer-events: none; }
+
+.globo {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: perspective(900px) rotateX(var(--gx, 0deg)) rotateY(var(--gy, 0deg));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.globo__meridianos * {
+  stroke: currentColor;
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  /* se dibujan al entrar en pantalla */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s var(--ease-in-out);
+}
+.globo__meridianos *:nth-child(2) { transition-delay: 0.12s; }
+.globo__meridianos *:nth-child(3) { transition-delay: 0.24s; }
+.globo__meridianos *:nth-child(n+4) { transition-delay: 0.4s; }
+.is-dibujado .globo__meridianos * { stroke-dashoffset: 0; }
+
+/* Los meridianos giran lento sobre sí mismos, como un globo sobre su eje */
+.globo__meridianos {
+  transform-origin: 100px 100px;
+  animation: og-eje 60s linear infinite;
+}
+@keyframes og-eje { to { transform: rotate(360deg); } }
+
+.globo__orbita {
+  stroke: var(--og-orbita);
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.4s var(--ease-out) 0.6s;
+}
+.is-dibujado .globo__orbita { stroke-dashoffset: 0; }
+
+.globo__punto {
+  fill: var(--og-punto);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--red) 80%, transparent));
+  opacity: 0;
+  transition: opacity 0.6s ease 1.8s;
+}
+.is-dibujado .globo__punto { opacity: 1; }
+
+/* Hero: el globo reemplaza al dibujo que antes solo giraba; ahora sigue al cursor */
+.hero__globe {
+  animation: none;
+  color: color-mix(in srgb, var(--bone) 22%, transparent);
+  aspect-ratio: 1;
+}
+
+/* Cierre: el globo vuelve, más grande, detrás de "Escríbenos" */
+.cta-final { position: relative; }
+.cta-final__globo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: min(92vw, 640px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  color: color-mix(in srgb, var(--bone) 14%, transparent);
+}
+
+/* Tienda: el mismo globo asoma en la esquina de la cabecera */
+.tienda-top__globo {
+  position: absolute;
+  z-index: -1;
+  top: -12%;
+  right: -8%;
+  width: clamp(260px, 42vw, 560px);
+  aspect-ratio: 1;
+  color: color-mix(in srgb, var(--bone) 13%, transparent);
+}
+
+/* ---------------- 2 · Meridianos: la curva que une secciones ---------------- */
+
+.manifiesto,
+.preview,
+.cta-final { position: relative; }
+
+.meridiano {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: clamp(90px, 11vw, 160px);
+  pointer-events: none;
+}
+.meridiano svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.meridiano__linea {
+  fill: none;
+  stroke: var(--og-orbita);
+  stroke-width: 1.2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  stroke-linecap: round;
+}
+.meridiano__punto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  border-radius: 50%;
+  background: var(--og-punto);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--red) 18%, transparent), 0 0 18px color-mix(in srgb, var(--red) 55%, transparent);
+  transform: scale(0);
+  will-change: transform;
+}
+
+/* En el cierre la curva cae al centro, donde espera el globo */
+.meridiano--c { height: clamp(110px, 16vw, 220px); }
+
+/* ---------------- 3 · El punto que cierra los títulos ---------------- */
+
+.section-head .h2::after,
+.lineas .h2::after,
+.runway__head .h2::after,
+.combo__head .h2::after,
+.focus__title::after,
+.social__text .h2::after,
+.preview__head .h2::after,
+.proceso__intro .h2::after,
+.orbita__head .h2::after,
+.tienda-top .h1::after,
+.cta-final__title::after,
+.hero__line--alt::after {
+  content: '';
+  display: inline-block;
+  width: 0.15em;
+  height: 0.15em;
+  margin-left: 0.07em;
+  border-radius: 50%;
+  background: var(--og-punto);
+  vertical-align: baseline;
+  transform: scale(0);
+  transition: transform 0.6s cubic-bezier(.34, 1.56, .64, 1) 0.35s;
+}
+/* aparece con un pequeño rebote cuando el título ya está en pantalla */
+[data-anim].is-in .h2::after,
+.is-in .h2::after,
+.words-in::after,
+.is-in::after,
+.tienda-top .h1::after,
+.lineas .h2::after,
+.runway__head .h2::after,
+.combo__head .h2::after,
+.focus__title::after,
+.hero__line--alt.words-in::after { transform: scale(1); }
+
+/* ---------------- 4 · Tarjetas: halo + arco de órbita ---------------- */
+
+.card__media {
+  --mx: 50%;
+  --my: 40%;
+  isolation: isolate;
+}
+.card__media img {
+  transform: translate3d(var(--tx, 0), var(--ty, 0), 0);
+  transition: transform 0.8s var(--ease-out);
+}
+.card:hover .card__media img {
+  transform: translate3d(var(--tx, 0), var(--ty, 0), 0) scale(1.06);
+}
+
+/* Luz que sigue al cursor: realza el producto sin taparlo */
+.card__media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, 0.34), transparent 46%);
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* La órbita: un arco fino que barre la esquina superior de la foto */
+.card__media::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: -25%;
+  right: -25%;
+  top: 6%;
+  height: 80%;
+  border: 1.4px solid transparent;
+  border-top-color: var(--og-orbita);
+  border-radius: 50%;
+  transform: rotate(-24deg) scale(0.88);
+  opacity: 0;
+  transition: transform 0.9s var(--ease-out), opacity 0.4s ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .card:hover .card__media::before { opacity: 1; }
+  .card:hover .card__media::after { opacity: 1; transform: rotate(-9deg) scale(1); }
+}
+
+/* Táctil: el arco pasa una vez cuando la tarjeta aparece, y la luz responde al toque */
+.card.is-orbita .card__media::after { animation: og-barrido 1.4s var(--ease-out) forwards; }
+@keyframes og-barrido {
+  0% { opacity: 0; transform: rotate(-30deg) scale(0.86); }
+  35% { opacity: 1; }
+  100% { opacity: 0.55; transform: rotate(-9deg) scale(1); }
+}
+.card:active .card__media::before { opacity: 1; }
+
+/* El ojo: su borde se vuelve una pequeña órbita al pasar el cursor */
+.card__ojo::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1.2px solid transparent;
+  border-top-color: var(--og-orbita);
+  border-right-color: var(--og-orbita);
+  opacity: 0;
+  transform: rotate(-40deg);
+  transition: opacity 0.3s ease, transform 0.6s var(--ease-out);
+}
+.card__ojo:hover::after,
+.card__ojo:focus-visible::after { opacity: 1; transform: rotate(140deg); }
+
+/* "Agregar": el punto rojo aparece dentro del botón antes de salir volando */
+.card__buy { position: relative; overflow: hidden; }
+.card__buy::after {
+  content: '';
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: var(--bone);
+  transform: scale(0);
+  transition: transform 0.35s cubic-bezier(.34, 1.56, .64, 1);
+}
+@media (hover: hover) {
+  .card__buy:hover::after { transform: scale(1); }
+}
+
+/* ---------------- 5 · WOW: el punto viaja en órbita al carrito ---------------- */
+
+.og-vuelo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: var(--og-punto);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--red) 20%, transparent), 0 0 24px color-mix(in srgb, var(--red) 70%, transparent);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* El carrito "recibe" el punto: un anillo de órbita se expande desde el ícono */
+.cart-btn,
+.js-cart-open { position: relative; }
+.is-recibe::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+  border: 2px solid var(--og-punto);
+  animation: og-recibe 0.7s var(--ease-out) forwards;
+  pointer-events: none;
+}
+@keyframes og-recibe {
+  from { opacity: 1; transform: scale(0.8); }
+  to { opacity: 0; transform: scale(1.7); }
+}
+
+/* ---------------- 6 · Cursor: un pequeño globo ---------------- */
+
+.cursor__ring::before {
+  content: '';
+  position: absolute;
+  inset: -1px 28%;
+  border: 1px solid color-mix(in srgb, var(--bone) 55%, transparent);
+  border-radius: 50%;
+  transition: inset 0.3s var(--ease-out);
+}
+.cursor.is-hot .cursor__ring::before { inset: -1px 34%; }
+
+/* ---------------- 7 · Dirección tipográfica ---------------- */
+
+/* Los números del hero se leen como marcadores de la marca */
+.hero__facts b {
+  font-stretch: 125%;
+  letter-spacing: -0.05em;
+}
+.hero__facts li:first-child b { color: var(--red-soft); }
+
+/* ---------------- Responsive y accesibilidad ---------------- */
+
+@media (max-width: 700px) {
+  .tienda-top__globo { right: -30%; top: -6%; width: 78vw; }
+  .meridiano { height: 80px; }
+  .meridiano--c { height: 120px; }
+  .meridiano__punto { width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globo__meridianos { animation: none; }
+  .globo__meridianos *, .globo__orbita { stroke-dashoffset: 0; transition: none; }
+  .globo__punto { opacity: 1; transition: none; }
+  .meridiano__linea { stroke-dashoffset: 0; }
+  .card.is-orbita .card__media::after { animation: none; opacity: 0.55; }
+}

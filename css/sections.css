@@ -766,7 +766,9 @@
   margin-bottom: clamp(1.4rem, 3vw, 2rem);
 }
 @media (min-width: 700px) {
-  .preview__cats { grid-template-columns: 1.3fr 1fr 1fr 0.8fr; }
+  /* 6 categorías: Básquetbol destacado arriba a la izquierda, el resto en 2 filas de 3 */
+  .preview__cats { grid-template-columns: repeat(3, 1fr); }
+  .preview__cats .preview-cat:first-child { grid-row: span 2; }
 }
 
 .preview-cat {
@@ -847,7 +849,7 @@
   margin-bottom: 1rem;
 }
 
-/* Móvil: Zapatillas a lo ancho y Gorras + Botas lado a lado (menos scroll) */
+/* Móvil: Básquetbol a lo ancho y el resto en pares (menos scroll) */
 @media (max-width: 699px) {
   .preview__cats { grid-template-columns: 1fr 1fr; }
   .preview-cat { min-height: 150px; }

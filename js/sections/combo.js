@@ -45,10 +45,12 @@ function pintarThumbs(cont, linea, alElegir) {
   });
 }
 
+const tallaBotonesHTML = (item) => item.tallas
+  .map((t) => `<button class="size" type="button" data-talla="${t}">${t}${item.unidad}</button>`)
+  .join('');
+
 function pintarTallas(cont, linea, alElegir) {
-  cont.innerHTML = LINEAS[linea].items[0].tallas
-    .map((t) => `<button class="size" type="button" data-talla="${t}">${t}${LINEAS[linea].items[0].unidad}</button>`)
-    .join('');
+  cont.innerHTML = tallaBotonesHTML(LINEAS[linea].items[0]);
 
   cont.addEventListener('click', (e) => {
     const b = e.target.closest('.size');
@@ -56,6 +58,14 @@ function pintarTallas(cont, linea, alElegir) {
     qsa('.size', cont).forEach((s) => s.classList.toggle('is-active', s === b));
     alElegir(b.dataset.talla);
   });
+}
+
+/* Las zapatillas del combo mezclan básquetbol (US) con hombre/dama (talla
+   colombiana): al cambiar de miniatura hay que repintar las tallas del par
+   elegido, porque ya no son siempre las mismas. */
+function refrescarTallasSneaker(cont, item) {
+  if (!cont) return;
+  cont.innerHTML = tallaBotonesHTML(item);
 }
 
 export function initCombo() {
@@ -80,7 +90,7 @@ export function initCombo() {
     const s = estado.sneakers.item;
     const lineas = ['Hola OGCLEAN, quiero este combo:'];
     if (c) lineas.push(`• Gorra ${c.name} (${c.tag})${estado.caps.talla ? ` talla ${estado.caps.talla}` : ''} — ${precioCOP(c.precio)}`);
-    if (s) lineas.push(`• Zapatillas ${s.name} (${s.tag})${estado.sneakers.talla ? ` talla ${estado.sneakers.talla} US` : ''} — ${tienePrecio(s) ? precioCOP(s.precio) : 'precio a confirmar'}`);
+    if (s) lineas.push(`• Zapatillas ${s.name} (${s.tag})${estado.sneakers.talla ? ` talla ${estado.sneakers.talla}${s.unidad}` : ''} — ${tienePrecio(s) ? precioCOP(s.precio) : 'precio a confirmar'}`);
     lineas.push(`Total: ${textoTotal()}`);
     return lineas.join('\n');
   };
@@ -93,9 +103,15 @@ export function initCombo() {
     if (cta) cta.href = wa(mensaje());
   };
 
+  const sneSizes = qs('#comboSneSizes');
+
   const setItem = (linea, item) => {
     if (!item) return;
     estado[linea].item = item;
+    if (linea === 'sneakers') {
+      estado.sneakers.talla = '';
+      refrescarTallasSneaker(sneSizes, item);
+    }
     const r = refs[linea];
     if (r.preview) r.preview.classList.add('is-swapping');
     setTimeout(() => {
@@ -111,7 +127,7 @@ export function initCombo() {
   pintarThumbs(capThumbs, 'caps', (item) => setItem('caps', item));
   pintarThumbs(sneThumbs, 'sneakers', (item) => setItem('sneakers', item));
   pintarTallas(qs('#comboCapSizes'), 'caps', (t) => { estado.caps.talla = t; refrescar(); });
-  pintarTallas(qs('#comboSneSizes'), 'sneakers', (t) => { estado.sneakers.talla = `${t}`; refrescar(); });
+  pintarTallas(sneSizes, 'sneakers', (t) => { estado.sneakers.talla = `${t}`; refrescar(); });
 
   // Manda el combo completo al carrito (una línea por pieza)
   const add = qs('#comboAdd');

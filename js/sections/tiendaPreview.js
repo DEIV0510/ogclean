@@ -21,10 +21,12 @@ export function initTiendaPreview() {
     const portada = {
       'Gorras cerradas': 'assets/img/caps/yankees-negro-oro-sm.webp',
       'Gorras ajustables': 'assets/img/gorras/los-angeles-dodgers-naranja-pespunte-sm.webp',
-      Zapatillas: 'assets/img/zapatos/jordan-air-jordan-4-blanco-rosa-sm.webp',
+      'Básquetbol': 'assets/img/zapatos/jordan-air-jordan-4-blanco-rosa-sm.webp',
+      'Zapatillas hombre': 'assets/img/zapatos/nike-dunk-low-blanco-negro-sm.webp',
+      'Zapatillas dama': 'assets/img/zapatos/on-cloud-crema-rosa-sm.webp',
       Botas: 'assets/img/zapatos/timberland-bota-6-trigo-monograma-sm.webp',
     };
-    cats.innerHTML = ['Zapatillas', 'Gorras cerradas', 'Gorras ajustables', 'Botas'].map((g) => `
+    cats.innerHTML = ['Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Gorras cerradas', 'Gorras ajustables', 'Botas'].map((g) => `
       <a class="preview-cat" href="${enlace({ categoria: g })}">
         <img src="${portada[g]}" alt="" loading="lazy" decoding="async" width="560" height="560">
         <span class="preview-cat__txt">

@@ -146,6 +146,7 @@ export function agregar(id, talla, cant = 1) {
   else lineas.push({ id, talla, cant });
   pintar();
   animarBadge();
+  document.dispatchEvent(new CustomEvent('og:agregado', { detail: { id, talla } }));
   return true;
 }
 
