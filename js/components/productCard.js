@@ -8,6 +8,11 @@ import { descuento, tienePrecio } from '../data/products.js';
 
 const ojo = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="20" height="20" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" stroke-linejoin="round"/><circle cx="12" cy="12" r="3"/></svg>';
 const bolsa = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15" aria-hidden="true"><path d="M6.5 8h11l-1 11.5a1.5 1.5 0 0 1-1.5 1.4H9a1.5 1.5 0 0 1-1.5-1.4L6.5 8Z" stroke-linejoin="round"/><path d="M9.5 8V6.6a2.5 2.5 0 0 1 5 0V8" stroke-linecap="round"/></svg>';
+const corazon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16" aria-hidden="true"><path d="M12 20.1s-7.4-4.5-9.9-9.1C0.6 7.5 2.2 4 5.7 4c2 0 3.5 1.1 4.3 2.6C10.8 5.1 12.3 4 14.3 4c3.5 0 5.1 3.5 3.6 7-2.5 4.6-9.9 9.1-9.9 9.1Z" stroke-linejoin="round"/></svg>';
+
+/** Botón de favorito, igual en tarjeta y ficha: mismo marcado, el corazón lo pinta favoritos.js. */
+export const favoritoHTML = (p, clase = 'card') =>
+  `<button class="${clase}__fav js-favorito" type="button" data-id="${p.id}" aria-pressed="false" aria-label="Guardar en favoritos">${corazon}</button>`;
 
 const TALLAS_A_LA_VISTA = 5;
 
@@ -42,6 +47,7 @@ export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100
         <img src="${p.srcCard || p.srcSm}" ${p.srcCard ? '' : `srcset="${p.srcSm} 560w, ${p.src} 1000w" sizes="${sizes}"`}
              alt="${p.alt}" loading="lazy" decoding="async" width="560" height="560">
         <button class="card__ojo js-visor" type="button" data-id="${p.id}" aria-label="Ver fotos de ${p.name} en grande">${ojo}</button>
+        ${favoritoHTML(p)}
       </div>
       <div class="card__body">
         <p class="card__kicker mono">${p.marca && p.marca !== 'Otras' ? p.marca : p.tipo}</p>

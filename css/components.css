@@ -892,6 +892,31 @@
 .card__ojo:hover { background: var(--ink); color: var(--bone); transform: scale(1.08); }
 .card__ojo:active { transform: scale(0.94); }
 
+/* Favorito: arriba a la derecha de la foto (tarjeta y ficha comparten estilo) */
+.card__fav, .quick__fav {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 4;
+  width: 34px; height: 34px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, #fff 94%, transparent);
+  color: var(--ink);
+  box-shadow: 0 6px 18px -6px rgba(12, 10, 9, 0.45);
+  transition: transform 0.3s var(--ease-out), background 0.25s ease, color 0.25s ease;
+}
+.card__fav:hover, .quick__fav:hover { transform: scale(1.08); }
+.card__fav:active, .quick__fav:active { transform: scale(0.9); }
+.card__fav.is-activo, .quick__fav.is-activo { color: var(--red); }
+.card__fav.is-activo svg, .quick__fav.is-activo svg { fill: currentColor; }
+.card__fav.is-pop, .quick__fav.is-pop { animation: fav-pop 0.26s var(--ease-out); }
+@keyframes fav-pop {
+  35% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
 .card__desc {
   position: absolute;
   top: 0.7rem;

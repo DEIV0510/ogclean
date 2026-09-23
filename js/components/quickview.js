@@ -4,7 +4,7 @@
 import { qs, qsa } from '../utils/dom.js';
 import { porId, LINEAS, tienePrecio, descuento } from '../data/products.js';
 import { SITE, wa, precioCOP } from '../data/site.js';
-import { cardHTML } from './productCard.js';
+import { cardHTML, favoritoHTML } from './productCard.js';
 import { agregar, aviso } from './cart.js';
 
 const waIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>';
@@ -31,6 +31,7 @@ function fichaHTML(p) {
       <img src="${p.src}" alt="${p.alt}" width="1000" height="1000" decoding="async">
       <span class="quick__hint">Clic para acercar</span>
       ${p.video ? `<video class="quick__video" src="${p.video}" poster="${p.src}" muted loop playsinline autoplay preload="metadata" aria-label="Video 360° de ${p.name}"></video><span class="quick__hint quick__hint--video">▶ Video 360°</span>` : ''}
+      ${favoritoHTML(p, 'quick')}
     </div>
 
     <div class="quick__info">
@@ -85,6 +86,8 @@ function activarZoom() {
   const img = qs('img', media);
 
   media.addEventListener('click', (e) => {
+    // El corazón de favoritos vive dentro de la foto: no debe activar el zoom
+    if (e.target.closest('.js-favorito')) return;
     // Con video 360°, el primer clic lo quita y deja la foto lista para acercar
     const video = qs('.quick__video', media);
     if (video && !video.hidden) {

@@ -175,10 +175,13 @@
 
 /* ---------------- 4 · Tarjetas: halo + arco de órbita ---------------- */
 
+/* isolation va en .card (no en .card__media): así el ::before con mix-blend-mode
+   sigue contenido, pero el ojo y el favorito (z-index más alto) compiten en el
+   mismo contexto que .card__btn en vez de quedar atrapados dentro de la foto */
+.card { isolation: isolate; }
 .card__media {
   --mx: 50%;
   --my: 40%;
-  isolation: isolate;
 }
 .card__media img {
   transform: translate3d(var(--tx, 0), var(--ty, 0), 0);
