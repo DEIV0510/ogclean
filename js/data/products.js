@@ -10,19 +10,18 @@ export const PRECIOS = { caps: 85000, sneakers: 185000 };
 
 export const TALLAS = {
   caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
-  // Básquetbol y botas conservan tallas US, como ya estaba publicado (el usuario
-  // solo confirmó talla colombiana para las zapatillas de calle, no para botas)
+  // Básquetbol conserva talla US, como ya estaba publicado
   basquetbol: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
-  botas: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
-  // Zapatillas de calle: talla colombiana confirmada por el dueño
+  // Botas y zapatillas de calle: talla colombiana confirmada por el dueño
+  botas: ['40', '41', '42', '43', '44'],
   hombre: ['40', '41', '42', '43', '44'],
   dama: ['36', '37', '38', '39'],
 };
 
-export const UNIDAD_TALLA = { caps: '', basquetbol: ' US', botas: ' US', hombre: '', dama: '' };
+export const UNIDAD_TALLA = { caps: '', basquetbol: ' US', botas: '', hombre: '', dama: '' };
 
-/** Grupo de talla de una zapatilla/bota: básquetbol y botas conservan US;
- *  el resto usa la talla colombiana del género. */
+/** Grupo de talla de una zapatilla/bota: solo básquetbol conserva US;
+ *  botas y calle usan talla colombiana (botas = rango hombre). */
 function grupoTalla(item) {
   if (item.deporte === 'basquetbol') return 'basquetbol';
   if (/bota/i.test(item.name)) return 'botas'; // item aún no tiene `tipo`: se decora más abajo
