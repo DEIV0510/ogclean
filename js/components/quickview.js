@@ -13,6 +13,7 @@ const bolsaIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
 let modal, cuerpo, scroll, ultimoFoco = null;
 let tallaElegida = '';
+let cantidadElegida = 1;
 
 /* Primero la misma marca, luego el resto de la línea */
 function relacionados(p) {
@@ -39,12 +40,21 @@ function fichaHTML(p) {
       <h2 class="h2 quick__title">${p.name}</h2>
       <p class="lead">${p.tag}${p.tag.toLowerCase().includes(p.color.toLowerCase()) ? '' : ` · ${p.color}`}. ${p.linea === 'caps' ? (p.cierre === 'Ajustable' ? 'Ajustable, talla única.' : 'Cerrada, solo las tallas disponibles.') : `${p.marca}, ${p.unidad ? 'talla US' : 'talla colombiana'}.`}</p>
 
-      <p class="quick__price${tienePrecio(p) ? '' : ' is-cotizar'}">${precioCOP(p.precio)} <small>${tienePrecio(p) ? (p.linea === 'caps' ? 'Precio único de la línea' : 'Precio confirmado') : 'Agrégalo y te lo confirmamos en el chat'}</small></p>
+      <p class="quick__price${tienePrecio(p) ? '' : ' is-cotizar'}" id="quickPrecio"><span id="quickPrecioN">${precioCOP(p.precio)}</span> <small>${tienePrecio(p) ? (p.linea === 'caps' ? 'Precio único de la línea' : 'Precio confirmado') : 'Agrégalo y te lo confirmamos en el chat'}</small></p>
       ${descuento(p) ? `<p class="quick__antes">Antes <s>${precioCOP(descuento(p).antes)}</s> · Ahorras ${precioCOP(descuento(p).ahorro)} (-${descuento(p).porcentaje}%)</p>` : ''}
 
       <div>
         <p class="mono" style="margin-bottom:.5rem">${p.tallas.length === 1 ? 'Talla única' : 'Elige tu talla'}</p>
         <div class="sizes" id="quickSizes" role="group" aria-label="Tallas disponibles">${tallas}</div>
+      </div>
+
+      <div>
+        <p class="mono" style="margin-bottom:.5rem">Cantidad</p>
+        <div class="qty" id="quickQty" role="group" aria-label="Cantidad">
+          <button class="qty__btn" type="button" data-qty="menos" aria-label="Quitar una unidad">−</button>
+          <span class="qty__n" id="quickQtyN">1</span>
+          <button class="qty__btn" type="button" data-qty="mas" aria-label="Agregar una unidad">+</button>
+        </div>
       </div>
 
       <button class="btn btn--dark btn--lg btn--block" id="quickAdd" type="button">
@@ -75,8 +85,9 @@ function fichaHTML(p) {
 }
 
 function mensaje(p) {
-  const partes = [`Hola OGCLEAN, quiero comprar: ${p.name} (${p.tag}) — ${tienePrecio(p) ? precioCOP(p.precio) : 'precio a confirmar'}.`];
+  const partes = [`Hola OGCLEAN, quiero comprar: ${p.name} (${p.tag}) — ${tienePrecio(p) ? precioCOP(p.precio * cantidadElegida) : 'precio a confirmar'}.`];
   if (tallaElegida) partes.push(`Talla: ${tallaElegida}${p.unidad}.`);
+  if (cantidadElegida > 1) partes.push(`Cantidad: ${cantidadElegida}.`);
   return partes.join(' ');
 }
 
@@ -110,6 +121,7 @@ export function abrirFicha(id) {
   if (!p || !modal) return;
 
   tallaElegida = '';
+  cantidadElegida = 1;
   cuerpo.innerHTML = fichaHTML(p);
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
@@ -118,11 +130,26 @@ export function abrirFicha(id) {
 
   const cta = qs('#quickCta');
   const sizes = qs('#quickSizes');
+  const qty = qs('#quickQty');
+  const qtyN = qs('#quickQtyN');
+  const precioN = qs('#quickPrecioN');
   const link2 = qs('.js-wa2', cuerpo);
 
   const refrescarCta = () => { if (cta) cta.href = wa(mensaje(p)); };
+  const refrescarPrecio = () => { if (precioN && tienePrecio(p)) precioN.textContent = precioCOP(p.precio * cantidadElegida); };
   refrescarCta();
   if (link2) link2.href = wa(link2.dataset.wa, SITE.whatsapp.linea2.numero);
+
+  if (qty) {
+    qty.addEventListener('click', (e) => {
+      const b = e.target.closest('.qty__btn');
+      if (!b) return;
+      cantidadElegida = Math.min(20, Math.max(1, cantidadElegida + (b.dataset.qty === 'mas' ? 1 : -1)));
+      if (qtyN) qtyN.textContent = cantidadElegida;
+      refrescarPrecio();
+      refrescarCta();
+    });
+  }
 
   if (sizes) {
     sizes.addEventListener('click', (e) => {
@@ -153,8 +180,8 @@ export function abrirFicha(id) {
   if (add) {
     add.addEventListener('click', () => {
       if (pedirTalla()) return;
-      agregar(p.id, tallaElegida);
-      aviso(p, tallaElegida);
+      agregar(p.id, tallaElegida, cantidadElegida);
+      aviso(p, tallaElegida, cantidadElegida);
       const original = add.innerHTML;
       add.classList.add('is-added');
       add.innerHTML = '✓ Agregado al carrito';

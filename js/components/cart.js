@@ -176,13 +176,13 @@ function animarBadge() {
 let avisoTimer = 0;
 
 /** Confirma lo agregado sin sacar al visitante de donde está. */
-export function aviso(p, talla) {
+export function aviso(p, talla, cant = 1) {
   const el = qs('#aviso');
   if (!el || !p) return;
   qs('#avisoImg', el).src = p.srcCard || p.srcSm;
   qs('#avisoImg', el).alt = '';
   qs('#avisoNombre', el).textContent = p.name;
-  qs('#avisoMeta', el).textContent = `${p.tag}${talla ? (talla === 'Ajustable' ? ' · Ajustable' : ` · Talla ${talla}${p.unidad}`) : ''}`;
+  qs('#avisoMeta', el).textContent = `${p.tag}${talla ? (talla === 'Ajustable' ? ' · Ajustable' : ` · Talla ${talla}${p.unidad}`) : ''}${cant > 1 ? ` · x${cant}` : ''}`;
   el.hidden = false;
   requestAnimationFrame(() => el.classList.add('is-visible'));
   clearTimeout(avisoTimer);
