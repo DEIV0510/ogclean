@@ -4,9 +4,10 @@
 import { ZAPATOS } from './zapatos.js';
 import { GORRAS } from './gorras.js';
 
-/* Precio por defecto de cada línea. En zapatillas solo los Kyrie tienen precio
-   confirmado: el resto trae su propio `precio` (null = se cotiza por WhatsApp). */
-export const PRECIOS = { caps: 85000, sneakers: 185000 };
+/* Precio por defecto de cada línea (fallback solo para items sin `precio` propio,
+   como las 15 gorras cerradas originales del array CAPS). El resto del catálogo
+   ya trae su `precio` real en zapatos.js/gorras.js (null = se cotiza por WhatsApp). */
+export const PRECIOS = { caps: { Cerrada: 95000, Ajustable: 85000 }, sneakers: 185000 };
 
 export const TALLAS = {
   caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
@@ -64,7 +65,7 @@ function decorar(item, linea, idx) {
     linea,
     idx,
     id: `${linea}-${item.img}`,
-    precio: item.precio !== undefined ? item.precio : PRECIOS[linea],
+    precio: item.precio !== undefined ? item.precio : (linea === 'caps' ? PRECIOS.caps[item.cierre] : PRECIOS[linea]),
     tallas: item.tallas && item.tallas.length ? item.tallas : TALLAS[linea === 'sneakers' ? grupoTalla(item) : linea],
     unidad: linea === 'sneakers' ? UNIDAD_TALLA[grupoTalla(item)] : UNIDAD_TALLA[linea],
     src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
