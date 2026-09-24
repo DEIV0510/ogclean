@@ -319,7 +319,7 @@
   text-transform: uppercase;
   color: var(--muted);
 }
-.spec-list .v { font-weight: 600; text-align: right; }
+.spec-list .v { font-weight: 600; text-align: right; font-stretch: 78%; letter-spacing: -0.01em; }
 
 .quick__related { display: grid; gap: 0.9rem; }
 .quick__related-track {
