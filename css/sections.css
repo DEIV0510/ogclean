@@ -142,6 +142,7 @@
 /* ══════ MANIFIESTO ══════ */
 
 .manifiesto {
+  position: relative;
   padding-block: clamp(5rem, 14vw, 11rem);
   background: var(--bone);
 }
@@ -210,7 +211,7 @@
 
 /* ══════ RUNWAY (scroll horizontal) ══════ */
 
-.runway { background: var(--bone); padding-block: clamp(3.5rem, 9vw, 6rem) clamp(3rem, 7vw, 5rem); overflow: hidden; }
+.runway { position: relative; background: var(--bone); padding-block: clamp(3.5rem, 9vw, 6rem) clamp(3rem, 7vw, 5rem); overflow: hidden; }
 .runway__head {
   display: flex;
   align-items: flex-end;
@@ -745,7 +746,7 @@
 
 /* ══════ TIENDA · VISTA PREVIA EN EL INICIO ══════ */
 
-.preview { background: var(--bone); }
+.preview { position: relative; overflow: hidden; background: var(--bone); }
 .preview__head {
   display: grid;
   gap: 1.2rem;
