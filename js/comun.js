@@ -2,7 +2,7 @@
    ficha de producto, cursor y reveals. */
 
 import { qs, qsa } from './utils/dom.js';
-import { SITE, wa } from './data/site.js';
+import { wa } from './data/site.js';
 import { initReveals, initMarquees } from './utils/motion.js';
 import { initHeader, initMenu } from './components/nav.js';
 import { initCursor, initMagnetic } from './components/cursor.js';
@@ -12,15 +12,10 @@ import { initVisor } from './components/visor.js';
 import { initFirma } from './components/firma.js';
 import { initFavoritos } from './components/favoritos.js';
 
-/** Enlaza todos los CTA de WhatsApp (línea 1 y línea 2). */
+/** Enlaza todos los CTA de WhatsApp con la única línea de atención. */
 export function initWhatsApp(raiz = document) {
   qsa('.js-wa', raiz).forEach((el) => {
     el.href = wa(el.dataset.wa || 'Hola OGCLEAN, quiero más información.');
-    el.target = '_blank';
-    el.rel = 'noopener';
-  });
-  qsa('.js-wa2', raiz).forEach((el) => {
-    el.href = wa(el.dataset.wa || 'Hola OGCLEAN, quiero más información.', SITE.whatsapp.linea2.numero);
     el.target = '_blank';
     el.rel = 'noopener';
   });

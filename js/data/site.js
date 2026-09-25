@@ -5,7 +5,6 @@ export const SITE = {
   tagline: 'Estilo propio, al mejor precio.',
   whatsapp: {
     linea1: { numero: '573137558643', label: '+57 313 755 8643' },
-    linea2: { numero: '573235182745', label: '+57 323 518 2745' },
   },
   redes: {
     facebook: 'https://www.facebook.com/profile.php?id=61577983661507',

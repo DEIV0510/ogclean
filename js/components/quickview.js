@@ -63,9 +63,6 @@ function fichaHTML(p) {
       <a class="btn btn--primary btn--lg btn--block" id="quickCta" href="#" target="_blank" rel="noopener">
         ${waIcon} Pedir solo esta pieza
       </a>
-      <a class="link-line js-wa2" data-wa="Hola OGCLEAN, quiero preguntar por ${p.name} (${p.tag})." href="#">
-        Escribir a la línea 2 <span aria-hidden="true">→</span>
-      </a>
 
       <ul class="spec-list">
         <li><span class="k">Línea</span><span class="v">${p.linea === 'caps' ? [p.equipo, p.liga].filter(Boolean).join(' · ') || p.tipo : p.marca}</span></li>
@@ -133,12 +130,10 @@ export function abrirFicha(id) {
   const qty = qs('#quickQty');
   const qtyN = qs('#quickQtyN');
   const precioN = qs('#quickPrecioN');
-  const link2 = qs('.js-wa2', cuerpo);
 
   const refrescarCta = () => { if (cta) cta.href = wa(mensaje(p)); };
   const refrescarPrecio = () => { if (precioN && tienePrecio(p)) precioN.textContent = precioCOP(p.precio * cantidadElegida); };
   refrescarCta();
-  if (link2) link2.href = wa(link2.dataset.wa, SITE.whatsapp.linea2.numero);
 
   if (qty) {
     qty.addEventListener('click', (e) => {

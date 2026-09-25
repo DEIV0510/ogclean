@@ -40,10 +40,28 @@ export function initTiendaPreview() {
   if (marcas) {
     const conteo = {};
     TODOS.forEach((p) => { if (p.marca !== 'Otras') conteo[p.marca] = (conteo[p.marca] || 0) + 1; });
+    // Portada curada por marca (una foto real y representativa, no "la primera que salga")
+    const portadaMarca = {
+      Nike: 'assets/img/sneakers/kyrie3-blanco-sm.webp',
+      Adidas: 'assets/img/zapatos/adidas-trefoil-low-blanco-gris-sm.webp',
+      Salomon: 'assets/img/zapatos/salomon-xt-6-crema-cafe-sm.webp',
+      Jordan: 'assets/img/zapatos/jordan-air-jordan-11-blanco-negro-charol-sm.webp',
+      'New Balance': 'assets/img/zapatos/new-balance-running-blanco-plata-sm.webp',
+      On: 'assets/img/zapatos/on-cloud-blanco-gris-sm.webp',
+    };
     marcas.innerHTML = Object.entries(conteo)
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 10)
-      .map(([m, n]) => `<a class="chip" href="${enlace({ marca: m })}">${m} <span class="chip__n">${n}</span></a>`)
+      .filter(([m]) => portadaMarca[m])
+      .slice(0, 6)
+      .map(([m, n]) => `
+        <a class="preview-cat preview-marca" href="${enlace({ marca: m })}">
+          <img src="${portadaMarca[m]}" alt="" loading="lazy" decoding="async" width="560" height="560">
+          <span class="preview-cat__txt">
+            <span class="preview-cat__n mono">${n} productos</span>
+            <span class="preview-cat__t">${m}</span>
+          </span>
+          <span class="preview-cat__flecha" aria-hidden="true">→</span>
+        </a>`)
       .join('');
   }
 
