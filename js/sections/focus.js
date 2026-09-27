@@ -2,12 +2,20 @@
    encendiendo uno a uno. Sin GSAP cae a un IntersectionObserver simple. */
 
 import { qs, qsa, reducedMotion, clamp, rafThrottle } from '../utils/dom.js';
+import { porId } from '../data/products.js';
+import { precioCOP } from '../data/site.js';
 
 export function initFocus(gsap) {
   const seccion = qs('#focus');
   const img = qs('#focusImg');
   const pasos = qsa('.focus__step');
   if (!seccion || !img || !pasos.length) return;
+
+  // El precio sale del catálogo (la misma fuente que la ficha y el carrito): así este
+  // texto no vuelve a quedar desfasado cuando cambie el precio de la pieza
+  const precioEl = qs('#focusPrecio');
+  const pieza = porId(qs('.focus__panel .js-quick')?.dataset.id);
+  if (precioEl && pieza) precioEl.textContent = precioCOP(pieza.precio);
 
   const encender = (i) => pasos.forEach((p, idx) => p.classList.toggle('is-on', idx === i));
 

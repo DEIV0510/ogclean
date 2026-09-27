@@ -43,6 +43,11 @@
 .hero__inner { position: relative; z-index: 2; display: grid; gap: clamp(1.2rem, 3vw, 2rem); }
 .hero__eyebrow { color: var(--red-soft); }
 
+/* Tres frases cortas: en pantallas anchas van en una línea separadas por puntos,
+   en móvil se apilan (ver el bloque ≤700px) para dejarle su columna a la mascota */
+.hero__tags { display: flex; flex-wrap: wrap; gap: 0.2rem 0.5rem; }
+.hero__tags b { font-weight: inherit; color: var(--bone); }
+
 .hero__title { margin: 0; }
 .hero__line { display: block; }
 .hero__line--alt { padding-left: 0.06em; }
@@ -95,7 +100,8 @@
 /* La mascota es un sticker con fondo transparente, no una foto: sin marco
    circular ni recorte — solo el personaje flotando, con su propia sombra. */
 .hero__float--mascota {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 897 / 1443;   /* el ratio real del sticker: sin aire arriba ni abajo */
+  z-index: -1;                /* dentro de .hero__inner: por debajo del texto, encima del fondo */
   border-radius: 0;
   overflow: visible;
   border: none;
@@ -135,9 +141,60 @@
   100% { transform: scaleY(0); transform-origin: 50% 100%; }
 }
 
-@media (max-width: 600px) {
+/* Pantallas anchas: la mascota flota sobre el hero (no sobre el bloque de texto) */
+@media (min-width: 701px) {
+  .hero__inner { position: static; }
+  .hero__tags > span:not(:last-child)::after { content: '·'; margin-left: 0.5rem; }
+}
+
+/* Móvil: la mascota es una columna del propio bloque «eyebrow + título», no una pieza
+   suelta encima del hero. Así ni se recorta ni pisa el texto, en cualquier ancho:
+   – su columna es lo que sobra al lado de «COPIA.» (≈3.85 em del título contando el
+     punto rojo; el título escala con --fs-display) menos un margen, y
+   – su alto (1.61 × ancho) cabe en el bloque, porque el ancho también se limita a 1.68 em + 37px. */
+@media (max-width: 700px) {
+  /* la foto circular de zapatillas caería justo detrás de la columna de la mascota */
   .hero__float--b { display: none; }
-  .hero__float--a { top: 9%; right: -6%; opacity: 0.9; }
+
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr)
+      clamp(56px, min(calc(100% - 3.85 * var(--fs-display) - 8px), calc(1.68 * var(--fs-display) + 37px)), 230px);
+    column-gap: 12px;
+  }
+  .hero__eyebrow, .hero__title { grid-column: 1; }
+  .hero__grid { grid-column: 1 / -1; }
+
+  /* El punto rojo de «COPIA.» no ocupa ancho de línea (cuelga hacia el hueco entre
+     columnas): si ocupara, en una columna justa saltaría solo a una tercera línea */
+  .hero__line--alt::after { margin-right: -0.22em; }
+
+  .hero__eyebrow::before { display: none; }
+  .hero__tags {
+    flex-direction: column;
+    gap: 0.18rem;
+    padding-left: 0.65rem;
+    border-left: 1px solid currentColor;
+  }
+
+  .hero__float--mascota {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    top: auto;
+    right: auto;
+    width: 100%;
+    opacity: 1;
+    /* sin parallax en móvil: initParallax() escribe translate en línea y la sacaría de su columna */
+    translate: none !important;
+  }
+}
+
+/* ≤299px (p. ej. la pantalla externa de un plegable): junto a «COPIA.» ya no cabe una
+   columna útil para la mascota; se oculta y el título vuelve a tener todo el ancho */
+@media (max-width: 299px) {
+  .hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .hero__float--mascota { display: none; }
 }
 
 @media (min-width: 900px) {

@@ -154,7 +154,7 @@
     </div>
 
     <div class="container hero__inner">
-      <p class="eyebrow hero__eyebrow" data-anim="fade">Gorras · Zapatillas multimarca · Colombia</p>
+      <p class="eyebrow hero__eyebrow" data-anim="fade"><span class="hero__tags"><span>Gorras <b>New Era</b></span><span>Zapatillas multimarca</span><span>Colombia</span></span></p>
 
       <h1 class="display hero__title">
         <span class="hero__line" data-split>Tu fit</span>
@@ -178,12 +178,16 @@
           <li><b>32</b><span>departamentos con envío</span></li>
         </ul>
       </div>
+
+      <!-- Mascota: vive dentro del bloque de texto para que en móvil ocupe su propia columna
+           junto al título (nunca recortada ni sobre el texto); en pantallas anchas el CSS la
+           suelta y la ancla al hero -->
+      <div class="hero__float hero__float--a hero__float--mascota" data-parallax="0.16" aria-hidden="true">
+        <img src="assets/img/brand/mascota-jordan.webp" alt="" width="897" height="1443" fetchpriority="high">
+      </div>
     </div>
 
-    <!-- Piezas flotantes con parallax -->
-    <div class="hero__float hero__float--a hero__float--mascota" data-parallax="0.16" aria-hidden="true">
-      <img src="assets/img/brand/mascota-jordan.webp" alt="" width="897" height="1443" fetchpriority="high">
-    </div>
+    <!-- Pieza flotante con parallax -->
     <div class="hero__float hero__float--b" data-parallax="-0.1" aria-hidden="true">
       <img src="assets/img/sneakers/kyrie7-verde-azul-sm.webp" alt="" width="500" height="500" loading="lazy">
     </div>
@@ -304,7 +308,7 @@
           </div>
           <div class="focus__step" data-step="2">
             <span class="mono">03 · Precio</span>
-            <p>$85.000. Tallas 7 a 7 3/8, y te confirmamos disponibilidad por WhatsApp.</p>
+            <p><span id="focusPrecio">$95.000</span>. Tallas 7 a 7 3/8, y te confirmamos disponibilidad por WhatsApp.</p>
           </div>
         </div>
         <a class="btn btn--primary js-quick js-magnetic" data-id="caps-padres-cafe" href="#catalogo">Ver ficha completa <span class="btn__arrow">→</span></a>
