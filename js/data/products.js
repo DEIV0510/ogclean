@@ -71,9 +71,10 @@ function decorar(item, linea, idx) {
     srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
     // Gorras en collage: la tarjeta muestra solo el frente; ficha y visor, la foto completa
     srcCard: item.carpeta === 'gorras' ? `assets/img/gorras/${item.img}-card.webp` : null,
+    // Guayos y zuecos traen su `tipo` en los datos; el resto se deduce del nombre
     tipo: linea === 'caps'
       ? (item.cierre === 'Ajustable' ? 'Gorra ajustable' : 'Gorra cerrada')
-      : (/bota/i.test(item.name) ? 'Botas' : 'Zapatillas'),
+      : (item.tipo || (/bota/i.test(item.name) ? 'Botas' : 'Zapatillas')),
   };
 }
 
@@ -154,8 +155,8 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   if (p.linea === 'caps') {
     p.grupo = p.cierre === 'Ajustable' ? 'Gorras ajustables' : 'Gorras cerradas';
     p.equipo = p.equipo || null;
-  } else if (p.tipo === 'Botas') {
-    p.grupo = 'Botas';
+  } else if (p.tipo === 'Botas' || p.tipo === 'Guayos' || p.tipo === 'Zuecos') {
+    p.grupo = p.tipo;
   } else if (p.deporte === 'basquetbol') {
     p.grupo = 'Básquetbol';
   } else {

@@ -25,8 +25,14 @@ export function initTiendaPreview() {
       'Zapatillas hombre': 'assets/img/zapatos/nike-dunk-low-blanco-negro-sm.webp',
       'Zapatillas dama': 'assets/img/zapatos/on-cloud-crema-rosa-sm.webp',
       Botas: 'assets/img/zapatos/timberland-bota-6-trigo-monograma-sm.webp',
+      Guayos: 'assets/img/zapatos/nike-phantom-celeste-negro-fucsia-sm.webp',
+      Zuecos: 'assets/img/zapatos/adidas-adimule-cafe-gamuza-sm.webp',
     };
-    cats.innerHTML = ['Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Gorras cerradas', 'Gorras ajustables', 'Botas'].map((g) => `
+    // 8 accesos: en escritorio llenan la grilla de 3 (Básquetbol ocupa dos filas); una categoría sin
+    // productos no se muestra
+    cats.innerHTML = ['Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Gorras cerradas', 'Gorras ajustables', 'Guayos', 'Botas', 'Zuecos']
+      .filter((g) => cuenta(g) > 0)
+      .map((g) => `
       <a class="preview-cat" href="${enlace({ categoria: g })}">
         <img src="${portada[g]}" alt="" loading="lazy" decoding="async" width="560" height="560">
         <span class="preview-cat__txt">

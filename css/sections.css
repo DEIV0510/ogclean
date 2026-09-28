@@ -142,7 +142,7 @@
 }
 
 /* Pantallas anchas: la mascota flota sobre el hero (no sobre el bloque de texto) */
-@media (min-width: 701px) {
+@media (min-width: 700.02px) {
   .hero__inner { position: static; }
   .hero__tags > span:not(:last-child)::after { content: '·'; margin-left: 0.5rem; }
 }
@@ -749,7 +749,7 @@
   color: color-mix(in srgb, var(--bone) 45%, var(--ink));
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .footer__bottom { padding-bottom: calc(4.6rem + env(safe-area-inset-bottom, 0px)); }
 }
 
@@ -791,14 +791,14 @@
 .combo__head .h2, .lineas .h2 { max-width: 14ch; }
 
 /* En móvil el indicador de scroll choca con las cifras del hero */
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .hero__scroll { display: none; }
   .hero { padding-bottom: clamp(2.5rem, 7vh, 4rem); }
 }
 
 /* La pista de destacados: en móvil la pista de ayuda baja a su propia línea */
 .runway__head { flex-wrap: wrap; }
-@media (max-width: 699px) {
+@media (max-width: 699.98px) {
   .runway__hint { flex: 1 0 100%; order: 2; }
 }
 
@@ -875,7 +875,8 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-stretch: 112%;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  /* la tarjeta mide ~1/3 del ancho: con 4vw «BÁSQUETBOL» se salía entre 700 y 1100px */
+  font-size: clamp(1.2rem, 2.8vw, 2.4rem);
   text-transform: uppercase;
   letter-spacing: -0.03em;
   line-height: 0.95;
@@ -913,10 +914,10 @@
 }
 @media (max-width: 480px) {
   .preview-marca { min-height: 150px; }
-  .preview-marca .preview-cat__t { font-size: 1.1rem; }
+  .preview-marca .preview-cat__t { font-size: clamp(0.9rem, 4.6vw, 1.1rem); }
 }
 
-@media (max-width: 699px) {
+@media (max-width: 699.98px) {
   #previewMarcas { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
   #previewMarcas::-webkit-scrollbar { display: none; }
   #previewMarcas .chip { flex: 0 0 auto; }
@@ -932,11 +933,15 @@
 }
 
 /* Móvil: Básquetbol a lo ancho y el resto en pares (menos scroll) */
-@media (max-width: 699px) {
+@media (max-width: 699.98px) {
   .preview__cats { grid-template-columns: 1fr 1fr; }
   .preview-cat { min-height: 150px; }
   .preview-cat:first-child { grid-column: 1 / -1; min-height: 190px; }
-  .preview-cat__t { font-size: 1.35rem; }
+  /* si tras la primera queda una sola en la última fila, que también vaya a lo ancho */
+  .preview-cat:last-child:nth-child(even) { grid-column: 1 / -1; }
+  /* escala con el ancho: «AJUSTABLES» y «ZAPATILLAS» tienen que caber en media pantalla (a 390px se cortaban) */
+  .preview-cat__t { font-size: clamp(0.8rem, 4.1vw, 1.35rem); }
+  .preview-cat:last-child:nth-child(even) .preview-cat__t { font-size: 1.8rem; }
   .preview-cat:first-child .preview-cat__t { font-size: 1.8rem; }
   .preview-cat__flecha { width: 34px; height: 34px; font-size: 0.95rem; }
 }

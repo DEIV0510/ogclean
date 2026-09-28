@@ -167,6 +167,17 @@
   text-transform: uppercase;
   border-radius: 999px;
   backdrop-filter: blur(4px);
+  /* nunca por debajo del corazón (34px arriba a la derecha) */
+  max-width: calc(100% - 1.8rem - 34px);
+  line-height: 1.35;
+}
+/* como mucho 2 líneas: el recorte va en el span interno (sin relleno); con el relleno en el mismo
+   elemento, la tercera línea asomaba por el borde inferior de la etiqueta */
+.card__tag > span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .card__body {
@@ -447,7 +458,7 @@
   .wa-mascota:focus-visible .wa-mascota__bocadillo { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .wa-float { bottom: calc(env(safe-area-inset-bottom, 0px) + 4.6rem); }
   .wa-mascota { bottom: calc(env(safe-area-inset-bottom, 0px) + 4.6rem); width: 50px; }
 }
@@ -473,7 +484,7 @@
    una posición seguro por breakpoint, se ocultan aquí — el sitio ya tiene
    "menos elementos simultáneos" en móvil como pide el brief, y la mascota
    del botón de WhatsApp (.wa-mascota, aparte) ya tiene su propio ajuste. */
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .mascota-cameo { display: none; }
 }
 
@@ -890,7 +901,7 @@
 }
 .aviso__x:hover { color: var(--bone); }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   /* Sobre la barra móvil, no debajo */
   .aviso { bottom: calc(env(safe-area-inset-bottom, 0px) + 4.4rem); }
 }

@@ -7,13 +7,15 @@ import { renderCards } from '../components/productCard.js';
 import { initCompraRapida } from '../components/compraRapida.js';
 
 const POR_PAGINA = 24;
-const GRUPOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Botas'];
+const GRUPOS_TODOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Guayos', 'Botas', 'Zuecos'];
+// Una categoría sin productos no se muestra como pestaña
+const GRUPOS = GRUPOS_TODOS.filter((g) => TODOS.some((p) => p.grupo === g));
 
 /* Enlaces viejos siguen funcionando: ?categoria=Gorras muestra las dos líneas de gorras;
-   ?categoria=Zapatillas muestra hombre+dama+básquetbol (todo el calzado que no es bota) */
+   ?categoria=Zapatillas muestra hombre+dama+básquetbol (las zapatillas: ni botas, ni guayos, ni zuecos) */
 const esGrupo = (p, g) => p.grupo === g
   || (g === 'Gorras' && p.linea === 'caps')
-  || (g === 'Zapatillas' && p.linea === 'sneakers' && p.tipo !== 'Botas');
+  || (g === 'Zapatillas' && p.linea === 'sneakers' && p.tipo === 'Zapatillas');
 
 /* Filtros de casillas. Añadir uno nuevo = una línea aquí + su bloque en tienda.html.
    `orden` fija el orden de las opciones; si no, se ordenan por cantidad. */
