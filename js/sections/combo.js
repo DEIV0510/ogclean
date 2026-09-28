@@ -60,9 +60,9 @@ function pintarTallas(cont, linea, alElegir) {
   });
 }
 
-/* Las zapatillas del combo mezclan básquetbol (US) con hombre/dama (talla
-   colombiana): al cambiar de miniatura hay que repintar las tallas del par
-   elegido, porque ya no son siempre las mismas. */
+/* Las zapatillas del combo mezclan calzado de hombre (Euro 40–44) y de dama
+   (Euro 36–39): al cambiar de miniatura hay que repintar las tallas del par
+   elegido, porque no siempre son las mismas. */
 function refrescarTallasSneaker(cont, item) {
   if (!cont) return;
   cont.innerHTML = tallaBotonesHTML(item);

@@ -9,25 +9,23 @@ import { GORRAS } from './gorras.js';
    ya trae su `precio` real en zapatos.js/gorras.js (null = se cotiza por WhatsApp). */
 export const PRECIOS = { caps: { Cerrada: 95000, Ajustable: 85000 }, sneakers: 185000 };
 
+/* Zapatillas y botas van en talla Euro, confirmado por el dueño: hombre 40 a 44 y dama
+   36 a 39. Las botas y el básquetbol son calzado de hombre, así que usan el rango hombre
+   (antes el básquetbol iba en US 7–13 y el dueño lo corrigió a Euro 40–44). */
 export const TALLAS = {
   caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
-  // Básquetbol conserva talla US, como ya estaba publicado
-  basquetbol: ['7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '13'],
-  // Botas y zapatillas de calle: talla colombiana confirmada por el dueño
-  botas: ['40', '41', '42', '43', '44'],
   hombre: ['40', '41', '42', '43', '44'],
   dama: ['36', '37', '38', '39'],
 };
 
-export const UNIDAD_TALLA = { caps: '', basquetbol: ' US', botas: '', hombre: '', dama: '' };
+/* Sufijo que acompaña a cada talla en pantalla, y nombre de la escala para los rótulos
+   («Elige tu talla (Euro)»). Las tallas Euro se muestran sin sufijo: «42», no «42 EU». */
+export const UNIDAD_TALLA = { caps: '', sneakers: '' };
+export const ESCALA_TALLA = { caps: '', sneakers: 'Euro' };
 
-/** Grupo de talla de una zapatilla/bota: solo básquetbol conserva US;
- *  botas y calle usan talla colombiana (botas = rango hombre). */
-function grupoTalla(item) {
-  if (item.deporte === 'basquetbol') return 'basquetbol';
-  if (/bota/i.test(item.name)) return 'botas'; // item aún no tiene `tipo`: se decora más abajo
-  return item.genero === 'dama' ? 'dama' : 'hombre';
-}
+/** Rango de talla de una zapatilla/bota: dama 36–39, todo lo demás (calle hombre, botas
+ *  y básquetbol, que no llevan `genero: 'dama'`) 40–44. */
+const grupoTalla = (item) => (item.genero === 'dama' ? 'dama' : 'hombre');
 
 export const CAPS = [
   { img: 'mets-rojo', name: 'New York Mets', tag: 'Shea Stadium 40th', alt: 'Gorra fitted New York Mets roja', cat: 'mlb', color: 'Rojo' },
@@ -67,7 +65,8 @@ function decorar(item, linea, idx) {
     id: `${linea}-${item.img}`,
     precio: item.precio !== undefined ? item.precio : (linea === 'caps' ? PRECIOS.caps[item.cierre] : PRECIOS[linea]),
     tallas: item.tallas && item.tallas.length ? item.tallas : TALLAS[linea === 'sneakers' ? grupoTalla(item) : linea],
-    unidad: linea === 'sneakers' ? UNIDAD_TALLA[grupoTalla(item)] : UNIDAD_TALLA[linea],
+    unidad: UNIDAD_TALLA[linea],
+    escala: ESCALA_TALLA[linea],
     src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
     srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
     // Gorras en collage: la tarjeta muestra solo el frente; ficha y visor, la foto completa

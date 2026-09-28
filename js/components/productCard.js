@@ -55,7 +55,7 @@ export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100
         <p class="card__meta">${p.color}</p>
         ${precioHTML(p)}
         ${rapida ? `
-        <div class="card__chips" role="group" aria-label="Tallas${p.unidad ? ' US' : ''}">${chips}</div>
+        <div class="card__chips" role="group" aria-label="Tallas${p.escala ? ` ${p.escala}` : ''}">${chips}</div>
         <div class="card__acciones">
           <button class="card__ver js-quick" type="button" data-id="${p.id}">Ver producto</button>
           <button class="card__buy" type="button" data-agregar aria-label="Agregar ${p.name} al carrito">${bolsa} Agregar</button>
@@ -65,7 +65,7 @@ export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100
       ${rapida ? `
       <div class="card__rapida" role="group" aria-label="Elige tu talla de ${p.name}">
         <div class="card__rapida-top">
-          <span class="mono">Elige tu talla${p.unidad ? ' (US)' : ''}</span>
+          <span class="mono">Elige tu talla${p.escala ? ` (${p.escala})` : ''}</span>
           <button class="card__rapida-x" type="button" data-rapida-cerrar aria-label="Cerrar tallas">✕</button>
         </div>
         <div class="card__sizes">${tallasPanel}</div>
