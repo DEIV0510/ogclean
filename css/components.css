@@ -332,6 +332,11 @@
 }
 .spec-list .v { font-weight: 600; text-align: right; font-stretch: 78%; letter-spacing: -0.01em; }
 
+/* "Sobre el modelo": historia corta + para qué sirve, debajo de los botones de compra */
+.quick__sobre { display: grid; gap: 0.5rem; padding-top: 0.2rem; }
+.quick__sobre .mono { color: var(--muted); }
+.quick__desc { font-size: 0.98rem; line-height: 1.6; max-width: 62ch; }
+
 .quick__related { display: grid; gap: 0.9rem; }
 .quick__related-track {
   display: grid;

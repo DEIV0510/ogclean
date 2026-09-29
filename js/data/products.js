@@ -3,6 +3,7 @@
 
 import { ZAPATOS } from './zapatos.js';
 import { GORRAS } from './gorras.js';
+import { DESCRIPCIONES } from './descripciones.js';
 
 /* Precio por defecto de cada línea (fallback solo para items sin `precio` propio,
    como las 15 gorras cerradas originales del array CAPS). El resto del catálogo
@@ -47,9 +48,8 @@ export const CAPS = [
 
 export const SNEAKERS = [
   { img: 'kyrie3-blanco', deporte: 'basquetbol', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie-blanco-oro', deporte: 'basquetbol', name: 'Nike Low', tag: 'Blanco / Oro', alt: 'Tenis Nike blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie-blanco-oro', deporte: 'basquetbol', name: 'Nike LeBron Ambassador 13', tag: 'Blanco / Oro', alt: 'Tenis Nike LeBron Ambassador 13 blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
   { img: 'kyrie4-negro', deporte: 'basquetbol', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie5-lila', deporte: 'basquetbol', name: 'Nike Kyrie 5', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 5 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
   { img: 'kyrie7-morado-azul', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
   { img: 'kyrie7-lila-rosa', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
   { img: 'kyrie7-verde-amarillo', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
@@ -67,6 +67,8 @@ function decorar(item, linea, idx) {
     tallas: item.tallas && item.tallas.length ? item.tallas : TALLAS[linea === 'sneakers' ? grupoTalla(item) : linea],
     unidad: UNIDAD_TALLA[linea],
     escala: ESCALA_TALLA[linea],
+    // Descripción del modelo (compartida por todos sus colores); solo calzado
+    descripcion: linea === 'sneakers' ? (DESCRIPCIONES[item.name] || null) : null,
     src: `assets/img/${item.carpeta || linea}/${item.img}.webp`,
     srcSm: `assets/img/${item.carpeta || linea}/${item.img}-sm.webp`,
     // Gorras en collage: la tarjeta muestra solo el frente; ficha y visor, la foto completa
@@ -176,7 +178,7 @@ export const DESTACADOS = [
   'caps-padres-cafe',
   'sneakers-kyrie7-verde-azul',
   'caps-yankees-negro-oro',
-  'sneakers-kyrie5-lila',
+  'sneakers-kyrie4-negro',
   'caps-whitesox-negro',
   'sneakers-kyrie3-blanco',
   'caps-mexico-verde',

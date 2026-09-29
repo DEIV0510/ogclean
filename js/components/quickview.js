@@ -64,6 +64,12 @@ function fichaHTML(p) {
         ${waIcon} Pedir solo esta pieza
       </a>
 
+      ${p.descripcion ? `
+      <div class="quick__sobre">
+        <p class="mono">Sobre el modelo</p>
+        <p class="quick__desc">${p.descripcion}</p>
+      </div>` : ''}
+
       <ul class="spec-list">
         <li><span class="k">Línea</span><span class="v">${p.linea === 'caps' ? [p.equipo, p.liga].filter(Boolean).join(' · ') || p.tipo : p.marca}</span></li>
         <li><span class="k">Referencia</span><span class="v">${p.tag}</span></li>

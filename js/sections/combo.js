@@ -13,7 +13,7 @@ const estado = {
 
 /* Zapatillas para el combo: los Kyrie (precio confirmado) + una muestra de marcas */
 const COMBO_ZAPATILLAS = [
-  'sneakers-kyrie4-negro', 'sneakers-kyrie3-blanco', 'sneakers-kyrie7-verde-azul', 'sneakers-kyrie5-lila',
+  'sneakers-kyrie4-negro', 'sneakers-kyrie3-blanco', 'sneakers-kyrie7-verde-azul', 'sneakers-kyrie7-lila-rosa',
   'sneakers-jordan-air-jordan-4-blanco-rosa', 'sneakers-nike-dunk-low-blanco-cafe', 'sneakers-nike-air-force-1-blanco-total',
   'sneakers-salomon-xt-6-crema-cafe', 'sneakers-on-cloud-crema-rosa', 'sneakers-adidas-campus-00s-crema-cafe',
   'sneakers-new-balance-running-crema', 'sneakers-nike-shox-r4-rojo-negro',

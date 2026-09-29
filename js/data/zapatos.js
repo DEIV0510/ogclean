@@ -15,10 +15,10 @@ export const ZAPATOS = [
   {
     "img": "nike-nocta-hot-step-turquesa",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step 2",
     "tag": "Turquesa",
     "color": "Turquesa",
-    "alt": "Zapatillas Nike NOCTA Hot Step color turquesa",
+    "alt": "Zapatillas Nike NOCTA Hot Step 2 color turquesa",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -75,20 +75,20 @@ export const ZAPATOS = [
   {
     "img": "nike-nocta-hot-step-blanco-total",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step 2",
     "tag": "Blanco total",
     "color": "Blanco total",
-    "alt": "Zapatillas Nike NOCTA Hot Step color blanco total",
+    "alt": "Zapatillas Nike NOCTA Hot Step 2 color blanco total",
     "precio": 169900,
     "genero": "hombre"
   },
   {
     "img": "nike-knit-capsulas-lila-naranja",
     "marca": "Nike",
-    "name": "Nike Knit Cápsulas",
+    "name": "Nike Mind 002",
     "tag": "Lila / Naranja",
     "color": "Lila / Naranja",
-    "alt": "Zapatillas Nike Knit Cápsulas color lila / naranja",
+    "alt": "Zapatillas Nike Mind 002 color lila / naranja",
     "precio": 169900,
     "genero": "dama"
   },
@@ -185,10 +185,10 @@ export const ZAPATOS = [
   {
     "img": "nike-knit-capsulas-rosa-palo-naranja",
     "marca": "Nike",
-    "name": "Nike Knit Cápsulas",
+    "name": "Nike Mind 002",
     "tag": "Rosa palo / Naranja",
     "color": "Rosa palo / Naranja",
-    "alt": "Zapatillas Nike Knit Cápsulas color rosa palo / naranja",
+    "alt": "Zapatillas Nike Mind 002 color rosa palo / naranja",
     "precio": 169900,
     "genero": "dama"
   },
@@ -215,10 +215,10 @@ export const ZAPATOS = [
   {
     "img": "numeris-glitter-negro-brillante",
     "marca": "Numeris",
-    "name": "Numeris Glitter",
+    "name": "Numeris Atelier",
     "tag": "Negro brillante",
     "color": "Negro brillante",
-    "alt": "Zapatillas Numeris Glitter color negro brillante",
+    "alt": "Zapatillas Numeris Atelier color negro brillante",
     "precio": 169900,
     "genero": "dama"
   },
@@ -245,10 +245,10 @@ export const ZAPATOS = [
   {
     "img": "bape-road-sta-negro-blanco",
     "marca": "BAPE",
-    "name": "BAPE Road Sta",
+    "name": "BAPE Road Sta Express",
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
-    "alt": "Zapatillas BAPE Road Sta color negro / blanco",
+    "alt": "Zapatillas BAPE Road Sta Express color negro / blanco",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -334,10 +334,10 @@ export const ZAPATOS = [
   {
     "img": "nike-running-blanco-rojo",
     "marca": "Nike",
-    "name": "Nike Running",
+    "name": "Nike Vomero Plus",
     "tag": "Blanco / Rojo",
     "color": "Blanco / Rojo",
-    "alt": "Zapatillas Nike Running color blanco / rojo",
+    "alt": "Zapatillas Nike Vomero Plus color blanco / rojo",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -404,10 +404,10 @@ export const ZAPATOS = [
   {
     "img": "nike-nocta-hot-step-negro-total",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step 2",
     "tag": "Negro total",
     "color": "Negro total",
-    "alt": "Zapatillas Nike NOCTA Hot Step color negro total",
+    "alt": "Zapatillas Nike NOCTA Hot Step 2 color negro total",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -434,10 +434,10 @@ export const ZAPATOS = [
   {
     "img": "numeris-low-negro-blanco",
     "marca": "Numeris",
-    "name": "Numeris Low",
+    "name": "Numeris Atelier",
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
-    "alt": "Zapatillas Numeris Low color negro / blanco",
+    "alt": "Zapatillas Numeris Atelier color negro / blanco",
     "precio": 169900,
     "genero": "dama"
   },
@@ -464,50 +464,50 @@ export const ZAPATOS = [
   {
     "img": "osiris-d3-negro-total",
     "marca": "Osiris",
-    "name": "Osiris D3",
+    "name": "Osiris Skate",
     "tag": "Negro total",
     "color": "Negro total",
-    "alt": "Zapatillas Osiris D3 color negro total",
-    "precio": 185900,
+    "alt": "Zapatillas Osiris Skate color negro total",
+    "precio": 169900,
     "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-negro-verde",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step Air Terra",
     "tag": "Negro / Verde",
     "color": "Negro / Verde",
-    "alt": "Zapatillas Nike NOCTA Hot Step color negro / verde",
+    "alt": "Zapatillas Nike NOCTA Hot Step Air Terra color negro / verde",
     "precio": 169900,
     "genero": "hombre"
   },
   {
     "img": "numeris-low-beige-camuflado",
     "marca": "Numeris",
-    "name": "Numeris Low",
+    "name": "Numeris Atelier",
     "tag": "Beige camuflado",
     "color": "Beige camuflado",
-    "alt": "Zapatillas Numeris Low color beige camuflado",
+    "alt": "Zapatillas Numeris Atelier color beige camuflado",
     "precio": 169900,
     "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-blanco-amarillo",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step Air Terra",
     "tag": "Blanco / Amarillo",
     "color": "Blanco / Amarillo",
-    "alt": "Zapatillas Nike NOCTA Hot Step color blanco / amarillo",
+    "alt": "Zapatillas Nike NOCTA Hot Step Air Terra color blanco / amarillo",
     "precio": 169900,
     "genero": "hombre"
   },
   {
     "img": "nike-nocta-hot-step-morado",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step 2",
     "tag": "Morado",
     "color": "Morado",
-    "alt": "Zapatillas Nike NOCTA Hot Step color morado",
+    "alt": "Zapatillas Nike NOCTA Hot Step 2 color morado",
     "precio": 169900,
     "genero": "dama"
   },
@@ -613,11 +613,11 @@ export const ZAPATOS = [
   },
   {
     "img": "amiri-low-negro-salpicado",
-    "marca": "Amiri",
-    "name": "Amiri Low",
+    "marca": "Numeris",
+    "name": "Numeris Atelier",
     "tag": "Negro salpicado",
     "color": "Negro salpicado",
-    "alt": "Zapatillas Amiri Low color negro salpicado",
+    "alt": "Zapatillas Numeris Atelier color negro salpicado",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -751,11 +751,11 @@ export const ZAPATOS = [
   },
   {
     "img": "denim-chunky-azul",
-    "marca": "Otras",
-    "name": "Denim Chunky",
-    "tag": "Azul",
-    "color": "Azul",
-    "alt": "Zapatillas Denim Chunky color azul",
+    "marca": "Dolce & Gabbana",
+    "name": "Dolce & Gabbana Sneaker",
+    "tag": "Azul denim",
+    "color": "Azul denim",
+    "alt": "Zapatillas Dolce & Gabbana Sneaker color azul denim",
     "precio": 169900,
     "genero": "dama"
   },
@@ -792,10 +792,10 @@ export const ZAPATOS = [
   {
     "img": "bape-road-sta-crema-morado",
     "marca": "BAPE",
-    "name": "BAPE Road Sta",
+    "name": "BAPE Road Sta Express",
     "tag": "Crema / Morado",
     "color": "Crema / Morado",
-    "alt": "Zapatillas BAPE Road Sta color crema / morado",
+    "alt": "Zapatillas BAPE Road Sta Express color crema / morado",
     "precio": 169900,
     "genero": "dama"
   },
@@ -812,10 +812,10 @@ export const ZAPATOS = [
   {
     "img": "bape-road-sta-vinotinto",
     "marca": "BAPE",
-    "name": "BAPE Road Sta",
+    "name": "BAPE Road Sta Express",
     "tag": "Vinotinto",
     "color": "Vinotinto",
-    "alt": "Zapatillas BAPE Road Sta color vinotinto",
+    "alt": "Zapatillas BAPE Road Sta Express color vinotinto",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -832,20 +832,20 @@ export const ZAPATOS = [
   {
     "img": "numeris-low-negro-rosa",
     "marca": "Numeris",
-    "name": "Numeris Low",
+    "name": "Numeris Atelier",
     "tag": "Negro / Rosa",
     "color": "Negro / Rosa",
-    "alt": "Zapatillas Numeris Low color negro / rosa",
+    "alt": "Zapatillas Numeris Atelier color negro / rosa",
     "precio": 169900,
     "genero": "dama"
   },
   {
     "img": "nike-nocta-hot-step-negro-amarillo",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step Air Terra",
     "tag": "Negro / Amarillo",
     "color": "Negro / Amarillo",
-    "alt": "Zapatillas Nike NOCTA Hot Step color negro / amarillo",
+    "alt": "Zapatillas Nike NOCTA Hot Step Air Terra color negro / amarillo",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -952,10 +952,10 @@ export const ZAPATOS = [
   {
     "img": "nike-running-blanco-menta",
     "marca": "Nike",
-    "name": "Nike Running",
+    "name": "Nike Vomero Plus",
     "tag": "Blanco / Menta",
     "color": "Blanco / Menta",
-    "alt": "Zapatillas Nike Running color blanco / menta",
+    "alt": "Zapatillas Nike Vomero Plus color blanco / menta",
     "precio": 169900,
     "genero": "dama"
   },
@@ -991,10 +991,10 @@ export const ZAPATOS = [
   {
     "img": "nike-knit-capsulas-negro-blanco",
     "marca": "Nike",
-    "name": "Nike Knit Cápsulas",
+    "name": "Nike Mind 002",
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
-    "alt": "Zapatillas Nike Knit Cápsulas color negro / blanco",
+    "alt": "Zapatillas Nike Mind 002 color negro / blanco",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -1011,10 +1011,10 @@ export const ZAPATOS = [
   {
     "img": "jordan-air-jordan-11-negro-rojo",
     "marca": "Jordan",
-    "name": "Air Jordan 11",
+    "name": "Air Jordan 11 Low",
     "tag": "Negro / Rojo",
     "color": "Negro / Rojo",
-    "alt": "Zapatillas Air Jordan 11 color negro / rojo",
+    "alt": "Zapatillas Air Jordan 11 Low color negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol"
   },
@@ -1041,20 +1041,20 @@ export const ZAPATOS = [
   {
     "img": "nike-running-rosa-blanco",
     "marca": "Nike",
-    "name": "Nike Running",
+    "name": "Nike Vomero Plus",
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
-    "alt": "Zapatillas Nike Running color rosa / blanco",
+    "alt": "Zapatillas Nike Vomero Plus color rosa / blanco",
     "precio": 169900,
     "genero": "dama"
   },
   {
     "img": "nike-nocta-hot-step-blanco-perla",
     "marca": "Nike",
-    "name": "Nike NOCTA Hot Step",
+    "name": "Nike NOCTA Hot Step 2",
     "tag": "Blanco perla",
     "color": "Blanco perla",
-    "alt": "Zapatillas Nike NOCTA Hot Step color blanco perla",
+    "alt": "Zapatillas Nike NOCTA Hot Step 2 color blanco perla",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -1081,10 +1081,10 @@ export const ZAPATOS = [
   {
     "img": "numeris-glitter-negro",
     "marca": "Numeris",
-    "name": "Numeris Glitter",
-    "tag": "Negro",
-    "color": "Negro",
-    "alt": "Zapatillas Numeris Glitter color negro",
+    "name": "Numeris Atelier",
+    "tag": "Negro glitter",
+    "color": "Negro glitter",
+    "alt": "Zapatillas Numeris Atelier color negro glitter",
     "precio": 169900,
     "genero": "dama"
   },
@@ -1140,10 +1140,10 @@ export const ZAPATOS = [
   {
     "img": "numeris-low-negro-total",
     "marca": "Numeris",
-    "name": "Numeris Low",
+    "name": "Numeris Atelier",
     "tag": "Negro total",
     "color": "Negro total",
-    "alt": "Zapatillas Numeris Low color negro total",
+    "alt": "Zapatillas Numeris Atelier color negro total",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -1180,20 +1180,20 @@ export const ZAPATOS = [
   {
     "img": "nike-knit-capsulas-rosa-blanco",
     "marca": "Nike",
-    "name": "Nike Knit Cápsulas",
+    "name": "Nike Mind 002",
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
-    "alt": "Zapatillas Nike Knit Cápsulas color rosa / blanco",
+    "alt": "Zapatillas Nike Mind 002 color rosa / blanco",
     "precio": 169900,
     "genero": "dama"
   },
   {
     "img": "bape-road-sta-plata-amarillo",
     "marca": "BAPE",
-    "name": "BAPE Road Sta",
+    "name": "BAPE Road Sta Express",
     "tag": "Plata / Amarillo",
     "color": "Plata / Amarillo",
-    "alt": "Zapatillas BAPE Road Sta color plata / amarillo",
+    "alt": "Zapatillas BAPE Road Sta Express color plata / amarillo",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -1230,30 +1230,30 @@ export const ZAPATOS = [
   {
     "img": "numeris-low-blanco-total",
     "marca": "Numeris",
-    "name": "Numeris Low",
+    "name": "Numeris Atelier",
     "tag": "Blanco total",
     "color": "Blanco total",
-    "alt": "Zapatillas Numeris Low color blanco total",
+    "alt": "Zapatillas Numeris Atelier color blanco total",
     "precio": 169900,
     "genero": "hombre"
   },
   {
     "img": "numeris-glitter-negro-blanco",
     "marca": "Numeris",
-    "name": "Numeris Glitter",
-    "tag": "Negro / Blanco",
-    "color": "Negro / Blanco",
-    "alt": "Zapatillas Numeris Glitter color negro / blanco",
+    "name": "Numeris Atelier",
+    "tag": "Negro glitter / Blanco",
+    "color": "Negro glitter / Blanco",
+    "alt": "Zapatillas Numeris Atelier color negro glitter / blanco",
     "precio": 169900,
     "genero": "dama"
   },
   {
     "img": "nike-running-blanco-rosa",
     "marca": "Nike",
-    "name": "Nike Running",
+    "name": "Nike Vomero Plus",
     "tag": "Blanco / Rosa",
     "color": "Blanco / Rosa",
-    "alt": "Zapatillas Nike Running color blanco / rosa",
+    "alt": "Zapatillas Nike Vomero Plus color blanco / rosa",
     "precio": 169900,
     "genero": "dama"
   },
@@ -1280,10 +1280,10 @@ export const ZAPATOS = [
   {
     "img": "numeris-low-azul-estampado",
     "marca": "Numeris",
-    "name": "Numeris Low",
+    "name": "Numeris Atelier",
     "tag": "Azul estampado",
     "color": "Azul estampado",
-    "alt": "Zapatillas Numeris Low color azul estampado",
+    "alt": "Zapatillas Numeris Atelier color azul estampado",
     "precio": 169900,
     "genero": "dama"
   },
@@ -1300,10 +1300,10 @@ export const ZAPATOS = [
   {
     "img": "nike-knit-capsulas-negro-naranja",
     "marca": "Nike",
-    "name": "Nike Knit Cápsulas",
+    "name": "Nike Mind 002",
     "tag": "Negro / Naranja",
     "color": "Negro / Naranja",
-    "alt": "Zapatillas Nike Knit Cápsulas color negro / naranja",
+    "alt": "Zapatillas Nike Mind 002 color negro / naranja",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -1330,10 +1330,10 @@ export const ZAPATOS = [
   {
     "img": "nike-zoomx-negro-blanco",
     "marca": "Nike",
-    "name": "Nike ZoomX",
+    "name": "Nike Vomero Plus",
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
-    "alt": "Zapatillas Nike ZoomX color negro / blanco",
+    "alt": "Zapatillas Nike Vomero Plus color negro / blanco",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -1390,10 +1390,10 @@ export const ZAPATOS = [
   {
     "img": "bape-road-sta-azul-marino",
     "marca": "BAPE",
-    "name": "BAPE Road Sta",
+    "name": "BAPE Road Sta Express",
     "tag": "Azul marino cuero",
     "color": "Azul marino",
-    "alt": "Zapatillas BAPE Road Sta azul marino en cuero, vista del video 360",
+    "alt": "Zapatillas BAPE Road Sta Express color azul marino",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -2796,9 +2796,9 @@ export const ZAPATOS = [
     "img": "adidas-drop-step-blanco-gris-negro",
     "marca": "Adidas",
     "name": "Adidas Drop Step",
-    "tag": "Blanco / Gris / Negro",
-    "color": "Blanco / Gris / Negro",
-    "alt": "Zapatillas Adidas Drop Step color blanco / gris / negro",
+    "tag": "Blanco / Negro · ribete verde",
+    "color": "Blanco / Negro · ribete verde",
+    "alt": "Zapatillas Adidas Drop Step color blanco / negro · ribete verde",
     "precio": 169900,
     "genero": "hombre",
     "origen": "nuevos #198"
@@ -3386,10 +3386,10 @@ export const ZAPATOS = [
   {
     "img": "adidas-zueco-negro-gamuza-cafe",
     "marca": "Adidas",
-    "name": "Adidas Zueco",
-    "tag": "Negro gamuza / Café",
-    "color": "Negro gamuza / Café",
-    "alt": "Zuecos Adidas Zueco color negro gamuza / café",
+    "name": "Adidas Adimule",
+    "tag": "Negro gamuza",
+    "color": "Negro gamuza",
+    "alt": "Zuecos Adidas Adimule color negro gamuza",
     "precio": null,
     "tipo": "Zuecos",
     "genero": "hombre",
@@ -3398,10 +3398,10 @@ export const ZAPATOS = [
   {
     "img": "nike-mule-turquesa-verde-menta",
     "marca": "Nike",
-    "name": "Nike Mule",
+    "name": "Nike Mind 001",
     "tag": "Turquesa / Verde / Menta",
     "color": "Turquesa / Verde / Menta",
-    "alt": "Zuecos Nike Mule color turquesa / verde / menta",
+    "alt": "Zuecos Nike Mind 001 color turquesa / verde / menta",
     "precio": null,
     "tipo": "Zuecos",
     "genero": "hombre",
@@ -4405,10 +4405,10 @@ export const ZAPATOS = [
   {
     "img": "nike-mule-vinotinto-rojo",
     "marca": "Nike",
-    "name": "Nike Mule",
+    "name": "Nike Mind 001",
     "tag": "Vinotinto / Rojo",
     "color": "Vinotinto / Rojo",
-    "alt": "Zuecos Nike Mule color vinotinto / rojo",
+    "alt": "Zuecos Nike Mind 001 color vinotinto / rojo",
     "precio": null,
     "tipo": "Zuecos",
     "genero": "hombre",
@@ -4593,10 +4593,10 @@ export const ZAPATOS = [
   {
     "img": "adidas-low-blanco-gris-negro",
     "marca": "Adidas",
-    "name": "Adidas Low",
+    "name": "Adidas Drop Step",
     "tag": "Blanco / Gris / Negro",
     "color": "Blanco / Gris / Negro",
-    "alt": "Zapatillas Adidas Low color blanco / gris / negro",
+    "alt": "Zapatillas Adidas Drop Step color blanco / gris / negro",
     "precio": 169900,
     "genero": "hombre",
     "origen": "nuevos #442"
@@ -4660,10 +4660,10 @@ export const ZAPATOS = [
   {
     "img": "skechers-running-azul-naranja",
     "marca": "Skechers",
-    "name": "Skechers Running",
+    "name": "Skechers Max Cushioning Glide-Step",
     "tag": "Azul / Naranja",
     "color": "Azul / Naranja",
-    "alt": "Zapatillas Skechers Running color azul / naranja",
+    "alt": "Zapatillas Skechers Max Cushioning Glide-Step color azul / naranja",
     "precio": 169900,
     "genero": "hombre",
     "origen": "nuevos #452"
@@ -4715,10 +4715,10 @@ export const ZAPATOS = [
   {
     "img": "adidas-low-blanco-verde-negro",
     "marca": "Adidas",
-    "name": "Adidas Low",
+    "name": "Adidas Drop Step",
     "tag": "Blanco / Verde / Negro",
     "color": "Blanco / Verde / Negro",
-    "alt": "Zapatillas Adidas Low color blanco / verde / negro",
+    "alt": "Zapatillas Adidas Drop Step color blanco / verde / negro",
     "precio": 169900,
     "genero": "hombre",
     "origen": "nuevos #461"
@@ -4793,10 +4793,10 @@ export const ZAPATOS = [
   {
     "img": "nike-mule-gris-azul",
     "marca": "Nike",
-    "name": "Nike Mule",
+    "name": "Nike Mind 001",
     "tag": "Gris / Azul",
     "color": "Gris / Azul",
-    "alt": "Zuecos Nike Mule color gris / azul",
+    "alt": "Zuecos Nike Mind 001 color gris / azul",
     "precio": null,
     "tipo": "Zuecos",
     "genero": "hombre",
