@@ -770,16 +770,6 @@ export const ZAPATOS = [
     "deporte": "basquetbol"
   },
   {
-    "img": "dior-oblique-low-beige-negro",
-    "marca": "Dior",
-    "name": "Dior Oblique Low",
-    "tag": "Beige / Negro",
-    "color": "Beige / Negro",
-    "alt": "Zapatillas Dior Oblique Low color beige / negro",
-    "precio": 169900,
-    "genero": "dama"
-  },
-  {
     "img": "nike-air-force-1-verde-amarillo-rojo",
     "marca": "Nike",
     "name": "Nike Air Force 1",
