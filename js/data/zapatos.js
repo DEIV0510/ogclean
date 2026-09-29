@@ -468,7 +468,7 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Osiris D3 color negro total",
-    "precio": 169900,
+    "precio": 185900,
     "genero": "hombre"
   },
   {
@@ -1154,7 +1154,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Osiris D3 color negro / blanco",
-    "precio": 169900,
+    "precio": 185900,
     "genero": "hombre"
   },
   {
@@ -1164,7 +1164,7 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Osiris D3 color blanco total",
-    "precio": 169900,
+    "precio": 185900,
     "genero": "hombre"
   },
   {
@@ -1384,7 +1384,7 @@ export const ZAPATOS = [
     "tag": "Azul marino / Salmón",
     "color": "Azul marino / Salmón",
     "alt": "Zapatillas Osiris D3 color azul marino / salmón",
-    "precio": 169900,
+    "precio": 185900,
     "genero": "hombre"
   },
   {
