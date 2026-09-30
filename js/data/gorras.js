@@ -2171,54 +2171,6 @@ export const GORRAS = [
     "precio": 85000
   },
   {
-    "img": "gorra-ajustable-negro-rojo-bandera-usa",
-    "name": "Kansas City Chiefs",
-    "tag": "Negro / rojo bandera USA",
-    "color": "Negro / rojo bandera USA",
-    "equipo": "Kansas City Chiefs",
-    "liga": "NFL",
-    "cierre": "Ajustable",
-    "lineaGorra": "Clásica",
-    "tallas": [
-      "Ajustable"
-    ],
-    "alt": "Gorra ajustable Kansas City Chiefs, negro / rojo bandera usa",
-    "origen": "A1",
-    "precio": 85000
-  },
-  {
-    "img": "buffalo-bills-negro",
-    "name": "Buffalo Bills",
-    "tag": "Negro",
-    "color": "Negro",
-    "equipo": "Buffalo Bills",
-    "liga": "NFL",
-    "cierre": "Ajustable",
-    "lineaGorra": "Clásica",
-    "tallas": [
-      "Ajustable"
-    ],
-    "alt": "Gorra ajustable Buffalo Bills, negro",
-    "origen": "A2",
-    "precio": 85000
-  },
-  {
-    "img": "gorra-ajustable-turquesa-con-parche",
-    "name": "Gorra ajustable",
-    "tag": "Turquesa con parche",
-    "color": "Turquesa con parche",
-    "equipo": null,
-    "liga": "Otras",
-    "cierre": "Ajustable",
-    "lineaGorra": "Clásica",
-    "tallas": [
-      "Ajustable"
-    ],
-    "alt": "Gorra ajustable Gorra ajustable, turquesa con parche",
-    "origen": "A3",
-    "precio": 85000
-  },
-  {
     "img": "los-angeles-dodgers-gris-celeste",
     "name": "Los Angeles Dodgers",
     "tag": "Gris / celeste",
@@ -2248,38 +2200,6 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Toronto Raptors, negro / rojo",
     "origen": "A5",
-    "precio": 85000
-  },
-  {
-    "img": "jordan-negro-grafico",
-    "name": "Jordan",
-    "tag": "Negro gráfico",
-    "color": "Negro gráfico",
-    "equipo": "Jordan",
-    "liga": "Marcas",
-    "cierre": "Ajustable",
-    "lineaGorra": "Clásica",
-    "tallas": [
-      "Ajustable"
-    ],
-    "alt": "Gorra ajustable Jordan, negro gráfico",
-    "origen": "A6",
-    "precio": 85000
-  },
-  {
-    "img": "los-angeles-dodgers-blanco-tono-sobre-tono",
-    "name": "Los Angeles Dodgers",
-    "tag": "Blanco tono sobre tono",
-    "color": "Blanco tono sobre tono",
-    "equipo": "Los Angeles Dodgers",
-    "liga": "MLB",
-    "cierre": "Ajustable",
-    "lineaGorra": "Clásica",
-    "tallas": [
-      "Ajustable"
-    ],
-    "alt": "Gorra ajustable Los Angeles Dodgers, blanco tono sobre tono",
-    "origen": "A7",
     "precio": 85000
   },
   {

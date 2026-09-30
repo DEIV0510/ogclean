@@ -1440,7 +1440,7 @@ export const ZAPATOS = [
     "tag": "Turquesa / Plata",
     "color": "Turquesa / Plata",
     "alt": "Guayos Nike Tiempo color turquesa / plata",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #5"
@@ -1463,7 +1463,7 @@ export const ZAPATOS = [
     "tag": "Morado / Blanco / Dorado",
     "color": "Morado / Blanco / Dorado",
     "alt": "Guayos Mizuno Morelia Neo color morado / blanco / dorado",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #8"
@@ -1475,7 +1475,7 @@ export const ZAPATOS = [
     "tag": "Turquesa / Blanco / Negro",
     "color": "Turquesa / Blanco / Negro",
     "alt": "Guayos Nike Phantom color turquesa / blanco / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #9"
@@ -1498,7 +1498,7 @@ export const ZAPATOS = [
     "tag": "Morado / Verde / Blanco",
     "color": "Morado / Verde / Blanco",
     "alt": "Guayos Adidas F50 color morado / verde / blanco",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #11"
@@ -1532,7 +1532,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Guayos Adidas Copa Mundial color negro / blanco",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #15"
@@ -1764,7 +1764,7 @@ export const ZAPATOS = [
     "tag": "Gris / Rosa / Marino",
     "color": "Gris / Rosa / Marino",
     "alt": "Guayos Adidas Predator color gris / rosa / marino",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #56"
@@ -1908,7 +1908,7 @@ export const ZAPATOS = [
     "tag": "Gris / Verde",
     "color": "Gris / Verde",
     "alt": "Guayos Nike Phantom color gris / verde",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #76"
@@ -2075,7 +2075,7 @@ export const ZAPATOS = [
     "tag": "Negro / Verde",
     "color": "Negro / Verde",
     "alt": "Guayos Nike Mercurial Superfly color negro / verde",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #98"
@@ -2164,7 +2164,7 @@ export const ZAPATOS = [
     "tag": "Rojo / Plata / Morado",
     "color": "Rojo / Plata / Morado",
     "alt": "Guayos Nike Mercurial Vapor color rojo / plata / morado",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #113"
@@ -2187,7 +2187,7 @@ export const ZAPATOS = [
     "tag": "Rojo / Celeste / Negro",
     "color": "Rojo / Celeste / Negro",
     "alt": "Guayos Nike Phantom color rojo / celeste / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #115"
@@ -2276,7 +2276,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Amarillo / Rojo",
     "color": "Blanco / Amarillo / Rojo",
     "alt": "Guayos Adidas F50 color blanco / amarillo / rojo",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #125"
@@ -2299,7 +2299,7 @@ export const ZAPATOS = [
     "tag": "Morado / Fucsia",
     "color": "Morado / Fucsia",
     "alt": "Guayos Adidas F50 color morado / fucsia",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #131"
@@ -2467,7 +2467,7 @@ export const ZAPATOS = [
     "tag": "Vinotinto / Plata / Blanco",
     "color": "Vinotinto / Plata / Blanco",
     "alt": "Guayos Nike Mercurial Vapor color vinotinto / plata / blanco",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #155"
@@ -2590,7 +2590,7 @@ export const ZAPATOS = [
     "tag": "Fucsia / Azul / Verde",
     "color": "Fucsia / Azul / Verde",
     "alt": "Guayos Adidas F50 color fucsia / azul / verde",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #169"
@@ -2845,7 +2845,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Fucsia / Menta",
     "color": "Blanco / Fucsia / Menta",
     "alt": "Guayos Adidas F50 color blanco / fucsia / menta",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #205"
@@ -2890,7 +2890,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Rosa / Negro",
     "color": "Blanco / Rosa / Negro",
     "alt": "Guayos Mizuno Morelia color blanco / rosa / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #211"
@@ -3045,7 +3045,7 @@ export const ZAPATOS = [
     "tag": "Rojo / Dorado",
     "color": "Rojo / Dorado",
     "alt": "Guayos Adidas F50 color rojo / dorado",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #232"
@@ -3057,7 +3057,7 @@ export const ZAPATOS = [
     "tag": "Amarillo / Negro / Rosa",
     "color": "Amarillo / Negro / Rosa",
     "alt": "Guayos Adidas F50 color amarillo / negro / rosa",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #233"
@@ -3246,7 +3246,7 @@ export const ZAPATOS = [
     "tag": "Verde / Café / Dorado",
     "color": "Verde / Café / Dorado",
     "alt": "Guayos Nike Phantom TF color verde / café / dorado",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #259"
@@ -3258,7 +3258,7 @@ export const ZAPATOS = [
     "tag": "Verde / Negro",
     "color": "Verde / Negro",
     "alt": "Guayos Nike Mercurial Vapor color verde / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #261"
@@ -3514,7 +3514,7 @@ export const ZAPATOS = [
     "tag": "Verde / Negro",
     "color": "Verde / Negro",
     "alt": "Guayos Adidas F50 TF color verde / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #291"
@@ -3603,7 +3603,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Azul",
     "color": "Blanco / Azul",
     "alt": "Guayos Nike Phantom color blanco / azul",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #302"
@@ -3626,7 +3626,7 @@ export const ZAPATOS = [
     "tag": "Amarillo / Blanco",
     "color": "Amarillo / Blanco",
     "alt": "Guayos Nike Mercurial Vapor color amarillo / blanco",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #304"
@@ -3693,7 +3693,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco / Rojo",
     "color": "Negro / Blanco / Rojo",
     "alt": "Guayos Mizuno Morelia color negro / blanco / rojo",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #313"
@@ -3738,7 +3738,7 @@ export const ZAPATOS = [
     "tag": "Azul / Blanco / Fucsia",
     "color": "Azul / Blanco / Fucsia",
     "alt": "Guayos Nike Phantom color azul / blanco / fucsia",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #318"
@@ -3750,7 +3750,7 @@ export const ZAPATOS = [
     "tag": "Naranja / Amarillo / Azul",
     "color": "Naranja / Amarillo / Azul",
     "alt": "Guayos Nike Phantom color naranja / amarillo / azul",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #319"
@@ -3905,7 +3905,7 @@ export const ZAPATOS = [
     "tag": "Crema / Café estampado / Vinotinto",
     "color": "Crema / Café estampado / Vinotinto",
     "alt": "Guayos Nike Tiempo color crema / café estampado / vinotinto",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #338"
@@ -4028,7 +4028,7 @@ export const ZAPATOS = [
     "tag": "Rojo / Blanco / Negro",
     "color": "Rojo / Blanco / Negro",
     "alt": "Guayos Adidas Predator color rojo / blanco / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #359"
@@ -4040,7 +4040,7 @@ export const ZAPATOS = [
     "tag": "Naranja / Amarillo / Rosa",
     "color": "Naranja / Amarillo / Rosa",
     "alt": "Guayos Adidas Guayo sin cordones color naranja / amarillo / rosa",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #360"
@@ -4196,7 +4196,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Guayos Adidas Mundial Team color negro / blanco",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #383"
@@ -4264,7 +4264,7 @@ export const ZAPATOS = [
     "tag": "Celeste / Negro / Fucsia",
     "color": "Celeste / Negro / Fucsia",
     "alt": "Guayos Nike Phantom color celeste / negro / fucsia",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #392"
@@ -4287,7 +4287,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Rosa / Lila",
     "color": "Blanco / Rosa / Lila",
     "alt": "Guayos Nike Mercurial Vapor color blanco / rosa / lila",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #397"
@@ -4299,7 +4299,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Rosa / Negro",
     "color": "Blanco / Rosa / Negro",
     "alt": "Guayos Nike Phantom TF color blanco / rosa / negro",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #402"
@@ -4609,7 +4609,7 @@ export const ZAPATOS = [
     "tag": "Dorado / Negro / Blanco",
     "color": "Dorado / Negro / Blanco",
     "alt": "Guayos Nike Tiempo color dorado / negro / blanco",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #447"
@@ -4742,7 +4742,7 @@ export const ZAPATOS = [
     "tag": "Plata / Gris / Rojo",
     "color": "Plata / Gris / Rojo",
     "alt": "Guayos Adidas Predator color plata / gris / rojo",
-    "precio": null,
+    "precio": 195900,
     "tipo": "Guayos",
     "genero": "hombre",
     "origen": "nuevos #466"
