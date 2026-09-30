@@ -122,7 +122,8 @@
       <a class="menu__link" href="tienda.html" style="--d:.2s"><span>03</span>Tienda</a>
       <a class="menu__link" href="#combo" style="--d:.26s"><span>04</span>Arma tu combo</a>
       <a class="menu__link" href="#proceso" style="--d:.32s"><span>05</span>Cómo comprar</a>
-      <a class="menu__link" href="#contacto" style="--d:.38s"><span>06</span>Contacto</a>
+      <a class="menu__link" href="#tallas" style="--d:.38s"><span>06</span>Guía de tallas</a>
+      <a class="menu__link" href="#contacto" style="--d:.44s"><span>07</span>Contacto</a>
     </nav>
     <aside class="menu__aside">
       <p class="mono">Pide por WhatsApp</p>
@@ -388,12 +389,13 @@
         <div class="combo__slot" data-slot="caps">
           <p class="mono combo__slot-label">Gorra</p>
           <div class="combo__preview">
-            <img id="comboCapImg" src="assets/img/caps/whitesox-negro-sm.webp" alt="Gorra seleccionada" width="500" height="500" loading="lazy">
+            <img id="comboCapImg" src="assets/img/caps/mets-rojo-sm.webp" alt="Gorra seleccionada" width="500" height="500" loading="lazy">
           </div>
           <div class="combo__meta">
-            <h3 class="h3" id="comboCapName">Chicago White Sox</h3>
-            <p class="mono" id="comboCapTag">World Series 05</p>
+            <h3 class="h3" id="comboCapName">New York Mets</h3>
+            <p class="mono" id="comboCapTag">Shea Stadium 40th</p>
           </div>
+          <div class="combo__cats" id="comboCapCats" role="group" aria-label="Tipo de gorra"></div>
           <div class="combo__thumbs" id="comboCapThumbs" role="listbox" aria-label="Elige una gorra"></div>
           <div class="combo__sizes">
             <p class="mono">Talla</p>
@@ -404,18 +406,20 @@
         <div class="combo__x" aria-hidden="true">+</div>
 
         <div class="combo__slot" data-slot="sneakers">
-          <p class="mono combo__slot-label">Zapatillas</p>
+          <p class="mono combo__slot-label">Calzado</p>
           <div class="combo__preview">
-            <img id="comboSneImg" src="assets/img/sneakers/kyrie4-negro-sm.webp" alt="Zapatillas seleccionadas" width="500" height="500" loading="lazy">
+            <img id="comboSneImg" src="assets/img/sneakers/kyrie4-negro-sm.webp" alt="Calzado seleccionado" width="500" height="500" loading="lazy">
           </div>
           <div class="combo__meta">
             <h3 class="h3" id="comboSneName">Nike Kyrie 4</h3>
             <p class="mono" id="comboSneTag">Negro total</p>
           </div>
+          <div class="combo__cats" id="comboSneCats" role="group" aria-label="Tipo de calzado"></div>
           <div class="combo__thumbs" id="comboSneThumbs" role="listbox" aria-label="Elige un par"></div>
           <div class="combo__sizes">
-            <p class="mono">Talla</p>
-            <div class="sizes" id="comboSneSizes" role="group" aria-label="Talla de zapatillas"></div>
+            <p class="mono">Talla (Euro)</p>
+            <div class="sizes" id="comboSneSizes" role="group" aria-label="Talla de calzado"></div>
+            <a class="combo__guia" href="#tallas">¿Cuál es mi talla? Ver guía <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
@@ -506,6 +510,36 @@
         <div class="stat" data-anim="scale" style="--delay:.08s"><span class="stat__num" data-count="549">0</span><span class="stat__label">Pares de calzado</span></div>
         <div class="stat" data-anim="scale" style="--delay:.16s"><span class="stat__num" data-count="2">0</span><span class="stat__label">Líneas de atención</span></div>
         <div class="stat" data-anim="scale" style="--delay:.24s"><span class="stat__num" data-count="32">0</span><span class="stat__label">Departamentos con envío</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 11b · GUÍA DE TALLAS ══════════ -->
+  <section class="tallas section" id="tallas" aria-labelledby="tallasTitulo">
+    <div class="container tallas__grid">
+      <div class="tallas__intro" data-anim="left">
+        <p class="eyebrow">Guía de tallas</p>
+        <h2 class="h2" id="tallasTitulo">Escoge tu talla<br>en Euro</h2>
+        <p class="lead">Todo nuestro calzado viene en talla Euro (EUR). Mira la etiqueta de las zapatillas que ya usas: ahí está tu número.</p>
+        <div class="etiqueta" role="img" aria-label="Ejemplo de etiqueta de zapatilla: US 8.5, UK 8, EUR 42, CM 26.5. Tu talla es el número EUR.">
+          <span class="etiqueta__marca">Marca</span>
+          <span class="etiqueta__col"><small>US</small>8.5</span>
+          <span class="etiqueta__col"><small>UK</small>8</span>
+          <span class="etiqueta__col is-eur"><small>EUR</small>42</span>
+          <span class="etiqueta__col"><small>CM</small>26.5</span>
+          <span class="etiqueta__barras"></span>
+        </div>
+      </div>
+
+      <div class="tallas__cuerpo" data-anim>
+        <ol class="tallas__pasos">
+          <li><b>01</b><span>Revisa la etiqueta interna de las zapatillas que ya usas.</span></li>
+          <li><b>02</b><span>Busca el número que dice <strong>EUR</strong>.</span></li>
+          <li><b>03</b><span>Elige ese mismo número en la ficha del producto.</span></li>
+        </ol>
+        <p class="mono tallas__sub">¿Sin etiqueta? Pasa tu talla nacional a Euro</p>
+        <div class="tallas__tablas" data-guia-tallas></div>
+        <a class="btn btn--dark js-wa js-magnetic" data-wa="Hola OGCLEAN, tengo una duda con mi talla." href="#">¿Dudas con tu talla? Escríbenos</a>
       </div>
     </div>
   </section>
@@ -602,6 +636,7 @@
       <a href="tienda.html">Tienda</a>
       <a href="#combo">Arma tu combo</a>
       <a href="#proceso">Cómo comprar</a>
+      <a href="#tallas">Guía de tallas</a>
       <a href="#contacto">Contacto</a>
       <a href="terminos.html">Términos y condiciones</a>
     </nav>

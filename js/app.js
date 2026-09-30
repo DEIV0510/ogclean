@@ -11,6 +11,7 @@ import { initScrollSpy } from './components/nav.js';
 import { initComun, alCargar } from './comun.js';
 import { initTiendaPreview } from './sections/tiendaPreview.js';
 import { initCombo } from './sections/combo.js';
+import { initGuiaTallas } from './components/guiaTallas.js';
 import { initRunway } from './sections/runway.js';
 import { initFocus } from './sections/focus.js';
 import { initManifiesto, initHeroVideo, initSocialStrip, initLineas } from './sections/storytelling.js';
@@ -20,6 +21,7 @@ function arrancar() {
   initHeroVideo(); // cuanto antes arranque, antes se ve el hero en movimiento
   initTiendaPreview();
   initCombo();
+  initGuiaTallas();
   initSocialStrip();
   initLineas();
 

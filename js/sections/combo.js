@@ -1,71 +1,88 @@
-/* "Arma tu combo": configurador gorra + tenis con total real y pedido
-   precargado en WhatsApp (modelos, tallas y total). */
+/* "Arma tu combo": configurador gorra + calzado con total real y pedido
+   precargado en WhatsApp (modelos, tallas y total). Muestra todo el catálogo
+   (el dueño pidió que "salgan todas las gorras y todos los zapatos"), repartido
+   en las mismas categorías de la tienda para poder recorrerlo: cada fila tiene
+   flechas y sus fotos cargan solo cuando se asoman. */
 
 import { qs, qsa } from '../utils/dom.js';
 import { LINEAS, tienePrecio, porId } from '../data/products.js';
 import { wa, precioCOP } from '../data/site.js';
 import { agregar } from '../components/cart.js';
+import { initFila } from '../components/fila.js';
+
+const CATEGORIAS = {
+  caps: [['Gorras cerradas', 'Cerradas'], ['Gorras ajustables', 'Ajustables']],
+  sneakers: [['Básquetbol', 'Básquetbol'], ['Zapatillas hombre', 'Hombre'], ['Zapatillas dama', 'Dama'],
+    ['Guayos', 'Guayos'], ['Botas', 'Botas'], ['Zuecos', 'Zuecos']],
+};
+const itemsDe = (linea, grupo) => LINEAS[linea].items.filter((p) => p.grupo === grupo);
+
+/* Con qué arranca el combo (las mismas piezas que ya trae el HTML) */
+const INICIO = { caps: 'caps-mets-rojo', sneakers: 'sneakers-kyrie4-negro' };
+
+/* En el pedido cada pieza de calzado se nombra por lo que es */
+const piezaCalzado = (p) => (p.tipo && p.tipo !== 'Zapatillas' ? p.tipo : 'Zapatillas');
 
 const estado = {
-  caps: { item: null, talla: '' },
-  sneakers: { item: null, talla: '' },
+  caps: { item: null, talla: '', grupo: '' },
+  sneakers: { item: null, talla: '', grupo: '' },
 };
 
-/* Zapatillas para el combo: los Kyrie (precio confirmado) + una muestra de marcas */
-const COMBO_ZAPATILLAS = [
-  'sneakers-kyrie4-negro', 'sneakers-kyrie3-blanco', 'sneakers-kyrie7-verde-azul', 'sneakers-kyrie7-lila-rosa',
-  'sneakers-jordan-air-jordan-4-blanco-rosa', 'sneakers-nike-dunk-low-blanco-cafe', 'sneakers-nike-air-force-1-blanco-total',
-  'sneakers-salomon-xt-6-crema-cafe', 'sneakers-on-cloud-crema-rosa', 'sneakers-adidas-campus-00s-crema-cafe',
-  'sneakers-new-balance-running-crema', 'sneakers-nike-shox-r4-rojo-negro',
-].map(porId).filter(Boolean);
+/* Hay cientos de miniaturas: cada foto se pide solo cuando se asoma en su fila */
+const vigias = new WeakMap();
+function vigilarFotos(cont) {
+  const pendientes = qsa('img[data-src]', cont);
+  if (!('IntersectionObserver' in window)) {
+    pendientes.forEach((img) => { img.src = img.dataset.src; });
+    return;
+  }
+  let io = vigias.get(cont);
+  if (!io) {
+    io = new IntersectionObserver((entradas) => entradas.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const img = en.target;
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+      io.unobserve(img);
+    }), { root: cont, rootMargin: '0px 320px' });
+    vigias.set(cont, io);
+  }
+  io.disconnect();
+  pendientes.forEach((img) => io.observe(img));
+}
 
-/* Gorras para el combo: las 15 cerradas originales (todas con las 4 tallas y precio real) */
-const COMBO_GORRAS = LINEAS.caps.items.filter((p) => !p.carpeta);
+function pintarCats(cont, linea) {
+  if (!cont) return;
+  const activa = estado[linea].grupo;
+  cont.innerHTML = CATEGORIAS[linea]
+    .map(([grupo, label]) => ({ grupo, label, n: itemsDe(linea, grupo).length }))
+    .filter((c) => c.n)
+    .map((c) => `
+      <button class="combo__cat${c.grupo === activa ? ' is-active' : ''}" type="button"
+              data-grupo="${c.grupo}" aria-pressed="${c.grupo === activa}">${c.label} <span>${c.n}</span></button>`)
+    .join('');
+}
 
-const opcionesDe = (linea) => (linea === 'sneakers' ? COMBO_ZAPATILLAS : COMBO_GORRAS);
-
-function pintarThumbs(cont, linea, alElegir) {
-  cont.innerHTML = opcionesDe(linea)
-    .map((p, i) => `
-      <button class="combo__thumb${i === 0 ? ' is-active' : ''}" type="button" role="option"
-              aria-selected="${i === 0}" data-id="${p.id}" title="${p.name} — ${p.tag}">
-        <img src="${p.srcSm}" alt="${p.alt}" loading="lazy" decoding="async" width="120" height="120">
+function pintarThumbs(cont, linea) {
+  const { grupo, item } = estado[linea];
+  cont.innerHTML = itemsDe(linea, grupo)
+    .map((p) => `
+      <button class="combo__thumb${p === item ? ' is-active' : ''}" type="button" role="option"
+              aria-selected="${p === item}" data-id="${p.id}" title="${p.name} — ${p.tag}">
+        <img data-src="${p.srcSm}" alt="${p.alt}" loading="lazy" decoding="async" width="120" height="120">
       </button>`)
     .join('');
-
-  cont.addEventListener('click', (e) => {
-    const b = e.target.closest('.combo__thumb');
-    if (!b) return;
-    qsa('.combo__thumb', cont).forEach((t) => {
-      const activo = t === b;
-      t.classList.toggle('is-active', activo);
-      t.setAttribute('aria-selected', String(activo));
-    });
-    alElegir(opcionesDe(linea).find((p) => p.id === b.dataset.id));
-  });
+  vigilarFotos(cont);
+  // Que se vea la miniatura elegida aunque no sea de las primeras
+  const activa = qs('.combo__thumb.is-active', cont);
+  cont.scrollLeft = activa ? activa.offsetLeft - cont.clientWidth / 2 + activa.offsetWidth / 2 : 0;
 }
 
-const tallaBotonesHTML = (item) => item.tallas
-  .map((t) => `<button class="size" type="button" data-talla="${t}">${t}${item.unidad}</button>`)
-  .join('');
-
-function pintarTallas(cont, linea, alElegir) {
-  cont.innerHTML = tallaBotonesHTML(LINEAS[linea].items[0]);
-
-  cont.addEventListener('click', (e) => {
-    const b = e.target.closest('.size');
-    if (!b) return;
-    qsa('.size', cont).forEach((s) => s.classList.toggle('is-active', s === b));
-    alElegir(b.dataset.talla);
-  });
-}
-
-/* Las zapatillas del combo mezclan calzado de hombre (Euro 40–44) y de dama
-   (Euro 36–39): al cambiar de miniatura hay que repintar las tallas del par
-   elegido, porque no siempre son las mismas. */
-function refrescarTallasSneaker(cont, item) {
-  if (!cont) return;
-  cont.innerHTML = tallaBotonesHTML(item);
+function pintarTallas(cont, linea) {
+  const { item, talla } = estado[linea];
+  cont.innerHTML = item.tallas
+    .map((t) => `<button class="size${t === talla ? ' is-active' : ''}" type="button" data-talla="${t}">${t}${item.unidad}</button>`)
+    .join('');
 }
 
 export function initCombo() {
@@ -74,23 +91,26 @@ export function initCombo() {
   if (!capThumbs || !sneThumbs) return;
 
   const refs = {
-    caps: { img: qs('#comboCapImg'), name: qs('#comboCapName'), tag: qs('#comboCapTag'), preview: qs('#comboCapImg')?.parentElement },
-    sneakers: { img: qs('#comboSneImg'), name: qs('#comboSneName'), tag: qs('#comboSneTag'), preview: qs('#comboSneImg')?.parentElement },
+    caps: { thumbs: capThumbs, cats: qs('#comboCapCats'), sizes: qs('#comboCapSizes'), img: qs('#comboCapImg'), name: qs('#comboCapName'), tag: qs('#comboCapTag') },
+    sneakers: { thumbs: sneThumbs, cats: qs('#comboSneCats'), sizes: qs('#comboSneSizes'), img: qs('#comboSneImg'), name: qs('#comboSneName'), tag: qs('#comboSneTag') },
   };
   const totalEl = qs('#comboTotal');
   const cta = qs('#comboCta');
 
   const piezas = () => [estado.caps.item, estado.sneakers.item].filter(Boolean);
   const total = () => piezas().reduce((n, p) => n + (tienePrecio(p) ? p.precio : 0), 0);
-  const porCotizar = () => piezas().some((p) => !tienePrecio(p));
-  const textoTotal = () => (porCotizar() ? `${precioCOP(total())} + zapatillas por cotizar` : precioCOP(total()));
+  const sinPrecio = () => piezas().filter((p) => !tienePrecio(p));
+  const textoTotal = () => {
+    const faltan = sinPrecio().map((p) => (p.linea === 'caps' ? 'gorra' : piezaCalzado(p).toLowerCase()));
+    return faltan.length ? `${precioCOP(total())} + ${faltan.join(' y ')} por cotizar` : precioCOP(total());
+  };
 
   const mensaje = () => {
     const c = estado.caps.item;
     const s = estado.sneakers.item;
     const lineas = ['Hola OGCLEAN, quiero este combo:'];
     if (c) lineas.push(`• Gorra ${c.name} (${c.tag})${estado.caps.talla ? ` talla ${estado.caps.talla}` : ''} — ${precioCOP(c.precio)}`);
-    if (s) lineas.push(`• Zapatillas ${s.name} (${s.tag})${estado.sneakers.talla ? ` talla ${estado.sneakers.talla}${s.unidad}` : ''} — ${tienePrecio(s) ? precioCOP(s.precio) : 'precio a confirmar'}`);
+    if (s) lineas.push(`• ${piezaCalzado(s)} ${s.name} (${s.tag})${estado.sneakers.talla ? ` talla ${estado.sneakers.talla}${s.unidad}` : ''} — ${tienePrecio(s) ? precioCOP(s.precio) : 'precio a confirmar'}`);
     lineas.push(`Total: ${textoTotal()}`);
     return lineas.join('\n');
   };
@@ -98,36 +118,73 @@ export function initCombo() {
   const refrescar = () => {
     if (totalEl) {
       totalEl.textContent = textoTotal();
-      totalEl.classList.toggle('is-long', porCotizar());
+      totalEl.classList.toggle('is-long', sinPrecio().length > 0);
     }
     if (cta) cta.href = wa(mensaje());
   };
 
-  const sneSizes = qs('#comboSneSizes');
-
   const setItem = (linea, item) => {
     if (!item) return;
-    estado[linea].item = item;
-    if (linea === 'sneakers') {
-      estado.sneakers.talla = '';
-      refrescarTallasSneaker(sneSizes, item);
-    }
+    const e = estado[linea];
+    e.item = item;
+    // La talla elegida se conserva si la nueva pieza la tiene; si solo hay una, va sola
+    if (!item.tallas.includes(e.talla)) e.talla = '';
+    if (item.tallas.length === 1) e.talla = item.tallas[0];
+    pintarTallas(refs[linea].sizes, linea);
+
     const r = refs[linea];
-    if (r.preview) r.preview.classList.add('is-swapping');
+    const preview = r.img?.parentElement;
+    if (preview) preview.classList.add('is-swapping');
     setTimeout(() => {
       r.img.src = item.srcSm;
       r.img.alt = item.alt;
       r.name.textContent = item.name;
       r.tag.textContent = `${item.tag} · ${precioCOP(item.precio)}`;
-      if (r.preview) r.preview.classList.remove('is-swapping');
+      if (preview) preview.classList.remove('is-swapping');
     }, 160);
     refrescar();
   };
 
-  pintarThumbs(capThumbs, 'caps', (item) => setItem('caps', item));
-  pintarThumbs(sneThumbs, 'sneakers', (item) => setItem('sneakers', item));
-  pintarTallas(qs('#comboCapSizes'), 'caps', (t) => { estado.caps.talla = t; refrescar(); });
-  pintarTallas(sneSizes, 'sneakers', (t) => { estado.sneakers.talla = `${t}`; refrescar(); });
+  initFila(capThumbs, { etiqueta: 'gorras' });
+  initFila(sneThumbs, { etiqueta: 'pares' });
+
+  ['caps', 'sneakers'].forEach((linea) => {
+    const r = refs[linea];
+    const primero = porId(INICIO[linea]) || LINEAS[linea].items[0];
+    estado[linea].grupo = primero.grupo;
+    setItem(linea, primero);
+    pintarCats(r.cats, linea);
+    pintarThumbs(r.thumbs, linea);
+
+    // Otra categoría: se muestran sus piezas y se elige la primera
+    r.cats?.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-grupo]');
+      if (!b || b.dataset.grupo === estado[linea].grupo) return;
+      estado[linea].grupo = b.dataset.grupo;
+      setItem(linea, itemsDe(linea, b.dataset.grupo)[0]);
+      pintarCats(r.cats, linea);
+      pintarThumbs(r.thumbs, linea);
+    });
+
+    r.thumbs.addEventListener('click', (e) => {
+      const b = e.target.closest('.combo__thumb');
+      if (!b) return;
+      qsa('.combo__thumb', r.thumbs).forEach((t) => {
+        const activo = t === b;
+        t.classList.toggle('is-active', activo);
+        t.setAttribute('aria-selected', String(activo));
+      });
+      setItem(linea, porId(b.dataset.id));
+    });
+
+    r.sizes.addEventListener('click', (e) => {
+      const b = e.target.closest('.size');
+      if (!b) return;
+      qsa('.size', r.sizes).forEach((s) => s.classList.toggle('is-active', s === b));
+      estado[linea].talla = b.dataset.talla;
+      refrescar();
+    });
+  });
 
   // Manda el combo completo al carrito (una línea por pieza)
   const add = qs('#comboAdd');
@@ -135,7 +192,7 @@ export function initCombo() {
     add.addEventListener('click', () => {
       const faltaTalla = !estado.caps.talla || !estado.sneakers.talla;
       if (faltaTalla) {
-        [qs('#comboCapSizes'), qs('#comboSneSizes')].forEach((cont, i) => {
+        [refs.caps.sizes, refs.sneakers.sizes].forEach((cont, i) => {
           const falta = i === 0 ? !estado.caps.talla : !estado.sneakers.talla;
           if (!cont || !falta) return;
           cont.classList.add('is-hint');
@@ -151,8 +208,4 @@ export function initCombo() {
       setTimeout(() => { add.classList.remove('is-added'); add.textContent = original; }, 1400);
     });
   }
-
-  // Arranque con las piezas que ya están en el HTML
-  setItem('caps', COMBO_GORRAS[0]);
-  setItem('sneakers', COMBO_ZAPATILLAS[0]);
 }

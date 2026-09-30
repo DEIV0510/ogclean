@@ -1006,7 +1006,7 @@ export const ZAPATOS = [
     "color": "Negro / Rojo",
     "alt": "Zapatillas Air Jordan 11 Low color negro / rojo",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "genero": "hombre"
   },
   {
     "img": "on-cloud-blanco-verde",
@@ -1419,7 +1419,7 @@ export const ZAPATOS = [
     "color": "Blanco / Azul",
     "alt": "Zapatillas Air Jordan 1 Low color blanco / azul",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #2"
   },
   {
@@ -1666,7 +1666,7 @@ export const ZAPATOS = [
     "color": "Café / Rosa / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color café / rosa / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #43"
   },
   {
@@ -1843,7 +1843,7 @@ export const ZAPATOS = [
     "color": "Blanco total",
     "alt": "Zapatillas Air Jordan 1 Low color blanco total",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #65"
   },
   {
@@ -1999,7 +1999,7 @@ export const ZAPATOS = [
     "color": "Oliva / Crema / Negro",
     "alt": "Zapatillas Air Jordan 1 Low color oliva / crema / negro",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #86"
   },
   {
@@ -2558,7 +2558,7 @@ export const ZAPATOS = [
     "color": "Verde / Negro / Blanco",
     "alt": "Zapatillas Air Jordan 4 RM color verde / negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #165"
   },
   {
@@ -2614,7 +2614,7 @@ export const ZAPATOS = [
     "color": "Gris / Negro / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color gris / negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #171"
   },
   {
@@ -2658,7 +2658,7 @@ export const ZAPATOS = [
     "color": "Blanco / Celeste charol",
     "alt": "Zapatillas Air Jordan 11 Low color blanco / celeste charol",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #177"
   },
   {
@@ -3136,7 +3136,7 @@ export const ZAPATOS = [
     "color": "Café / Blanco / Rosa palo",
     "alt": "Zapatillas Air Jordan 1 Low color café / blanco / rosa palo",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #245"
   },
   {
@@ -3785,7 +3785,7 @@ export const ZAPATOS = [
     "color": "Blanco / Gris / Crema",
     "alt": "Zapatillas Air Jordan 1 Low color blanco / gris / crema",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #322"
   },
   {
@@ -3940,7 +3940,7 @@ export const ZAPATOS = [
     "color": "Blanco / Negro charol",
     "alt": "Zapatillas Air Jordan 11 Low color blanco / negro charol",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #346"
   },
   {
@@ -4130,7 +4130,7 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #371"
   },
   {
@@ -4186,7 +4186,7 @@ export const ZAPATOS = [
     "color": "Café / Negro / Crema",
     "alt": "Zapatillas Air Jordan 1 Low color café / negro / crema",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #379"
   },
   {
@@ -4511,7 +4511,7 @@ export const ZAPATOS = [
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color rosa / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #428"
   },
   {
@@ -4577,7 +4577,7 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Air Jordan 11 Low color negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #440"
   },
   {
@@ -5367,7 +5367,7 @@ export const ZAPATOS = [
     "color": "Negro / Celeste / Blanco",
     "alt": "Zapatillas Jordan Max Aura 6 color negro / celeste / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "carpeta2 #51"
   },
   {
@@ -5931,7 +5931,7 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Jordan Max Aura 6 color negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "carpeta2 #103"
   }
 ];

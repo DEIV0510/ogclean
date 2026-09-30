@@ -5,6 +5,7 @@ import { qs, qsa } from '../utils/dom.js';
 import { TODOS, ORDEN_COLORES, tienePrecio } from '../data/products.js';
 import { renderCards } from '../components/productCard.js';
 import { initCompraRapida } from '../components/compraRapida.js';
+import { initFila } from '../components/fila.js';
 
 const POR_PAGINA = 24;
 const GRUPOS_TODOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Guayos', 'Botas', 'Zuecos'];
@@ -282,6 +283,9 @@ export function initShop() {
     inicioResultados: qs('#resultados'),
   };
   if (!refs.grid) return;
+
+  // Las categorías no caben en una línea: flechas para correr la fila (pedido del dueño)
+  initFila(refs.grupos, { etiqueta: 'categorías', sangrado: true });
 
   // Alto real del header para que la barra y los filtros fijos no queden debajo
   const header = qs('#header');

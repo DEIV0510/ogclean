@@ -957,3 +957,109 @@
 .legal__cuerpo { display: grid; gap: 1.5rem; margin-block: clamp(2.4rem, 6vw, 3.6rem); max-width: 62ch; }
 .legal__cuerpo h2 { margin-bottom: -0.7rem; }
 .legal__cuerpo p { color: var(--muted); }
+
+/* ---------------- Combo: categorías, flechas y guía de tallas ---------------- */
+.combo__cats { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.combo__cat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--bone) 24%, transparent);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.combo__cat span { color: var(--red-soft); }
+.combo__cat:hover { border-color: var(--bone); }
+.combo__cat.is-active { background: var(--bone); border-color: var(--bone); color: var(--ink); }
+.combo__cat.is-active span { color: var(--red); }
+.combo__slot .fila { --fila-fondo: color-mix(in srgb, var(--bone) 5%, var(--ink)); }
+.combo__slot .fila__flecha { width: 2.4rem; height: 2.4rem; }
+.combo__thumbs { scrollbar-color: color-mix(in srgb, var(--bone) 30%, transparent) transparent; }
+.combo__guia {
+  justify-self: start;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red-soft);
+}
+.combo__guia:hover { color: var(--bone); }
+
+/* ══════ GUÍA DE TALLAS (inicio) ══════ */
+.tallas__grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
+.tallas__intro { display: grid; gap: 1rem; justify-items: start; align-content: start; }
+.tallas__cuerpo { display: grid; gap: 1.2rem; justify-items: start; align-content: start; }
+.tallas__pasos { display: grid; gap: 0.55rem; width: 100%; }
+.tallas__pasos li {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  align-items: baseline;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.tallas__pasos b { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.1em; color: var(--red); }
+.tallas__pasos strong { color: var(--red); }
+.tallas__sub { color: var(--muted); }
+.tallas__tablas { width: 100%; }
+.tallas .guia-tallas__tabla caption { font-size: 1.15rem; }
+.tallas .guia-tallas__tabla td { padding: 0.6rem 0.75rem; font-size: 1.1rem; }
+
+/* Etiqueta de ejemplo: el número EUR va encerrado, como en la imagen del dueño */
+.etiqueta {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  width: min(100%, 360px);
+  margin-top: 0.4rem;
+  border: 2px solid var(--ink);
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.etiqueta__marca {
+  grid-column: 1 / -1;
+  padding: 0.45rem;
+  border-bottom: 2px solid var(--ink);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.etiqueta__col {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 0.7rem 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.etiqueta__col small { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.1em; }
+.etiqueta__col + .etiqueta__col { border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+.etiqueta__col.is-eur { color: var(--red); }
+.etiqueta__col.is-eur::after {
+  content: '';
+  position: absolute;
+  inset: 0.2rem;
+  border: 2.5px solid var(--red);
+  border-radius: 50%;
+}
+.etiqueta__barras {
+  grid-column: 1 / -1;
+  height: 30px;
+  margin: 0.2rem 0.8rem 0.7rem;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 13px);
+}
+
+@media (min-width: 860px) {
+  .tallas__grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+}
