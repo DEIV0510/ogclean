@@ -15,14 +15,16 @@ export function tablasTallasHTML(resaltar = '') {
     </table>`).join('')}</div>`;
 }
 
-/** Desplegable para la ficha de un par de calzado. */
+/** Desplegable para la ficha de un par de calzado. Unisex: las dos tablas por igual. */
 export function guiaFichaHTML(p) {
+  const unisex = p.genero === 'unisex';
   return `
     <details class="quick__guia">
       <summary>¿Cuál es mi talla? <span>Guía de tallas</span></summary>
       <div class="quick__guia-cuerpo">
         <p>Revisa la etiqueta de las zapatillas que ya usas y busca el número <b>EUR</b>: esa es tu talla. Si no la tienes, pasa tu talla nacional a Euro:</p>
-        ${tablasTallasHTML(p.genero === 'dama' ? 'dama' : 'hombre')}
+        ${unisex ? '<p><b>Este par es unisex:</b> viene de la 36 a la 44, usa la tabla de caballero o la de dama.</p>' : ''}
+        ${tablasTallasHTML(unisex ? '' : p.genero === 'dama' ? 'dama' : 'hombre')}
       </div>
     </details>`;
 }

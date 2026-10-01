@@ -10,11 +10,12 @@ import { initFila } from '../components/fila.js';
 const POR_PAGINA = 24;
 const GRUPOS_TODOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Guayos', 'Botas', 'Zuecos'];
 // Una categoría sin productos no se muestra como pestaña
-const GRUPOS = GRUPOS_TODOS.filter((g) => TODOS.some((p) => p.grupo === g));
+const GRUPOS = GRUPOS_TODOS.filter((g) => TODOS.some((p) => p.grupos.includes(g)));
 
 /* Enlaces viejos siguen funcionando: ?categoria=Gorras muestra las dos líneas de gorras;
-   ?categoria=Zapatillas muestra hombre+dama+básquetbol (las zapatillas: ni botas, ni guayos, ni zuecos) */
-const esGrupo = (p, g) => p.grupo === g
+   ?categoria=Zapatillas muestra hombre+dama+básquetbol (las zapatillas: ni botas, ni guayos, ni zuecos).
+   Las unisex están en dos categorías a la vez (p.grupos). */
+const esGrupo = (p, g) => p.grupos.includes(g)
   || (g === 'Gorras' && p.linea === 'caps')
   || (g === 'Zapatillas' && p.linea === 'sneakers' && p.tipo === 'Zapatillas');
 
@@ -62,7 +63,7 @@ function filtrar(ignorar = '') {
       if (estado.precio === 'cotizar' && tienePrecio(p)) return false;
     }
     if (palabras.length) {
-      const texto = normal([p.name, p.tag, p.color, p.marca, p.grupo, p.tipo, p.equipo, p.liga, p.cierre, p.lineaGorra]
+      const texto = normal([p.name, p.tag, p.color, p.marca, ...p.grupos, p.genero === 'unisex' ? 'unisex' : '', p.tipo, p.equipo, p.liga, p.cierre, p.lineaGorra]
         .filter(Boolean).join(' '));
       if (!palabras.every((w) => texto.includes(w))) return false;
     }
@@ -109,8 +110,10 @@ function opcionCheck(nombre, valor, label, n, marcado) {
 
 function pintarFiltros() {
   // Categorías (pestañas grandes arriba)
-  const porGrupo = contar(filtrar('grupo'), 'grupo');
-  const totalGrupo = Object.values(porGrupo).reduce((a, b) => a + b, 0);
+  // Por `grupos`: una unisex suma en hombre y en dama, pero en «Todo» cuenta una sola vez
+  const sinGrupo = filtrar('grupo');
+  const porGrupo = contar(sinGrupo, 'grupos');
+  const totalGrupo = sinGrupo.length;
   refs.grupos.innerHTML = [['todo', 'Todo', totalGrupo], ...GRUPOS.map((g) => [g, g, porGrupo[g] || 0])]
     .map(([id, label, n]) => `
       <button class="tienda-cat${estado.grupo === id ? ' is-active' : ''}" type="button" data-grupo="${id}" aria-pressed="${estado.grupo === id}">

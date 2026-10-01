@@ -11,6 +11,7 @@ import { initCart } from './components/cart.js';
 import { initVisor } from './components/visor.js';
 import { initFirma } from './components/firma.js';
 import { initFavoritos } from './components/favoritos.js';
+import { initEncuadre } from './components/productCard.js';
 
 /** Enlaza todos los CTA de WhatsApp con la única línea de atención. */
 export function initWhatsApp(raiz = document) {
@@ -36,6 +37,7 @@ export function initComun() {
   initVisor();
   initFirma();
   initFavoritos();
+  initEncuadre();
   initHeader();
   initMenu();
   initCursor();

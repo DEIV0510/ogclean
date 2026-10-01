@@ -50,7 +50,7 @@ export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100
         ${favoritoHTML(p)}
       </div>
       <div class="card__body">
-        <p class="card__kicker mono">${p.marca && p.marca !== 'Otras' ? p.marca : p.tipo}</p>
+        <p class="card__kicker mono">${p.marca && p.marca !== 'Otras' ? p.marca : p.tipo}${p.genero === 'unisex' ? ' · Unisex' : ''}</p>
         <h3 class="card__name">${p.name}</h3>
         <p class="card__meta">${p.color}</p>
         ${precioHTML(p)}
@@ -73,6 +73,29 @@ export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100
         <a class="btn btn--primary btn--sm btn--block" data-pedir-ya href="#" target="_blank" rel="noopener" hidden>Pedir ya</a>
       </div>` : ''}
     </article>`;
+}
+
+/* Fotos de forma extrema (muy verticales o muy anchas): con «cover» la caja les cortaría el
+   producto («que no queden mochas las imágenes», dueño 2026-10-01). Esas se muestran enteras
+   (contain) sobre el fondo blanco de la caja; las demás siguen llenándola como siempre. */
+const CAJAS = [['.card__media', 1], ['.cart-item__media', 1], ['.runway__media', 0.8]];
+const RECORTE_MAX = 0.21; // lo que se puede perder de la foto sin que el zapato quede cortado
+
+export function encuadrar(img) {
+  if (!img.naturalWidth || !img.naturalHeight) return;
+  const caja = CAJAS.find(([sel]) => img.parentElement?.matches(sel));
+  if (!caja) return;
+  const forma = img.naturalWidth / img.naturalHeight;
+  const recorte = 1 - Math.min(forma / caja[1], caja[1] / forma);
+  img.classList.toggle('is-entera', recorte > RECORTE_MAX);
+}
+
+/** Encuadra cada foto al cargar, también las de tarjetas que se pintan después (filtros, ficha…). */
+export function initEncuadre() {
+  // `load` no burbujea: se escucha en captura
+  document.addEventListener('load', (e) => { if (e.target.tagName === 'IMG') encuadrar(e.target); }, true);
+  document.querySelectorAll('.card__media img, .cart-item__media img, .runway__media img')
+    .forEach((img) => { if (img.complete) encuadrar(img); });
 }
 
 /** Pinta una lista de productos dentro de un contenedor. */

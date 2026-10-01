@@ -15,7 +15,7 @@ export function initTiendaPreview() {
   const grid = qs('#previewGrid');
   if (!grid) return;
 
-  const cuenta = (g) => TODOS.filter((p) => p.grupo === g).length;
+  const cuenta = (g) => TODOS.filter((p) => p.grupos.includes(g)).length;
 
   if (cats) {
     const portada = {

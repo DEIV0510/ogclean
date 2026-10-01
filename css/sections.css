@@ -1063,3 +1063,45 @@
 @media (min-width: 860px) {
   .tallas__grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
 }
+
+/* ══════ CAMBIOS Y REEMBOLSOS (inicio) ══════ */
+.reembolsos { background: var(--paper); }
+.reembolsos__grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
+.reembolsos__intro { display: grid; gap: 1rem; justify-items: start; align-content: start; }
+.reembolsos__dias { color: var(--red); }
+.reembolsos__cuerpo { display: grid; gap: 1.4rem; align-content: start; }
+.reembolsos__reglas { display: grid; gap: 0.6rem; }
+.reembolsos__reglas li {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  align-items: baseline;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.reembolsos__reglas b { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.1em; color: var(--red); }
+.reembolsos__reglas span { display: grid; gap: 0.25rem; color: var(--muted); }
+.reembolsos__reglas strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.reembolsos__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.4rem; }
+
+@media (min-width: 860px) {
+  .reembolsos__grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+}
+
+/* El pie: la política de 20 días lleva a su sección */
+.footer__meta a { transition: color 0.25s ease; }
+.footer__meta a:hover { color: var(--red-soft); }
+
+/* Combo: la foto grande se ve entera (nada «mocho»); el recuadro blanco la enmarca */
+.combo__preview img { object-fit: contain; }
+
+/* terminos.html#reembolsos: el título llega visible, no tapado por el header fijo */
+.legal__cuerpo h2[id] { scroll-margin-top: 8rem; }

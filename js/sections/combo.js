@@ -15,7 +15,7 @@ const CATEGORIAS = {
   sneakers: [['Básquetbol', 'Básquetbol'], ['Zapatillas hombre', 'Hombre'], ['Zapatillas dama', 'Dama'],
     ['Guayos', 'Guayos'], ['Botas', 'Botas'], ['Zuecos', 'Zuecos']],
 };
-const itemsDe = (linea, grupo) => LINEAS[linea].items.filter((p) => p.grupo === grupo);
+const itemsDe = (linea, grupo) => LINEAS[linea].items.filter((p) => p.grupos.includes(grupo));
 
 /* Con qué arranca el combo (las mismas piezas que ya trae el HTML) */
 const INICIO = { caps: 'caps-mets-rojo', sneakers: 'sneakers-kyrie4-negro' };

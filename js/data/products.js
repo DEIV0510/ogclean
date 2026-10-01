@@ -17,16 +17,30 @@ export const TALLAS = {
   caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
   hombre: ['40', '41', '42', '43', '44'],
   dama: ['36', '37', '38', '39'],
+  unisex: ['36', '37', '38', '39', '40', '41', '42', '43', '44'],
 };
+
+/* Unisex (dueño, 2026-10-01: «las que tengas talla de hombre y de mujer son unisex»):
+   si un modelo tiene pares de hombre y de dama, todos sus pares son unisex, con todas
+   las tallas (36–44), y salen tanto en «Zapatillas hombre» como en «Zapatillas dama».
+   Es una regla, no un dato: un modelo nuevo que llegue en los dos géneros queda unisex solo. */
+const MODELOS_UNISEX = (() => {
+  const generos = {};
+  ZAPATOS.forEach((z) => {
+    if (z.genero === 'hombre' || z.genero === 'dama') (generos[z.name] = generos[z.name] || new Set()).add(z.genero);
+  });
+  return new Set(Object.keys(generos).filter((n) => generos[n].size === 2));
+})();
+const generoDe = (z) => ((z.genero === 'hombre' || z.genero === 'dama') && MODELOS_UNISEX.has(z.name) ? 'unisex' : z.genero);
 
 /* Sufijo que acompaña a cada talla en pantalla, y nombre de la escala para los rótulos
    («Elige tu talla (Euro)»). Las tallas Euro se muestran sin sufijo: «42», no «42 EU». */
 export const UNIDAD_TALLA = { caps: '', sneakers: '' };
 export const ESCALA_TALLA = { caps: '', sneakers: 'Euro' };
 
-/** Rango de talla de una zapatilla/bota: dama 36–39, todo lo demás (calle hombre, botas
- *  y básquetbol, que no llevan `genero: 'dama'`) 40–44. */
-const grupoTalla = (item) => (item.genero === 'dama' ? 'dama' : 'hombre');
+/** Rango de talla de una zapatilla/bota: dama 36–39, unisex 36–44 y todo lo demás
+ *  (calle hombre, botas y básquetbol, que no llevan `genero: 'dama'`) 40–44. */
+const grupoTalla = (item) => ({ dama: 'dama', unisex: 'unisex' }[item.genero] || 'hombre');
 
 export const CAPS = [
   { img: 'mets-rojo', name: 'New York Mets', tag: 'Shea Stadium 40th', alt: 'Gorra fitted New York Mets roja', cat: 'mlb', color: 'Rojo' },
@@ -105,7 +119,7 @@ export const LINEAS = {
     plural: 'pares',
     kicker: 'Multimarca',
     desc: 'Nike, Jordan, Adidas, Salomon, On, New Balance y más, en tu talla.',
-    items: [...SNEAKERS, ...ZAPATOS.map((z) => ({ ...z, carpeta: 'zapatos', cat: z.marca }))]
+    items: [...SNEAKERS, ...ZAPATOS.map((z) => ({ ...z, genero: generoDe(z), carpeta: 'zapatos', cat: z.marca }))]
       .map((s, i) => decorar(s, 'sneakers', i)),
     filtros: [],
   },
@@ -164,6 +178,8 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   } else {
     p.grupo = p.genero === 'dama' ? 'Zapatillas dama' : 'Zapatillas hombre';
   }
+  // Categorías en las que aparece: las unisex salen en hombre y en dama
+  p.grupos = p.genero === 'unisex' && p.grupo === 'Zapatillas hombre' ? ['Zapatillas hombre', 'Zapatillas dama'] : [p.grupo];
 });
 
 export const TODOS = [...LINEAS.caps.items, ...LINEAS.sneakers.items];

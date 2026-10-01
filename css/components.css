@@ -1352,3 +1352,69 @@
 .quick__guia-cuerpo { display: grid; gap: 0.9rem; padding-bottom: 1rem; }
 .quick__guia-cuerpo p { color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
 .quick__guia-cuerpo b { color: var(--fg); }
+
+/* ---------------- Favoritos: botón ♥ junto al carrito y su apartado ---------------- */
+/* El panel reutiliza el del carrito (.cart, .cart__panel, .cart-item…); aquí solo lo propio. */
+.fav-badge {
+  position: absolute;
+  top: -3px; right: -3px;
+  min-width: 20px;
+  height: 20px;
+  padding-inline: 5px;
+  display: grid;
+  place-content: center;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.3s var(--ease-out), opacity 0.3s ease;
+}
+.fav-badge.is-empty { transform: scale(0); opacity: 0; }
+.fav-btn svg path { transition: fill 0.25s ease, stroke 0.25s ease; }
+.fav-btn.has-favs svg path { fill: var(--red); stroke: var(--red); }
+.fav-btn.has-favs:hover svg path { fill: var(--bone); stroke: var(--bone); }
+
+.fav-item__media {
+  display: block;
+  padding: 0;
+  cursor: pointer;
+}
+.fav-item__media img { transition: transform 0.4s var(--ease-out); }
+.fav-item__media:hover img { transform: scale(1.06); }
+.fav-item__ver {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.fav-item__ver:hover { background: var(--ink); color: var(--bone); }
+.fav-item__ver:focus-visible,
+.fav-item__media:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+/* Con el ♥ en el header ya son 4 botones: en celulares angostos «Comprar» queda solo con el ícono */
+@media (max-width: 479.98px) {
+  .header__actions { gap: 0.4rem; }
+  .header__cta-text { display: none; }
+  .header__actions .btn--sm { width: 46px; height: 46px; padding: 0; justify-content: center; }
+}
+
+/* ---------------- Ficha: la foto entera siempre cabe en la pantalla ---------------- */
+/* Antes medía lo mismo que su columna y quedaba anclada 5.5rem más abajo: en un portátil
+   (≈650–720 px de alto útil) se cortaba la parte de abajo de la foto («mocha»). Ahora la
+   caja nunca es más alta que lo que queda visible y se ancla justo donde empieza. */
+.quick__media { width: min(100%, calc(100vh - 9.5rem)); width: min(100%, calc(100svh - 9.5rem)); margin-inline: auto; }
+@media (min-width: 860px) {
+  .quick__media { position: sticky; top: clamp(1.2rem, 3vw, 2.4rem); }
+}
+
+/* Fotos de forma extrema: enteras dentro de su caja, sin cortar el producto (productCard.js → encuadrar) */
+.card__media img.is-entera,
+.cart-item__media img.is-entera,
+.runway__media img.is-entera { object-fit: contain; object-position: center; }

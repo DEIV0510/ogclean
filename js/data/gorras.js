@@ -2171,22 +2171,6 @@ export const GORRAS = [
     "precio": 85000
   },
   {
-    "img": "los-angeles-dodgers-gris-celeste",
-    "name": "Los Angeles Dodgers",
-    "tag": "Gris / celeste",
-    "color": "Gris / celeste",
-    "equipo": "Los Angeles Dodgers",
-    "liga": "MLB",
-    "cierre": "Ajustable",
-    "lineaGorra": "Clásica",
-    "tallas": [
-      "Ajustable"
-    ],
-    "alt": "Gorra ajustable Los Angeles Dodgers, gris / celeste",
-    "origen": "A4",
-    "precio": 85000
-  },
-  {
     "img": "toronto-raptors-negro-rojo",
     "name": "Toronto Raptors",
     "tag": "Negro / rojo",

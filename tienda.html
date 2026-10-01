@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>Tienda OGCLEAN | Gorras, zapatillas, guayos y botas</title>
-<meta name="description" content="Compra en OGCLEAN: 932 productos entre gorras cerradas y ajustables, zapatillas Nike, Jordan, Adidas, On, New Balance, Salomon y más, guayos, botas y zuecos. Filtra por equipo, liga, marca, color y precio, elige tu talla y pide por WhatsApp.">
+<meta name="description" content="Compra en OGCLEAN: 930 productos entre gorras cerradas y ajustables, zapatillas Nike, Jordan, Adidas, On, New Balance, Salomon y más, guayos, botas y zuecos. Filtra por equipo, liga, marca, color y precio, elige tu talla y pide por WhatsApp.">
 <meta name="theme-color" content="#0C0A09">
 <link rel="canonical" href="https://ogclean.vercel.app/tienda.html">
 
@@ -65,6 +65,12 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
         <span class="header__cta-text">Comprar</span>
       </a>
+      <button class="cart-btn fav-btn" id="favBtn" type="button" aria-label="Ver favoritos, ninguno guardado" aria-controls="favs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <path d="M12 20.1s-7.4-4.5-9.9-9.1C0.6 7.5 2.2 4 5.7 4c2 0 3.5 1.1 4.3 2.6C10.8 5.1 12.3 4 14.3 4c3.5 0 5.1 3.5 3.6 7-2.5 4.6-9.9 9.1-9.9 9.1Z" stroke-linejoin="round"/>
+        </svg>
+        <span class="fav-badge is-empty" aria-hidden="true">0</span>
+      </button>
       <button class="cart-btn" id="cartBtn" type="button" aria-label="Ver carrito, vacío">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
           <path d="M6.5 8h11l-1 11.5a1.5 1.5 0 0 1-1.5 1.4H9a1.5 1.5 0 0 1-1.5-1.4L6.5 8Z" stroke-linejoin="round"/>
@@ -96,7 +102,8 @@
       <a class="menu__link" href="index.html#combo" style="--d:.26s"><span>04</span>Arma tu combo</a>
       <a class="menu__link" href="index.html#proceso" style="--d:.32s"><span>05</span>Cómo comprar</a>
       <a class="menu__link" href="index.html#tallas" style="--d:.38s"><span>06</span>Guía de tallas</a>
-      <a class="menu__link" href="index.html#contacto" style="--d:.44s"><span>07</span>Contacto</a>
+      <a class="menu__link" href="index.html#reembolsos" style="--d:.44s"><span>07</span>Reembolsos</a>
+      <a class="menu__link" href="index.html#contacto" style="--d:.5s"><span>08</span>Contacto</a>
     </nav>
     <aside class="menu__aside">
       <p class="mono">Pide por WhatsApp</p>
@@ -128,7 +135,7 @@
       </nav>
       <div class="tienda-top__fila">
         <h1 class="h1" id="tituloTienda">Tienda</h1>
-        <p class="tienda-top__meta mono"><b id="tiendaTotal">932</b> productos · Envíos a toda Colombia</p>
+        <p class="tienda-top__meta mono"><b id="tiendaTotal">930</b> productos · Envíos a toda Colombia</p>
       </div>
       <form class="tienda-buscar" id="tiendaBuscarForm" role="search">
         <label class="sr-only" for="tiendaBuscar">Buscar por marca, modelo o color</label>
@@ -254,12 +261,13 @@
       <a href="index.html#combo">Arma tu combo</a>
       <a href="index.html#proceso">Cómo comprar</a>
       <a href="index.html#tallas">Guía de tallas</a>
+      <a href="index.html#reembolsos">Cambios y reembolsos</a>
       <a href="index.html#contacto">Contacto</a>
       <a href="terminos.html">Términos y condiciones</a>
     </nav>
     <div class="footer__meta">
       <p class="mono">Envíos a toda Colombia</p>
-      <p class="mono">20 días para cambios o reembolsos</p>
+      <p class="mono"><a href="index.html#reembolsos">20 días para cambios o reembolsos · solo por defecto</a></p>
     </div>
   </div>
   <div class="footer__bottom container">
@@ -310,10 +318,43 @@
         <span class="mono">Total</span>
         <strong id="cartTotal">$0</strong>
       </div>
-      <p class="cart__nota mono">Envíos a toda Colombia · Confirmamos disponibilidad por chat</p>
+      <p class="cart__nota mono">Envíos a toda Colombia · Confirmamos disponibilidad por chat · Cambios y reembolsos: 20 días, solo por defecto</p>
       <a class="btn btn--primary btn--lg btn--block js-magnetic" id="cartCta" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
         Enviar pedido por WhatsApp
+      </a>
+    </footer>
+  </aside>
+</div>
+
+<!-- Favoritos: el apartado junto al carrito con lo que más le gustó (js/components/favoritos.js) -->
+<div class="cart favs" id="favs" role="dialog" aria-modal="true" aria-label="Tus favoritos" aria-hidden="true">
+  <div class="cart__fondo" data-fav-cerrar></div>
+  <aside class="cart__panel">
+    <header class="cart__top">
+      <div>
+        <p class="mono">Tus favoritos</p>
+        <p class="cart__sub mono">Lo que más te gustó, guardado aquí</p>
+      </div>
+      <button class="cart__close" id="favsClose" type="button" aria-label="Cerrar favoritos">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </header>
+
+    <div class="cart__body">
+      <ul class="cart__lista" id="favsLista"></ul>
+      <div class="cart__vacio" id="favsVacio" hidden>
+        <p class="h3">Todavía no tienes<br>favoritos</p>
+        <p class="txt-muted">Toca el ♥ de cualquier gorra o zapato y aparece aquí para verlo después.</p>
+        <a class="btn btn--dark" href="#resultados" data-fav-cerrar>Ver productos <span class="btn__arrow">→</span></a>
+      </div>
+    </div>
+
+    <footer class="cart__foot">
+      <p class="cart__nota mono" id="favsCuenta">Aún no guardas nada</p>
+      <a class="btn btn--primary btn--lg btn--block js-magnetic" id="favsCta" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+        Preguntar por mis favoritos
       </a>
     </footer>
   </aside>

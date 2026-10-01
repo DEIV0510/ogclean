@@ -4134,18 +4134,6 @@ export const ZAPATOS = [
     "origen": "nuevos #371"
   },
   {
-    "img": "under-armour-micro-g-negro-total",
-    "marca": "Under Armour",
-    "name": "Under Armour Micro G",
-    "tag": "Negro total",
-    "color": "Negro total",
-    "alt": "Botas Under Armour Micro G color negro total",
-    "precio": 229900,
-    "tipo": "Botas",
-    "genero": "hombre",
-    "origen": "nuevos #372"
-  },
-  {
     "img": "nike-air-force-1-foamposite-negro-total",
     "marca": "Nike",
     "name": "Nike Air Force 1 Foamposite",

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>OGCLEAN | Gorras cerradas, ajustables y zapatillas · Envíos a toda Colombia</title>
-<meta name="description" content="OGCLEAN — 383 gorras cerradas y ajustables (MLB, NBA, NFL, Supreme y más) y 549 pares de calzado entre zapatillas, guayos, botas y zuecos: Nike, Jordan, Adidas, On, New Balance, Salomon y más. Elige tu talla, agrega al carrito y pide por WhatsApp. Envíos a toda Colombia.">
+<meta name="description" content="OGCLEAN — 382 gorras cerradas y ajustables (MLB, NBA, NFL, Supreme y más) y 548 pares de calzado entre zapatillas, guayos, botas y zuecos: Nike, Jordan, Adidas, On, New Balance, Salomon y más. Elige tu talla, agrega al carrito y pide por WhatsApp. Envíos a toda Colombia.">
 <meta name="theme-color" content="#0C0A09">
 <link rel="canonical" href="https://ogclean.vercel.app/">
 
@@ -92,6 +92,12 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
         <span class="header__cta-text">Comprar</span>
       </a>
+      <button class="cart-btn fav-btn" id="favBtn" type="button" aria-label="Ver favoritos, ninguno guardado" aria-controls="favs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <path d="M12 20.1s-7.4-4.5-9.9-9.1C0.6 7.5 2.2 4 5.7 4c2 0 3.5 1.1 4.3 2.6C10.8 5.1 12.3 4 14.3 4c3.5 0 5.1 3.5 3.6 7-2.5 4.6-9.9 9.1-9.9 9.1Z" stroke-linejoin="round"/>
+        </svg>
+        <span class="fav-badge is-empty" aria-hidden="true">0</span>
+      </button>
       <button class="cart-btn" id="cartBtn" type="button" aria-label="Ver carrito, vacío">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
           <path d="M6.5 8h11l-1 11.5a1.5 1.5 0 0 1-1.5 1.4H9a1.5 1.5 0 0 1-1.5-1.4L6.5 8Z" stroke-linejoin="round"/>
@@ -123,7 +129,8 @@
       <a class="menu__link" href="#combo" style="--d:.26s"><span>04</span>Arma tu combo</a>
       <a class="menu__link" href="#proceso" style="--d:.32s"><span>05</span>Cómo comprar</a>
       <a class="menu__link" href="#tallas" style="--d:.38s"><span>06</span>Guía de tallas</a>
-      <a class="menu__link" href="#contacto" style="--d:.44s"><span>07</span>Contacto</a>
+      <a class="menu__link" href="#reembolsos" style="--d:.44s"><span>07</span>Reembolsos</a>
+      <a class="menu__link" href="#contacto" style="--d:.5s"><span>08</span>Contacto</a>
     </nav>
     <aside class="menu__aside">
       <p class="mono">Pide por WhatsApp</p>
@@ -174,8 +181,8 @@
         </div>
 
         <ul class="hero__facts" data-anim style="--delay:.35s">
-          <li><b>383</b><span>gorras cerradas y ajustables</span></li>
-          <li><b>549</b><span>pares de calzado</span></li>
+          <li><b>382</b><span>gorras cerradas y ajustables</span></li>
+          <li><b>548</b><span>pares de calzado</span></li>
           <li><b>32</b><span>departamentos con envío</span></li>
         </ul>
       </div>
@@ -238,11 +245,11 @@
       <div class="linea__body">
         <span class="linea__num mono">Línea 01</span>
         <h2 class="h2">Gorras<br><span class="outline-text">OG</span></h2>
-        <p class="linea__desc">139 cerradas (tallas 7 a 7 3/8, solo las disponibles) y 244 ajustables de MLB, NBA, NFL, Supreme y más.</p>
+        <p class="linea__desc">139 cerradas (tallas 7 a 7 3/8, solo las disponibles) y 243 ajustables de MLB, NBA, NFL, Supreme y más.</p>
         <p class="linea__price mono">Filtra por equipo y liga</p>
         <div class="linea__ctas">
           <a class="btn btn--primary btn--sm js-magnetic" href="tienda.html?categoria=Gorras+cerradas">Cerradas (139) <span class="btn__arrow">→</span></a>
-          <a class="btn btn--primary btn--sm js-magnetic" href="tienda.html?categoria=Gorras+ajustables">Ajustables (244) <span class="btn__arrow">→</span></a>
+          <a class="btn btn--primary btn--sm js-magnetic" href="tienda.html?categoria=Gorras+ajustables">Ajustables (243) <span class="btn__arrow">→</span></a>
         </div>
       </div>
     </article>
@@ -257,7 +264,7 @@
       <div class="linea__body">
         <span class="linea__num mono">Línea 02</span>
         <h2 class="h2">Zapa<br><span class="outline-text">tillas</span></h2>
-        <p class="linea__desc">430 pares de zapatillas de Nike, Jordan, Adidas, On, New Balance y más, 99 guayos, 12 botas y 8 zuecos. Todo en talla Euro: hombre 40 a 44 y dama 36 a 39.</p>
+        <p class="linea__desc">430 pares de zapatillas de Nike, Jordan, Adidas, On, New Balance y más, 99 guayos, 11 botas y 8 zuecos. Todo en talla Euro: hombre 40 a 44, dama 36 a 39 y unisex 36 a 44.</p>
         <p class="linea__price mono">Filtra por marca y elige tu talla</p>
         <div class="linea__ctas">
           <a class="btn btn--primary btn--sm js-magnetic" href="tienda.html?categoria=B%C3%A1squetbol">Básquetbol <span class="btn__arrow">→</span></a>
@@ -328,8 +335,8 @@
           <h2 class="h2">Cuatro razones,<br>cero relleno</h2>
         </div>
         <ul class="orbita__ficha" data-anim="right">
-          <li><span class="mono">Gorras</span><b>383 modelos</b></li>
-          <li><span class="mono">Calzado</span><b>549 pares</b></li>
+          <li><span class="mono">Gorras</span><b>382 modelos</b></li>
+          <li><span class="mono">Calzado</span><b>548 pares</b></li>
           <li><span class="mono">Envío</span><b>Toda Colombia</b></li>
           <li><span class="mono">Pedidos</span><b>WhatsApp</b></li>
         </ul>
@@ -452,7 +459,7 @@
           <h2 class="h2">Elige por dónde<br>empezar</h2>
         </div>
         <a class="btn btn--dark btn--lg js-magnetic preview__todo" href="tienda.html" data-anim="right">
-          Ver los <span id="previewTotal">932</span> productos <span class="btn__arrow">→</span>
+          Ver los <span id="previewTotal">930</span> productos <span class="btn__arrow">→</span>
         </a>
       </div>
 
@@ -506,8 +513,8 @@
       </div>
 
       <div class="cifras">
-        <div class="stat" data-anim="scale"><span class="stat__num" data-count="383">0</span><span class="stat__label">Gorras cerradas y ajustables</span></div>
-        <div class="stat" data-anim="scale" style="--delay:.08s"><span class="stat__num" data-count="549">0</span><span class="stat__label">Pares de calzado</span></div>
+        <div class="stat" data-anim="scale"><span class="stat__num" data-count="382">0</span><span class="stat__label">Gorras cerradas y ajustables</span></div>
+        <div class="stat" data-anim="scale" style="--delay:.08s"><span class="stat__num" data-count="548">0</span><span class="stat__label">Pares de calzado</span></div>
         <div class="stat" data-anim="scale" style="--delay:.16s"><span class="stat__num" data-count="2">0</span><span class="stat__label">Líneas de atención</span></div>
         <div class="stat" data-anim="scale" style="--delay:.24s"><span class="stat__num" data-count="32">0</span><span class="stat__label">Departamentos con envío</span></div>
       </div>
@@ -540,6 +547,39 @@
         <p class="mono tallas__sub">¿Sin etiqueta? Pasa tu talla nacional a Euro</p>
         <div class="tallas__tablas" data-guia-tallas></div>
         <a class="btn btn--dark js-wa js-magnetic" data-wa="Hola OGCLEAN, tengo una duda con mi talla." href="#">¿Dudas con tu talla? Escríbenos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 11c · CAMBIOS Y REEMBOLSOS ══════════ -->
+  <!-- Política que dio el dueño (audio 2026-09-30): 20 días; solo por defecto del producto; nada más. -->
+  <section class="reembolsos section" id="reembolsos" aria-labelledby="reembolsosTitulo">
+    <div class="container reembolsos__grid">
+      <div class="reembolsos__intro" data-anim="left">
+        <p class="eyebrow">Cambios y reembolsos</p>
+        <h2 class="h2" id="reembolsosTitulo">Tienes<br><span class="reembolsos__dias">20 días</span></h2>
+        <p class="lead">Para pedir el reembolso o, si lo prefieres, el cambio de tu producto.</p>
+      </div>
+
+      <div class="reembolsos__cuerpo" data-anim>
+        <ul class="reembolsos__reglas">
+          <li>
+            <b>01</b>
+            <span><strong>Hasta 20 días</strong>Tienes hasta 20 días para solicitar el reembolso o el cambio de tu producto.</span>
+          </li>
+          <li>
+            <b>02</b>
+            <span><strong>Solo por defecto</strong>Aplica únicamente si el calzado o la gorra tiene un defecto.</span>
+          </li>
+          <li>
+            <b>03</b>
+            <span><strong>Ningún otro motivo</strong>Por cualquier otro motivo no se hacen cambios ni reembolsos.</span>
+          </li>
+        </ul>
+        <div class="reembolsos__acciones">
+          <a class="btn btn--dark js-wa js-magnetic" data-wa="Hola OGCLEAN, quiero solicitar un cambio o reembolso por defecto. Mi pedido es:" href="#">Solicitar un cambio o reembolso</a>
+          <a class="link-line mono" href="terminos.html#reembolsos">Ver términos y condiciones</a>
+        </div>
       </div>
     </div>
   </section>
@@ -637,12 +677,13 @@
       <a href="#combo">Arma tu combo</a>
       <a href="#proceso">Cómo comprar</a>
       <a href="#tallas">Guía de tallas</a>
+      <a href="#reembolsos">Cambios y reembolsos</a>
       <a href="#contacto">Contacto</a>
       <a href="terminos.html">Términos y condiciones</a>
     </nav>
     <div class="footer__meta">
       <p class="mono">Envíos a toda Colombia</p>
-      <p class="mono">20 días para cambios o reembolsos</p>
+      <p class="mono"><a href="#reembolsos">20 días para cambios o reembolsos · solo por defecto</a></p>
     </div>
   </div>
   <div class="footer__bottom container">
@@ -693,10 +734,43 @@
         <span class="mono">Total</span>
         <strong id="cartTotal">$0</strong>
       </div>
-      <p class="cart__nota mono">Envíos a toda Colombia · Confirmamos disponibilidad por chat</p>
+      <p class="cart__nota mono">Envíos a toda Colombia · Confirmamos disponibilidad por chat · Cambios y reembolsos: 20 días, solo por defecto</p>
       <a class="btn btn--primary btn--lg btn--block js-magnetic" id="cartCta" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
         Enviar pedido por WhatsApp
+      </a>
+    </footer>
+  </aside>
+</div>
+
+<!-- Favoritos: el apartado junto al carrito con lo que más le gustó (js/components/favoritos.js) -->
+<div class="cart favs" id="favs" role="dialog" aria-modal="true" aria-label="Tus favoritos" aria-hidden="true">
+  <div class="cart__fondo" data-fav-cerrar></div>
+  <aside class="cart__panel">
+    <header class="cart__top">
+      <div>
+        <p class="mono">Tus favoritos</p>
+        <p class="cart__sub mono">Lo que más te gustó, guardado aquí</p>
+      </div>
+      <button class="cart__close" id="favsClose" type="button" aria-label="Cerrar favoritos">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </header>
+
+    <div class="cart__body">
+      <ul class="cart__lista" id="favsLista"></ul>
+      <div class="cart__vacio" id="favsVacio" hidden>
+        <p class="h3">Todavía no tienes<br>favoritos</p>
+        <p class="txt-muted">Toca el ♥ de cualquier gorra o zapato y aparece aquí para verlo después.</p>
+        <a class="btn btn--dark" href="tienda.html" data-fav-cerrar>Ir a la tienda <span class="btn__arrow">→</span></a>
+      </div>
+    </div>
+
+    <footer class="cart__foot">
+      <p class="cart__nota mono" id="favsCuenta">Aún no guardas nada</p>
+      <a class="btn btn--primary btn--lg btn--block js-magnetic" id="favsCta" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2.9.4 1.3.5.5.2 1 .1 1.3-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+        Preguntar por mis favoritos
       </a>
     </footer>
   </aside>
