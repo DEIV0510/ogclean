@@ -69,7 +69,7 @@ function pintarThumbs(cont, linea) {
     .map((p) => `
       <button class="combo__thumb${p === item ? ' is-active' : ''}" type="button" role="option"
               aria-selected="${p === item}" data-id="${p.id}" title="${p.name} — ${p.tag}">
-        <img data-src="${p.srcSm}" alt="${p.alt}" loading="lazy" decoding="async" width="120" height="120">
+        <img data-src="${p.srcCard || p.srcSm}" alt="${p.alt}" loading="lazy" decoding="async" width="120" height="120">
       </button>`)
     .join('');
   vigilarFotos(cont);
@@ -136,7 +136,7 @@ export function initCombo() {
     const preview = r.img?.parentElement;
     if (preview) preview.classList.add('is-swapping');
     setTimeout(() => {
-      r.img.src = item.srcSm;
+      r.img.src = item.srcCard || item.srcSm;
       r.img.alt = item.alt;
       r.name.textContent = item.name;
       r.tag.textContent = `${item.tag} · ${precioCOP(item.precio)}`;

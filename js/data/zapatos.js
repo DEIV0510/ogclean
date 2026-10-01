@@ -1975,7 +1975,7 @@ export const ZAPATOS = [
     "tag": "Crema / Café / Blanco",
     "color": "Crema / Café / Blanco",
     "alt": "Zuecos Adidas Samba Mule color crema / café / blanco",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #84"
@@ -2311,7 +2311,7 @@ export const ZAPATOS = [
     "tag": "Café gamuza",
     "color": "Café gamuza",
     "alt": "Zuecos Adidas Adimule color café gamuza",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #132"
@@ -2490,7 +2490,7 @@ export const ZAPATOS = [
     "tag": "Caqui gamuza",
     "color": "Caqui gamuza",
     "alt": "Zuecos Adidas Adimule color caqui gamuza",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #158"
@@ -2811,7 +2811,7 @@ export const ZAPATOS = [
     "tag": "Crema / Rosa / Gris",
     "color": "Crema / Rosa / Gris",
     "alt": "Zuecos Adidas Samba Mule color crema / rosa / gris",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "dama",
     "origen": "nuevos #200"
@@ -3380,7 +3380,7 @@ export const ZAPATOS = [
     "tag": "Negro gamuza",
     "color": "Negro gamuza",
     "alt": "Zuecos Adidas Adimule color negro gamuza",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #277"
@@ -3392,7 +3392,7 @@ export const ZAPATOS = [
     "tag": "Turquesa / Verde / Menta",
     "color": "Turquesa / Verde / Menta",
     "alt": "Zuecos Nike Mind 001 color turquesa / verde / menta",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #278"
@@ -4399,7 +4399,7 @@ export const ZAPATOS = [
     "tag": "Vinotinto / Rojo",
     "color": "Vinotinto / Rojo",
     "alt": "Zuecos Nike Mind 001 color vinotinto / rojo",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #414"
@@ -4787,7 +4787,7 @@ export const ZAPATOS = [
     "tag": "Gris / Azul",
     "color": "Gris / Azul",
     "alt": "Zuecos Nike Mind 001 color gris / azul",
-    "precio": null,
+    "precio": 149900,
     "tipo": "Zuecos",
     "genero": "hombre",
     "origen": "nuevos #472"

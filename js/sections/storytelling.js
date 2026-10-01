@@ -85,7 +85,7 @@ export function initSocialStrip() {
   if (!strip) return;
   const muestra = [...TODOS].sort(() => 0.5 - Math.random()).slice(0, 12);
   strip.innerHTML = muestra
-    .map((p) => `<div class="social__thumb"><img src="${p.srcSm}" alt="${p.alt}" loading="lazy" decoding="async" width="300" height="300"></div>`)
+    .map((p) => `<div class="social__thumb"><img src="${p.srcCard || p.srcSm}" alt="${p.alt}" loading="lazy" decoding="async" width="300" height="300"></div>`)
     .join('');
 }
 
