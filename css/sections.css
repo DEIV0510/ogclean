@@ -1257,3 +1257,8 @@
   .preview-marca:not(:first-child) .preview-cat__n { display: none; }
   .preview-marca__genero { padding: 0.45rem 0.7rem; }
 }
+
+/* 9 categorías (con Chanclas): en escritorio, cuadrícula pareja de 3×3 en vez de Básquetbol en dos filas */
+@media (min-width: 700px) {
+  .preview__cats:has(> .preview-cat:nth-child(9)) .preview-cat:first-child { grid-row: auto; }
+}

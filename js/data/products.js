@@ -180,7 +180,7 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   if (p.linea === 'caps') {
     p.grupo = p.cierre === 'Ajustable' ? 'Gorras ajustables' : 'Gorras cerradas';
     p.equipo = p.equipo || null;
-  } else if (p.tipo === 'Botas' || p.tipo === 'Guayos' || p.tipo === 'Zuecos') {
+  } else if (['Botas', 'Guayos', 'Zuecos', 'Chanclas'].includes(p.tipo)) {
     p.grupo = p.tipo;
   } else if (p.deporte === 'basquetbol') {
     p.grupo = 'Básquetbol';

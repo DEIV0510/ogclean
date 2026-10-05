@@ -8,7 +8,7 @@ import { initCompraRapida } from '../components/compraRapida.js';
 import { initFila } from '../components/fila.js';
 
 const POR_PAGINA = 24;
-const GRUPOS_TODOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Guayos', 'Botas', 'Zuecos'];
+const GRUPOS_TODOS = ['Gorras cerradas', 'Gorras ajustables', 'Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Guayos', 'Botas', 'Zuecos', 'Chanclas'];
 // Una categoría sin productos no se muestra como pestaña
 const GRUPOS = GRUPOS_TODOS.filter((g) => TODOS.some((p) => p.grupos.includes(g)));
 

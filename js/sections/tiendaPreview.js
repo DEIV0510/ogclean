@@ -27,10 +27,11 @@ export function initTiendaPreview() {
       Botas: 'assets/img/zapatos/timberland-bota-6-trigo-monograma-sm.webp',
       Guayos: 'assets/img/zapatos/nike-phantom-celeste-negro-fucsia-sm.webp',
       Zuecos: 'assets/img/zapatos/adidas-adimule-cafe-gamuza-sm.webp',
+      Chanclas: 'assets/img/zapatos/adidas-adilette-negro-blanco-suela-negra-sm.webp',
     };
     // 8 accesos: en escritorio llenan la grilla de 3 (Básquetbol ocupa dos filas); una categoría sin
     // productos no se muestra
-    cats.innerHTML = ['Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Gorras cerradas', 'Gorras ajustables', 'Guayos', 'Botas', 'Zuecos']
+    cats.innerHTML = ['Básquetbol', 'Zapatillas hombre', 'Zapatillas dama', 'Gorras cerradas', 'Gorras ajustables', 'Guayos', 'Botas', 'Zuecos', 'Chanclas']
       .filter((g) => cuenta(g) > 0)
       .map((g) => `
       <a class="preview-cat" href="${enlace({ categoria: g })}">
