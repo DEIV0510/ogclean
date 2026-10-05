@@ -110,7 +110,8 @@ export const ZAPATOS = [
     "color": "Blanco / Negro charol",
     "alt": "Zapatillas Air Jordan 11 color blanco / negro charol",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "diesel-runner-beige-negro",
@@ -160,7 +161,8 @@ export const ZAPATOS = [
     "color": "Negro / Multicolor",
     "alt": "Zapatillas Nike Kyrie 3 color negro / multicolor",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "adidas-superstar-cafe-gamuza",
@@ -240,7 +242,8 @@ export const ZAPATOS = [
     "color": "Blanco / Azul",
     "alt": "Zapatillas Air Jordan 4 color blanco / azul",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "bape-road-sta-negro-blanco",
@@ -299,7 +302,8 @@ export const ZAPATOS = [
     "tag": "Negro",
     "color": "Negro",
     "alt": "Zapatillas The North Face Bota color negro",
-    "precio": 229900
+    "precio": 229900,
+    "genero": "hombre"
   },
   {
     "img": "dolce-y-gabbana-sneaker-negro-blanco",
@@ -449,7 +453,8 @@ export const ZAPATOS = [
     "color": "Blanco / Verde / Naranja",
     "alt": "Zapatillas Air Jordan 3 color blanco / verde / naranja",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "adidas-superstar-blanco-negro",
@@ -629,7 +634,8 @@ export const ZAPATOS = [
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Air Jordan 1 Mid color rosa / blanco",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "dama"
   },
   {
     "img": "adidas-running-negro-blanco-verde",
@@ -678,7 +684,8 @@ export const ZAPATOS = [
     "tag": "Gris / Negro",
     "color": "Gris / Negro",
     "alt": "Zapatillas The North Face Bota color gris / negro",
-    "precio": 229900
+    "precio": 229900,
+    "genero": "hombre"
   },
   {
     "img": "nike-dunk-low-blanco-cafe",
@@ -737,7 +744,8 @@ export const ZAPATOS = [
     "tag": "Negro monograma",
     "color": "Negro monograma",
     "alt": "Zapatillas Timberland Bota 6\" color negro monograma",
-    "precio": 229900
+    "precio": 229900,
+    "genero": "hombre"
   },
   {
     "img": "under-armour-running-plata-blanco",
@@ -767,7 +775,8 @@ export const ZAPATOS = [
     "color": "Blanco / Cemento / Rojo",
     "alt": "Zapatillas Air Jordan 3 color blanco / cemento / rojo",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "nike-air-force-1-verde-amarillo-rojo",
@@ -877,7 +886,8 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Nike Air More Uptempo color negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "nike-air-more-uptempo-blanco-total",
@@ -887,7 +897,8 @@ export const ZAPATOS = [
     "color": "Blanco total",
     "alt": "Zapatillas Nike Air More Uptempo color blanco total",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "nike-shox-r4-rojo-negro",
@@ -937,7 +948,8 @@ export const ZAPATOS = [
     "color": "Negro cemento",
     "alt": "Zapatillas Air Jordan 3 color negro cemento",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "nike-running-blanco-menta",
@@ -976,7 +988,8 @@ export const ZAPATOS = [
     "tag": "Blanco",
     "color": "Blanco",
     "alt": "Zapatillas The North Face Bota color blanco",
-    "precio": 229900
+    "precio": 229900,
+    "genero": "hombre"
   },
   {
     "img": "nike-knit-capsulas-negro-blanco",
@@ -1096,7 +1109,8 @@ export const ZAPATOS = [
     "color": "Gris / Rosa",
     "alt": "Zapatillas Nike Kyrie 3 color gris / rosa",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "timberland-bota-6-trigo-monograma",
@@ -1105,7 +1119,8 @@ export const ZAPATOS = [
     "tag": "Trigo monograma",
     "color": "Trigo monograma",
     "alt": "Zapatillas Timberland Bota 6\" color trigo monograma",
-    "precio": 229900
+    "precio": 229900,
+    "genero": "hombre"
   },
   {
     "img": "on-cloud-blanco-negro",
@@ -1255,7 +1270,8 @@ export const ZAPATOS = [
     "color": "Blanco / Rosa",
     "alt": "Zapatillas Air Jordan 4 color blanco / rosa",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "dama"
   },
   {
     "img": "jordan-air-jordan-4-blanco-verde-durazno",
@@ -1265,7 +1281,8 @@ export const ZAPATOS = [
     "color": "Blanco / Verde / Durazno",
     "alt": "Zapatillas Air Jordan 4 color blanco / verde / durazno",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "numeris-low-azul-estampado",
@@ -1365,7 +1382,8 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Nike Kyrie 3 color negro / blanco",
     "precio": 185000,
-    "deporte": "basquetbol"
+    "deporte": "basquetbol",
+    "genero": "hombre"
   },
   {
     "img": "osiris-d3-azul-marino-salmon",
@@ -1431,6 +1449,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color beige / negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #4"
   },
   {
@@ -1512,6 +1531,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color blanco / gris / vinotinto",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #12"
   },
   {
@@ -1523,6 +1543,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color negro charol",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #14"
   },
   {
@@ -1568,6 +1589,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 11 color amarillo / negro charol",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #26"
   },
   {
@@ -1579,6 +1601,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 14 color amarillo / morado",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #28"
   },
   {
@@ -1623,6 +1646,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / gris",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #35"
   },
   {
@@ -1634,6 +1658,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / gris / negro",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #38"
   },
   {
@@ -1733,6 +1758,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color lila / blanco / rosa",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #51"
   },
   {
@@ -1789,6 +1815,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color negro / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #60"
   },
   {
@@ -1800,6 +1827,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color gris / negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #61"
   },
   {
@@ -1833,6 +1861,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color negro charol / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #64"
   },
   {
@@ -1855,6 +1884,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color morado / blanco / rosa",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #67"
   },
   {
@@ -1944,6 +1974,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 10 color gris total",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #81"
   },
   {
@@ -1977,7 +2008,7 @@ export const ZAPATOS = [
     "alt": "Zuecos Adidas Samba Mule color crema / café / blanco",
     "precio": 149900,
     "tipo": "Zuecos",
-    "genero": "hombre",
+    "genero": "dama",
     "origen": "nuevos #84"
   },
   {
@@ -1989,6 +2020,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color celeste / negro / gris",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #85"
   },
   {
@@ -2033,6 +2065,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color blanco / rojo / gris",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #90"
   },
   {
@@ -2178,6 +2211,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 9 color negro total",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #114"
   },
   {
@@ -2234,6 +2268,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color gris / negro / rosa",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #119"
   },
   {
@@ -2245,6 +2280,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color blanco / celeste / fucsia",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #120"
   },
   {
@@ -2290,6 +2326,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color rosa / crema",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #126"
   },
   {
@@ -2336,6 +2373,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 High color blanco / negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #134"
   },
   {
@@ -2380,6 +2418,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Jordan True Flight color negro / rojo / plata",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #142"
   },
   {
@@ -2447,6 +2486,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color blanco / gris / azul",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #150"
   },
   {
@@ -2537,6 +2577,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 High color fucsia glitter",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #162"
   },
   {
@@ -2548,6 +2589,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color blanco / negro charol / dorado",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #164"
   },
   {
@@ -2604,6 +2646,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color rojo / blanco / verde",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #170"
   },
   {
@@ -2626,6 +2669,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / celeste · cordones blancos",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #172"
   },
   {
@@ -2637,6 +2681,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color blanco / verde / rosa",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #175"
   },
   {
@@ -2670,6 +2715,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color rojo / negro / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #179"
   },
   {
@@ -2692,6 +2738,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color negro / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #182"
   },
   {
@@ -2836,6 +2883,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 14 color negro / amarillo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #202"
   },
   {
@@ -2870,6 +2918,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 14 color blanco / verde",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #209"
   },
   {
@@ -2904,6 +2953,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color celeste / lila / gris",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #214"
   },
   {
@@ -2970,6 +3020,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color negro / rojo / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #223"
   },
   {
@@ -3003,6 +3054,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 9 color blanco / gris / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #226"
   },
   {
@@ -3093,6 +3145,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / celeste · cordones celestes",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #240"
   },
   {
@@ -3115,6 +3168,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color gris total",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #243"
   },
   {
@@ -3159,6 +3213,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 14 color blanco / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #248"
   },
   {
@@ -3237,6 +3292,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #258"
   },
   {
@@ -3272,6 +3328,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #263"
   },
   {
@@ -3316,6 +3373,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 9 color blanco / azul charol / amarillo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #269"
   },
   {
@@ -3327,6 +3385,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color negro total",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #270"
   },
   {
@@ -3349,6 +3408,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color blanco / vinotinto / dorado",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #273"
   },
   {
@@ -3371,6 +3431,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 14 color blanco / negro / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #276"
   },
   {
@@ -3417,6 +3478,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 Mid color negro / blanco / rosa",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #281"
   },
   {
@@ -3594,6 +3656,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 11 color negro charol / azul",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #301"
   },
   {
@@ -3640,6 +3703,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color crema total",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #306"
   },
   {
@@ -3662,6 +3726,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / rojo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #309"
   },
   {
@@ -3775,6 +3840,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 High color blanco / vinotinto",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #321"
   },
   {
@@ -3874,6 +3940,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color gris / plata / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #333"
   },
   {
@@ -3896,6 +3963,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color blanco / plata",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #335"
   },
   {
@@ -3919,6 +3987,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color negro / rojo / gris",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #343"
   },
   {
@@ -3930,6 +3999,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color negro / rojo / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #344"
   },
   {
@@ -3975,6 +4045,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 3 color blanco / naranja",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #354"
   },
   {
@@ -3986,6 +4057,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 9 color negro / amarillo",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #355"
   },
   {
@@ -4019,6 +4091,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / vinotinto / negro",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #358"
   },
   {
@@ -4076,6 +4149,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 14 color rojo / negro / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #363"
   },
   {
@@ -4153,6 +4227,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 11 color blanco / celeste",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #376"
   },
   {
@@ -4164,6 +4239,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color blanco / plata",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #378"
   },
   {
@@ -4334,6 +4410,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color celeste / menta / crema",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #407"
   },
   {
@@ -4356,6 +4433,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color rosa / gris / negro",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #409"
   },
   {
@@ -4378,6 +4456,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color celeste / crema / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #411"
   },
   {
@@ -4401,6 +4480,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 High color blanco / rojo / negro",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #416"
   },
   {
@@ -4434,6 +4514,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color crema / celeste / rosa",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "dama",
     "origen": "nuevos #419"
   },
   {
@@ -4478,6 +4559,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color gris topo gamuza / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #425"
   },
   {
@@ -4489,6 +4571,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 10 color blanco / morado",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #426"
   },
   {
@@ -4511,6 +4594,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 4 color crema / gris / negro",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #431"
   },
   {
@@ -4544,6 +4628,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color morado / negro / crema",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #434"
   },
   {
@@ -4633,6 +4718,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 5 color gris / blanco",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #451"
   },
   {
@@ -4744,6 +4830,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 11 color café / negro charol",
     "precio": 185000,
     "deporte": "basquetbol",
+    "genero": "hombre",
     "origen": "nuevos #468"
   },
   {

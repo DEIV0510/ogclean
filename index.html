@@ -407,6 +407,7 @@
           <div class="combo__sizes">
             <p class="mono">Talla</p>
             <div class="sizes" id="comboCapSizes" role="group" aria-label="Talla de gorra"></div>
+            <a class="combo__guia" href="#tallas-gorras">¿Cómo saber tu talla? Ver guía <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
@@ -465,9 +466,11 @@
 
       <div class="preview__cats" id="previewCategorias"></div>
 
-      <div class="preview__marcas">
-        <p class="mono">Comprar por marca</p>
+      <div class="preview__marcas" id="marcas">
+        <p class="mono">Comprar por marca · hombre y dama</p>
         <div class="preview__marcas-grid" id="previewMarcas"></div>
+        <p class="mono marcas-lista__titulo">Todas las marcas</p>
+        <ul class="marcas-lista" id="previewMarcasLista"></ul>
       </div>
 
       <div class="preview__sub">
@@ -547,6 +550,25 @@
         <p class="mono tallas__sub">¿Sin etiqueta? Pasa tu talla nacional a Euro</p>
         <div class="tallas__tablas" data-guia-tallas></div>
         <a class="btn btn--dark js-wa js-magnetic" data-wa="Hola OGCLEAN, tengo una duda con mi talla." href="#">¿Dudas con tu talla? Escríbenos</a>
+      </div>
+    </div>
+
+    <!-- Gorras cerradas (59FIFTY): contorno de la cabeza → talla, tabla oficial de New Era (js/data/tallas.js) -->
+    <div class="container tallas__grid tallas__grid--gorras" id="tallas-gorras">
+      <div class="tallas__intro" data-anim="left">
+        <p class="eyebrow">Gorras cerradas</p>
+        <h2 class="h2">Mide tu<br>cabeza</h2>
+        <p class="lead">Las gorras cerradas vienen por talla, de la 7 a la 7 3/8, según el contorno de tu cabeza. Las ajustables son talla única: se ajustan atrás.</p>
+        <div class="cinta" role="img" aria-label="Ejemplo: si tu cabeza mide 57,7 centímetros, tu talla es 7 1/4.">
+          <span class="cinta__regla" aria-hidden="true"><i>55</i><i>56</i><i>57</i><i>58</i><i>59</i></span>
+          <span class="cinta__marca" aria-hidden="true">57,7 cm <b>= 7 1/4</b></span>
+        </div>
+      </div>
+
+      <div class="tallas__cuerpo" data-anim>
+        <ol class="tallas__pasos" data-pasos-gorras></ol>
+        <div class="tallas__tablas" data-guia-gorras></div>
+        <a class="btn btn--dark js-wa js-magnetic" data-wa="Hola OGCLEAN, tengo una duda con la talla de mi gorra." href="#">¿Dudas con tu talla? Escríbenos</a>
       </div>
     </div>
   </section>

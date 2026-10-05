@@ -44,8 +44,20 @@ export function initTiendaPreview() {
   }
 
   if (marcas) {
+    // Marca × género (dueño, 2026-10-04: «Adidas dama, Adidas hombre, Jordan dama, Jordan hombre…»).
+    // Las unisex cuentan en los dos géneros; «Otras» (sin marca) no se lista.
     const conteo = {};
-    TODOS.forEach((p) => { if (p.marca !== 'Otras') conteo[p.marca] = (conteo[p.marca] || 0) + 1; });
+    const porGenero = {};
+    TODOS.forEach((p) => {
+      if (p.linea !== 'sneakers' || p.marca === 'Otras') return;
+      conteo[p.marca] = (conteo[p.marca] || 0) + 1;
+      const g = (porGenero[p.marca] = porGenero[p.marca] || { Hombre: 0, Dama: 0 });
+      p.generos.forEach((x) => { g[x] += 1; });
+    });
+    const generosHTML = (m, clase) => ['Hombre', 'Dama']
+      .filter((g) => porGenero[m][g])
+      .map((g) => `<a class="${clase}" href="${enlace({ marca: m, genero: g })}">${g} <b>${porGenero[m][g]}</b></a>`)
+      .join('');
     // Portada curada por marca (una foto real y representativa, no "la primera que salga")
     const portadaMarca = {
       Nike: 'assets/img/sneakers/kyrie3-blanco-sm.webp',
@@ -55,20 +67,35 @@ export function initTiendaPreview() {
       'New Balance': 'assets/img/zapatos/new-balance-running-blanco-plata-sm.webp',
       On: 'assets/img/zapatos/on-cloud-blanco-gris-sm.webp',
     };
-    marcas.innerHTML = Object.entries(conteo)
-      .sort((a, b) => b[1] - a[1])
-      .filter(([m]) => portadaMarca[m])
-      .slice(0, 6)
-      .map(([m, n]) => `
-        <a class="preview-cat preview-marca" href="${enlace({ marca: m })}">
+    const orden = Object.entries(conteo).sort((a, b) => b[1] - a[1]);
+    const conFoto = orden.filter(([m]) => portadaMarca[m]).slice(0, 6).map(([m]) => m);
+    // La tarjeta entera lleva a toda la marca; los botones de abajo, a hombre o dama
+    marcas.innerHTML = conFoto
+      .map((m) => `
+        <div class="preview-cat preview-marca">
           <img src="${portadaMarca[m]}" alt="" loading="lazy" decoding="async" width="560" height="560">
+          <a class="preview-marca__todo" href="${enlace({ marca: m })}" aria-label="Ver todo ${m} (${conteo[m]} productos)"></a>
           <span class="preview-cat__txt">
-            <span class="preview-cat__n mono">${n} productos</span>
+            <span class="preview-cat__n mono">${conteo[m]} productos</span>
             <span class="preview-cat__t">${m}</span>
+            <span class="preview-marca__generos">${generosHTML(m, 'preview-marca__genero')}</span>
           </span>
           <span class="preview-cat__flecha" aria-hidden="true">→</span>
-        </a>`)
+        </div>`)
       .join('');
+
+    // El resto de marcas, cada una con su hombre/dama
+    const lista = qs('#previewMarcasLista');
+    if (lista) {
+      lista.innerHTML = orden
+        .filter(([m]) => !conFoto.includes(m))
+        .map(([m, n]) => `
+          <li class="marcas-lista__item">
+            <a class="marcas-lista__marca" href="${enlace({ marca: m })}">${m} <span>${n}</span></a>
+            <span class="marcas-lista__generos">${generosHTML(m, 'marcas-lista__genero')}</span>
+          </li>`)
+        .join('');
+    }
   }
 
   renderCards(grid, DESTACADOS.slice(8, 12), { sizes: '(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 22vw' });

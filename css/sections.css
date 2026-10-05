@@ -1105,3 +1105,155 @@
 
 /* terminos.html#reembolsos: el título llega visible, no tapado por el header fijo */
 .legal__cuerpo h2[id] { scroll-margin-top: 8rem; }
+
+/* ══════ Comprar por marca: hombre y dama (dueño, 2026-10-04) ══════ */
+/* La tarjeta entera lleva a la marca (enlace de fondo); los botones Hombre/Dama van encima */
+.preview-marca__todo { position: absolute; inset: 0; z-index: 0; border-radius: inherit; }
+.preview-marca__todo:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; }
+.preview-marca .preview-cat__txt { position: relative; z-index: 1; pointer-events: none; }
+.preview-marca__generos { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.55rem; pointer-events: auto; }
+.preview-marca__genero {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--bone) 55%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+  backdrop-filter: blur(4px);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.preview-marca__genero b { color: var(--red-soft); font-weight: 700; }
+.preview-marca__genero:hover,
+.preview-marca__genero:focus-visible { background: var(--bone); color: var(--ink); border-color: var(--bone); }
+.preview-marca__genero:hover b,
+.preview-marca__genero:focus-visible b { color: var(--red); }
+.preview-marca__genero:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.preview-marca .preview-cat__flecha { z-index: 1; pointer-events: none; }
+.preview-marca:hover img { transform: scale(1.06); }
+
+.marcas-lista__titulo { margin-top: 0.6rem; }
+.marcas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  column-gap: 1.6rem;
+  border-top: 1px solid var(--line);
+}
+.marcas-lista__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.7rem 0.2rem;
+  border-bottom: 1px solid var(--line);
+}
+.marcas-lista__marca {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+.marcas-lista__marca span { font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 400; color: var(--muted); }
+.marcas-lista__marca:hover { color: var(--red); }
+.marcas-lista__generos { display: flex; gap: 0.3rem; flex-shrink: 0; }
+.marcas-lista__genero {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.marcas-lista__genero b { color: var(--red); }
+.marcas-lista__genero:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.marcas-lista__genero:hover b { color: var(--red-soft); }
+
+/* ══════ Guía de tallas: gorras cerradas ══════ */
+.tallas__grid--gorras {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 7vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+.guia-tallas--una { grid-template-columns: minmax(0, 1fr); max-width: 420px; }
+.guia-gorras__tabla tr.is-agotada td { color: var(--muted); opacity: 0.55; }
+.guia-gorras__pasos { display: grid; gap: 0.4rem; padding-left: 1.2rem; list-style: decimal; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.guia-gorras__pasos li::marker { color: var(--red); font-family: var(--font-mono); font-size: 0.8em; }
+.quick__guia-cuerpo .guia-gorras__tabla { max-width: 320px; }
+
+/* Cinta métrica de ejemplo: la medida marcada y su talla, como la etiqueta del calzado */
+.cinta {
+  position: relative;
+  width: min(100%, 360px);
+  margin-top: 0.4rem;
+  padding: 1.6rem 0 0.4rem;
+}
+.cinta__regla {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 58px;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 2%) left bottom / 100% 12px no-repeat,
+    repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 20%) left bottom / 100% 24px no-repeat,
+    #F7D64A;
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.cinta__regla i {
+  padding: 0.35rem 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+/* 57,7 cm en una regla de 55 a 60: (57,7 − 55) / 5 = 54 % */
+.cinta__marca {
+  position: absolute;
+  top: 0;
+  left: 54%;
+  translate: -50% 0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.cinta__marca::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 2px;
+  height: 64px;
+  translate: -50% 0;
+  background: var(--red);
+}
+.cinta__marca b { font-weight: 700; }
+
+/* Botones de la guía de tallas: en celular el texto baja de línea en vez de ensanchar la página */
+.tallas__cuerpo .btn { max-width: 100%; white-space: normal; text-align: center; }
+
+/* Celular: las tarjetas de marca en dos columnas apilan Hombre/Dama; más alto y sin el conteo
+   general (cada botón ya trae el suyo) para que nada se monte sobre la flecha */
+@media (max-width: 699.98px) {
+  .preview-marca { min-height: 220px; }
+  .preview-marca:not(:first-child) .preview-cat__n { display: none; }
+  .preview-marca__genero { padding: 0.45rem 0.7rem; }
+}

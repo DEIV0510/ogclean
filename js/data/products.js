@@ -11,8 +11,9 @@ import { DESCRIPCIONES } from './descripciones.js';
 export const PRECIOS = { caps: { Cerrada: 95000, Ajustable: 85000 }, sneakers: 185000 };
 
 /* Zapatillas y botas van en talla Euro, confirmado por el dueño: hombre 40 a 44 y dama
-   36 a 39. Las botas y el básquetbol son calzado de hombre, así que usan el rango hombre
-   (antes el básquetbol iba en US 7–13 y el dueño lo corrigió a Euro 40–44). */
+   36 a 39. Todo el calzado (también básquetbol y botas) lleva `genero` en los datos para
+   poder navegar por marca y género (dueño, 2026-10-04: «Adidas dama, Adidas hombre, Jordan
+   dama, Jordan hombre…»). Antes el básquetbol iba en US 7–13 y el dueño lo corrigió a Euro. */
 export const TALLAS = {
   caps: ['7', '7 1/8', '7 1/4', '7 3/8'],
   hombre: ['40', '41', '42', '43', '44'],
@@ -23,15 +24,23 @@ export const TALLAS = {
 /* Unisex (dueño, 2026-10-01: «las que tengas talla de hombre y de mujer son unisex»):
    si un modelo tiene pares de hombre y de dama, todos sus pares son unisex, con todas
    las tallas (36–44), y salen tanto en «Zapatillas hombre» como en «Zapatillas dama».
-   Es una regla, no un dato: un modelo nuevo que llegue en los dos géneros queda unisex solo. */
-const MODELOS_UNISEX = (() => {
-  const generos = {};
-  ZAPATOS.forEach((z) => {
-    if (z.genero === 'hombre' || z.genero === 'dama') (generos[z.name] = generos[z.name] || new Set()).add(z.genero);
-  });
-  return new Set(Object.keys(generos).filter((n) => generos[n].size === 2));
-})();
-const generoDe = (z) => ((z.genero === 'hombre' || z.genero === 'dama') && MODELOS_UNISEX.has(z.name) ? 'unisex' : z.genero);
+   Es una regla, no un dato: un modelo nuevo que llegue en los dos géneros queda unisex solo.
+   GENERO_FIJO: modelos cuyo género confirmó el dueño y que la regla no debe cambiar. */
+const GENERO_FIJO = {
+  'Adidas Samba Mule': 'dama', // «son solo tallas de mujer» (2026-10-04)
+};
+let modelosUnisex = null; // se calcula al primer uso, cuando SNEAKERS ya existe
+const generoDe = (z) => {
+  if (GENERO_FIJO[z.name]) return GENERO_FIJO[z.name];
+  if (!modelosUnisex) {
+    const generos = {};
+    [...SNEAKERS, ...ZAPATOS].forEach((p) => {
+      if (p.genero === 'hombre' || p.genero === 'dama') (generos[p.name] = generos[p.name] || new Set()).add(p.genero);
+    });
+    modelosUnisex = new Set(Object.keys(generos).filter((n) => generos[n].size === 2 && !GENERO_FIJO[n]));
+  }
+  return (z.genero === 'hombre' || z.genero === 'dama') && modelosUnisex.has(z.name) ? 'unisex' : z.genero;
+};
 
 /* Sufijo que acompaña a cada talla en pantalla, y nombre de la escala para los rótulos
    («Elige tu talla (Euro)»). Las tallas Euro se muestran sin sufijo: «42», no «42 EU». */
@@ -61,13 +70,13 @@ export const CAPS = [
 ];
 
 export const SNEAKERS = [
-  { img: 'kyrie3-blanco', deporte: 'basquetbol', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie-blanco-oro', deporte: 'basquetbol', name: 'Nike LeBron Ambassador 13', tag: 'Blanco / Oro', alt: 'Tenis Nike LeBron Ambassador 13 blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie4-negro', deporte: 'basquetbol', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-morado-azul', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-lila-rosa', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-verde-amarillo', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
-  { img: 'kyrie7-verde-azul', deporte: 'basquetbol', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', cat: 'color', color: 'Verde / Azul', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie3-blanco', deporte: 'basquetbol', genero: 'hombre', name: 'Nike Kyrie 3', tag: 'Blanco iridiscente', alt: 'Tenis Nike Kyrie 3 blanco iridiscente', cat: 'neutro', color: 'Blanco', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie-blanco-oro', deporte: 'basquetbol', genero: 'hombre', name: 'Nike LeBron Ambassador 13', tag: 'Blanco / Oro', alt: 'Tenis Nike LeBron Ambassador 13 blanco con detalles dorados', cat: 'neutro', color: 'Blanco / Oro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie4-negro', deporte: 'basquetbol', genero: 'hombre', name: 'Nike Kyrie 4', tag: 'Negro total', alt: 'Tenis Nike Kyrie 4 negro', cat: 'neutro', color: 'Negro', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-morado-azul', deporte: 'basquetbol', genero: 'hombre', name: 'Nike Kyrie 7', tag: 'Azul / Amarillo', alt: 'Tenis Nike Kyrie 7 azul y amarillo', cat: 'color', color: 'Azul / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-lila-rosa', deporte: 'basquetbol', genero: 'dama', name: 'Nike Kyrie 7', tag: 'Lila / Rosa', alt: 'Tenis Nike Kyrie 7 lila y rosa', cat: 'color', color: 'Lila / Rosa', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-verde-amarillo', deporte: 'basquetbol', genero: 'hombre', name: 'Nike Kyrie 7', tag: 'Verde / Amarillo', alt: 'Tenis Nike Kyrie 7 verde y amarillo', cat: 'color', color: 'Verde / Amarillo', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
+  { img: 'kyrie7-verde-azul', deporte: 'basquetbol', genero: 'hombre', name: 'Nike Kyrie 7', tag: 'Verde / Azul', alt: 'Tenis Nike Kyrie 7 verde y azul', cat: 'color', color: 'Verde / Azul', marca: 'Nike', carpeta: 'sneakers', precio: 185000 },
 ];
 
 /** Normaliza un item del catálogo con todo lo que la UI necesita. */
@@ -119,7 +128,7 @@ export const LINEAS = {
     plural: 'pares',
     kicker: 'Multimarca',
     desc: 'Nike, Jordan, Adidas, Salomon, On, New Balance y más, en tu talla.',
-    items: [...SNEAKERS, ...ZAPATOS.map((z) => ({ ...z, genero: generoDe(z), carpeta: 'zapatos', cat: z.marca }))]
+    items: [...SNEAKERS.map((s) => ({ ...s, genero: generoDe(s) })), ...ZAPATOS.map((z) => ({ ...z, genero: generoDe(z), carpeta: 'zapatos', cat: z.marca }))]
       .map((s, i) => decorar(s, 'sneakers', i)),
     filtros: [],
   },
@@ -180,6 +189,8 @@ const minus = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   }
   // Categorías en las que aparece: las unisex salen en hombre y en dama
   p.grupos = p.genero === 'unisex' && p.grupo === 'Zapatillas hombre' ? ['Zapatillas hombre', 'Zapatillas dama'] : [p.grupo];
+  // Género para navegar por marca: una unisex sale en hombre y en dama; las gorras no llevan género
+  p.generos = p.linea === 'caps' ? [] : ({ unisex: ['Hombre', 'Dama'], dama: ['Dama'] }[p.genero] || ['Hombre']);
 });
 
 export const TODOS = [...LINEAS.caps.items, ...LINEAS.sneakers.items];

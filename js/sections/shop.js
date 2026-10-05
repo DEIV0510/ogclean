@@ -22,6 +22,8 @@ const esGrupo = (p, g) => p.grupos.includes(g)
 /* Filtros de casillas. Añadir uno nuevo = una línea aquí + su bloque en tienda.html.
    `orden` fija el orden de las opciones; si no, se ordenan por cantidad. */
 const FACETAS = [
+  // Género del calzado (las unisex están en los dos; las gorras no tienen): «Adidas dama», «Jordan hombre»…
+  { id: 'genero', campo: 'generos', param: 'genero', orden: ['Hombre', 'Dama'] },
   { id: 'lineaGorra', campo: 'lineaGorra', param: 'linea', orden: ['Clásica', 'Exclusiva'] },
   { id: 'liga', campo: 'liga', param: 'liga', orden: ['MLB', 'NBA', 'NFL', 'NHL', 'NCAA', 'World Baseball Classic', 'Marcas', 'Otras'],
     etiqueta: (v) => ({ Marcas: 'Marcas (Supreme, Jordan…)', Otras: 'Otras' }[v] || v) },
@@ -55,7 +57,7 @@ function filtrar(ignorar = '') {
     for (const f of FACETAS) {
       if (ignorar === f.id) continue;
       const set = estado.sel[f.id];
-      if (set.size && !set.has(p[f.campo])) return false;
+      if (set.size && ![].concat(p[f.campo] ?? []).some((v) => set.has(v))) return false;
     }
     if (ignorar !== 'colores' && estado.colores.size && !p.colores.some((c) => estado.colores.has(c))) return false;
     if (ignorar !== 'precio') {
@@ -236,7 +238,7 @@ function leerUrl() {
   if (tipo === 'Ajustable') estado.grupo = 'Gorras ajustables';
   if (tipo === 'Cerrada') estado.grupo = 'Gorras cerradas';
   FACETAS.forEach((f) => {
-    const validos = new Set(TODOS.map((p) => p[f.campo]).filter(Boolean));
+    const validos = new Set(TODOS.flatMap((p) => [].concat(p[f.campo] ?? [])).filter(Boolean));
     estado.sel[f.id] = new Set(lista(f.param).filter((v) => validos.has(v)));
   });
   estado.colores = new Set(lista('color').filter((c) => ORDEN_COLORES.includes(c)));
