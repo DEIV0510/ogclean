@@ -21,7 +21,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro logo rosa",
     "origen": "C0",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-empire-state",
@@ -38,7 +38,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro empire state",
     "origen": "C1",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-cafe",
@@ -56,7 +56,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, café",
     "origen": "C2",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-rojo",
@@ -74,7 +74,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, rojo",
     "origen": "C3",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-caqui-con-flores",
@@ -92,7 +92,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, caqui con flores",
     "origen": "C4",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "mlb-azul-marino-todos-los-equipos",
@@ -110,7 +110,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada MLB, azul marino todos los equipos",
     "origen": "C5",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-con-parches",
@@ -128,7 +128,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro con parches",
     "origen": "C6",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-negro-con-parche-bordado",
@@ -146,7 +146,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, negro con parche bordado",
     "origen": "C7",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-estrellas",
@@ -164,7 +164,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro estrellas",
     "origen": "C8",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-cadena-plata",
@@ -182,7 +182,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro cadena plata",
     "origen": "C9",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-negro-graffiti",
@@ -200,7 +200,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York, negro graffiti",
     "origen": "C10",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-script",
@@ -218,7 +218,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro script",
     "origen": "C11",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-bordado-floral",
@@ -236,7 +236,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro bordado floral",
     "origen": "C12",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-bordado-floral",
@@ -254,7 +254,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro bordado floral",
     "origen": "C13",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-bordado-floral",
@@ -272,7 +272,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro bordado floral",
     "origen": "C14",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-con-dorado",
@@ -290,7 +290,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro con dorado",
     "origen": "C15",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-flores-azules",
@@ -308,7 +308,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro flores azules",
     "origen": "C16",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-flores-azules",
@@ -326,7 +326,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro flores azules",
     "origen": "C17",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-con-rosas-rojas",
@@ -344,7 +344,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema con rosas rojas",
     "origen": "C18",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-con-parches",
@@ -362,7 +362,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro con parches",
     "origen": "C19",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-chicago",
@@ -379,7 +379,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro chicago",
     "origen": "C20",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-crema-palmeras",
@@ -396,7 +396,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, crema palmeras",
     "origen": "C21",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-caqui-logo-lila",
@@ -413,7 +413,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, caqui logo lila",
     "origen": "C22",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-laurel-dorado",
@@ -430,7 +430,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro laurel dorado",
     "origen": "C23",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-azul-rey",
@@ -448,7 +448,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, azul rey",
     "origen": "C24",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-bulls-blanco-negro",
@@ -466,7 +466,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago Bulls, blanco / negro",
     "origen": "C25",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-cadena-dorada",
@@ -483,7 +483,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro cadena dorada",
     "origen": "C26",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "houston-astros-cafe-con-parches",
@@ -499,7 +499,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Houston Astros, café con parches",
     "origen": "C27",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-caqui-visera-celeste",
@@ -515,7 +515,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, caqui visera celeste",
     "origen": "C28",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-estrellas-doradas",
@@ -531,7 +531,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro estrellas doradas",
     "origen": "C29",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-estrellas-azules",
@@ -549,7 +549,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro estrellas azules",
     "origen": "C30",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-visera-verde",
@@ -567,7 +567,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro visera verde",
     "origen": "C31",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-cafe-script",
@@ -585,7 +585,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, café script",
     "origen": "C32",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-azul-marino",
@@ -603,7 +603,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, azul marino",
     "origen": "C33",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "boston-red-sox-azul-marino",
@@ -621,7 +621,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Boston Red Sox, azul marino",
     "origen": "C34",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "seattle-mariners-crema-rojo",
@@ -639,7 +639,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Seattle Mariners, crema / rojo",
     "origen": "C35",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-azul-con-parches",
@@ -657,7 +657,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, azul con parches",
     "origen": "C36",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-crema-cafe-flamas",
@@ -675,7 +675,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, crema / café flamas",
     "origen": "C37",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-rojo-dragon-dorado",
@@ -692,7 +692,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, rojo dragón dorado",
     "origen": "C38",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-destellos-verdes",
@@ -710,7 +710,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro destellos verdes",
     "origen": "C39",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "oakland-athletics-verde",
@@ -728,7 +728,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Oakland Athletics, verde",
     "origen": "C40",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-negro-logo-gotico",
@@ -746,7 +746,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, negro logo gótico",
     "origen": "C41",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "pittsburgh-pirates-negro",
@@ -764,7 +764,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Pittsburgh Pirates, negro",
     "origen": "C42",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-con-parches-dorados",
@@ -782,7 +782,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro con parches dorados",
     "origen": "C43",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-gris-claro",
@@ -798,7 +798,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, gris claro",
     "origen": "C44",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-script",
@@ -816,7 +816,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro script",
     "origen": "C45",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-rojo-box",
@@ -834,7 +834,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, rojo box",
     "origen": "C46",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-cruz",
@@ -851,7 +851,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro cruz",
     "origen": "C47",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-angels-negro-rojo-alas",
@@ -869,7 +869,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Angels, negro / rojo alas",
     "origen": "C48",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-verde-alas-doradas",
@@ -887,7 +887,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, verde alas doradas",
     "origen": "C49",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "houston-astros-negro-flamas",
@@ -905,7 +905,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Houston Astros, negro flamas",
     "origen": "C50",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "boston-red-sox-negro-con-parches",
@@ -923,7 +923,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Boston Red Sox, negro con parches",
     "origen": "C51",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-alambre-de-puas",
@@ -941,7 +941,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro alambre de púas",
     "origen": "C52",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-rojo-logo-gotico",
@@ -959,7 +959,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, rojo logo gótico",
     "origen": "C53",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-flamas",
@@ -976,7 +976,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro flamas",
     "origen": "C54",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-cruces",
@@ -994,7 +994,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro cruces",
     "origen": "C55",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-verde-cruces",
@@ -1012,7 +1012,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema / verde cruces",
     "origen": "C56",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-alas",
@@ -1030,7 +1030,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro alas",
     "origen": "C57",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-cafe-flores-rosadas",
@@ -1048,7 +1048,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, café flores rosadas",
     "origen": "C58",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-crema-jon-stan",
@@ -1064,7 +1064,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, crema jon stan",
     "origen": "C59",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro",
@@ -1081,7 +1081,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro",
     "origen": "C60",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "detroit-tigers-azul-marino-con-parches",
@@ -1099,7 +1099,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Detroit Tigers, azul marino con parches",
     "origen": "C61",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "ovo-negro-dorado",
@@ -1117,7 +1117,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada OVO, negro / dorado",
     "origen": "C62",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-jon-stan",
@@ -1134,7 +1134,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro jon stan",
     "origen": "C63",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "oakland-athletics-caqui-jon-stan",
@@ -1151,7 +1151,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Oakland Athletics, caqui jon stan",
     "origen": "C64",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-cafe-jon-stan",
@@ -1167,7 +1167,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, café jon stan",
     "origen": "C65",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "oakland-athletics-negro-jon-stan",
@@ -1184,7 +1184,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Oakland Athletics, negro jon stan",
     "origen": "C66",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-naranja-jon-stan",
@@ -1201,7 +1201,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, naranja jon stan",
     "origen": "C67",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-jon-stan",
@@ -1218,7 +1218,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro jon stan",
     "origen": "C68",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "boston-red-sox-negro-jon-stan",
@@ -1235,7 +1235,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Boston Red Sox, negro jon stan",
     "origen": "C69",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-jon-stan",
@@ -1252,7 +1252,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro jon stan",
     "origen": "C70",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-estrellas",
@@ -1271,7 +1271,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro estrellas",
     "origen": "C71",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-rojo-dragon",
@@ -1290,7 +1290,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, rojo dragón",
     "origen": "C72",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-rojo-dragon",
@@ -1308,7 +1308,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, rojo dragón",
     "origen": "C73",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-turquesa",
@@ -1326,7 +1326,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro turquesa",
     "origen": "C74",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-box-logo",
@@ -1344,7 +1344,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro box logo",
     "origen": "C75",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "atlanta-braves-azul-marino",
@@ -1360,7 +1360,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Atlanta Braves, azul marino",
     "origen": "C76",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-script-blanco",
@@ -1376,7 +1376,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro script blanco",
     "origen": "C77",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "boston-red-sox-crema-rojo",
@@ -1392,7 +1392,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Boston Red Sox, crema / rojo",
     "origen": "C78",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-negro-tono-sobre-tono",
@@ -1408,7 +1408,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, negro tono sobre tono",
     "origen": "C79",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-azul-rey-con-parches",
@@ -1424,7 +1424,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, azul rey con parches",
     "origen": "C80",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-con-parches-2",
@@ -1442,7 +1442,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro con parches",
     "origen": "C81",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-flamas-celestes",
@@ -1460,7 +1460,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema flamas celestes",
     "origen": "C82",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "arizona-diamondbacks-crema-cactus",
@@ -1478,7 +1478,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Arizona Diamondbacks, crema cactus",
     "origen": "C83",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "arizona-diamondbacks-crema",
@@ -1496,7 +1496,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Arizona Diamondbacks, crema",
     "origen": "C84",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-rosas",
@@ -1513,7 +1513,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro rosas",
     "origen": "C85",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-rosas",
@@ -1530,7 +1530,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro rosas",
     "origen": "C86",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-rosas-rojas",
@@ -1547,7 +1547,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro rosas rojas",
     "origen": "C87",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-manzana-verde",
@@ -1564,7 +1564,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro manzana verde",
     "origen": "C88",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-crema-visera-azul",
@@ -1581,7 +1581,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, crema visera azul",
     "origen": "C89",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-con-parches",
@@ -1598,7 +1598,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema con parches",
     "origen": "C90",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-new-york",
@@ -1615,7 +1615,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro new york",
     "origen": "C91",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-los-angeles",
@@ -1632,7 +1632,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro los angeles",
     "origen": "C92",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-amarillo-celeste",
@@ -1649,7 +1649,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, amarillo / celeste",
     "origen": "C93",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-total",
@@ -1666,7 +1666,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro total",
     "origen": "C94",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-negro-rosas",
@@ -1683,7 +1683,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, negro rosas",
     "origen": "C95",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "oakland-athletics-negro-flores",
@@ -1700,7 +1700,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Oakland Athletics, negro flores",
     "origen": "C96",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-flores",
@@ -1717,7 +1717,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema flores",
     "origen": "C97",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-mapa",
@@ -1734,7 +1734,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro mapa",
     "origen": "C98",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-celeste",
@@ -1752,7 +1752,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, celeste",
     "origen": "C99",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-crema-flores-azules",
@@ -1770,7 +1770,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, crema flores azules",
     "origen": "C100",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-verde",
@@ -1788,7 +1788,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, verde",
     "origen": "C101",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-letras-japonesas",
@@ -1805,7 +1805,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro letras japonesas",
     "origen": "C102",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-rojo-s",
@@ -1823,7 +1823,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, rojo s",
     "origen": "C103",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "san-diego-padres-rosado",
@@ -1839,7 +1839,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada San Diego Padres, rosado",
     "origen": "C104",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-tono-sobre-tono",
@@ -1855,7 +1855,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro tono sobre tono",
     "origen": "C105",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-grafico",
@@ -1872,7 +1872,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro gráfico",
     "origen": "C106",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-crema-box-logo",
@@ -1890,7 +1890,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, crema box logo",
     "origen": "C107",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "detroit-tigers-negro-total",
@@ -1907,7 +1907,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Detroit Tigers, negro total",
     "origen": "C108",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-negro-rojo",
@@ -1924,7 +1924,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, negro / rojo",
     "origen": "C109",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-negro-racing",
@@ -1942,7 +1942,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, negro racing",
     "origen": "C110",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-negro-logo-p",
@@ -1960,7 +1960,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, negro logo p",
     "origen": "C111",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-negro-tono-sobre-tono",
@@ -1976,7 +1976,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, negro tono sobre tono",
     "origen": "C112",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "pittsburgh-pirates-negro-con-parches",
@@ -1992,7 +1992,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Pittsburgh Pirates, negro con parches",
     "origen": "C113",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "gorra-cerrada-negro-total",
@@ -2008,7 +2008,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Gorra cerrada, negro total",
     "origen": "C114",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-rosa",
@@ -2024,7 +2024,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema rosa",
     "origen": "C115",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-rojo-jon-stan",
@@ -2040,7 +2040,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, rojo jon stan",
     "origen": "C116",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-crema-flores-bordadas",
@@ -2056,7 +2056,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, crema flores bordadas",
     "origen": "C117",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "new-york-yankees-gris-jon-stan",
@@ -2072,7 +2072,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada New York Yankees, gris jon stan",
     "origen": "C118",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "los-angeles-dodgers-verde-jon-stan",
@@ -2088,7 +2088,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Los Angeles Dodgers, verde jon stan",
     "origen": "C119",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "san-francisco-giants-negro",
@@ -2104,7 +2104,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada San Francisco Giants, negro",
     "origen": "C120",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "nba-negro-todos-los-equipos",
@@ -2120,7 +2120,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada NBA, negro todos los equipos",
     "origen": "C121",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "chicago-white-sox-rojo-dragon",
@@ -2136,7 +2136,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Chicago White Sox, rojo dragón",
     "origen": "C122",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "supreme-blanco-rojo",
@@ -2152,7 +2152,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra cerrada Supreme, blanco / rojo",
     "origen": "C123",
-    "precio": 95000
+    "precio": 119900
   },
   {
     "img": "san-diego-padres-crema",
@@ -4808,7 +4808,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Boston Red Sox, negro rosa",
     "origen": "X0",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-naranja-pespunte",
@@ -4824,7 +4824,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, naranja pespunte",
     "origen": "X1",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-con-parches-2",
@@ -4840,7 +4840,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro con parches",
     "origen": "X2",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-cafe-rosa",
@@ -4856,7 +4856,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, café / rosa",
     "origen": "X3",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "boston-red-sox-negro-rosas",
@@ -4872,7 +4872,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Boston Red Sox, negro rosas",
     "origen": "X4",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-negro-flamas-azules",
@@ -4888,7 +4888,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, negro flamas azules",
     "origen": "X5",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-rojo-logos",
@@ -4904,7 +4904,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, rojo logos",
     "origen": "X6",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-mets-negro-bandana",
@@ -4920,7 +4920,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Mets, negro bandana",
     "origen": "X7",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-telarana",
@@ -4936,7 +4936,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro telaraña",
     "origen": "X8",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "oakland-athletics-negro-rosas-2",
@@ -4952,7 +4952,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Oakland Athletics, negro rosas",
     "origen": "X9",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "green-bay-packers-verde",
@@ -4968,7 +4968,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Green Bay Packers, verde",
     "origen": "X10",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-tono-sobre-tono",
@@ -4984,7 +4984,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro tono sobre tono",
     "origen": "X11",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-bulls-negro-rojo",
@@ -5000,7 +5000,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago Bulls, negro / rojo",
     "origen": "X12",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-azul-marino-rojo-peace-up",
@@ -5016,7 +5016,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, azul marino / rojo peace up",
     "origen": "X13",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-crema-vinotinto",
@@ -5032,7 +5032,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, crema / vinotinto",
     "origen": "X14",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-telarana",
@@ -5048,7 +5048,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro telaraña",
     "origen": "X15",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-flores-rojas",
@@ -5064,7 +5064,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro flores rojas",
     "origen": "X16",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-script",
@@ -5080,7 +5080,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro script",
     "origen": "X17",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "san-antonio-spurs-blanco",
@@ -5096,7 +5096,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable San Antonio Spurs, blanco",
     "origen": "X18",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-alambre",
@@ -5112,7 +5112,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro alambre",
     "origen": "X19",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "memphis-grizzlies-negro-celeste",
@@ -5128,7 +5128,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Memphis Grizzlies, negro celeste",
     "origen": "X20",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-2",
@@ -5144,7 +5144,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro",
     "origen": "X21",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-telarana",
@@ -5160,7 +5160,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro telaraña",
     "origen": "X22",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-cafe-2",
@@ -5176,7 +5176,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, café",
     "origen": "X23",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "north-carolina-tar-heels-blanco-celeste",
@@ -5192,7 +5192,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable North Carolina Tar Heels, blanco / celeste",
     "origen": "X24",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "oakland-athletics-verde-script",
@@ -5208,7 +5208,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Oakland Athletics, verde script",
     "origen": "X25",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-negro-garras",
@@ -5224,7 +5224,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, negro garras",
     "origen": "X26",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-blanco-azul",
@@ -5240,7 +5240,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York, blanco / azul",
     "origen": "X27",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-corazon",
@@ -5256,7 +5256,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro corazón",
     "origen": "X28",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-caqui-flores",
@@ -5272,7 +5272,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, caqui flores",
     "origen": "X29",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-logos",
@@ -5288,7 +5288,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro logos",
     "origen": "X30",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "california-crema-cafe-oso",
@@ -5304,7 +5304,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable California, crema / café oso",
     "origen": "X31",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "jordan-blanco-negro",
@@ -5320,7 +5320,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Jordan, blanco / negro",
     "origen": "X32",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-tono-rojo",
@@ -5336,7 +5336,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro tono rojo",
     "origen": "X33",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-rojo-con-parches",
@@ -5352,7 +5352,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, rojo con parches",
     "origen": "X34",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "boston-red-sox-azul-marino-2",
@@ -5368,7 +5368,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Boston Red Sox, azul marino",
     "origen": "X35",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "san-diego-padres-cafe",
@@ -5384,7 +5384,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable San Diego Padres, café",
     "origen": "X36",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-crema-negro-gotico",
@@ -5400,7 +5400,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, crema / negro gótico",
     "origen": "X37",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-chicago-2",
@@ -5416,7 +5416,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro chicago",
     "origen": "X38",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-crema-pinos",
@@ -5432,7 +5432,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, crema pinos",
     "origen": "X39",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-ribete",
@@ -5448,7 +5448,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro ribete",
     "origen": "X40",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-azul-paisley",
@@ -5464,7 +5464,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, azul paisley",
     "origen": "X41",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-blanco-all-star",
@@ -5480,7 +5480,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York, blanco all-star",
     "origen": "X42",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-azul-rey-letras",
@@ -5496,7 +5496,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, azul rey letras",
     "origen": "X43",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-alambre",
@@ -5512,7 +5512,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro alambre",
     "origen": "X44",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-azul-marino-script",
@@ -5528,7 +5528,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, azul marino script",
     "origen": "X45",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-caqui-flores",
@@ -5544,7 +5544,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, caqui flores",
     "origen": "X46",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-negro-rojo-logo",
@@ -5560,7 +5560,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, negro / rojo logo",
     "origen": "X47",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-cafe",
@@ -5576,7 +5576,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro / café",
     "origen": "X48",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-celeste",
@@ -5592,7 +5592,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro celeste",
     "origen": "X49",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-crema-rosa-2",
@@ -5608,7 +5608,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, crema / rosa",
     "origen": "X50",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-tono-rojo",
@@ -5624,7 +5624,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro tono rojo",
     "origen": "X51",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-logos",
@@ -5640,7 +5640,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro logos",
     "origen": "X52",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-beige-mostaza",
@@ -5656,7 +5656,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, beige / mostaza",
     "origen": "X53",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-mets-crema-azul",
@@ -5672,7 +5672,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Mets, crema / azul",
     "origen": "X54",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-crema-tono-sobre-tono",
@@ -5688,7 +5688,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, crema tono sobre tono",
     "origen": "X55",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-azul-marino-turquesa",
@@ -5704,7 +5704,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, azul marino / turquesa",
     "origen": "X56",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-flores",
@@ -5720,7 +5720,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro flores",
     "origen": "X57",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-cruces",
@@ -5736,7 +5736,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro cruces",
     "origen": "X58",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-alambre",
@@ -5752,7 +5752,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro alambre",
     "origen": "X59",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-logos-celestes",
@@ -5768,7 +5768,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro logos celestes",
     "origen": "X60",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-crema-letras",
@@ -5784,7 +5784,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York, crema letras",
     "origen": "X61",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-dragon",
@@ -5800,7 +5800,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro dragón",
     "origen": "X62",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-knicks-negro-estatua",
@@ -5816,7 +5816,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Knicks, negro estatua",
     "origen": "X63",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "atlanta-braves-caqui-crema-rosa",
@@ -5832,7 +5832,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Atlanta Braves, caqui / crema rosa",
     "origen": "X64",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-caqui-flores",
@@ -5848,7 +5848,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, caqui flores",
     "origen": "X65",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-negro-rojo-grafico",
@@ -5864,7 +5864,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, negro / rojo gráfico",
     "origen": "X66",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-negro-con-parches-2",
@@ -5880,7 +5880,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, negro con parches",
     "origen": "X67",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-blanco-azul",
@@ -5896,7 +5896,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, blanco / azul",
     "origen": "X68",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "gorra-ajustable-negro-tono-sobre-tono",
@@ -5912,7 +5912,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Gorra ajustable, negro tono sobre tono",
     "origen": "X69",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-rojo-letras",
@@ -5928,7 +5928,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, rojo letras",
     "origen": "X70",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-crema-naranja-2",
@@ -5944,7 +5944,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, crema / naranja",
     "origen": "X71",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-negro-con-parches-3",
@@ -5960,7 +5960,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, negro con parches",
     "origen": "X72",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "new-york-yankees-azul-marino-rayos",
@@ -5976,7 +5976,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable New York Yankees, azul marino rayos",
     "origen": "X73",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "san-diego-padres-cafe-parche",
@@ -5992,7 +5992,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable San Diego Padres, café parche",
     "origen": "X74",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "chicago-white-sox-negro-aguila",
@@ -6008,7 +6008,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Chicago White Sox, negro águila",
     "origen": "X75",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-rosa",
@@ -6024,7 +6024,7 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro rosa",
     "origen": "X76",
-    "precio": 85000
+    "precio": 110000
   },
   {
     "img": "los-angeles-dodgers-negro-esqueleto",
@@ -6040,6 +6040,6 @@ export const GORRAS = [
     ],
     "alt": "Gorra ajustable Los Angeles Dodgers, negro esqueleto",
     "origen": "X77",
-    "precio": 85000
+    "precio": 110000
   }
 ];

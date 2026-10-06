@@ -41,7 +41,7 @@ function fichaHTML(p) {
       <h2 class="h2 quick__title">${p.name}</h2>
       <p class="lead">${p.tag}${p.tag.toLowerCase().includes(p.color.toLowerCase()) ? '' : ` · ${p.color}`}. ${p.linea === 'caps' ? (p.cierre === 'Ajustable' ? 'Ajustable, talla única.' : 'Cerrada, solo las tallas disponibles.') : `${p.marca}${p.genero === 'unisex' ? ', unisex (hombre y dama)' : ''}, talla ${p.escala}.`}</p>
 
-      <p class="quick__price${tienePrecio(p) ? '' : ' is-cotizar'}" id="quickPrecio"><span id="quickPrecioN">${precioCOP(p.precio)}</span> <small>${tienePrecio(p) ? (p.linea === 'caps' ? 'Precio único de la línea' : 'Precio confirmado') : 'Agrégalo y te lo confirmamos en el chat'}</small></p>
+      <p class="quick__price${tienePrecio(p) ? '' : ' is-cotizar'}" id="quickPrecio"><span id="quickPrecioN">${precioCOP(p.precio)}</span> <small>${tienePrecio(p) ? 'Precio confirmado' : 'Agrégalo y te lo confirmamos en el chat'}</small></p>
       ${descuento(p) ? `<p class="quick__antes">Antes <s>${precioCOP(descuento(p).antes)}</s> · Ahorras ${precioCOP(descuento(p).ahorro)} (-${descuento(p).porcentaje}%)</p>` : ''}
 
       <div>
