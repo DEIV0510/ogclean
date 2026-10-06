@@ -19,7 +19,108 @@
   z-index: -1;
   background: radial-gradient(90% 120% at 85% 0%, color-mix(in srgb, var(--red) 26%, transparent), transparent 60%);
 }
-.tienda-top__inner { display: grid; gap: clamp(0.9rem, 2.4vw, 1.4rem); }
+.tienda-top__inner { position: relative; display: grid; gap: clamp(0.9rem, 2.4vw, 1.4rem); }
+
+/* Vitrina: fotos de estudio que se turnan en el fondo de la cabecera, a la derecha.
+   La máscara las funde con el negro hacia el título (izquierda) y hacia las categorías (abajo). */
+.tienda-top__vitrina {
+  --vitrina-mascara: linear-gradient(90deg, transparent 0%, #000 46%), linear-gradient(0deg, transparent 8%, #000 52%);
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 auto;
+  width: min(66%, 1000px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  -webkit-mask-image: var(--vitrina-mascara);
+  -webkit-mask-composite: source-in;
+  mask-image: var(--vitrina-mascara);
+  mask-composite: intersect;
+}
+.tienda-top__vitrina.is-lista { opacity: 0.94; }
+.vitrina__slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.vitrina__slide.is-on { opacity: 1; }
+.vitrina__slide img { width: 100%; height: 100%; object-fit: cover; }
+/* Entra cerca y se abre despacio, como un plano de cámara */
+.vitrina__slide.is-on img { animation: vitrina-plano 7s cubic-bezier(.2, .6, .2, 1) both; }
+@keyframes vitrina-plano { from { transform: scale(1.12); } to { transform: scale(1); } }
+
+/* Pie de la vitrina: qué par se ve y acceso a su ficha (alineado con las migas) */
+.tienda-top__pie {
+  position: absolute;
+  top: 0;
+  right: var(--gutter);
+  translate: 0 -32%;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55em;
+  max-width: calc(100% - 2 * var(--gutter) - 11rem);
+  padding: 0.5em 0.95em;
+  border: 1px solid color-mix(in srgb, var(--bone) 16%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 60%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: color-mix(in srgb, var(--bone) 78%, var(--ink));
+  font-size: var(--fs-small, 0.75rem);
+  text-align: right;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.tienda-top__pie:hover,
+.tienda-top__pie:focus-visible { color: var(--bone); }
+.tienda-top__pie-k { color: var(--red-soft, var(--red)); }
+.tienda-top__pie-n { color: var(--bone); font-weight: 700; }
+.tienda-top__pie-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.tienda-top__pie-f { transition: transform 0.25s ease; }
+.tienda-top__pie:hover .tienda-top__pie-f { transform: translateX(4px); }
+
+/* Sobre la foto, el título y la línea de productos llevan sombra y el buscador oscurece lo que tiene detrás */
+.tienda-top .h1 { text-shadow: 0 2px 28px color-mix(in srgb, var(--ink) 55%, transparent); }
+/* En escritorio la línea de productos cae encima del par: misma píldora oscura que el pie */
+.tienda-top .tienda-top__meta {
+  padding: 0.5em 0.95em;
+  border: 1px solid color-mix(in srgb, var(--bone) 12%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 60%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: color-mix(in srgb, var(--bone) 80%, var(--ink));
+  text-shadow: 0 1px 2px var(--ink), 0 0 16px color-mix(in srgb, var(--ink) 85%, transparent);
+}
+
+@media (max-width: 700px) {
+  /* En celular va bajo el título, donde la foto ya se apagó: texto suelto como antes */
+  .tienda-top .tienda-top__meta {
+    padding: 0;
+    border: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .tienda-top__vitrina {
+    --vitrina-mascara: linear-gradient(90deg, transparent 0%, #000 52%), linear-gradient(0deg, transparent 42%, #000 70%);
+    width: 100%;
+  }
+  .tienda-top__vitrina.is-lista { opacity: 0.8; }
+  /* En celular el pie solo dice el modelo */
+  .tienda-top__pie-k,
+  .tienda-top__pie-t,
+  .tienda-top__pie-p { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrina__slide.is-on img { animation: none; }
+  .tienda-top__vitrina,
+  .vitrina__slide { transition: none; }
+}
 
 .migas { display: flex; gap: 0.5rem; color: color-mix(in srgb, var(--bone) 55%, var(--ink)); }
 .migas a:hover { color: var(--bone); }
@@ -37,6 +138,7 @@
 .tienda-buscar { position: relative; }
 .tienda-buscar svg {
   position: absolute;
+  z-index: 1; /* encima del campo: su backdrop-filter la taparía */
   left: 1.1rem; top: 50%;
   width: 20px; height: 20px;
   translate: 0 -50%;
@@ -49,6 +151,8 @@
   border: 1px solid color-mix(in srgb, var(--bone) 22%, transparent);
   border-radius: 999px;
   background: color-mix(in srgb, var(--bone) 7%, transparent);
+  -webkit-backdrop-filter: blur(10px) brightness(0.55);
+  backdrop-filter: blur(10px) brightness(0.55);
   color: var(--bone);
   font-size: 1rem;
   transition: border-color 0.25s ease, background 0.25s ease;
