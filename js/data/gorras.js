@@ -6041,5 +6041,133 @@ export const GORRAS = [
     "alt": "Gorra ajustable Los Angeles Dodgers, negro esqueleto",
     "origen": "X77",
     "precio": 110000
+  },
+  {
+    "img": "new-york-yankees-rosado-estrellas",
+    "name": "New York Yankees",
+    "tag": "Rosado estrellas",
+    "color": "Rosado estrellas",
+    "equipo": "New York Yankees",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable New York Yankees, rosado estrellas",
+    "origen": "ajustablesexclusivas #1",
+    "precio": 110000
+  },
+  {
+    "img": "los-angeles-dodgers-blanco-script-azul",
+    "name": "Los Angeles Dodgers",
+    "tag": "Blanco script azul",
+    "color": "Blanco script azul",
+    "equipo": "Los Angeles Dodgers",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable Los Angeles Dodgers, blanco script azul",
+    "origen": "ajustablesexclusivas #2",
+    "precio": 110000
+  },
+  {
+    "img": "pittsburgh-pirates-negro-script-blanco",
+    "name": "Pittsburgh Pirates",
+    "tag": "Negro script blanco",
+    "color": "Negro script blanco",
+    "equipo": "Pittsburgh Pirates",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable Pittsburgh Pirates, negro script blanco",
+    "origen": "ajustablesexclusivas #3",
+    "precio": 110000
+  },
+  {
+    "img": "chicago-white-sox-negro-flamas-celestes",
+    "name": "Chicago White Sox",
+    "tag": "Negro flamas celestes",
+    "color": "Negro flamas celestes",
+    "equipo": "Chicago White Sox",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable Chicago White Sox, negro flamas celestes",
+    "origen": "ajustablesexclusivas #4",
+    "precio": 110000
+  },
+  {
+    "img": "los-angeles-dodgers-azul-rey-flores-de-cerezo",
+    "name": "Los Angeles Dodgers",
+    "tag": "Azul rey flores de cerezo",
+    "color": "Azul rey flores de cerezo",
+    "equipo": "Los Angeles Dodgers",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable Los Angeles Dodgers, azul rey flores de cerezo",
+    "origen": "ajustablesexclusivas #5",
+    "precio": 110000
+  },
+  {
+    "img": "new-york-yankees-negro-estrellas-negras",
+    "name": "New York Yankees",
+    "tag": "Negro estrellas negras",
+    "color": "Negro estrellas negras",
+    "equipo": "New York Yankees",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable New York Yankees, negro estrellas negras",
+    "origen": "ajustablesexclusivas #6",
+    "precio": 110000
+  },
+  {
+    "img": "los-angeles-dodgers-negro-la-contorno-blanco",
+    "name": "Los Angeles Dodgers",
+    "tag": "Negro LA contorno blanco",
+    "color": "Negro LA contorno blanco",
+    "equipo": "Los Angeles Dodgers",
+    "liga": "MLB",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable Los Angeles Dodgers, negro la contorno blanco",
+    "origen": "ajustablesexclusivas #7",
+    "precio": 110000
+  },
+  {
+    "img": "topps-allen-y-ginter-crema-negro",
+    "name": "Topps Allen & Ginter",
+    "tag": "Crema / negro",
+    "color": "Crema / negro",
+    "equipo": "Topps Allen & Ginter",
+    "liga": "Marcas",
+    "cierre": "Ajustable",
+    "lineaGorra": "Exclusiva",
+    "tallas": [
+      "Ajustable"
+    ],
+    "alt": "Gorra ajustable Topps Allen & Ginter, crema / negro",
+    "origen": "ajustablesexclusivas #8",
+    "precio": 110000
   }
 ];
