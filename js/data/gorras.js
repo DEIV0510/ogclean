@@ -5644,17 +5644,17 @@ export const GORRAS = [
   },
   {
     "img": "los-angeles-dodgers-beige-mostaza",
-    "name": "Los Angeles Dodgers",
+    "name": "Houston Astros",
     "tag": "Beige / mostaza",
     "color": "Beige / mostaza",
-    "equipo": "Los Angeles Dodgers",
+    "equipo": "Houston Astros",
     "liga": "MLB",
     "cierre": "Ajustable",
     "lineaGorra": "Exclusiva",
     "tallas": [
       "Ajustable"
     ],
-    "alt": "Gorra ajustable Los Angeles Dodgers, beige / mostaza",
+    "alt": "Gorra ajustable Houston Astros, beige / mostaza",
     "origen": "X53",
     "precio": 110000
   },
