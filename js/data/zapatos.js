@@ -1692,8 +1692,9 @@ export const ZAPATOS = [
     "color": "Café / Rosa / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color café / rosa / blanco",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #43"
+    "origen": "nuevos #43",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "nike-nocta-glide-negro-rojo",
@@ -1873,8 +1874,9 @@ export const ZAPATOS = [
     "color": "Blanco total",
     "alt": "Zapatillas Air Jordan 1 Low color blanco total",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #65"
+    "origen": "nuevos #65",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "air-jordan-1-mid-morado-blanco-rosa",
@@ -2704,8 +2706,9 @@ export const ZAPATOS = [
     "color": "Blanco / Celeste charol",
     "alt": "Zapatillas Air Jordan 11 Low color blanco / celeste charol",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #177"
+    "origen": "nuevos #177",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "air-jordan-4-rojo-negro-blanco",
@@ -3123,8 +3126,9 @@ export const ZAPATOS = [
     "color": "Crema / Beige / Rojo",
     "alt": "Zapatillas Nike M2K Tekno color crema / beige / rojo",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #235"
+    "origen": "nuevos #235",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "adidas-superstar-blanco-negro-suela-negra",
@@ -3340,8 +3344,9 @@ export const ZAPATOS = [
     "color": "Blanco / Negro / Gris",
     "alt": "Zapatillas Nike M2K Tekno color blanco / negro / gris",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #264"
+    "origen": "nuevos #264",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "new-balance-9060-negro-beige-blanco",
@@ -3852,8 +3857,9 @@ export const ZAPATOS = [
     "color": "Blanco / Gris / Crema",
     "alt": "Zapatillas Air Jordan 1 Low color blanco / gris / crema",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #322"
+    "origen": "nuevos #322",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "on-cloud-gris-crema-negro",
@@ -3896,8 +3902,9 @@ export const ZAPATOS = [
     "color": "Gris / Negro / Blanco",
     "alt": "Zapatillas Nike M2K Tekno color gris / negro / blanco",
     "precio": 169900,
+    "origen": "nuevos #329",
     "genero": "hombre",
-    "origen": "nuevos #329"
+    "generoFijo": true
   },
   {
     "img": "nike-air-max-alpha-trainer-gris-marino-blanco",
@@ -4011,8 +4018,9 @@ export const ZAPATOS = [
     "color": "Blanco / Negro charol",
     "alt": "Zapatillas Air Jordan 11 Low color blanco / negro charol",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #346"
+    "origen": "nuevos #346",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "under-armour-micro-g-valsetz-negro-total",
@@ -4205,8 +4213,9 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color negro / blanco",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #371"
+    "origen": "nuevos #371",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "nike-air-force-1-foamposite-negro-total",
@@ -4537,8 +4546,9 @@ export const ZAPATOS = [
     "color": "Blanco / Crema",
     "alt": "Zapatillas Nike M2K Tekno color blanco / crema",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #423"
+    "origen": "nuevos #423",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "osiris-skate-negro-cafe",
@@ -4583,8 +4593,9 @@ export const ZAPATOS = [
     "color": "Rosa / Blanco",
     "alt": "Zapatillas Air Jordan 1 Low color rosa / blanco",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #428"
+    "origen": "nuevos #428",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "air-jordan-4-crema-gris-negro",
@@ -4651,8 +4662,9 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Air Jordan 11 Low color negro / blanco",
     "precio": 185000,
-    "genero": "hombre",
-    "origen": "nuevos #440"
+    "origen": "nuevos #440",
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "adidas-low-blanco-gris-negro",
@@ -6662,8 +6674,9 @@ export const ZAPATOS = [
     "color": "Blanco / Azul / Gris",
     "alt": "Zapatillas On Running color blanco / azul / gris",
     "precio": 169900,
+    "origen": "nuevosog #65",
     "genero": "hombre",
-    "origen": "nuevosog #65"
+    "generoFijo": true
   },
   {
     "img": "nike-shox-navina-plata-rojo",
