@@ -50,7 +50,8 @@ export const ZAPATOS = [
     "color": "Blanco / Gris",
     "alt": "Zapatillas Adidas Trefoil Low color blanco / gris",
     "precio": 169900,
-    "genero": "hombre"
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "salomon-xt-6-blanco-menta",
@@ -6051,7 +6052,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco · suela blanca",
     "color": "Negro / Blanco · suela blanca",
     "alt": "Chanclas Adidas Adilette color negro / blanco · suela blanca",
-    "precio": null,
+    "precio": 84900,
     "tipo": "Chanclas",
     "genero": "hombre",
     "origen": "nuevosog #3"
@@ -6130,7 +6131,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco · suela negra",
     "color": "Negro / Blanco · suela negra",
     "alt": "Chanclas Adidas Adilette color negro / blanco · suela negra",
-    "precio": null,
+    "precio": 84900,
     "tipo": "Chanclas",
     "genero": "hombre",
     "origen": "nuevosog #12"
@@ -6154,7 +6155,7 @@ export const ZAPATOS = [
     "tag": "Negro / Rosa",
     "color": "Negro / Rosa",
     "alt": "Chanclas Adidas Adilette color negro / rosa",
-    "precio": null,
+    "precio": 84900,
     "tipo": "Chanclas",
     "genero": "dama",
     "origen": "nuevosog #15"
@@ -6636,7 +6637,7 @@ export const ZAPATOS = [
     "tag": "Lila / Blanco",
     "color": "Lila / Blanco",
     "alt": "Chanclas Adidas Adilette color lila / blanco",
-    "precio": null,
+    "precio": 84900,
     "tipo": "Chanclas",
     "genero": "dama",
     "origen": "nuevosog #63"
@@ -6682,7 +6683,7 @@ export const ZAPATOS = [
     "tag": "Rosa / Blanco",
     "color": "Rosa / Blanco",
     "alt": "Chanclas Adidas Adilette color rosa / blanco",
-    "precio": null,
+    "precio": 84900,
     "tipo": "Chanclas",
     "genero": "dama",
     "origen": "nuevosog #67"

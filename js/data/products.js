@@ -31,10 +31,14 @@ const GENERO_FIJO = {
 };
 let modelosUnisex = null; // se calcula al primer uso, cuando SNEAKERS ya existe
 const generoDe = (z) => {
+  // `generoFijo: true` en zapatos.js = el dueño confirmó el género de ESE par (p. ej. la Trefoil Low
+  // blanco/gris «es de mujer», 2026-10-06): se respeta tal cual y no vuelve unisex a su modelo
+  if (z.generoFijo) return z.genero;
   if (GENERO_FIJO[z.name]) return GENERO_FIJO[z.name];
   if (!modelosUnisex) {
     const generos = {};
     [...SNEAKERS, ...ZAPATOS].forEach((p) => {
+      if (p.generoFijo) return;
       if (p.genero === 'hombre' || p.genero === 'dama') (generos[p.name] = generos[p.name] || new Set()).add(p.genero);
     });
     modelosUnisex = new Set(Object.keys(generos).filter((n) => generos[n].size === 2 && !GENERO_FIJO[n]));
