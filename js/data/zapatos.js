@@ -751,7 +751,8 @@ export const ZAPATOS = [
     "color": "Negro monograma",
     "alt": "Zapatillas Timberland Bota 6\" color negro monograma",
     "precio": 229900,
-    "genero": "hombre"
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "under-armour-running-plata-blanco",
@@ -1127,7 +1128,8 @@ export const ZAPATOS = [
     "color": "Trigo monograma",
     "alt": "Zapatillas Timberland Bota 6\" color trigo monograma",
     "precio": 229900,
-    "genero": "hombre"
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "on-cloud-blanco-negro",
@@ -1426,18 +1428,6 @@ export const ZAPATOS = [
     "origen": "nuevos #0"
   },
   {
-    "img": "timberland-bota-6-trigo-monograma-suela-clara",
-    "marca": "Timberland",
-    "name": "Timberland Bota 6\"",
-    "tag": "Trigo monograma / Suela clara",
-    "color": "Trigo monograma / Suela clara",
-    "alt": "Botas Timberland Bota 6\" color trigo monograma / suela clara",
-    "precio": 229900,
-    "tipo": "Botas",
-    "genero": "hombre",
-    "origen": "nuevos #1"
-  },
-  {
     "img": "air-jordan-1-low-blanco-azul",
     "marca": "Jordan",
     "name": "Air Jordan 1 Low",
@@ -1631,8 +1621,9 @@ export const ZAPATOS = [
     "color": "Naranja estampado / Plata",
     "alt": "Zapatillas Adidas Superstar color naranja estampado / plata",
     "precio": 169900,
+    "origen": "nuevos #31",
     "genero": "hombre",
-    "origen": "nuevos #31"
+    "generoFijo": true
   },
   {
     "img": "new-balance-530-negro-blanco-plata",
@@ -2593,8 +2584,9 @@ export const ZAPATOS = [
     "alt": "Zapatillas Air Jordan 1 High color fucsia glitter",
     "precio": 185000,
     "deporte": "basquetbol",
+    "origen": "nuevos #162",
     "genero": "dama",
-    "origen": "nuevos #162"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-1-mid-blanco-negro-charol-dorado",
@@ -2778,8 +2770,9 @@ export const ZAPATOS = [
     "color": "Café / Blanco",
     "alt": "Zapatillas Nike Air Force 1 color café / blanco",
     "precio": 169900,
+    "origen": "nuevos #186",
     "genero": "hombre",
-    "origen": "nuevos #186"
+    "generoFijo": true
   },
   {
     "img": "nike-dunk-low-rosa-blanco",
@@ -2866,8 +2859,9 @@ export const ZAPATOS = [
     "color": "Blanco / Negro / Gris",
     "alt": "Zapatillas Nike Air Force 1 color blanco / negro / gris",
     "precio": 169900,
+    "origen": "nuevos #199",
     "genero": "hombre",
-    "origen": "nuevos #199"
+    "generoFijo": true
   },
   {
     "img": "adidas-samba-mule-crema-rosa-gris",
@@ -2889,8 +2883,9 @@ export const ZAPATOS = [
     "color": "Blanco / Gris · entresuela gris",
     "alt": "Zapatillas Nike Air Force 1 color blanco / gris · entresuela gris",
     "precio": 169900,
+    "origen": "nuevos #201",
     "genero": "hombre",
-    "origen": "nuevos #201"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-14-negro-amarillo",
@@ -3085,8 +3080,9 @@ export const ZAPATOS = [
     "color": "Marino / Blanco",
     "alt": "Zapatillas Nike Air Force 1 color marino / blanco",
     "precio": 169900,
+    "origen": "nuevos #227",
     "genero": "hombre",
-    "origen": "nuevos #227"
+    "generoFijo": true
   },
   {
     "img": "on-cloud-blanco-crema-gris",
@@ -3671,8 +3667,9 @@ export const ZAPATOS = [
     "color": "Blanco / Gris / Negro",
     "alt": "Zapatillas Nike Air Force 1 color blanco / gris / negro",
     "precio": 169900,
+    "origen": "nuevos #300",
     "genero": "hombre",
-    "origen": "nuevos #300"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-11-negro-charol-azul",
@@ -3820,8 +3817,9 @@ export const ZAPATOS = [
     "color": "Azul / Blanco",
     "alt": "Zapatillas Nike Air Force 1 color azul / blanco",
     "precio": 169900,
+    "origen": "nuevos #317",
     "genero": "hombre",
-    "origen": "nuevos #317"
+    "generoFijo": true
   },
   {
     "img": "nike-phantom-azul-blanco-fucsia",
@@ -4309,8 +4307,9 @@ export const ZAPATOS = [
     "color": "Vinotinto gamuza / Blanco",
     "alt": "Zapatillas Nike Air Force 1 color vinotinto gamuza / blanco",
     "precio": 169900,
+    "origen": "nuevos #384",
     "genero": "hombre",
-    "origen": "nuevos #384"
+    "generoFijo": true
   },
   {
     "img": "nike-air-force-1-blanco-gris-verde",
@@ -4320,8 +4319,9 @@ export const ZAPATOS = [
     "color": "Blanco / Gris / Verde",
     "alt": "Zapatillas Nike Air Force 1 color blanco / gris / verde",
     "precio": 169900,
+    "origen": "nuevos #387",
     "genero": "hombre",
-    "origen": "nuevos #387"
+    "generoFijo": true
   },
   {
     "img": "dior-b30-gris-plata-celeste",
@@ -4527,8 +4527,9 @@ export const ZAPATOS = [
     "color": "Blanco / Verde",
     "alt": "Zapatillas Nike Air Force 1 color blanco / verde",
     "precio": 169900,
+    "origen": "nuevos #417",
     "genero": "hombre",
-    "origen": "nuevos #417"
+    "generoFijo": true
   },
   {
     "img": "adidas-terrex-oliva-negro",
@@ -6716,8 +6717,9 @@ export const ZAPATOS = [
     "color": "Plata / Rojo",
     "alt": "Zapatillas Nike Shox Navina color plata / rojo",
     "precio": 169900,
+    "origen": "nuevosog #66",
     "genero": "hombre",
-    "origen": "nuevosog #66"
+    "generoFijo": true
   },
   {
     "img": "adidas-adilette-rosa-blanco",
@@ -6797,8 +6799,9 @@ export const ZAPATOS = [
     "color": "Negro / Blanco",
     "alt": "Zapatillas Adidas Supernova color negro / blanco",
     "precio": 169900,
+    "origen": "nuevosog #73",
     "genero": "hombre",
-    "origen": "nuevosog #73"
+    "generoFijo": true
   },
   {
     "img": "under-armour-bota-tactica-arena-cana-alta",
@@ -6854,7 +6857,8 @@ export const ZAPATOS = [
     "color": "Negro / Dorado",
     "alt": "Zapatillas Nike Shox Navina color negro / dorado",
     "precio": 169900,
+    "origen": "nuevosog #79",
     "genero": "hombre",
-    "origen": "nuevosog #79"
+    "generoFijo": true
   }
 ];
