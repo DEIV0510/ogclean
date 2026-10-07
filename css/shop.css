@@ -139,6 +139,13 @@
   padding-inline: var(--gutter);
 }
 .tienda-cats::-webkit-scrollbar { display: none; }
+
+/* Antes de que el JS pinte la tienda se reserva el alto de lo que llega después: sin esto, en
+   la primera visita la fila de categorías, el resumen y la cuadrícula aparecen de golpe y empujan
+   la página (CLS 0,64 medido en celular). La cuadrícula pierde `is-cargando` al pintarse. */
+.tienda-cats:empty { min-height: 3.125rem; }
+.tienda-barra__resumen:empty::before { content: '\00a0'; }
+.tienda-grid.is-cargando { min-height: 120svh; }
 .tienda-cat {
   flex: 0 0 auto;
   display: inline-flex;

@@ -28,7 +28,7 @@ export function precioHTML(p, clase = 'card') {
 }
 
 /** Devuelve el HTML de una tarjeta. `rapida: false` la deja como enlace simple (relacionados). */
-export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 22vw', rapida = true } = {}) {
+export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100px) 30vw, 22vw', rapida = true, prioridad = false } = {}) {
   const d = descuento(p);
   const tallasPanel = p.tallas
     .map((t) => `<button class="card__size" type="button" data-talla="${t}">${t}</button>`)
@@ -45,7 +45,7 @@ export function cardHTML(p, { sizes = '(max-width: 700px) 46vw, (max-width: 1100
         ${d ? `<span class="card__desc">-${d.porcentaje}%</span>` : ''}
         <span class="card__tag"><span>${p.video ? '▶ Video 360°' : p.tag}</span></span>
         <img src="${p.srcCard || p.srcSm}" ${p.srcCard ? '' : `srcset="${p.srcSm} 560w, ${p.src} 1000w" sizes="${sizes}"`}
-             alt="${p.alt}" loading="lazy" decoding="async" width="560" height="560">
+             alt="${p.alt}" ${prioridad ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" width="560" height="560">
         <button class="card__ojo js-visor" type="button" data-id="${p.id}" aria-label="Ver fotos de ${p.name} en grande">${ojo}</button>
         ${favoritoHTML(p)}
       </div>
@@ -98,8 +98,10 @@ export function initEncuadre() {
     .forEach((img) => { if (img.complete) encuadrar(img); });
 }
 
-/** Pinta una lista de productos dentro de un contenedor. */
-export function renderCards(cont, items, opciones) {
+/** Pinta una lista de productos dentro de un contenedor. `prioridad: n` = las primeras n
+    fotos se piden de una y con prioridad alta (las que se ven al abrir la página: LCP). */
+export function renderCards(cont, items, opciones = {}) {
   if (!cont) return;
-  cont.innerHTML = items.map((p) => cardHTML(p, opciones)).join('');
+  const { prioridad = 0, ...resto } = opciones;
+  cont.innerHTML = items.map((p, i) => cardHTML(p, { ...resto, prioridad: i < prioridad })).join('');
 }

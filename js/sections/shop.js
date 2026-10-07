@@ -182,7 +182,9 @@ function pintarResultados({ mantenerScroll = false } = {}) {
   const lista = ordenar(filtrar());
   const pagina = lista.slice(0, estado.visibles);
 
-  renderCards(refs.grid, pagina, { sizes: '(max-width: 620px) 46vw, (max-width: 1100px) 30vw, 260px' });
+  // Las 4 primeras fotos son las que se ven al abrir la tienda: van con prioridad
+  renderCards(refs.grid, pagina, { sizes: '(max-width: 620px) 46vw, (max-width: 1100px) 30vw, 260px', prioridad: 4 });
+  refs.grid.classList.remove('is-cargando'); // quita el alto reservado antes del JS (ver shop.css)
 
   const n = lista.length;
   refs.total.textContent = n;

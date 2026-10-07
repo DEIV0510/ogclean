@@ -32,6 +32,29 @@
 <link rel="stylesheet" href="css/shop.css">
 <link rel="stylesheet" href="css/firma.css">
 
+<link rel="modulepreload" href="js/components/cart.js">
+<link rel="modulepreload" href="js/components/compraRapida.js">
+<link rel="modulepreload" href="js/components/cursor.js">
+<link rel="modulepreload" href="js/components/favoritos.js">
+<link rel="modulepreload" href="js/components/fila.js">
+<link rel="modulepreload" href="js/components/firma.js">
+<link rel="modulepreload" href="js/components/guiaTallas.js">
+<link rel="modulepreload" href="js/components/nav.js">
+<link rel="modulepreload" href="js/components/productCard.js">
+<link rel="modulepreload" href="js/components/quickview.js">
+<link rel="modulepreload" href="js/components/visor.js">
+<link rel="modulepreload" href="js/comun.js">
+<link rel="modulepreload" href="js/data/descripciones.js">
+<link rel="modulepreload" href="js/data/gorras.js">
+<link rel="modulepreload" href="js/data/products.js">
+<link rel="modulepreload" href="js/data/site.js">
+<link rel="modulepreload" href="js/data/tallas.js">
+<link rel="modulepreload" href="js/data/zapatos.js">
+<link rel="modulepreload" href="js/sections/shop.js">
+<link rel="modulepreload" href="js/sections/vitrina.js">
+<link rel="modulepreload" href="js/utils/dom.js">
+<link rel="modulepreload" href="js/utils/motion.js">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -221,7 +244,7 @@
         <div class="tienda-activos__lista" id="filtrosActivos"></div>
       </div>
 
-      <div class="catalogo__grid tienda-grid" id="tiendaGrid"></div>
+      <div class="catalogo__grid tienda-grid is-cargando" id="tiendaGrid"></div>
 
       <div class="tienda-vacio" id="tiendaVacio" hidden>
         <p class="h3">No hay productos con esos filtros</p>
@@ -255,7 +278,7 @@
 <!-- ══════════ 15 · FOOTER ══════════ -->
 <footer class="footer is-dark">
   <div class="mascota-cameo" data-anim="scale" style="--mc-w:96px; --mc-rot:6deg; top:1rem; right:1.2rem;">
-    <img src="assets/img/brand/mascota-lacoste.webp" alt="" width="1001" height="1464" loading="lazy" decoding="async">
+    <img src="assets/img/brand/mascota-lacoste-sm.webp" alt="" width="1001" height="1464" loading="lazy" decoding="async">
   </div>
   <div class="container footer__inner">
     <div class="footer__brand">
@@ -386,7 +409,7 @@
 </a>
 <a class="wa-mascota js-wa" id="waMascota" data-wa="Hola OGCLEAN, necesito ayuda." href="#" aria-label="¿Necesitas ayuda? Habla con OGCLEAN por WhatsApp">
   <span class="wa-mascota__bocadillo">¿Necesitas ayuda?<b>Habla con OGCLEAN</b></span>
-  <img src="assets/img/brand/mascota-newera.webp" alt="" width="230" height="384" loading="lazy" decoding="async">
+  <img src="assets/img/brand/mascota-newera-sm.webp" alt="" width="230" height="384" loading="lazy" decoding="async">
 </a>
 
 <div class="mobile-bar" id="mobileBar">
