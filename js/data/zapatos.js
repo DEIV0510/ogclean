@@ -1132,6 +1132,30 @@ export const ZAPATOS = [
     "generoFijo": true
   },
   {
+    "img": "timberland-bota-6-trigo",
+    "marca": "Timberland",
+    "name": "Timberland Bota 6\"",
+    "tag": "Trigo",
+    "color": "Trigo",
+    "alt": "Zapatillas Timberland Bota 6\" color trigo",
+    "precio": 229900,
+    "genero": "unisex",
+    "generoFijo": true,
+    "origen": "OGCLEAN 2026-10-07 #1"
+  },
+  {
+    "img": "timberland-bota-6-negro-total",
+    "marca": "Timberland",
+    "name": "Timberland Bota 6\"",
+    "tag": "Negro total",
+    "color": "Negro total",
+    "alt": "Zapatillas Timberland Bota 6\" color negro total",
+    "precio": 229900,
+    "genero": "unisex",
+    "generoFijo": true,
+    "origen": "OGCLEAN 2026-10-07 #2"
+  },
+  {
     "img": "on-cloud-blanco-negro",
     "marca": "On",
     "name": "On Cloud",
