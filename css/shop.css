@@ -51,40 +51,9 @@
 .vitrina__slide.is-on img { animation: vitrina-plano 7s cubic-bezier(.2, .6, .2, 1) both; }
 @keyframes vitrina-plano { from { transform: scale(1.12); } to { transform: scale(1); } }
 
-/* Pie de la vitrina: qué par se ve y acceso a su ficha (alineado con las migas) */
-.tienda-top__pie {
-  position: absolute;
-  top: 0;
-  right: var(--gutter);
-  translate: 0 -32%;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.55em;
-  max-width: calc(100% - 2 * var(--gutter) - 11rem);
-  padding: 0.5em 0.95em;
-  border: 1px solid color-mix(in srgb, var(--bone) 16%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--ink) 60%, transparent);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  color: color-mix(in srgb, var(--bone) 78%, var(--ink));
-  font-size: var(--fs-small, 0.75rem);
-  text-align: right;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: color 0.25s ease;
-}
-.tienda-top__pie:hover,
-.tienda-top__pie:focus-visible { color: var(--bone); }
-.tienda-top__pie-k { color: var(--red-soft, var(--red)); }
-.tienda-top__pie-n { color: var(--bone); font-weight: 700; }
-.tienda-top__pie-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-.tienda-top__pie-f { transition: transform 0.25s ease; }
-.tienda-top__pie:hover .tienda-top__pie-f { transform: translateX(4px); }
-
 /* Sobre la foto, el título y la línea de productos llevan sombra y el buscador oscurece lo que tiene detrás */
 .tienda-top .h1 { text-shadow: 0 2px 28px color-mix(in srgb, var(--ink) 55%, transparent); }
-/* En escritorio la línea de productos cae encima del par: misma píldora oscura que el pie */
+/* En escritorio la línea de productos cae encima del par: va en una píldora oscura */
 .tienda-top .tienda-top__meta {
   padding: 0.5em 0.95em;
   border: 1px solid color-mix(in srgb, var(--bone) 12%, transparent);
@@ -110,10 +79,6 @@
     width: 100%;
   }
   .tienda-top__vitrina.is-lista { opacity: 0.8; }
-  /* En celular el pie solo dice el modelo */
-  .tienda-top__pie-k,
-  .tienda-top__pie-t,
-  .tienda-top__pie-p { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -39,7 +39,7 @@ export const ZAPATOS = [
     "tag": "Crema / Café",
     "color": "Crema / Café",
     "alt": "Zapatillas Salomon XT-6 color crema / café",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -60,7 +60,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Menta",
     "color": "Blanco / Menta",
     "alt": "Zapatillas Salomon XT-6 color blanco / menta",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "dama"
   },
   {
@@ -151,7 +151,7 @@ export const ZAPATOS = [
     "tag": "Beige / Negro",
     "color": "Beige / Negro",
     "alt": "Zapatillas Salomon XT-6 color beige / negro",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "dama"
   },
   {
@@ -177,11 +177,11 @@ export const ZAPATOS = [
   },
   {
     "img": "runner-retro-blanco-gris",
-    "marca": "Otras",
-    "name": "Runner Retro",
+    "marca": "Golden Goose",
+    "name": "Golden Goose Running Sole",
     "tag": "Blanco / Gris",
     "color": "Blanco / Gris",
-    "alt": "Zapatillas Runner Retro color blanco / gris",
+    "alt": "Zapatillas Golden Goose Running Sole color blanco / gris",
     "precio": 169900,
     "genero": "hombre"
   },
@@ -222,7 +222,7 @@ export const ZAPATOS = [
     "tag": "Negro brillante",
     "color": "Negro brillante",
     "alt": "Zapatillas Numeris Atelier color negro brillante",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "dama"
   },
   {
@@ -253,7 +253,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas BAPE Road Sta Express color negro / blanco",
-    "precio": 169900,
+    "precio": 199900,
     "genero": "hombre"
   },
   {
@@ -284,7 +284,8 @@ export const ZAPATOS = [
     "color": "Blanco / Gris",
     "alt": "Zapatillas On Cloud color blanco / gris",
     "precio": 169900,
-    "genero": "hombre"
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "salomon-xt-negro-total",
@@ -293,7 +294,7 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Salomon XT color negro total",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -333,7 +334,7 @@ export const ZAPATOS = [
     "tag": "Blanco / Plata",
     "color": "Blanco / Plata",
     "alt": "Zapatillas Salomon XT-6 color blanco / plata",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "dama"
   },
   {
@@ -364,7 +365,8 @@ export const ZAPATOS = [
     "color": "Crema / Rosa",
     "alt": "Zapatillas On Cloud color crema / rosa",
     "precio": 169900,
-    "genero": "dama"
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "salomon-xt-6-plata",
@@ -373,18 +375,19 @@ export const ZAPATOS = [
     "tag": "Plata",
     "color": "Plata",
     "alt": "Zapatillas Salomon XT-6 color plata",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "dama"
   },
   {
     "img": "skate-chunky-negro-rojo-gris",
-    "marca": "Otras",
-    "name": "Skate Chunky",
+    "marca": "Dolce & Gabbana",
+    "name": "Dolce & Gabbana Sneaker",
     "tag": "Negro / Rojo / Gris",
     "color": "Negro / Rojo / Gris",
-    "alt": "Zapatillas Skate Chunky color negro / rojo / gris",
+    "alt": "Zapatillas Dolce & Gabbana Sneaker color negro / rojo / gris",
     "precio": 169900,
-    "genero": "hombre"
+    "genero": "hombre",
+    "generoFijo": true
   },
   {
     "img": "adidas-running-blanco-celeste",
@@ -404,7 +407,8 @@ export const ZAPATOS = [
     "color": "Gris oscuro",
     "alt": "Zapatillas On Cloud color gris oscuro",
     "precio": 169900,
-    "genero": "hombre"
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "nike-nocta-hot-step-negro-total",
@@ -443,7 +447,7 @@ export const ZAPATOS = [
     "tag": "Negro / Blanco",
     "color": "Negro / Blanco",
     "alt": "Zapatillas Numeris Atelier color negro / blanco",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "dama"
   },
   {
@@ -494,7 +498,7 @@ export const ZAPATOS = [
     "tag": "Beige camuflado",
     "color": "Beige camuflado",
     "alt": "Zapatillas Numeris Atelier color beige camuflado",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "hombre"
   },
   {
@@ -529,13 +533,14 @@ export const ZAPATOS = [
   },
   {
     "img": "skate-chunky-azul-naranja",
-    "marca": "Otras",
-    "name": "Skate Chunky",
+    "marca": "Dolce & Gabbana",
+    "name": "Dolce & Gabbana Sneaker",
     "tag": "Azul / Naranja",
     "color": "Azul / Naranja",
-    "alt": "Zapatillas Skate Chunky color azul / naranja",
+    "alt": "Zapatillas Dolce & Gabbana Sneaker color azul / naranja",
     "precio": 169900,
-    "genero": "hombre"
+    "genero": "hombre",
+    "generoFijo": true
   },
   {
     "img": "nike-p-6000-negro-plata",
@@ -604,7 +609,7 @@ export const ZAPATOS = [
     "tag": "Negro / Rojo",
     "color": "Negro / Rojo",
     "alt": "Zapatillas Salomon XT-6 color negro / rojo",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -614,7 +619,7 @@ export const ZAPATOS = [
     "tag": "Azul / Gris",
     "color": "Azul / Gris",
     "alt": "Zapatillas Salomon XT-6 color azul / gris",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -624,7 +629,7 @@ export const ZAPATOS = [
     "tag": "Negro salpicado",
     "color": "Negro salpicado",
     "alt": "Zapatillas Numeris Atelier color negro salpicado",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "hombre"
   },
   {
@@ -715,7 +720,7 @@ export const ZAPATOS = [
     "tag": "Gris claro",
     "color": "Gris claro",
     "alt": "Zapatillas Salomon XT-6 color gris claro",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -735,7 +740,7 @@ export const ZAPATOS = [
     "tag": "Negro / Beige",
     "color": "Negro / Beige",
     "alt": "Zapatillas Salomon XT color negro / beige",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -796,7 +801,7 @@ export const ZAPATOS = [
     "tag": "Crema / Morado",
     "color": "Crema / Morado",
     "alt": "Zapatillas BAPE Road Sta Express color crema / morado",
-    "precio": 169900,
+    "precio": 199900,
     "genero": "dama"
   },
   {
@@ -806,7 +811,7 @@ export const ZAPATOS = [
     "tag": "Negro / Plata",
     "color": "Negro / Plata",
     "alt": "Zapatillas Salomon XT-6 GTX color negro / plata",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -816,7 +821,7 @@ export const ZAPATOS = [
     "tag": "Vinotinto",
     "color": "Vinotinto",
     "alt": "Zapatillas BAPE Road Sta Express color vinotinto",
-    "precio": 169900,
+    "precio": 199900,
     "genero": "hombre"
   },
   {
@@ -836,7 +841,7 @@ export const ZAPATOS = [
     "tag": "Negro / Rosa",
     "color": "Negro / Rosa",
     "alt": "Zapatillas Numeris Atelier color negro / rosa",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "dama"
   },
   {
@@ -938,7 +943,7 @@ export const ZAPATOS = [
     "tag": "Negro / Plata",
     "color": "Negro / Plata",
     "alt": "Zapatillas Salomon XT-6 color negro / plata",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -1030,7 +1035,8 @@ export const ZAPATOS = [
     "color": "Blanco / Verde",
     "alt": "Zapatillas On Cloud color blanco / verde",
     "precio": 169900,
-    "genero": "dama"
+    "genero": "unisex",
+    "generoFijo": true
   },
   {
     "img": "new-balance-running-blanco-verde",
@@ -1089,7 +1095,7 @@ export const ZAPATOS = [
     "tag": "Negro glitter",
     "color": "Negro glitter",
     "alt": "Zapatillas Numeris Atelier color negro glitter",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "dama"
   },
   {
@@ -1131,7 +1137,8 @@ export const ZAPATOS = [
     "color": "Blanco / Negro",
     "alt": "Zapatillas On Cloud color blanco / negro",
     "precio": 169900,
-    "genero": "hombre"
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "adidas-campus-00s-gris-negro",
@@ -1150,7 +1157,7 @@ export const ZAPATOS = [
     "tag": "Negro total",
     "color": "Negro total",
     "alt": "Zapatillas Numeris Atelier color negro total",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "hombre"
   },
   {
@@ -1200,7 +1207,7 @@ export const ZAPATOS = [
     "tag": "Plata / Amarillo",
     "color": "Plata / Amarillo",
     "alt": "Zapatillas BAPE Road Sta Express color plata / amarillo",
-    "precio": 169900,
+    "precio": 199900,
     "genero": "hombre"
   },
   {
@@ -1220,7 +1227,7 @@ export const ZAPATOS = [
     "tag": "Gris oscuro",
     "color": "Gris oscuro",
     "alt": "Zapatillas Salomon XT-6 color gris oscuro",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -1240,7 +1247,7 @@ export const ZAPATOS = [
     "tag": "Blanco total",
     "color": "Blanco total",
     "alt": "Zapatillas Numeris Atelier color blanco total",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "hombre"
   },
   {
@@ -1250,7 +1257,7 @@ export const ZAPATOS = [
     "tag": "Negro glitter / Blanco",
     "color": "Negro glitter / Blanco",
     "alt": "Zapatillas Numeris Atelier color negro glitter / blanco",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "dama"
   },
   {
@@ -1292,7 +1299,7 @@ export const ZAPATOS = [
     "tag": "Azul estampado",
     "color": "Azul estampado",
     "alt": "Zapatillas Numeris Atelier color azul estampado",
-    "precio": 169900,
+    "precio": 194900,
     "genero": "dama"
   },
   {
@@ -1362,7 +1369,7 @@ export const ZAPATOS = [
     "tag": "Azul / Arena",
     "color": "Azul / Arena",
     "alt": "Zapatillas Salomon XT-6 color azul / arena",
-    "precio": 169900,
+    "precio": 214900,
     "genero": "hombre"
   },
   {
@@ -1403,7 +1410,7 @@ export const ZAPATOS = [
     "tag": "Azul marino cuero",
     "color": "Azul marino",
     "alt": "Zapatillas BAPE Road Sta Express color azul marino",
-    "precio": 169900,
+    "precio": 199900,
     "genero": "hombre"
   },
   {
@@ -1670,8 +1677,9 @@ export const ZAPATOS = [
     "color": "Negro total",
     "alt": "Zapatillas On Cloudrock color negro total",
     "precio": 169900,
+    "origen": "nuevos #40",
     "genero": "hombre",
-    "origen": "nuevos #40"
+    "generoFijo": true
   },
   {
     "img": "adidas-terrex-caqui-cafe-gris",
@@ -1805,8 +1813,9 @@ export const ZAPATOS = [
     "color": "Beige / Oliva / Blanco",
     "alt": "Zapatillas On Cloud color beige / oliva / blanco",
     "precio": 169900,
+    "origen": "nuevos #58",
     "genero": "hombre",
-    "origen": "nuevos #58"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-5-negro-blanco",
@@ -1998,7 +2007,7 @@ export const ZAPATOS = [
     "tag": "Negro / Gris",
     "color": "Negro / Gris",
     "alt": "Zapatillas Dior B30 color negro / gris",
-    "precio": 169900,
+    "precio": 184900,
     "genero": "hombre",
     "origen": "nuevos #83"
   },
@@ -2056,8 +2065,9 @@ export const ZAPATOS = [
     "color": "Beige / Arena",
     "alt": "Zapatillas On Cloud color beige / arena",
     "precio": 169900,
+    "origen": "nuevos #88",
     "genero": "hombre",
-    "origen": "nuevos #88"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-3-blanco-rojo-gris",
@@ -2294,8 +2304,9 @@ export const ZAPATOS = [
     "color": "Arena / Crema",
     "alt": "Zapatillas On Cloud color arena / crema",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #122"
+    "origen": "nuevos #122",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "nike-dunk-low-negro-blanco-suela-blanca",
@@ -2443,8 +2454,9 @@ export const ZAPATOS = [
     "color": "Crema / Caqui / Negro",
     "alt": "Zapatillas On Cloud color crema / caqui / negro",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #144"
+    "origen": "nuevos #144",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "under-armour-bota-tactica-negro-total-ua-storm",
@@ -2523,8 +2535,9 @@ export const ZAPATOS = [
     "color": "Crema / Verde",
     "alt": "Zapatillas On Cloud color crema / verde",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #157"
+    "origen": "nuevos #157",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "adidas-adimule-caqui-gamuza",
@@ -2625,8 +2638,9 @@ export const ZAPATOS = [
     "color": "Menta / Blanco",
     "alt": "Zapatillas On Cloud color menta / blanco",
     "precio": 169900,
+    "origen": "nuevos #168",
     "genero": "dama",
-    "origen": "nuevos #168"
+    "generoFijo": true
   },
   {
     "img": "adidas-f50-fucsia-azul-verde",
@@ -2967,7 +2981,7 @@ export const ZAPATOS = [
     "tag": "Gris / Oliva / Crema",
     "color": "Gris / Oliva / Crema",
     "alt": "Zapatillas Dior B30 color gris / oliva / crema",
-    "precio": 169900,
+    "precio": 184900,
     "genero": "hombre",
     "origen": "nuevos #216"
   },
@@ -2990,8 +3004,9 @@ export const ZAPATOS = [
     "color": "Negro total",
     "alt": "Zapatillas On Cloud Mid color negro total",
     "precio": 169900,
+    "origen": "nuevos #220",
     "genero": "hombre",
-    "origen": "nuevos #220"
+    "generoFijo": true
   },
   {
     "img": "on-cloud-gris-crema",
@@ -3001,8 +3016,9 @@ export const ZAPATOS = [
     "color": "Gris / Crema",
     "alt": "Zapatillas On Cloud color gris / crema",
     "precio": 169900,
+    "origen": "nuevos #221",
     "genero": "hombre",
-    "origen": "nuevos #221"
+    "generoFijo": true
   },
   {
     "img": "nike-dunk-low-crema-gamuza",
@@ -3080,8 +3096,9 @@ export const ZAPATOS = [
     "color": "Blanco / Crema / Gris",
     "alt": "Zapatillas On Cloud color blanco / crema / gris",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #229"
+    "origen": "nuevos #229",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "nike-metcon-blanco-gris",
@@ -3402,8 +3419,9 @@ export const ZAPATOS = [
     "color": "Gris total",
     "alt": "Zapatillas On Cloud color gris total",
     "precio": 169900,
+    "origen": "nuevos #271",
     "genero": "hombre",
-    "origen": "nuevos #271"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-5-blanco-vinotinto-dorado",
@@ -3472,8 +3490,9 @@ export const ZAPATOS = [
     "color": "Rosa / Lila / Blanco",
     "alt": "Zapatillas On Cloud color rosa / lila / blanco",
     "precio": 169900,
+    "origen": "nuevos #279",
     "genero": "dama",
-    "origen": "nuevos #279"
+    "generoFijo": true
   },
   {
     "img": "air-jordan-1-mid-negro-blanco-rosa",
@@ -3572,8 +3591,9 @@ export const ZAPATOS = [
     "color": "Crema / Lila",
     "alt": "Zapatillas On Cloud color crema / lila",
     "precio": 169900,
+    "origen": "nuevos #290",
     "genero": "dama",
-    "origen": "nuevos #290"
+    "generoFijo": true
   },
   {
     "img": "adidas-f50-tf-verde-negro",
@@ -3595,8 +3615,9 @@ export const ZAPATOS = [
     "color": "Crema / Rosa claro · talón rosa",
     "alt": "Zapatillas On Cloud color crema / rosa claro · talón rosa",
     "precio": 169900,
+    "origen": "nuevos #295",
     "genero": "dama",
-    "origen": "nuevos #295"
+    "generoFijo": true
   },
   {
     "img": "nike-air-max-plus-negro-blanco",
@@ -3869,8 +3890,9 @@ export const ZAPATOS = [
     "color": "Gris / Crema / Negro",
     "alt": "Zapatillas On Cloud color gris / crema / negro",
     "precio": 169900,
+    "origen": "nuevos #324",
     "genero": "hombre",
-    "origen": "nuevos #324"
+    "generoFijo": true
   },
   {
     "img": "on-cloud-gris-cafe-beige",
@@ -3880,8 +3902,9 @@ export const ZAPATOS = [
     "color": "Gris / Café / Beige",
     "alt": "Zapatillas On Cloud color gris / café / beige",
     "precio": 169900,
+    "origen": "nuevos #325",
     "genero": "hombre",
-    "origen": "nuevos #325"
+    "generoFijo": true
   },
   {
     "img": "asics-gel-resolution-crema-rosa",
@@ -4135,8 +4158,9 @@ export const ZAPATOS = [
     "color": "Gris total",
     "alt": "Zapatillas On Cloud Mid color gris total",
     "precio": 169900,
+    "origen": "nuevos #361",
     "genero": "hombre",
-    "origen": "nuevos #361"
+    "generoFijo": true
   },
   {
     "img": "nike-metcon-blanco-verde-negro",
@@ -4169,8 +4193,9 @@ export const ZAPATOS = [
     "color": "Crema / Fucsia",
     "alt": "Zapatillas On Cloud color crema / fucsia",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevos #364"
+    "origen": "nuevos #364",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "puma-180-crema-gris",
@@ -4191,8 +4216,9 @@ export const ZAPATOS = [
     "color": "Beige / Gris",
     "alt": "Zapatillas On Cloud Mid color beige / gris",
     "precio": 169900,
+    "origen": "nuevos #366",
     "genero": "hombre",
-    "origen": "nuevos #366"
+    "generoFijo": true
   },
   {
     "img": "adidas-hyperboost-azul-rosa-gris",
@@ -4304,7 +4330,7 @@ export const ZAPATOS = [
     "tag": "Gris / Plata / Celeste",
     "color": "Gris / Plata / Celeste",
     "alt": "Zapatillas Dior B30 color gris / plata / celeste",
-    "precio": 169900,
+    "precio": 184900,
     "genero": "hombre",
     "origen": "nuevos #388"
   },
@@ -4786,8 +4812,9 @@ export const ZAPATOS = [
     "color": "Rosa / Blanco",
     "alt": "Zapatillas On Cloud color rosa / blanco",
     "precio": 169900,
+    "origen": "nuevos #460",
     "genero": "dama",
-    "origen": "nuevos #460"
+    "generoFijo": true
   },
   {
     "img": "adidas-low-blanco-verde-negro",
@@ -6121,8 +6148,9 @@ export const ZAPATOS = [
     "color": "Blanco / Rosa palo / Naranja",
     "alt": "Zapatillas On Cloud color blanco / rosa palo / naranja",
     "precio": 169900,
+    "origen": "nuevosog #10",
     "genero": "dama",
-    "origen": "nuevosog #10"
+    "generoFijo": true
   },
   {
     "img": "under-armour-micro-g-valsetz-cafe-total",
@@ -6349,8 +6377,9 @@ export const ZAPATOS = [
     "color": "Blanco / Verde neón / Gris",
     "alt": "Zapatillas On Cloud color blanco / verde neón / gris",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevosog #31"
+    "origen": "nuevosog #31",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "timberland-senderismo-gris-blanco",
@@ -6417,8 +6446,9 @@ export const ZAPATOS = [
     "color": "Blanco / Celeste / Azul",
     "alt": "Zapatillas On Cloud color blanco / celeste / azul",
     "precio": 169900,
-    "genero": "hombre",
-    "origen": "nuevosog #38"
+    "origen": "nuevosog #38",
+    "genero": "dama",
+    "generoFijo": true
   },
   {
     "img": "skechers-running-rosa-blanco",
@@ -6675,7 +6705,7 @@ export const ZAPATOS = [
     "alt": "Zapatillas On Running color blanco / azul / gris",
     "precio": 169900,
     "origen": "nuevosog #65",
-    "genero": "hombre",
+    "genero": "dama",
     "generoFijo": true
   },
   {

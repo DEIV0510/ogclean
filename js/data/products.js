@@ -6,9 +6,10 @@ import { GORRAS } from './gorras.js';
 import { DESCRIPCIONES } from './descripciones.js';
 
 /* Precio por defecto de cada línea (fallback solo para items sin `precio` propio,
-   como las 15 gorras cerradas originales del array CAPS). El resto del catálogo
-   ya trae su `precio` real en zapatos.js/gorras.js (null = se cotiza por WhatsApp). */
-export const PRECIOS = { caps: { Cerrada: 95000, Ajustable: 85000 }, sneakers: 185000 };
+   como las 15 gorras cerradas originales del array CAPS: $149.900 desde el 2026-10-06,
+   video del dueño «todas esas son a 149900»). El resto del catálogo ya trae su `precio`
+   real en zapatos.js/gorras.js (null = se cotiza por WhatsApp). */
+export const PRECIOS = { caps: { Cerrada: 149900, Ajustable: 85000 }, sneakers: 185000 };
 
 /* Zapatillas y botas van en talla Euro, confirmado por el dueño: hombre 40 a 44 y dama
    36 a 39. Todo el calzado (también básquetbol y botas) lleva `genero` en los datos para
@@ -28,6 +29,14 @@ export const TALLAS = {
    GENERO_FIJO: modelos cuyo género confirmó el dueño y que la regla no debe cambiar. */
 const GENERO_FIJO = {
   'Adidas Samba Mule': 'dama', // «son solo tallas de mujer» (2026-10-04)
+  // Capturas del dueño del 2026-10-06: «solo de hombre» / «dama y caballero»
+  'Numeris Atelier': 'hombre',
+  'Nike Shox R4': 'hombre',
+  'BAPE Road Sta Express': 'hombre',
+  'Reebok Club C 85': 'unisex',
+  'Puma Suede XL': 'unisex',
+  'Puma 180': 'unisex',
+  'Puma Club II Era': 'unisex',
 };
 let modelosUnisex = null; // se calcula al primer uso, cuando SNEAKERS ya existe
 const generoDe = (z) => {

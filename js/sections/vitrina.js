@@ -1,13 +1,11 @@
 /* Vitrina de la cabecera de la tienda: fotos de estudio con fondo oscuro que se turnan
-   detrás del título (lado derecho), con un pie que abre la ficha del par en vitrina.
-   Pedido del dueño (video del 3 de octubre): «meterle algo bien brutal a ese fondo,
-   como una zapatilla, una gorra o modelos». Solo decora: si no carga, la cabecera
-   queda como antes. */
+   detrás del título (lado derecho). Pedido del dueño (video del 3 de octubre): «meterle
+   algo bien brutal a ese fondo, como una zapatilla, una gorra o modelos». Es solo fondo:
+   sin enlace ni pie (dueño, 6-oct: «la idea es que la gente siga scrolleando»). Si no
+   carga, la cabecera queda como antes. */
 
 import { qs, reducedMotion } from '../utils/dom.js';
 import { porId } from '../data/products.js';
-import { precioCOP } from '../data/site.js';
-import { abrirFicha } from '../components/quickview.js';
 
 // Fotos con fondo oscuro (se funden con la cabecera negra) y dónde queda el par en cada una
 const VITRINA = [
@@ -19,16 +17,8 @@ const VITRINA = [
 ];
 const CADA = 6000;
 
-const span = (clase, texto) => {
-  const s = document.createElement('span');
-  s.className = clase;
-  s.textContent = texto;
-  return s;
-};
-
 export function initVitrina() {
   const caja = qs('#tiendaVitrina');
-  const pie = qs('#tiendaVitrinaPie');
   if (!caja || navigator.connection?.saveData) return;
 
   const slides = VITRINA
@@ -57,27 +47,11 @@ export function initVitrina() {
     s.img.src = s.p.src;
   }));
 
-  const pintarPie = (p) => {
-    if (!pie) return;
-    pie.replaceChildren(
-      span('tienda-top__pie-k', 'En vitrina'),
-      span('tienda-top__pie-n', p.name),
-      span('tienda-top__pie-t', p.tag),
-      span('tienda-top__pie-p', precioCOP(p.precio)),
-      span('tienda-top__pie-f', '→'),
-    );
-    pie.lastChild.setAttribute('aria-hidden', 'true');
-    pie.dataset.id = p.id;
-    pie.setAttribute('aria-label', `En vitrina: ${p.name} ${p.tag}, ${precioCOP(p.precio)}. Ver producto`);
-    pie.hidden = false;
-  };
-
   let i = 0;
   let timer = 0;
   let visible = true;
   const mostrar = (n) => {
     slides.forEach((s, k) => s.fig.classList.toggle('is-on', k === n));
-    pintarPie(slides[n].p);
     if (slides.length > 1) cargar(slides[(n + 1) % slides.length]);
   };
   const programar = () => {
@@ -98,7 +72,6 @@ export function initVitrina() {
     programar();
   });
 
-  pie?.addEventListener('click', () => abrirFicha(pie.dataset.id));
   document.addEventListener('visibilitychange', programar);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; programar(); }).observe(caja);
