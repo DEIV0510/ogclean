@@ -236,17 +236,6 @@ export const ZAPATOS = [
     "genero": "hombre"
   },
   {
-    "img": "jordan-air-jordan-4-blanco-azul",
-    "marca": "Jordan",
-    "name": "Air Jordan 4",
-    "tag": "Blanco / Azul",
-    "color": "Blanco / Azul",
-    "alt": "Zapatillas Air Jordan 4 color blanco / azul",
-    "precio": 185000,
-    "deporte": "basquetbol",
-    "genero": "hombre"
-  },
-  {
     "img": "bape-road-sta-negro-blanco",
     "marca": "BAPE",
     "name": "BAPE Road Sta Express",
@@ -2692,18 +2681,6 @@ export const ZAPATOS = [
     "precio": 185000,
     "genero": "hombre",
     "origen": "nuevos #171"
-  },
-  {
-    "img": "air-jordan-4-blanco-celeste-cordones-blancos",
-    "marca": "Jordan",
-    "name": "Air Jordan 4",
-    "tag": "Blanco / Celeste · cordones blancos",
-    "color": "Blanco / Celeste · cordones blancos",
-    "alt": "Zapatillas Air Jordan 4 color blanco / celeste · cordones blancos",
-    "precio": 185000,
-    "deporte": "basquetbol",
-    "genero": "hombre",
-    "origen": "nuevos #172"
   },
   {
     "img": "air-jordan-3-blanco-verde-rosa",

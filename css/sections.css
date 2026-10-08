@@ -109,7 +109,13 @@
   background: none;
 }
 .hero__float--mascota img { object-fit: contain; filter: drop-shadow(0 18px 30px rgba(12, 10, 9, 0.5)); }
-.hero__float--b { top: 40%; right: 26%; width: clamp(88px, 17vw, 190px); animation: floatY 9s var(--ease-in-out) infinite reverse; }
+/* Círculo blanco con una zapatilla de foto de estudio (dueño, 7-oct: «se ve muy pequeña… una que
+   tenga el fondo blanco»): más grande y con la foto entera (contain) para que el círculo no la corte */
+.hero__float--b { top: 30%; right: 26%; width: clamp(150px, 17vw, 240px); background: #f6f6f6; animation: floatY 9s var(--ease-in-out) infinite reverse; }
+.hero__float--b img { object-fit: cover; transform: scale(1.08); }
+/* Más arriba cabe más grande sin tocar «NO SE»/«COPIA.» (medido de 1024 a 1920); en tablet vertical
+   vuelve a su altura para no rozar el texto de arriba. El fondo es el gris de la foto. */
+@media (max-width: 900px) { .hero__float--b { top: 40%; } }
 
 @keyframes floatY {
   0%, 100% { transform: translateY(0) rotate(0deg); }
