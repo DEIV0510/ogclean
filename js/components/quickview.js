@@ -78,7 +78,7 @@ function fichaHTML(p) {
         <li><span class="k">Color</span><span class="v">${p.color}</span></li>
         <li><span class="k">Tallas</span><span class="v">${p.tallas[0]}${p.unidad} — ${p.tallas[p.tallas.length - 1]}${p.unidad}</span></li>
         <li><span class="k">Envío</span><span class="v">${SITE.envios}</span></li>
-        <li><span class="k">Cambios y reembolsos</span><span class="v">20 días, solo por defecto</span></li>
+        <li><span class="k">Cambios y reembolsos</span><span class="v">20 días desde la entrega, solo por defecto</span></li>
       </ul>
     </div>
 
