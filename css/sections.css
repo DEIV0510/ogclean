@@ -1097,6 +1097,15 @@
   color: var(--fg);
 }
 .reembolsos__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.4rem; }
+.reembolsos__grupo {
+  margin-bottom: -0.6rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.reembolsos__reglas--no b { color: var(--muted); }
 
 @media (min-width: 860px) {
   .reembolsos__grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
