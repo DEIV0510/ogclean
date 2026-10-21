@@ -8,6 +8,7 @@ export const SITE = {
   },
   redes: {
     facebook: 'https://www.facebook.com/profile.php?id=61577983661507',
+    instagram: 'https://www.instagram.com/ogclean.co/',
     tiktok: 'https://www.tiktok.com/@ogclean.co',
     tiktokUser: '@ogclean.co',
   },

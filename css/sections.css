@@ -680,10 +680,12 @@
 .social__card svg { width: 26px; height: 26px; color: var(--red-soft); position: relative; z-index: 1; }
 .social__card-k { color: color-mix(in srgb, var(--bone) 55%, var(--ink)); position: relative; z-index: 1; }
 .social__card-v { font-weight: 700; font-size: 1.1rem; position: relative; z-index: 1; }
+.social__card svg[stroke] { fill: none; }
 
 @media (min-width: 860px) {
   .social__inner { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 3rem; }
   .social__cards { grid-template-columns: 1fr 1fr; }
+  .social__card--ancha { grid-column: 1 / -1; }
 }
 
 /* ══════ CTA FINAL ══════ */
