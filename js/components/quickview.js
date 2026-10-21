@@ -183,7 +183,8 @@ export function abrirFicha(id) {
   const add = qs('#quickAdd');
   if (add) {
     add.addEventListener('click', () => {
-      if (pedirTalla()) return;
+      // Doble clic: mientras dice «✓ Agregado» no vuelve a agregar (ni guarda ese texto como el original)
+      if (add.classList.contains('is-added') || pedirTalla()) return;
       agregar(p.id, tallaElegida, cantidadElegida);
       aviso(p, tallaElegida, cantidadElegida);
       const original = add.innerHTML;

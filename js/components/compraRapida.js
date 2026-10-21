@@ -35,6 +35,8 @@ export function initCompraRapida(contenedor) {
     // "Agregar": con talla elegida va directo al carrito; sin talla, muestra todas
     const agregarBtn = e.target.closest('[data-agregar]');
     if (agregarBtn) {
+      // Doble clic: mientras dice «✓ Agregado» no vuelve a agregar (ni guarda ese texto como el original)
+      if (agregarBtn.classList.contains('is-added')) return;
       const card = agregarBtn.closest('.card');
       const p = porId(card.dataset.id);
       if (!p) return;

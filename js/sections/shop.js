@@ -168,6 +168,10 @@ function pintarFiltros() {
 
 /* ---------------- Resultados ---------------- */
 
+/* La búsqueda llega de la dirección (?q=): se escribe como texto, nunca como HTML. Sin esto, un enlace
+   como tienda/?q=<img onerror=…> ejecutaba código en la página de quien lo abriera. */
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
 function chipsActivos() {
   const chips = [];
   if (estado.q.trim()) chips.push(['q', estado.q.trim(), `“${estado.q.trim()}”`]);
@@ -197,8 +201,8 @@ function pintarResultados({ mantenerScroll = false } = {}) {
 
   const chips = chipsActivos();
   refs.activos.innerHTML = chips.map(([tipo, valor, label]) => `
-    <button class="filtro-activo" type="button" data-quitar="${tipo}" data-valor="${valor}" aria-label="Quitar filtro ${label}">
-      ${label} <span aria-hidden="true">✕</span>
+    <button class="filtro-activo" type="button" data-quitar="${esc(tipo)}" data-valor="${esc(valor)}" aria-label="Quitar filtro ${esc(label)}">
+      ${esc(label)} <span aria-hidden="true">✕</span>
     </button>`).join('') + (chips.length ? '<button class="filtro-limpiar" type="button" data-limpiar>Limpiar todo</button>' : '');
   refs.activosBloque.hidden = !chips.length;
 

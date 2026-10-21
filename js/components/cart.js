@@ -136,11 +136,18 @@ function pintar() {
 
 /* ---------------- Acciones ---------------- */
 
+/* Doble clic en «Agregar» o «Comprar ahora»: el segundo toque llega en menos de 0,7 s y sumaría
+   otra unidad sin que el cliente lo quiera. Se ignora (vale para todos los botones que agregan). */
+let ultimoAgregado = { clave: '', t: 0 };
+
 /** Agrega una pieza al carrito. Devuelve false si falta la talla. */
 export function agregar(id, talla, cant = 1) {
   const p = porId(id);
   if (!p) return false;
   const clave = claveLinea(id, talla);
+  const ahora = Date.now();
+  if (clave === ultimoAgregado.clave && ahora - ultimoAgregado.t < 700) return true;
+  ultimoAgregado = { clave, t: ahora };
   const existente = lineas.find((l) => claveLinea(l.id, l.talla) === clave);
   if (existente) existente.cant = Math.min(existente.cant + cant, 20);
   else lineas.push({ id, talla, cant });
